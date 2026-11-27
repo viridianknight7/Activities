@@ -1,0 +1,98 @@
+{
+  "version": "V26",
+  "provenance": "Rebuilt from V25 only",
+  "art_direction": "Flat-faceted macro-chibi, physically volumetric, one tree per class, finger-first minimal text/data only",
+  "catalogue": {
+    "Zoan": 44,
+    "Logia": 12,
+    "Paramecia": 90,
+    "total": 146,
+    "family_groups": 19,
+    "unique_ids": 146,
+    "unverified_appearance_flags": 123
+  },
+  "screenshot_matrix": [
+    "Zoan frontal",
+    "Logia frontal",
+    "Paramecia frontal",
+    "Zoan 3/4 orbit",
+    "Logia 3/4 orbit",
+    "Paramecia 3/4 orbit",
+    "Focused tree family",
+    "Paramecia Body Alteration fruit family",
+    "Logia Mera Mera inspected",
+    "Logia Goro Goro sealed inspected"
+  ],
+  "model_dimensions_scene_units": [
+    {
+      "name": "Zoan",
+      "xyz": [
+        43.86,
+        67.41,
+        44.7
+      ],
+      "triangles": 15900
+    },
+    {
+      "name": "Logia",
+      "xyz": [
+        41.38,
+        65.64,
+        36.16
+      ],
+      "triangles": 13650
+    },
+    {
+      "name": "Paramecia",
+      "xyz": [
+        42.32,
+        68.37,
+        43.86
+      ],
+      "triangles": 15879
+    }
+  ],
+  "test_environment": "Chromium Playwright, headful virtual X11, software WebGL (SwiftShader)",
+  "viewports": [
+    {
+      "width": 390,
+      "height": 844,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "passed": true
+    }
+  ],
+  "checked": {
+    "loaded_WebGL": true,
+    "three_variants": true,
+    "groups_19": true,
+    "fruit_meshes_146": true,
+    "unique_records_146": true,
+    "required_fields": true,
+    "inspection_details_146": true,
+    "back_next_controls": true,
+    "tree_canvas_tap": true,
+    "focused_family_selection": true,
+    "fast_horizontal_swipe": true,
+    "slow_orbit_drag": true,
+    "wheel_zoom": true,
+    "simulated_two_pointer_pinch": true,
+    "source_rebuild_byte_identical": true,
+    "zero_uncaught_js_errors": true
+  },
+  "release": {
+    "html_sha256": "ac27836af6c8edfe03d0f31f2844056b24bfb2d9e40e18ad003795021f2284f1",
+    "html_git_blob": "c67f3adcebf9da8e6249780723eabd6256e2d9d1"
+  },
+  "limitations": [
+    "No independent audit of manga-canonical fruit appearance models",
+    "Only 23 historical appearances marked illustrated and still stylised",
+    "123 appearances remain sealed",
+    "No physical Android sustained FPS/thermal/battery measurements",
+    "External RawGitHack CDN has not been independently loaded in this environment",
+    "Vision match/completion percentages are subjective"
+  ]
+}
