@@ -1,0 +1,77 @@
+{
+  "release": "rebirth-01",
+  "date": "2026-11-27",
+  "source": "Entirely fresh HTML, CSS, JS and 3D meshes; only 146-entry structured catalogue data inherited",
+  "html_bytes": 108660,
+  "dataset": {
+    "total": 146,
+    "classes": {
+      "Zoan": 44,
+      "Logia": 12,
+      "Paramecia": 90
+    },
+    "groups": 19,
+    "opened_details": 146
+  },
+  "meshes": {
+    "Zoan": {
+      "triangles": 10190,
+      "extents_xyz": [
+        9.1,
+        13.84,
+        6.62
+      ]
+    },
+    "Logia": {
+      "triangles": 9372,
+      "extents_xyz": [
+        9.35,
+        13.23,
+        6.62
+      ]
+    },
+    "Paramecia": {
+      "triangles": 10750,
+      "extents_xyz": [
+        9.27,
+        13.74,
+        6.62
+      ]
+    }
+  },
+  "tested_viewports": [
+    "390x731",
+    "360x800",
+    "430x932",
+    "844x390",
+    "1366x768"
+  ],
+  "horizontal_overflow_errors": 0,
+  "browser_page_errors": 0,
+  "passed": [
+    "class switching",
+    "direct 3D fruit tapping (Mera Mera)",
+    "orbit drag",
+    "scroll-wheel zoom",
+    "19 group navigation",
+    "family page update",
+    "search Mera Mera",
+    "146/146 details",
+    "8 fields per record",
+    "detail next/previous"
+  ],
+  "screenshots": 10,
+  "tested_renderer": "Canvas2D software 3D (WebGL unavailable in test environment)",
+  "not_verified": [
+    "native Android WebGL and performance",
+    "canon accuracy of inherited catalogue",
+    "individual faithful 3D sculpts for all 146 fruit types",
+    "external GitHack host live accessibility"
+  ],
+  "assessment": {
+    "vision_percent_estimate": 30,
+    "feature_completeness_percent_estimate": 80,
+    "subjective": true
+  },
+  "cleanup": "Five unchanged assistant-created files deleted from main (v24, v25, v27); two modified v26 files preserved; no other branches changed"
+}
