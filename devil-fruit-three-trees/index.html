@@ -48,38 +48,113 @@ function ringPoint(cx,cy,cz,rad,ang){return v(cx+rad*Math.cos(ang),cy,cz+rad*Mat
 function tube(g,points,radii,colors,sides=9,twist=0){let previous=[];for(let k=0;k<points.length;k++){const pos=points[k],dir=norm(sub(points[Math.min(points.length-1,k+1)],points[Math.max(0,k-1)]));let u=norm(cross(dir,v(0,0,1)));if(len(cross(dir,v(0,0,1)))<.1)u=norm(cross(dir,v(0,1,0)));const vv=norm(cross(dir,u)),r=radii[k];const ring=[];for(let i=0;i<sides;i++){const a=i*TAU/sides+twist+k*.18;ring.push(add(pos,add(mul(u,Math.cos(a)*r),mul(vv,Math.sin(a)*r))));}if(previous.length){for(let j=0;j<sides;j++)g.addQuad(previous[j],previous[(j+1)%sides],ring[(j+1)%sides],ring[j],colors[(j+k)%colors.length]);}previous=ring;}}
 function blob(g,cen,sc,palette,seed,quality=1){const R=rndSeed(seed),n=quality?13:7,m=quality?8:4,grid=[];for(let k=0;k<=m;k++){const lat=-P/2+P*k/m,rr=[];for(let j=0;j<=n;j++){const lon=j*TAU/n;const bumps=1+.075*Math.sin(lon*5+seed*.3)*Math.cos(lat*4)+.065*Math.sin(lat*6+lon*3+seed*.2);const z=sc.z*Math.cos(lat)*Math.sin(lon)*bumps;const x=sc.x*Math.cos(lat)*Math.cos(lon)*bumps;const y=sc.y*Math.sin(lat)*(1+.05*Math.cos(lon*7));rr.push(add(cen,v(x,y,z)));}grid.push(rr);}for(let k=0;k<m;k++)for(let j=0;j<n;j++){let t=(k/m)*.46+(j/n)*.18;const q=R(),col=q<.53?palette[0]:q<.72?palette[3]:q<.85?palette[1]:q<.96?palette[2]:palette[4]||palette[0];g.addQuad(grid[k][j],grid[k][j+1],grid[k+1][j+1],grid[k+1][j],col);} }
 function panelGeom(g,c,w,h,zCol,edge,depth=.13){const x=w/2,y=h/2, d=depth;const A=v(-x,-y,-d),B=v(x,-y,-d),C=v(x,y,-d),D=v(-x,y,-d),E=v(-x,-y,d),F=v(x,-y,d),G=v(x,y,d),J=v(-x,y,d);g.addQuad(E,F,G,J,zCol);g.addQuad(A,B,F,E,edge);g.addQuad(B,C,G,F,edge);g.addQuad(C,D,J,G,edge);g.addQuad(D,A,E,J,edge);}
-function island(g,ci){const p=PALETTES[ci],R=rands[ci],n=24,rr=[7.1,7.55,6.25,3.25,.7],ys=[.25,-.1,-1.05,-3.75,-6.1],rings=[];for(let j=0;j<rr.length;j++){let ring=[];for(let i=0;i<n;i++){const a=TAU*i/n,rad=rr[j]*(1+Math.sin(a*7+ci*2)*.065+.036*Math.cos(a*13));ring.push(v(Math.cos(a)*rad,ys[j]+Math.sin(a*11)*(.12+j*.03),Math.sin(a)*rad*.88));}rings.push(ring);}for(let j=0;j<rr.length-1;j++)for(let i=0;i<n;i++){let base=j===0?'#83be99':j<2?p.lightRock:j===2?p.rock:'#20334d';g.addQuad(rings[j][i],rings[j][(i+1)%n],rings[j+1][(i+1)%n],rings[j+1][i],i%3===0?lerpColor(base,'#101f3b',.13):base);}const top=v(0,.35,0);for(let i=0;i<n;i++)g.addTri(top,rings[0][i],rings[0][(i+1)%n],i%3===0?lerpColor(p.leaf,'#b3ddce',.4):lerpColor(p.dark,'#647b8f',.38));
-// suspended carved chunks below the island, not random triangle shards
-for(let j=0;j<7;j++){const a=TAU*j/7+.5,base=v(Math.cos(a)*4.45,-1.45,Math.sin(a)*4.1),tip=add(base,v(.35,-2.7-R()*2,.3));tube(g,[base,add(base,v(0,-.9,0)),tip],[.9,.62,.03],['#2c4b65','#142c4b',p.rock],7);}
-// ornate gold ring on stone lip
-for(let i=0;i<48;i++){const a=i*TAU/48,b=(i+1)*TAU/48;g.lines.push([ringPoint(0,.45,0,7.42,a),ringPoint(0,.45,0,7.42,b),p.trim,2.3]);}
-const ring=[];for(let i=0;i<=56;i++)ring.push(ringPoint(0,.45,0,7.42,i*TAU/56));tube(g,ring,ring.map(()=>.072),['#fff2b8','#e9c981','#f7ebbe'],5);}
-
-function generateTree(ci,low=false){const g=new Geometry(),p=PALETTES[ci],R=rands[ci];island(g,ci);
-// organic trunks built as overlapping curved tapered wood sections
-const curve=[];for(let i=0;i<=15;i++){let t=i/15;curve.push(v(Math.sin(t*P*1.4+ci*.5)*(.62+1*t),.3+t*14.2,Math.cos(t*2.4+ci)*.45));}
-tube(g,curve,curve.map((_,i)=>1.85*Math.pow(1-i/17,1.16)+.15),[p.trunk,lerpColor(p.trunk,'#392d48',.26),lerpColor(p.trunk,'#e8c59c',.18)],15);
-// twisting grooves grow with the trunk as ink-dark inlaid veins
-for(let j=0;j<7;j++){let path=[];for(let k=0;k<18;k++){let t=k/17,a=j*TAU/7+t*4.3;const pos=curve[Math.min(15,Math.round(t*15))],rad=1.85*Math.pow(1-t,1.16)+.12;path.push(add(pos,v(Math.cos(a)*rad,.012,Math.sin(a)*rad)));}for(let k=1;k<path.length;k++)g.lines.push([path[k-1],path[k],j%3===0?'#f0dbaa':'#4d435b',j%3===0?1.8:1.2]);if(j%2===0)tube(g,path,path.map((_,i)=>.036*(1-i/path.length)+.018),['#e8d9a4','#99c5a0','#d3aa84'],5);}
-
-// prominent hand-shaped branches; thick at joints, organically curving and filling canopy volume
-let branches=[];const branchesCount=ci===0?9:ci===1?8:10;
-for(let j=0;j<branchesCount;j++){const a=TAU*j/branchesCount+ci*.7,R2=3.55+R()*2.35,start=curve[7+Math.floor(j%4)],end=v(Math.cos(a)*R2,12.5+R()*3.1,Math.sin(a)*R2*.72);const mid=add(mul(add(start,end),.5),v(Math.cos(a)*.55,1.1+R()*.6,Math.sin(a)*.5));tube(g,[start,mid,end],[.67,.38,.10],[p.trunk,lerpColor(p.trunk,'#e4bf9a',.2),'#564457'],8);branches.push({end,angle:a});
-const leafCen=add(end,v(Math.cos(a)*.2,.55,Math.sin(a)*.2)); const palette=[p.leaf,p.light,p.dark,lerpColor(p.leaf,p.light,.5),lerpColor(p.leaf,'#fff9cc',.32)];
-blob(g,leafCen,v(2.35+R()*.65,1.45+R()*.7,2.15+R()*.7),palette,101+ci*200+j*17,low?0:1);
-if(!low)blob(g,add(leafCen,v(Math.cos(a)*.9,-.55,Math.sin(a)*.65)),v(1.5,1.28,1.62),palette,201+ci*200+j*17,0);
+// Three category-specific mythical Devil Fruit trees. Each is a different silhouette,
+// not a recoloured instance of a shared tree mesh.
+function spear(g,foot,tip,r,material,facet=7){
+ const mid=add(mul(foot,.45),mul(tip,.55));
+ tube(g,[foot,mid,tip],[r,r*.67,.025],material,facet);
 }
-// elevated crown forms distinctive immense canopy silhouette
-const palette=[p.leaf,p.light,lerpColor(p.leaf,p.dark,.3),lerpColor(p.light,'#fdf6c9',.15),p.dark];
-blob(g,v(0,15.3,0),v(3.25,2.2,3.05),palette,610+ci,low?0:1);
-for(let j=0;j<5;j++){const a=TAU*j/5+.2;blob(g,v(Math.cos(a)*2.4,16.45+Math.sin(j*2)*.35,Math.sin(a)*2.05),v(2.1,1.52,1.65),palette,733+j+ci*9,0);}
-// floating auxiliary stone petals around island, intentional same silhouette
-for(let j=0;j<3;j++){const a=TAU*j/3+.55,cen=v(Math.cos(a)*8.55,-1.75,Math.sin(a)*6.9),n=8,topY=-.95;for(let k=0;k<n;k++){const a1=TAU*k/n,a2=TAU*(k+1)/n,A=add(cen,v(Math.cos(a1)*.91,topY,Math.sin(a1)*.78)),B=add(cen,v(Math.cos(a2)*.91,topY,Math.sin(a2)*.78)),tip=add(cen,v(0,-2.1,0));g.addTri(v(cen.x,topY,cen.z),A,B,'#699d9d');g.addTri(A,tip,B,j%2?p.rock:'#3d5574');}}
-// One precision-made orbit per world; the ring belongs to the 3D sculpture,
-// not to a flat overlay. Its subdued warm metal unifies all three islands.
-const orbit=[];for(let i=0;i<=76;i++){const a=TAU*i/76;orbit.push(v(Math.cos(a)*8.25,10.55+Math.sin(a)*2.10,Math.sin(a)*6.45));}
-tube(g,orbit,orbit.map(()=>.032),[lerpColor(p.trim,'#fff6da',.28),lerpColor(p.trim,'#84669a',.32)],5);
-return {geo:g,branches};}
+function jewel(g,c,rx,ry,rz,cols,n=7){
+ const top=add(c,v(0,ry,0)),bot=add(c,v(0,-ry*.83,0));
+ for(let j=0;j<n;j++){let a=j*TAU/n,b=(j+1)*TAU/n;
+ const A=add(c,v(Math.cos(a)*rx,.05,Math.sin(a)*rz));const B=add(c,v(Math.cos(b)*rx,.05,Math.sin(b)*rz));
+ g.addTri(top,A,B,cols[j%cols.length]);g.addTri(bot,B,A,cols[(j+2)%cols.length]);}
+}
+function island(g,ci){
+ const p=PALETTES[ci],R=rndSeed(850+ci*42),N=ci===0?24:ci===1?12:20;
+ const radius=ci===0?9.1:ci===1?7.6:8.0;
+ const levels=ci===0?[[1.06,.2],[1.1,-.7],[.85,-2.35],[.37,-5.6],[.035,-7.6]]:
+ ci===1?[[.96,.3],[1.08,-.24],[.91,-1.10],[.52,-3.2],[.03,-5.0]]:
+ [[1.04,.22],[1.1,-.43],[.91,-1.35],[.62,-3.9],[.04,-5.8]];
+ const rings=levels.map(([sz,y],ri)=>Array.from({length:N},(_,i)=>{const a=i*TAU/N,change=1+.042*Math.cos(a*7+ci)+.032*Math.sin(a*11+ci*2);return v(Math.cos(a)*radius*sz*change,y+Math.sin(a*9)*.09,Math.sin(a)*radius*sz*change*.85)}));
+ const stone=ci===0?['#2a6473','#244d62','#12344e','#091d3d']:
+ ci===1?['#417b9c','#25618c','#1c426d','#112a56']:
+ ['#9b7098','#6d547f','#493e6a','#242f55'];
+ for(let j=0;j<rings.length-1;j++)for(let i=0;i<N;i++)g.addQuad(rings[j][i],rings[j][(i+1)%N],rings[j+1][(i+1)%N],rings[j+1][i],stone[Math.min(j,3)]);
+ for(let i=0;i<N;i++)g.addTri(v(0,.27,0),rings[0][i],rings[0][(i+1)%N],ci===0?(i%4===0?'#6da776':'#3e7976'):
+ ci===1?(i%3===0?'#4bb7cd':'#21577f'):(i%3===0?'#b16e9d':'#875a87'));
+ for(let j=0;j<N;j++){
+  if(j% (ci===1?2:3)===0){let a=j*TAU/N,base=v(Math.cos(a)*radius*.85,-2.5,Math.sin(a)*radius*.71);
+   spear(g,base,add(base,v(.18*(R()-.5),-(ci===1?3.7:4.9)-R()*1.4,.12)),.65,[stone[1],stone[2],stone[3]],5);}
+ }
+ // Raised ornamental rim, actual tubes in world space.
+ let pts=Array.from({length:65},(_,i)=>{const a=i*TAU/64;return v(Math.cos(a)*radius*1.06,.34,Math.sin(a)*radius*.9*1.06)});
+ tube(g,pts,pts.map(()=>ci===1?.085:.065),ci===0?['#d9e6b0','#80d3b1']:ci===1?['#9cfcf4','#6cafe0']:['#ffccab','#fd9bbf'],5);
+ if(ci===1){
+  // levitating nested hexagonal hard-light rings around the storm-root.
+  for(let k=0;k<2;k++){const rr=radius*(.84+k*.24),pts=Array.from({length:49},(_,i)=>{let a=i*TAU/48;return v(Math.cos(a)*rr,-1-k*1.3,Math.sin(a)*rr*.82)});
+   tube(g,pts,pts.map(()=>.095),['#8cfeff','#487ec9','#8bd9ee'],4);}
+ }
+ if(ci===2){
+  // Impossible folded petals radiate from the island like a surreal flower.
+  for(let j=0;j<9;j++){const a=j*TAU/9;const c=v(Math.cos(a)*radius*.85,.04,Math.sin(a)*radius*.71);
+   jewel(g,add(c,v(0,.1,0)),.66,.3,1.14,['#f6a4b5','#e080ae','#935c9c'],5);}
+ }
+}
+function generateTree(ci,low=false){
+ const g=new Geometry(),p=PALETTES[ci],R=rndSeed(12009+ci*101),q=low?0:1;
+ island(g,ci);
+ if(ci===0){
+  // ZOAN: ancient beastheart, enormous roots and horn-shaped limbs; weight and strength.
+  const spine=Array.from({length:17},(_,i)=>{const t=i/16;return v(.65*Math.sin(t*2.3),.32+t*20.7,.27*Math.cos(t*3.2));});
+  tube(g,spine,spine.map((_,i)=>2.62*Math.pow(1-i/20,.87)+.17),['#624a4b','#95634c','#ad8062','#63494c'],12);
+  for(let j=0;j<8;j++){const a=j*TAU/8;const start=v(Math.cos(a)*1.8,.8,Math.sin(a)*1.75);
+   const mid=v(Math.cos(a)*3.9,.36,Math.sin(a)*3.4);const tip=v(Math.cos(a)*(6.4+R()*1.5),.34,Math.sin(a)*5.8);
+   tube(g,[add(spine[1],v(0,.25,0)),start,mid,tip],[1.02,.81,.47,.02],['#785348','#ac7657','#554e50'],7);}
+  // Branch canopy grows in three uneven levels, with characteristic upward horns.
+  const crown=[['#3d956c','#6ecb78','#a4e39b','#27776d','#dcf0ae'],['#56ba84','#b8ef9d','#2c957c','#8ce2b1','#cdec99']];
+  for(let j=0;j<10;j++){const a=TAU*j/10+.14,rad=6.8+R()*4.25,start=spine[7+j%6];
+   const mid=v(Math.cos(a)*rad*.55,12.4+R()*3.7,Math.sin(a)*rad*.52);
+   const tip=v(Math.cos(a)*rad,17.6+R()*4.9,Math.sin(a)*rad*.67);
+   tube(g,[start,mid,tip],[.9,.53,.09],['#6d4d47','#9a6755','#a6815d'],8);
+   blob(g,add(tip,v(0,.4,0)),v(3.3+R()*1.2,2.35+R()*1.1,2.55+R()*1.05),crown[j%2],1444+j*67,q);
+   if(j%2===0){spear(g,add(mid,v(0,.7,0)),add(tip,v(Math.cos(a)*1.2,4.0+R()*2,Math.sin(a))),.33,['#8d745d','#c9ac83','#f0d5a0'],6);}
+  }
+  for(let j=0;j<5;j++)blob(g,v((j-2)*2.25,21.5+R()*2.1,(R()-.5)*3.7),v(2.5,2.35,2.5),crown[1],2737+j,low?0:1);
+  jewel(g,v(0,25.2,.3),1.05,1.95,.96,['#d0f8c2','#8cdeb4','#e3dca8'],7);
+ }else if(ci===1){
+  // LOGIA: a storm-spire grown from prismatic roots, lightning forks and weather halos.
+  const blades=5;
+  for(let k=0;k<blades;k++){const a=k*TAU/blades,rad=1.35+k%2*.36;
+   const pts=Array.from({length:13},(_,i)=>{const t=i/12,spin=a+t*1.35;return v(Math.cos(spin)*rad*(1+.1*t),.4+t*(23.5+(k%3)*2),Math.sin(spin)*rad*(1+.12*t));});
+   tube(g,pts,pts.map((_,i)=>.73*(1-i/15)+.08),['#225a84','#389ac6','#8cecf5','#488cc0'],6);
+   jewel(g,pts[12],.47,1.9,.45,['#a7fcff','#64b6ff','#2e7ac8'],5);
+  }
+  for(let j=0;j<9;j++){const a=j*TAU/9,rad=5.5+R()*3.5,y=9+(j%3)*4.7;
+   const begin=v(Math.cos(a)*.8,y-3,Math.sin(a)*.8);
+   const mid=v(Math.cos(a)*rad*.6,y+1.7,Math.sin(a)*rad*.55);
+   const end=v(Math.cos(a)*rad,y+3.5+R()*2.9,Math.sin(a)*rad*.65);
+   tube(g,[begin,mid,end],[.55,.32,.075],['#3f87bd','#7edbea','#b3f9ef'],6);
+   jewel(g,end,1.05+R()*.55,2.9+R()*2.0,1.03,['#69bedc','#7feefa','#2c73ae','#d8f9ec'],6);
+   if(j%2===0)jewel(g,mid,.8,1.6,.75,['#b9ebfa','#5bb5e0','#246bb5'],6);
+  }
+  // Three dramatic flying storm rings across different planes.
+  for(let j=0;j<3;j++){const ring=Array.from({length:67},(_,i)=>{const a=i*TAU/66,rr=6.6+j*1.8;
+   return v(Math.cos(a)*rr,11.9+j*4.35+Math.sin(a*3+j)*.72,Math.sin(a)*rr*.61)});
+   tube(g,ring,ring.map(()=>j===1?.075:.042),j===1?['#e1fcff','#67cfee']:['#5fa9da','#8deef7'],5);}
+  // Cloud cells float between the forks but never form a conventional mushroom crown.
+  for(let j=0;j<8;j++){const a=j*TAU/8,rr=5.4+R()*2.3,cy=19.5+(j%3)*1.3;
+   blob(g,v(Math.cos(a)*rr,cy,Math.sin(a)*rr*.68),v(1.8+R()*.75,.72+R()*.42,1.7),['#2e86b8','#84d4e5','#4daacb','#b7eefa','#327aa9'],3200+j,low?0:1);}
+  jewel(g,v(0,28.1,0),1.65,3.2,1.2,['#c8fcff','#78f0e8','#4aaee5'],8);
+ }else{
+  // PARAMECIA: surreal braided vortex, blooming impossible coral crowns and floating ribbons.
+  for(let j=0;j<4;j++){const startAng=j*TAU/4,pts=Array.from({length:23},(_,i)=>{const t=i/22,a=startAng+t*TAU*.95;
+    const r=1.3+Math.sin(t*P)*.66;return v(Math.cos(a)*r,.4+t*21.0,Math.sin(a)*r);});
+   tube(g,pts,pts.map((_,i)=>.63*(1-i/28)+.045),['#824e91','#d487aa','#f1adbf','#99577f'],7);}
+  // asymmetric gestural stems spiral into airborne blooms.
+  for(let j=0;j<12;j++){const a=j*2.39996,y=12+(j%4)*2.75;
+   const rr=4.7+R()*5.0,st=v(Math.cos(a)*1.1,y-4,Math.sin(a)*1.1),mid=v(Math.cos(a+.35)*rr*.55,y+1.5,Math.sin(a+.35)*rr*.4),end=v(Math.cos(a)*rr,y+4.6+R()*2,Math.sin(a)*rr*.66);
+   tube(g,[st,mid,end],[.56,.33,.05],['#98547d','#ef95aa','#cc6f94'],6);
+   if(j%3===0){jewel(g,end,2.0,2.6,1.5,['#e687bd','#ffd6c6','#a36caa','#f4a9b8'],9);}else{
+    blob(g,end,v(2.0+R()*.9,2.2+R()*.9,1.6+R()*.8),['#e09aa9','#ffccb6','#bd81ac','#f5b9cb','#9b6aa2'],4000+j,low?0:1);}
+  }
+  for(let j=0;j<3;j++){const swirl=Array.from({length:53},(_,i)=>{const t=i/52,a=t*TAU*1.2+j*2.094;
+   return v(Math.cos(a)*(6+t*2),21.1+Math.sin(a*1.5+j)*1.2+t*1.1,Math.sin(a)*(4+t*1.2));});
+   tube(g,swirl,swirl.map((_,i)=>.09*(1-i/60)+.018),['#f8aaca','#ffcda6','#b97bd0'],5);}
+  jewel(g,v(0,25.1,.2),1.5,2.0,1.4,['#f9c4db','#f6a4cb','#d48dca'],10);
+ }
+ return {geo:g,branches:[]};
+}
 // Sculpted spiral-skinned Devil Fruit: a genuinely 3D, lit surface with protruding helix and stem.
 const FRUITSHAPES=['round','pear','lobed','bell','heart','oval'];
 function fruitShape(id){let t=(id*7+5)%6;const n=DATA[id]?.name||'';if(n.includes('Mera')||n.includes('Magu'))t=2;if(n==='Ope Ope no Mi')t=4;if(n.includes('Nika'))t=3;if(n.includes('Seiryu'))t=5;return FRUITSHAPES[t];}
@@ -125,9 +200,9 @@ const app={stage:0,ci:-1,gi:-1,fi:-1,page:0,familyPage:0,hover:null,transition:0
 // camera uses literal 3D position and quaternion-free orbit basis, perspective projection and spring-smoothed fly-to.
 const camera={target:v(0,8,0),goal:v(0,8,0),dist:44,goalDist:44,yaw:.03,goalYaw:.03,pitch:.10,goalPitch:.10,eye:v(),right:v(1,0,0),up:v(0,1,0),forward:v(0,0,-1),f:700};
 const root=v;
-function resetTreePositions(){if(W/H<.72){treePositions=[v(-4,19.8,0),v(-4,0,0),v(-4,-19.8,0)];}else{treePositions=[v(-13.5,0,0),v(0,0,-2),v(13.5,0,0)];}}
-function setOverview(){app.stage=0;app.ci=-1;app.gi=-1;app.fi=-1;app.page=0;app.familyPage=0;camera.goal=W/H<.72?v(0,8,0):v(0,8,0);camera.goalDist=W/H<.72?81:39.3;camera.goalYaw=.03;camera.goalPitch=W/H<.72?.015:.14;}
-function selectClass(i){app.stage=1;app.ci=i;app.gi=-1;app.fi=-1;app.page=0;app.familyPage=0;camera.goal=add(treePositions[i],v(0,8,0));camera.goalDist=W/H<.72?31:30;camera.goalYaw=.07;camera.goalPitch=.06;}
+function resetTreePositions(){if(W/H<.72){treePositions=[v(-11.3,0,-5.2),v(0,0,5.6),v(11.3,0,-5.2)];}else{treePositions=[v(-25.4,0,-3),v(0,0,4.8),v(25.4,0,-3)];}}
+function setOverview(){app.stage=0;app.ci=-1;app.gi=-1;app.fi=-1;app.page=0;app.familyPage=0;camera.goal=W/H<.72?v(0,11.4,0):v(0,10.4,0);camera.goalDist=W/H<.72?91:60.5;camera.goalYaw=.02;camera.goalPitch=W/H<.72?-.015:.085;}
+function selectClass(i){app.stage=1;app.ci=i;app.gi=-1;app.fi=-1;app.page=0;app.familyPage=0;camera.goal=add(treePositions[i],v(0,11.1,0));camera.goalDist=W/H<.72?35:38;camera.goalYaw=.07;camera.goalPitch=.06;}
 function familiesPerPage(){return W/H<.72?3:6}
 function visibleFamilies(){return GROUPS[app.ci].map((name,gi)=>({name,gi})).slice(app.familyPage*familiesPerPage(),(app.familyPage+1)*familiesPerPage());}
 function nextFamilyPage(n){const count=Math.ceil(GROUPS[app.ci].length/familiesPerPage());app.familyPage=(app.familyPage+n+count)%count;}
@@ -183,13 +258,24 @@ const members=DATA.filter(d=>d.class===CLASSES[ci]);for(let k=0;k<members.length
  if(stage===0||ci!==app.ci||stage===1){if(pp.k<6){drawLines.push([pp.z,pp,pr(add(pt,v(0,.25,0)))||pp,fruitPalette(members[k].id)[0],1.8,1]);}else if(k%11===0){addGeomDraw(smallModels[members[k].id],pt,.22,now*.25,4,.95);}}
  }
 }
-function drawOverview(){const colors=PALETTES.map(x=>x.accent);for(let ci=0;ci<3;ci++){const pos=treePositions[ci],isMobile=W/H<.72;
- const signPos=add(pos,isMobile?v(9,7.7,7.7):v(0,-.64,7.85));textDraw(CLASSES[ci].toUpperCase(),add(signPos,v(0,.1,0)),{size:isMobile?21:27,ref:17,bold:true,min:.85,max:1.5,color:'#fff6dc',halo:40});textDraw(`${DATA.filter(f=>f.class===CLASSES[ci]).length} DEVIL FRUITS`,add(signPos,v(0,-1.3,0)),{size:12,ref:17,bold:true,min:.9,max:1.5,color:colors[ci]});
- markClickable('tree'+ci,add(pos,v(0,8,0)),9.5,()=>selectClass(ci),1);markClickable('tree-sign'+ci,signPos,6,()=>selectClass(ci),3);
+function drawOverview(){
+ const colors=PALETTES.map(x=>x.accent),mobile=W/H<.72;
+ for(let ci=0;ci<3;ci++){
+  const pos=treePositions[ci];const sign=add(pos,v(0,-9.8,6.5));
+  const word=CLASSES[ci].toUpperCase(),count=DATA.filter(f=>f.class===CLASSES[ci]).length;
+  const pt=pr(sign);if(pt){const sc=mobile?.85:1.17,w=(mobile?101:198)*sc,h=mobile?43:53;
+   ui.save();ui.globalAlpha=.98;ui.shadowColor='rgba(2,10,34,.65)';ui.shadowBlur=12;ui.fillStyle='#102747';ui.strokeStyle=colors[ci];ui.lineWidth=1.5;
+   rounded(ui,pt.x-w/2,pt.y-h/2,w,h,Math.min(12,h/3));ui.fill();ui.stroke();ui.shadowBlur=0;
+   ui.font=`900 ${mobile?12:21}px system-ui`;ui.fillStyle='#fff1db';ui.textAlign='center';ui.textBaseline='middle';ui.fillText(word,pt.x,pt.y-8,w-8);
+   ui.font=`750 ${mobile?9:11}px system-ui`;ui.fillStyle=colors[ci];ui.fillText(`${count} FRUITS`,pt.x,pt.y+11,w-8);ui.restore();
+   clicks.push({key:'tree-label'+ci,x:pt.x,y:pt.y,r:w/2,z:0,priority:6,rect:[w/2,h/2],fn:()=>selectClass(ci)});
+  }
+  markClickable('tree'+ci,add(pos,v(0,11.4,0)),mobile?9.8:13.2,()=>selectClass(ci),1);
  }
- // The only opening instruction is a quiet in-world marker; no giant heading or page chrome.
- const titlept=uiWorldPoint(W*.5,Math.max(28,H*.075),12);textDraw('THE DEVIL FRUIT WORLD',titlept,{size:15,bold:true,ref:camera.f/12,min:1,max:1,color:'#fcecd8',shadow:true});
- const hintpt=uiWorldPoint(W*.5,H-35,12);textDraw('CHOOSE A TREE  ·  DRAG TO ORBIT  ·  PINCH TO ZOOM',hintpt,{size:10.5,ref:camera.f/12,min:1,max:1,color:'#f6e9dc'});
+ const title=uiWorldPoint(W*.5,mobile?H*.075:H*.090,12);
+ textDraw('THREE LEGENDARY TREES',title,{size:mobile?15:22,bold:true,ref:camera.f/12,min:1,max:1,color:'#f9ebd4'});
+ const hint=uiWorldPoint(W*.5,H-(mobile?33:38),12);
+ textDraw(mobile?'TAP A TREE  ·  SWIPE TO ORBIT':'TAP A TREE  ·  DRAG TO EXPLORE',hint,{size:mobile?9.8:11,ref:camera.f/12,min:1,max:1,color:'#f2d9c2'});
 }
 function drawFamilies(){const ci=app.ci,colors=PALETTES[ci],positions=familyGalleryAnchors(),vis=visibleFamilies();for(let i=0;i<positions.length;i++){const gi=vis[i].gi;
  const pos=positions[i],pv=pr(pos);if(!pv)continue;const a=gi*TAU/positions.length;
@@ -220,7 +306,7 @@ function wrapText(t,limit=37){const words=t.split(/\s+/),out=[],tmp=[];for(let w
 function drawDetail(){const d=DATA[app.fi],c=PALETTES[app.ci],mobile=W/H<.72,slate=makeSlateWorld();
  const projected=pr(slate.facePoint(-slate.width/2+.47,0));if(!projected)return;
  const blocks=[['POWER',d.power],['CLASSIFICATION',d.subtype],['KNOWN USER',d.users],['AFFILIATION',d.affiliation],['STORY ARCS',d.arcs],['SAGA',d.saga],['AWAKENED',d.awakened],['ORIGIN',d.origin]];
- const rows=[{t:d.name,title:true},{t:designRevealed(app.fi)?'REVEALED DESIGN · STYLISED SCULPTURE':'DESIGN UNREVEALED · CONCEPT SCULPTURE',status:true}];
+ const rows=[{t:d.name,title:true},...(!designRevealed(app.fi)?[{t:'UNREVEALED DESIGN',status:true}]:[])];
  for(const [label,value] of blocks){rows.push({t:label,label:true});for(const str of wrapText(value,mobile?33:47))rows.push({t:str});}
  const available=slate.height-(mobile?1.85:1.05),ideal=rows.reduce((n,r)=>n+(r.title?.78:r.status?.45:r.label?.43:.39),0),scale=Math.min(1,available/ideal);
  let y=slate.height/2-.43;
@@ -228,7 +314,7 @@ function drawDetail(){const d=DATA[app.fi],c=PALETTES[app.ci],mobile=W/H<.72,sla
  textDraw(r.t,place,{size:r.title?(mobile?16:19):r.status?(mobile?8.8:10.4):r.label?(mobile?10:10.4):(mobile?11:12.6),ref:mobile?37:50,min:.72,max:1.14,align:'left',shadow:false,maxwidth:mobile?W*.78:475,bold:!!(r.title||r.label||r.status),color:r.status?(designRevealed(app.fi)?'#edcb9b':'#c4cad2'):r.label?c.accent:r.title?'#fff0d7':'#eef5f3'});
  y-=ht;
  }
- drawFloatingAction('◀ PREVIOUS',mobile?.22:.18,.956,()=>nextFruit(-1));drawFloatingAction('NEXT ▶',mobile?.78:.82,.956,()=>nextFruit(1));
+ drawFloatingAction('◀ PREV',mobile?.22:.18,.950,()=>nextFruit(-1));drawFloatingAction('NEXT ▶',mobile?.78:.82,.950,()=>nextFruit(1));
 }
 function drawFloatingAction(text,xp,yp,fn,quiet=false){const pos=uiWorldPoint(W*xp,H*yp,8.2),screen=pr(pos);if(!screen)return;const sw=quiet?85:text.length*10+36,sh=40;ui.save();ui.globalAlpha=quiet?.85:1;ui.fillStyle='rgba(13,31,55,.95)';ui.strokeStyle='rgba(255,235,178,.8)';ui.lineWidth=1.3;rounded(ui,screen.x-sw/2,screen.y-sh/2,sw,sh,10);ui.fill();ui.stroke();ui.font=`800 ${quiet?12:13}px system-ui`;ui.fillStyle='#fff6da';ui.textAlign='center';ui.textBaseline='middle';ui.fillText(text,screen.x,screen.y);ui.restore();if(fn)clicks.push({key:'action'+text,x:screen.x,y:screen.y,r:Math.max(sw/2,25),z:0,fn,priority:11,rect:[sw/2,sh/2]});}
 function drawBack(){if(!app.stage)return;drawFloatingAction('← BACK',W/H<.72?.18:.085,.066,back);}
@@ -236,12 +322,12 @@ function vineWorld(){const g=new Geometry();g.dynamic=true;const pts=familyFruit
  for(const item of familyFruitAnchors()){const pos=item.pos,r=1.72,n=18;for(let i=0;i<n;i++){const a=i*TAU/n,b=(i+1)*TAU/n;const A=add(pos,v(Math.cos(a)*r,-1.25,Math.sin(a)*r*.24)),B=add(pos,v(Math.cos(b)*r,-1.25,Math.sin(b)*r*.24));g.lines.push([A,B,PALETTES[app.ci].trim,1.4]);}}
  return g;}
 function makeSlateWorld(){const ci=app.ci,gi=app.gi,base=groupAnchors(ci)[gi],mobile=W/H<.72;
- const center=add(base,v(mobile?0:4.25,mobile?-3.62:0,mobile?.15:1)),width=mobile?8.1:8.9,height=mobile?7.9:10.05,thick=.3;
+ const center=add(base,v(mobile?0:4.25,mobile?-3.48:0,mobile?.15:1)),width=mobile?8.35:9.25,height=mobile?8.3:10.4,thick=.3;
  const face=add(center,mul(camera.forward,-thick/2)),back=add(center,mul(camera.forward,thick/2)),w=width/2,h=height/2,cut=.33;
  const corners=[[-w+cut,-h],[w-cut,-h],[w,-h+cut],[w,h-cut],[w-cut,h],[-w+cut,h],[-w,h-cut],[-w,-h+cut]];
  const project=(o,a,b)=>add(o,add(mul(camera.right,a),mul(camera.up,b))),geo=new Geometry();geo.dynamic=true;
  const a=corners.map(x=>project(face,x[0],x[1])),b=corners.map(x=>project(back,x[0],x[1]));
- for(let i=0;i<8;i++){geo.addTri(face,a[i],a[(i+1)%8],i%2?'#172b4a':'#203e60');geo.addQuad(a[i],b[i],b[(i+1)%8],a[(i+1)%8],i%2?'#152743':'#c8a477');}
+ for(let i=0;i<8;i++){geo.addTri(face,a[i],a[(i+1)%8],'#132e49');geo.addQuad(a[i],b[i],b[(i+1)%8],a[(i+1)%8],'#254c65');}
  // Gold inset seam and two pronounced 3D carved ridges.
  for(let i=0;i<8;i++){const f=project(face,corners[i][0]*.94,corners[i][1]*.95),t=project(face,corners[(i+1)%8][0]*.94,corners[(i+1)%8][1]*.95);geo.lines.push([f,t,'#f2cf9f',1.3]);}
  return {geo,center:face,width,height,front:face,facePoint:(x,y)=>project(add(face,mul(camera.forward,-.05)),x,y)};}
