@@ -15,20 +15,18 @@ const PALETTES=[
 // Only a conservative set of publicly depicted fruit appearances are marked as revealed.
 // All sculptures remain selectable. An unrevealed design retains the same sculptural style,
 // with quieter materials and a small explanatory inscription rather than a locked entry.
+// Conservative, appearance-documented designs. An unverified physical design is sealed, never invented.
 const REVEALED_NAMES=new Set([
  'Awa Awa no Mi','Baku Baku no Mi','Bara Bara no Mi','Bomu Bomu no Mi',
- 'Doru Doru no Mi','Fude Fude no Mi','Goro Goro no Mi','Gura Gura no Mi',
- 'Hana Hana no Mi','Hebi Hebi no Mi, Model: Yamata no Orochi','Hito Hito no Mi',
- 'Hito Hito no Mi, Model: Nika','Hobi Hobi no Mi','Horo Horo no Mi',
+ 'Doru Doru no Mi','Fude Fude no Mi','Hana Hana no Mi',
+ 'Hebi Hebi no Mi, Model: Yamata no Orochi','Hito Hito no Mi','Hito Hito no Mi, Model: Nika',
  'Inu Inu no Mi, Model: Okuchi no Makami','Ito Ito no Mi','Jiki Jiki no Mi',
- 'Kage Kage no Mi','Kilo Kilo no Mi','Mane Mane no Mi','Mera Mera no Mi',
- 'Mero Mero no Mi','Mochi Mochi no Mi','Neko Neko no Mi, Model: Leopard',
- 'Nikyu Nikyu no Mi','Nui Nui no Mi','Ope Ope no Mi',
- 'Ryu Ryu no Mi, Model: Nidhöggr','Sara Sara no Mi, Model: Axolotl',
- 'Sube Sube no Mi','Suna Suna no Mi','Supa Supa no Mi',
- 'Tori Tori no Mi, Model: Phoenix','Uo Uo no Mi, Model: Seiryu',
- 'Ushi Ushi no Mi, Model: Bison','Ushi Ushi no Mi, Model: Giraffe',
- 'Yami Yami no Mi','Yomi Yomi no Mi']);
+ 'Kage Kage no Mi','Kilo Kilo no Mi','Mera Mera no Mi','Mero Mero no Mi',
+ 'Mochi Mochi no Mi','Neko Neko no Mi, Model: Leopard','Ope Ope no Mi',
+ 'Sara Sara no Mi, Model: Axolotl','Sube Sube no Mi','Suna Suna no Mi',
+ 'Uo Uo no Mi, Model: Seiryu','Ushi Ushi no Mi, Model: Bison',
+ 'Ushi Ushi no Mi, Model: Giraffe','Yami Yami no Mi','Yomi Yomi no Mi'
+]);
 const designRevealed=id=>REVEALED_NAMES.has(DATA[id]?.name);
 const GROUPS=CLASSES.map(c=>[...new Set(DATA.filter(x=>x.class===c).map(x=>x.group))]);
 const BYGROUP=CLASSES.map((c,i)=>GROUPS[i].map(g=>DATA.filter(x=>x.class===c&&x.group===g)));
@@ -145,12 +143,39 @@ function generateTree(ci,low=false){
   for(let j=0;j<9;j++){const a=j*TAU/9;const t=v(Math.cos(a)*8,38+Math.sin(a*2)*2.4,Math.sin(a)*5.7);jewel(g,t,1.6,2.7,1.5,['#ffd8b0','#e17faa','#da88c4','#ffb6b8'],8);}
   jewel(g,v(.2,44,0),3.3,3.6,3.2,['#ffaac8','#ffd6ae','#cf84b8','#f6a0b4'],11);
  }
+ // Monumental botanical relics, each unique to the class. Not repeated generic spheres.
+ const gold=['#bda36b','#f5d99c','#856d60'];
+ if(ci===0){
+  // Beastheart: twisted tusk-roots and drooping chains of seed pods.
+  for(let k=0;k<7;k++){const a=k*TAU/7;const st=v(Math.cos(a)*3.0,8.2,Math.sin(a)*3);const tip=v(Math.cos(a)*15.0,2.1,Math.sin(a)*13);
+   branchArc(g,st,tip,2.6,.48,['#755742','#b08c5a','#5e6548'],7);
+   if(k%2===0)jewel(g,v(Math.cos(a)*14.8,1.0,Math.sin(a)*12.2),.85,2.3,.84,['#cab78b','#97835b','#dccea5'],7);
+  }
+ }else if(ci===1){
+  // Tempest: floating angular light shards among cloud forks.
+  for(let k=0;k<9;k++){const a=k*TAU/9,r=11+(k%3)*2;
+   jewel(g,v(Math.cos(a)*r,19+(k%4)*5,Math.sin(a)*r*.75),.52,2.65,.59,['#ecfff6','#74d9e6','#3a8bb6'],6);
+  }
+ }else{
+  // Wonderbloom: arching petals and hung prisms surround the crown.
+  for(let k=0;k<9;k++){const a=k*TAU/9;petal(g,v(Math.cos(a)*7,15,Math.sin(a)*6),v(Math.cos(a)*18,24+(k%3)*3,Math.sin(a)*15),1.5,['#ffc2bb','#ce84b3','#ef96ac']);}
+ }
  return {geo:g,branches:[]};
 }
 
 // Sculpted spiral-skinned Devil Fruit: a genuinely 3D, lit surface with protruding helix and stem.
 const FRUITSHAPES=['round','pear','lobed','bell','heart','oval'];
-function fruitShape(id){let t=(id*7+5)%6;const n=DATA[id]?.name||'';if(n==='Mera Mera no Mi'||n.includes('Magu'))t=2;if(n==='Ope Ope no Mi')t=4;if(n.includes('Nika'))t=0;if(n.includes('Seiryu'))t=5;return FRUITSHAPES[t];}
+const CANON_SHAPES={
+ 'Hito Hito no Mi, Model: Nika':'round','Hito Hito no Mi':'bell',
+ 'Mera Mera no Mi':'lobed','Bara Bara no Mi':'oval','Baku Baku no Mi':'round',
+ 'Kage Kage no Mi':'round','Sube Sube no Mi':'round','Yami Yami no Mi':'lobed',
+ 'Ito Ito no Mi':'pear','Doru Doru no Mi':'oval','Suna Suna no Mi':'lobed',
+ 'Uo Uo no Mi, Model: Seiryu':'round','Neko Neko no Mi, Model: Leopard':'round',
+ 'Mochi Mochi no Mi':'bell','Jiki Jiki no Mi':'lobed','Hito Hito no Mi':'bell',
+ 'Hebi Hebi no Mi, Model: Yamata no Orochi':'round',
+ 'Mero Mero no Mi':'heart','Ope Ope no Mi':'heart'
+};
+function fruitShape(id){return CANON_SHAPES[DATA[id].name]||'round';}
 function fruitPalette(i){const x=DATA[i],c=CLASSES.indexOf(x.class);let r=(i*47+13)%10;
 const palettes=[['#a7f646','#2ba795','#eaffaf'],['#40cde5','#4376f2','#d4fdff'],['#ff6f7c','#bc55df','#ffdbb2'],['#ffb36a','#ec675d','#ffe5a4'],['#a486fe','#6577dc','#d3c7ff'],['#ffa8d2','#b73dc3','#ffe2f2'],['#6ee8c5','#087ea2','#cdfdee'],['#fadd6b','#cc8065','#fff1b3'],['#f2a6e7','#8e66cb','#ffe9f6'],['#fa7c67','#efbe67','#fff1bd']];let p=palettes[(r+c*3)%10];
 if(x.name==='Mera Mera no Mi')p=['#ffac52','#e8513b','#ffe2ac'];
@@ -161,15 +186,38 @@ if(x.name==='Yami Yami no Mi')p=['#73547f','#302741','#b694d4'];
 if(x.name==='Bomu Bomu no Mi')p=['#8b5fc1','#4b315e','#f7b7e5'];
 if(x.name==='Doru Doru no Mi')p=['#e9e4cb','#b0b5a7','#fffaf0'];
 if(x.name==='Suna Suna no Mi')p=['#ebc17a','#b38b6b','#fff0b4'];
-if(!designRevealed(i))p=p.map((col,j)=>lerpColor(col,j===2?'#d4d6dc':'#9fa6b3',j===2?.20:.30));
+const canonColors={
+ 'Bara Bara no Mi':['#8655b0','#603583','#b88be0'],
+ 'Baku Baku no Mi':['#7e54aa','#4e306c','#ad82d1'],
+ 'Awa Awa no Mi':['#aa76de','#7048a9','#d4b8f5'],
+ 'Hana Hana no Mi':['#f7aecf','#cc649c','#ffdfbf'],
+ 'Ito Ito no Mi':['#cbb8f1','#a988d5','#f7e9ff'],
+ 'Kage Kage no Mi':['#10131a','#262734','#c9ab6b'],
+ 'Mochi Mochi no Mi':['#f3e9cf','#c6c3b3','#fffaf0'],
+ 'Hito Hito no Mi':['#db4b55','#b52b44','#ffa4a1'],
+ 'Neko Neko no Mi, Model: Leopard':['#e9b14d','#c38843','#ffe8a5'],
+ 'Ushi Ushi no Mi, Model: Bison':['#1b2430','#10141c','#ddd5c6'],
+ 'Sube Sube no Mi':['#ef93b3','#c6689e','#ffd3e3'],
+ 'Jiki Jiki no Mi':['#9097a6','#565d69','#d4ae58'],
+ 'Mero Mero no Mi':['#e9516c','#8f4eaf','#f9b3ba'],
+ 'Doru Doru no Mi':['#eee5d6','#c7c7b8','#fff9ee'],
+ 'Fude Fude no Mi':['#23232c','#11131c','#f3f0ea'],
+ 'Yomi Yomi no Mi':['#f0a94b','#d87831','#f9df8c'],
+ 'Suna Suna no Mi':['#dcc28a','#ae8a60','#e9da9e'],
+ 'Uo Uo no Mi, Model: Seiryu':['#58b8e8','#1a5caa','#bceeff'],
+ 'Yami Yami no Mi':['#9e7fb8','#654777','#d4bedf'],
+ 'Mera Mera no Mi':['#fcad4b','#e34f27','#ffe0a1']
+};
+if(canonColors[x.name])p=canonColors[x.name];
+if(!designRevealed(i))p=['#0a0f1d','#11192a','#556073'];
 return p;}
 function bananaFruit(id,quality){
  const g=new Geometry(),p=['#e04a55','#e87166','#ff9a7d','#5d9c62'];
  // Kaku's giraffe fruit is a red bunch of bananas, not a round orange.
- for(let k=0;k<6;k++){const ang=k*TAU/6+.1;
+ for(let k=0;k<4;k++){const ang=k*TAU/4+.1;
   const pts=Array.from({length:11},(_,j)=>{const t=j/10,r=.13+Math.sin(t*P*.82)*.92;
    return v(Math.cos(ang)*r+Math.cos(ang+.65)*Math.sin(t*P)*.24,1.44-t*2.75,Math.sin(ang)*r);});
-  tube(g,pts,pts.map((_,j)=>.045+Math.sin(j/10*P)*.235),[p[k%3],p[(k+1)%3],p[2]],quality?9:7);
+  tube(g,pts,pts.map((_,j)=>.065+Math.sin(j/10*P)*.36),[p[k%3],p[(k+1)%3],p[2]],quality?9:7);
   for(let j=2;j<9;j+=3){const at=pts[j];const swirl=Array.from({length:13},(_,i)=>{const t=i/12,a=t*P*3;return add(at,v(Math.cos(a)*(.19*(1-t))+.18,.10*(1-t),Math.sin(a)*(.19*(1-t))));});
    tube(g,swirl,swirl.map(()=>.015),['#f4bd91','#ffd9a6'],4);}
  }
@@ -186,7 +234,7 @@ function heartFruit(id,quality){
  for(let side of [1,-1]){
   const rows=[];
   for(let q=0;q<=steps;q++){const t=q/steps,r=1-t;
-   rows.push(contour.map(p=>v(p.x*r,p.y*r,side*(.08+.34*Math.sin(t*P*.5)))));}
+   rows.push(contour.map(p=>v(p.x*r,p.y*r,side*(.05+.76*Math.sin(t*P*.5)))));}
   for(let q=0;q<steps;q++)for(let k=0;k<segments;k++){
    g.addQuad(rows[q][k],rows[q][(k+1)%segments],rows[q+1][(k+1)%segments],rows[q+1][k],(k+q)%5===0?'#db4160':(k+q)%3===0?'#ee6581':'#ba2c57');}
  }
@@ -195,10 +243,85 @@ function heartFruit(id,quality){
  const stem=Array.from({length:17},(_,i)=>{const t=i/16,a=P*.78*t;return v(.08+Math.sin(a)*.20,.66+t*.70,.03+.16*(1-Math.cos(a)));});
  tube(g,stem,stem.map((_,i)=>.11*(1-i/18)+.015),['#77a260','#a0bd72'],7);
  // Spirals belong to the front surface, following the heart instead of crossing its edges.
- for(let k=0;k<7;k++){const phi=k*TAU/7;const centre=v(Math.cos(phi)*.38,Math.sin(phi)*.41+.05,.43);const spiral=Array.from({length:25},(_,i)=>{const t=i/24,a=t*TAU*1.45+phi,rr=.14*(1-t);return add(centre,v(rr*Math.cos(a),rr*Math.sin(a),.02));});tube(g,spiral,spiral.map(()=>.009),['#ffb4bb','#ffd0c2'],4);}
+ for(let k=0;k<7;k++){const phi=k*TAU/7;const centre=v(Math.cos(phi)*.38,Math.sin(phi)*.41+.05,.75);const spiral=Array.from({length:25},(_,i)=>{const t=i/24,a=t*TAU*1.45+phi,rr=.14*(1-t);return add(centre,v(rr*Math.cos(a),rr*Math.sin(a),.02));});tube(g,spiral,spiral.map(()=>.009),['#ffb4bb','#ffd0c2'],4);}
  return g;
 }
-function fruitModel(id,quality=0){if(DATA[id].name==='Ushi Ushi no Mi, Model: Giraffe')return bananaFruit(id,quality);if(DATA[id].name==='Ope Ope no Mi')return heartFruit(id,quality);const g=new Geometry(),p=fruitPalette(id),shape=fruitShape(id),rings=quality?21:10,seg=quality?34:16;let xyz=[];
+
+// Undocumented physical appearances are black sealed reliquaries, not canon imitations.
+// The seal is part of the 3D object: two chains of actual mesh links and a brass lock.
+function sealedFruit(id,quality=0){
+ const g=new Geometry(),N=quality?26:14,M=quality?17:9;
+ const cols=['#070b15','#111522','#192131','#090f1d','#212635'];
+ const rows=[];
+ for(let j=0;j<=M;j++){
+  const t=P*j/M, y=Math.cos(t)*1.07, ring=[];
+  for(let k=0;k<=N;k++){
+   const a=TAU*k/N,r=Math.sin(t)*(1+.05*Math.sin(5*a+j*.33));
+   ring.push(v(r*Math.cos(a)*.92,y,r*Math.sin(a)*.86));
+  }rows.push(ring);
+ }
+ for(let j=0;j<M;j++)for(let k=0;k<N;k++)g.addQuad(rows[j][k],rows[j][k+1],rows[j+1][k+1],rows[j+1][k],cols[(j*3+k)%cols.length]);
+ // A twisted dark iron stem rather than a colourful fantasy reveal.
+ tube(g,[v(0,1.03,0),v(.08,1.28,0),v(.23,1.49,.09),v(.36,1.42,.11)],[.13,.10,.07,.035],['#333640','#454552','#191a26'],6);
+ // Individual metal chain links wrap across the visible face in two diagonals.
+ const steps=quality?12:6;
+ for(let diagonal of [-1,1])for(let i=0;i<steps;i++){
+  const t=(i+.5)/steps,x=(t-.5)*1.40, y=diagonal*(t-.5)*1.36;
+  const rr=Math.max(.19,1-x*x/.95-y*y/1.18),z=Math.sqrt(rr)*.87+.10;
+  const link=[];const turn=Math.atan2(diagonal,1);
+  for(let j=0;j<=10;j++){const a=j*TAU/10,dx=Math.cos(a)*.115,dy=Math.sin(a)*.20;
+   link.push(v(x+Math.cos(turn)*dx-Math.sin(turn)*dy,y+Math.sin(turn)*dx+Math.cos(turn)*dy,z+.035*Math.sin(a)));
+  }
+  tube(g,link,link.map(()=>quality?.029:.036),['#bcae94','#746e6b','#e0c6a0','#5b646f'],5);
+ }
+ // Sculpted padlock: a solid case, looped shackle, keyhole in dark metal.
+ const zz=quality?1.035:1.015;
+ const plate=v(0,-.18,zz);
+ const A=v(-.24,-.43,zz),B=v(.24,-.43,zz),C=v(.24,-.02,zz),D=v(-.24,-.02,zz);
+ g.addQuad(A,B,C,D,'#b99b63');g.addQuad(v(-.17,-.38,zz+.025),v(.17,-.38,zz+.025),v(.17,-.07,zz+.025),v(-.17,-.07,zz+.025),'#dfbd79');
+ const shackle=Array.from({length:11},(_,i)=>{const t=i/10,a=P-t*P;return v(Math.cos(a)*.155,-.04+Math.sin(a)*.19,zz)});
+ tube(g,shackle,shackle.map(()=>.042),['#d6d0bc','#8f9296'],6);
+ jewel(g,v(0,-.205,zz+.061),.049,.071,.018,['#1b2435','#2a3445'],6);
+ return g;
+}
+function bloomFruit(id,quality=0){
+ const g=new Geometry();const n=quality?17:11;
+ for(let layer=0;layer<3;layer++)for(let i=0;i<n;i++){
+  const a=i*TAU/n+layer*.21,r=.28+layer*.31,centre=v(0,.20,0);
+  const base=v(Math.cos(a)*r,.12-layer*.16,Math.sin(a)*r),tip=v(Math.cos(a)*(r+.63),.23-layer*.25,Math.sin(a)*(r+.63));
+  petal(g,base,tip,.31+layer*.06,[layer===0?'#fff2d5':'#f3a3c5','#d4659b','#ffd0df','#b8518c']);
+ }
+ jewel(g,v(0,.42,.18),.44,.30,.34,['#fce5a0','#d7a75a','#ffe8b1'],10);
+ tube(g,[v(0,.52,0),v(.06,.89,0),v(.25,1.02,.1)],[.14,.095,.04],['#4c955d','#8bb665'],7);
+ return g;
+}
+function doubleHeartFruit(id,quality=0){
+ const g=new Geometry();for(let k=0;k<2;k++){
+  const h=heartFruit(id,quality);for(const f of h.faces){if(k)f[3]=f[3].startsWith('#d')?'#ab7bcc':f[3].startsWith('#e')?'#d49bef':'#754da8';}
+  g.merge(h,v(k?.53:-.53,-.11,0));
+ }
+ tube(g,[v(-.53,.80,0),v(0,1.37,0),v(.53,.80,0)],[.075,.10,.075],['#528967','#c5df98'],6);
+ return g;
+}
+function mochiFruit(id,quality=0){const g=new Geometry();
+ blob(g,v(0,.36,0),v(.94,.75,.83),['#f3e7d0','#fff8ec','#d7d2c7','#e6dcc5','#fffdf6'],92,quality?1:0);
+ blob(g,v(0,-.67,0),v(.61,.53,.61),['#eadfc9','#f5ecdd','#d0c3b2','#fffaf2','#e8dcc7'],93,quality?1:0);
+ tube(g,[v(0,1.03,0),v(.07,1.3,.08),v(.25,1.40,.09)],[.12,.09,.038],['#6e9b63','#c6d9a2'],7);
+ return g;}
+function grapeFruit(id,quality=0){const g=new Geometry();for(let i=0;i<10;i++){
+ const ring=i<4?0:i<8?1:2,a=i*TAU/4,rr=ring===0?.43:ring===1?.65:.14;
+ blob(g,v(Math.cos(a)*rr,.68-ring*.75,Math.sin(a)*rr),v(.49,.50,.46),['#72568e','#9d80b5','#493a68','#ab9bc3','#674e81'],100+i,quality?1:0);
+ }tube(g,[v(0,1.09,0),v(.08,1.48,0),v(.30,1.61,.1)],[.15,.10,.03],['#6d8a5f','#9db88b'],8);return g;}
+function fruitModel(id,quality=0){
+ const name=DATA[id].name;
+ if(!designRevealed(id))return sealedFruit(id,quality);
+ if(name==='Ushi Ushi no Mi, Model: Giraffe')return bananaFruit(id,quality);
+ if(name==='Ope Ope no Mi')return heartFruit(id,quality);
+ if(name==='Hana Hana no Mi')return bloomFruit(id,quality);
+ if(name==='Mero Mero no Mi')return doubleHeartFruit(id,quality);
+ if(name==='Mochi Mochi no Mi')return mochiFruit(id,quality);
+ if(name==='Yami Yami no Mi')return grapeFruit(id,quality);
+const g=new Geometry(),p=fruitPalette(id),shape=fruitShape(id),rings=quality?21:10,seg=quality?34:16;let xyz=[];
 for(let j=0;j<=rings;j++){const th=P*j/rings, row=[];for(let k=0;k<=seg;k++){const a=k*TAU/seg;let radial=Math.sin(th), yy=Math.cos(th), t=(yy+1)/2;
 if(shape==='pear')radial*=1+.38*(-yy);else if(shape==='bell')radial*=1+.28*yy;else if(shape==='heart')radial*=1+.21*Math.sin(a*2)*Math.pow(t,2);else if(shape==='oval'){radial*=.81;yy*=1.19;}else if(shape==='lobed')radial*=1+.12*Math.cos(5*a)*Math.pow(Math.abs(yy),.5);
 const sw=1+.018*Math.sin(8*a+th*11+id*.8),x=Math.cos(a)*radial*sw,z=Math.sin(a)*radial*sw;
@@ -220,6 +343,15 @@ for(let j=0;j<=steps;j++){const t=j/steps,rad=(.25+.025*(k%3))*(1-t),ang=t*TAU*1
 tube(g,[v(0,.98,0),v(.06,1.28,0),v(.26,1.53,.12),v(.4,1.56,.25)],[.14,.12,.075,.035],['#6c704c','#a2bb63','#4a795e'],7);
 if(!designRevealed(id)){const cuff=[];for(let k=0;k<=16;k++){const a=TAU*k/16;cuff.push(v(Math.cos(a)*.155,1.06,Math.sin(a)*.155));}tube(g,cuff,cuff.map(()=>.018),['#c8d3da','#778a9c','#b5c4ce'],5);}
 let l1=[v(.04,1.24,0),v(.5,1.44,.03),v(.78,1.34,.08)],l2=[v(-.02,1.21,0),v(-.44,1.36,-.08),v(-.68,1.2,-.08)];for(const [a,b,c] of [l1,l2]){const up=add(b,v(0,.1,.12));g.addTri(a,up,c,'#75c78b');g.addTri(a,c,add(b,v(0,-.03,-.12)),'#287f78');}
+// Canon-specific accents stay faceted, with no texture download or expensive shaders.
+if(name==='Mera Mera no Mi')for(let k=0;k<8;k++){const a=k*TAU/8,base=v(Math.cos(a)*.47,.62,Math.sin(a)*.47),tip=v(Math.cos(a)*.62,1.5+.20*Math.sin(k*3),Math.sin(a)*.67);petal(g,base,tip,.15,['#ffcf63','#e94f28','#ffeb9a']);}
+if(name==='Bara Bara no Mi')for(let k=0;k<7;k++){const a=k*TAU/7;petal(g,v(0,1.1,0),v(Math.cos(a)*.81,1.61,Math.sin(a)*.7),.21,['#40865a','#8ed778','#1e693e']);}
+if(name==='Ushi Ushi no Mi, Model: Bison')for(let sign of [-1,1])tube(g,[v(sign*.65,.62,.03),v(sign*1.04,.79,.0),v(sign*1.12,1.22,0)],[.24,.17,.015],['#e5decc','#b4aea0'],7);
+if(name==='Neko Neko no Mi, Model: Leopard')for(let sign of [-1,1])jewel(g,v(sign*.61,.88,0),.27,.38,.23,['#b07936','#f5c96e','#463027'],5);
+if(name==='Kage Kage no Mi')for(let k=0;k<5;k++){const a=k*TAU/5;petal(g,v(0,1.00,0),v(Math.cos(a)*.84,1.35,Math.sin(a)*.70),.17,['#336f44','#8fc46a','#265a3d']);}
+if(name==='Uo Uo no Mi, Model: Seiryu')for(let k=0;k<8;k++){const a=k*TAU/8;petal(g,v(Math.cos(a)*.26,1.02,Math.sin(a)*.26),v(Math.cos(a)*.68,1.42,Math.sin(a)*.63),.14,['#d77e45','#f2ac66','#fae1a3']);}
+if(name==='Yomi Yomi no Mi')for(let k=0;k<4;k++){const a=k*TAU/4;spear(g,v(Math.cos(a)*.52,-.67,Math.sin(a)*.52),v(Math.cos(a)*.85,-1.38,Math.sin(a)*.85),.19,['#c56f37','#efa550','#e7b95e'],6);}
+if(name==='Doru Doru no Mi')for(let k=0;k<5;k++){const a=k*TAU/5;tube(g,[v(Math.cos(a)*.72,.58,Math.sin(a)*.72),v(Math.cos(a)*.73,.20,Math.sin(a)*.73),v(Math.cos(a)*.67,-.13-Math.sin(k)*.18,Math.sin(a)*.68)],[.14,.095,.012],['#faf9e9','#c6cbbb','#fffef2'],6);}
 return g;}
 const TREE=CLASSES.map((_,i)=>generateTree(i));const TREE_LOW=CLASSES.map((_,i)=>generateTree(i,true));
 const smallModels=DATA.map((_,i)=>fruitModel(i,0));let highModel=null,highId=-1;
@@ -231,7 +363,7 @@ function resetTreePositions(){treePositions=[v(-53,0,-8),v(0,0,6),v(53,0,-8)];}
 function setOverview(){app.stage=0;app.ci=-1;app.gi=-1;app.fi=-1;app.page=0;app.familyPage=0;
  const mobile=W/H<.72;
  camera.goal=mobile?add(treePositions[app.realm],v(0,20,0)):v(0,19,0);
- camera.goalDist=mobile?76:95;camera.goalYaw=.02;camera.goalPitch=mobile?.012:.065;
+ camera.goalDist=mobile?80:108;camera.goalYaw=.02;camera.goalPitch=mobile?.012:.065;
 }
 function selectClass(i){app.stage=1;app.ci=i;app.gi=-1;app.fi=-1;app.page=0;app.familyPage=0;app.realm=i;
  camera.goal=add(treePositions[i],v(17.6,24,17.2));camera.goalDist=W/H<.72?33:46;camera.goalYaw=.06;camera.goalPitch=.045;}
@@ -254,12 +386,12 @@ function selectedList(){return app.ci<0||app.gi<0?[]:BYGROUP[app.ci][app.gi]}
 function fruitsPerPage(){return W/H<.72?3:6}
 function familyFruitAnchors(){const items=selectedList(),ref=groupAnchors(app.ci)[app.gi],pagesize=fruitsPerPage(),start=app.page*pagesize,mobile=W/H<.72;
  return items.slice(start,start+pagesize).map((d,i)=>{let pos;if(mobile){pos=add(ref,v(Math.sin((i-1)*1.15)*1.7,(1-i)*4.35,3.15+Math.cos(i*1.1)*.28));}else{const total=Math.min(pagesize,items.length),a=i*TAU/total-P/2;pos=add(ref,v(Math.sin(a)*7.1,Math.cos(a)*3.65,3.4+Math.cos(a*2)*.4));}return {fruit:d,pos,local:i};});}
-function selectFruit(id){app.stage=3;app.fi=id;const p=groupAnchors(app.ci)[app.gi];camera.goal=add(p,v(0,.8,0));camera.goalDist=W/H<.72?16.4:14.5;camera.goalYaw=.08;camera.goalPitch=.025;highModel=fruitModel(id,1);highId=id;}
+function selectFruit(id){if(highModel)releaseHighModelGpu();app.stage=3;app.fi=id;const p=groupAnchors(app.ci)[app.gi];camera.goal=add(p,v(0,.8,0));camera.goalDist=W/H<.72?16.4:14.5;camera.goalYaw=.08;camera.goalPitch=.025;highModel=fruitModel(id,1);highId=id;}
 function back(){if(app.stage===3){const pg=app.page;selectGroup(app.gi);app.page=pg;}else if(app.stage===2){const pg=app.familyPage;selectClass(app.ci);app.familyPage=pg;}else if(app.stage===1)setOverview();}
 function nextFruit(n){const list=selectedList();if(!list.length)return;const cur=list.findIndex(x=>x.id===app.fi);selectFruit(list[(cur+n+list.length)%list.length].id);}
 function setPage(diff){const count=selectedList().length,np=Math.ceil(count/fruitsPerPage());app.page=(app.page+diff+np)%np;}
 function lerpVec(a,b,t){a.x=mix(a.x,b.x,t);a.y=mix(a.y,b.y,t);a.z=mix(a.z,b.z,t)}
-function updateCamera(dt){const t=1-Math.exp(-dt*5.3);lerpVec(camera.target,camera.goal,t);camera.dist=mix(camera.dist,camera.goalDist,t);camera.yaw=mix(camera.yaw,camera.goalYaw,t);camera.pitch=mix(camera.pitch,camera.goalPitch,t);const d=camera.dist,y=camera.yaw,p=camera.pitch;const offset=v(Math.sin(y)*Math.cos(p)*d,Math.sin(p)*d,Math.cos(y)*Math.cos(p)*d);camera.eye=add(camera.target,offset);camera.forward=norm(sub(camera.target,camera.eye));camera.right=norm(cross(camera.forward,v(0,1,0)));camera.up=norm(cross(camera.right,camera.forward));camera.f=H*.85;}
+function updateCamera(dt){const t=1-Math.exp(-dt*6.0);lerpVec(camera.target,camera.goal,t);camera.dist=mix(camera.dist,camera.goalDist,t);camera.yaw=mix(camera.yaw,camera.goalYaw,t);camera.pitch=mix(camera.pitch,camera.goalPitch,t);const d=camera.dist,y=camera.yaw,p=camera.pitch;const offset=v(Math.sin(y)*Math.cos(p)*d,Math.sin(p)*d,Math.cos(y)*Math.cos(p)*d);camera.eye=add(camera.target,offset);camera.forward=norm(sub(camera.target,camera.eye));camera.right=norm(cross(camera.forward,v(0,1,0)));camera.up=norm(cross(camera.right,camera.forward));camera.f=H*.85;}
 function pr(pt){const d=sub(pt,camera.eye),z=dot(d,camera.forward);if(z<.4)return null;const k=camera.f/z;return {x:W/2+dot(d,camera.right)*k,y:H/2-dot(d,camera.up)*k,k,z};}
 function sceneWorldPos(ci,pt,bob=0){return add(add(treePositions[ci],pt),v(0,bob,0));}
 let drawTris=[],drawLines=[],clicks=[],quadCount=0;
@@ -312,7 +444,7 @@ function drawOverview(){
   textDraw(`${BYGROUP[i].reduce((a,b)=>a+b.length,0)} FRUITS`,add(pos,v(0,-2.4,0)),{size:12,ref:8.7,min:1,max:1,bold:true,color:cc[i]});
  }
  const title=uiWorldPoint(W*.5,mobile?35:38,12);
- textDraw('THE THREE LEGENDARY TREES',title,{size:mobile?15:17,ref:camera.f/12,min:1,max:1,bold:true,color:'#fff3dd',shadow:true});
+ textDraw('THE DEVIL FRUIT TREES',title,{size:mobile?15:17,ref:camera.f/12,min:1,max:1,bold:true,color:'#fff3dd',shadow:true});
  if(mobile){
   // Single enormous tree on phones, with explicit one-tap left/right realm navigation.
   const ci=app.realm;
@@ -362,8 +494,8 @@ function drawDetail(){
  const br=pr(slate.facePoint(slate.width/2-.42,-slate.height/2+.50));
  if(!tl||!br)return;
  // All typography lives on the physical, camera-facing monument. No popup, no HTML card.
- const x=tl.x,y=tl.y,maxW=Math.max(110,Math.min(br.x-tl.x-22,W-tl.x-31)),maxH=Math.max(130,br.y-tl.y);
- const font=mobile?14.4:14.7,head=mobile?19.4:23,lab=mobile?11.65:11.7;
+ const x=tl.x+(mobile?18:19),y=tl.y+8,maxW=Math.max(95,Math.min(br.x-tl.x-(mobile?40:43),W-tl.x-48)),maxH=Math.max(130,Math.min(br.y-tl.y-34,mobile?H*.435:H*.66));
+ const font=mobile?15.5:16.5,head=mobile?21.2:25.5,lab=mobile?11.8:12.3;
  const lines=[];
  ui.save();ui.textAlign='left';ui.textBaseline='top';
  function wrapMeasured(text,sz,bold){
@@ -375,11 +507,11 @@ function drawDetail(){
  }
  const titleLines=wrapMeasured(d.name,head,true);
  for(const str of titleLines)lines.push({str,kind:'title',sz:head,height:head*1.10});
- lines.push({str:designRevealed(app.fi)?'':'APPEARANCE NOT SHOWN',kind:'status',sz:mobile?9.7:10.2,height:designRevealed(app.fi)?4:16});
+ lines.push({str:designRevealed(app.fi)?'':'SEALED  ·  DESIGN UNVERIFIED',kind:'status',sz:mobile?9.7:10.2,height:designRevealed(app.fi)?6:18});
  const fields=[['POWER',d.power],['TYPE',d.subtype],['USER',d.users],['AFFILIATION',d.affiliation],['ARCS',d.arcs],['SAGA',d.saga],['AWAKENING',d.awakened],['ORIGIN',d.origin]];
  for(const [key,value] of fields){lines.push({str:key,kind:'label',sz:lab,height:lab*1.17});
   for(const line of wrapMeasured(value,font,false))lines.push({str:line,kind:'value',sz:font,height:font*1.21});
-  lines.push({str:'',kind:'spacer',sz:0,height:mobile?4.0:4});
+  lines.push({str:'',kind:'spacer',sz:0,height:mobile?6.0:6});
  }
  const needed=lines.reduce((sum,l)=>sum+l.height,0);
  const compact=Math.min(1,maxH/Math.max(needed,1));
@@ -388,7 +520,7 @@ function drawDetail(){
  for(const line of lines){const lineHeight=line.height*compact;
   if(line.str){const size=line.sz*compact;
    ui.font=`${line.kind==='title'?850:line.kind==='value'?600:800} ${size}px system-ui,Arial`;
-   ui.fillStyle=line.kind==='title'?'#fff7e8':line.kind==='status'?'#afc9d4':line.kind==='label'?c.accent:'#f0f6f4';
+   ui.fillStyle=line.kind==='title'?'#fff7e8':line.kind==='status'?'#afc9d4':line.kind==='label'?'#d7c69b':'#f0f6f4';
    ui.fillText(line.str,x,cursor,maxW);
   }
   cursor+=lineHeight;
@@ -397,7 +529,7 @@ function drawDetail(){
  drawFloatingAction('◀ PREV',mobile?.22:.18,.950,()=>nextFruit(-1));
  drawFloatingAction('NEXT ▶',mobile?.78:.82,.950,()=>nextFruit(1));
 }
-function drawFloatingAction(text,xp,yp,fn,quiet=false){const pos=uiWorldPoint(W*xp,H*yp,8.2),screen=pr(pos);if(!screen)return;const sw=quiet?85:text.length*10+36,sh=40;ui.save();ui.globalAlpha=quiet?.85:1;ui.fillStyle='rgba(13,31,55,.95)';ui.strokeStyle='rgba(255,235,178,.8)';ui.lineWidth=1.3;rounded(ui,screen.x-sw/2,screen.y-sh/2,sw,sh,10);ui.fill();ui.stroke();ui.font=`800 ${quiet?12:13}px system-ui`;ui.fillStyle='#fff6da';ui.textAlign='center';ui.textBaseline='middle';ui.fillText(text,screen.x,screen.y);ui.restore();if(fn)clicks.push({key:'action'+text,x:screen.x,y:screen.y,r:Math.max(sw/2,25),z:0,fn,priority:11,rect:[sw/2,sh/2]});}
+function drawFloatingAction(text,xp,yp,fn,quiet=false){const pos=uiWorldPoint(W*xp,H*yp,8.2),screen=pr(pos);if(!screen)return;const sw=quiet?85:text.length*10+36,sh=40;ui.save();ui.globalAlpha=quiet?.85:1;ui.fillStyle='rgba(11,23,43,.90)';ui.strokeStyle='rgba(255,235,178,.8)';ui.lineWidth=1.3;rounded(ui,screen.x-sw/2,screen.y-sh/2,sw,sh,10);ui.fill();ui.stroke();ui.font=`800 ${quiet?12:13}px system-ui`;ui.fillStyle='#f9efdb';ui.textAlign='center';ui.textBaseline='middle';ui.fillText(text,screen.x,screen.y);ui.restore();if(fn)clicks.push({key:'action'+text,x:screen.x,y:screen.y,r:Math.max(sw/2,25),z:0,fn,priority:11,rect:[sw/2,sh/2]});}
 function drawBack(){if(!app.stage)return;drawFloatingAction('← BACK',W/H<.72?.18:.085,.066,back);}
 function vineWorld(){const g=new Geometry();g.dynamic=true;const pts=familyFruitAnchors().map(x=>x.pos);if(pts.length>1){const rad=pts.map((_,i)=>.12+Math.sin(i*P/Math.max(2,pts.length-1))*.025);tube(g,pts,rad,['#d1e49c','#457e8a','#f6d190'],9);}
  for(const item of familyFruitAnchors()){const pos=item.pos,r=1.72,n=18;for(let i=0;i<n;i++){const a=i*TAU/n,b=(i+1)*TAU/n;const A=add(pos,v(Math.cos(a)*r,-1.25,Math.sin(a)*r*.24)),B=add(pos,v(Math.cos(b)*r,-1.25,Math.sin(b)*r*.24));g.lines.push([A,B,PALETTES[app.ci].trim,1.4]);}}
@@ -408,11 +540,11 @@ function makeSlateWorld(){const ci=app.ci,gi=app.gi,base=groupAnchors(ci)[gi],mo
  const corners=[[-w+cut,-h],[w-cut,-h],[w,-h+cut],[w,h-cut],[w-cut,h],[-w+cut,h],[-w,h-cut],[-w,-h+cut]];
  const project=(o,a,b)=>add(o,add(mul(camera.right,a),mul(camera.up,b))),geo=new Geometry();geo.dynamic=true;
  const a=corners.map(x=>project(face,x[0],x[1])),b=corners.map(x=>project(back,x[0],x[1]));
- geo.addTri(a[0],a[2],a[4],'#1b3a57');geo.addTri(a[4],a[6],a[0],'#1b3a57');for(let i=0;i<8;i++){geo.addQuad(a[i],b[i],b[(i+1)%8],a[(i+1)%8],i%2?'#284d68':'#27506b');}
+ geo.addQuad(a[0],a[2],a[4],a[6],'#102436');for(let i=0;i<8;i++){geo.addQuad(a[i],b[i],b[(i+1)%8],a[(i+1)%8],i%2?'#36546a':'#243d52');}
  // Gold inset seam and two pronounced 3D carved ridges.
  for(let i=0;i<8;i++){const f=project(face,corners[i][0]*.94,corners[i][1]*.95),t=project(face,corners[(i+1)%8][0]*.94,corners[(i+1)%8][1]*.95);geo.lines.push([f,t,'#f2cf9f',1.3]);}
  return {geo,center:face,width,height,front:face,facePoint:(x,y)=>project(add(face,mul(camera.forward,-.05)),x,y)};}
-function prepareFocusGeometry(){if(app.stage===1){for(const [i,item] of visibleFamilies().entries())addGeomDraw(smallModels[BYGROUP[app.ci][item.gi][0].id],add(familyGalleryAnchors()[i],v(0,.55,0)),W/H<.72?1.60:1.48,now*.17+i*.3,1);}else if(app.stage===2){addGeomDraw(vineWorld(),v(),1,0,1);for(const item of familyFruitAnchors())addGeomDraw(smallModels[item.fruit.id],item.pos,W/H<.72?1.12:1.30,now*.26+item.fruit.id*.03,1);}else if(app.stage===3){const slate=makeSlateWorld();addGeomDraw(slate.geo,v(),1,0,1);if(!highModel||highId!==app.fi){highModel=fruitModel(app.fi,1);highId=app.fi;}const p=groupAnchors(app.ci)[app.gi];const mobile=W/H<.72;const fp=add(p,v(mobile?0:-3.0,mobile?5.3:.7,0));addGeomDraw(highModel,fp,mobile?2.12:2.62,DATA[app.fi].name==='Ope Ope no Mi'?0:now*.24,1);}}
+function prepareFocusGeometry(){if(app.stage===1){for(const [i,item] of visibleFamilies().entries())addGeomDraw(smallModels[BYGROUP[app.ci][item.gi][0].id],add(familyGalleryAnchors()[i],v(0,.55,0)),W/H<.72?1.60:1.48,now*.17+i*.3,1);}else if(app.stage===2){addGeomDraw(vineWorld(),v(),1,0,1);for(const item of familyFruitAnchors())addGeomDraw(smallModels[item.fruit.id],item.pos,W/H<.72?1.12:1.30,now*.26+item.fruit.id*.03,1);}else if(app.stage===3){const slate=makeSlateWorld();addGeomDraw(slate.geo,v(),1,0,1);if(!highModel||highId!==app.fi){highModel=fruitModel(app.fi,1);highId=app.fi;}const p=groupAnchors(app.ci)[app.gi];const mobile=W/H<.72;const fp=add(p,v(mobile?0:-3.0,mobile?5.3:.7,0));addGeomDraw(highModel,fp,mobile?2.12:2.62,!designRevealed(app.fi)?Math.sin(now*.48)*.045:DATA[app.fi].name==='Ope Ope no Mi'?0:now*.18,1);}}
 function renderSoftware(){drawSky();drawTris=[];drawLines=[];clicks=[];for(let ci=0;ci<3;ci++){
 // keep other trees as distant architecture in close views, reduce polygon detail for speed.
  if(app.stage>=2)continue;
@@ -433,6 +565,9 @@ at.p=gl.getAttribLocation(shader,'p');at.n=gl.getAttribLocation(shader,'n');at.c
 let gpuAvailable=tryGL();if(gpuAvailable){gpu.style.display='block';canvas.style.display='none'}
 function mat4(){const f=1/Math.tan(.60),aspect=W/H;const Pm=[f/aspect,0,0,0,0,f,0,0,0,0,-1.0004,-1,0,0,-.20004,0];const r=camera.right,u=camera.up,fwd=camera.forward,e=camera.eye;const V=[r.x,u.x,-fwd.x,0,r.y,u.y,-fwd.y,0,r.z,u.z,-fwd.z,0,-dot(r,e),-dot(u,e),dot(fwd,e),1];let out=Array(16).fill(0);for(let c=0;c<4;c++)for(let row=0;row<4;row++)for(let k=0;k<4;k++)out[c*4+row]+=Pm[k*4+row]*V[c*4+k];return new Float32Array(out)}
 const gpuMeshCache=new WeakMap();let gpuMeshCount=0;
+// Dispose prior detailed meshes when moving between fruits. WebGL buffers otherwise accumulate.
+function releaseHighModelGpu(){if(!gl||!highModel)return;const cache=gpuMeshCache.get(highModel);if(!cache)return;for(const mesh of cache.values()){if(mesh.buffer)gl.deleteBuffer(mesh.buffer);gpuMeshCount=Math.max(0,gpuMeshCount-1);}gpuMeshCache.delete(highModel);}
+
 function drawGpuGeom(g,origin,scale,spin,skip=1){let entry=gpuMeshCache.get(g);if(!entry){entry=new Map();gpuMeshCache.set(g,entry);}let mesh=g.dynamic?null:entry.get(skip);
 if(!mesh){const verts=[];for(let j=0;j<g.faces.length;j+=skip){const face=g.faces[j],ps=face.slice(0,3).map(k=>g.verts[k]),a=ps[0],b=ps[1],c=ps[2],normal=norm(cross(sub(b,a),sub(c,a))),rgbc=rgb(face[3]);for(const p of ps)verts.push(p.x,p.y,p.z,normal.x,normal.y,normal.z,rgbc[0]/255,rgbc[1]/255,rgbc[2]/255);}
 const arr=new Float32Array(verts),buffer=g.dynamic?(at.dynamicBuffer||(at.dynamicBuffer=gl.createBuffer())):gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,arr,g.dynamic?gl.STREAM_DRAW:gl.STATIC_DRAW);mesh={buffer,count:arr.length/9};if(!g.dynamic){entry.set(skip,mesh);gpuMeshCount++;}}
@@ -442,7 +577,7 @@ for(let ci=0;ci<3;ci++){if(app.stage>=2)continue;if(app.stage>=1&&ci!==app.ci)co
 if(app.stage<=1){for(let ci=0;ci<3;ci++){if(app.stage===1&&ci!==app.ci)continue;const list=DATA.filter(x=>x.class===CLASSES[ci]);for(let k=0;k<Math.min(7,list.length);k++){const a=k*TAU/7+.2,pt=add(treePositions[ci],v(Math.cos(a)*5.15,13.25+(k%3)*.8,Math.sin(a)*3.5+1.3));drawGpuGeom(smallModels[list[k].id],pt,app.stage===0?.35:.51,now*.2+k*.4,2);}}}
 if(app.stage===1){for(const [i,item] of visibleFamilies().entries())drawGpuGeom(smallModels[BYGROUP[app.ci][item.gi][0].id],familyGalleryAnchors()[i],W/H<.72?1.60:1.48,now*.17+i*.3,1)}
 if(app.stage===2){drawGpuGeom(vineWorld(),v(),1,0,1);for(const item of familyFruitAnchors())drawGpuGeom(smallModels[item.fruit.id],item.pos,W/H<.72?1.12:1.30,now*.28+item.fruit.id*.03,1)}
-if(app.stage===3){drawGpuGeom(makeSlateWorld().geo,v(),1,0,1);const pos=groupAnchors(app.ci)[app.gi],fruitPos=add(pos,v(W/H<.72?0:-3.0,W/H<.72?5.3:.7,0));drawGpuGeom(highModel,fruitPos,W/H<.72?2.12:2.62,DATA[app.fi].name==='Ope Ope no Mi'?0:now*.24,1);}
+if(app.stage===3){drawGpuGeom(makeSlateWorld().geo,v(),1,0,1);const pos=groupAnchors(app.ci)[app.gi],fruitPos=add(pos,v(W/H<.72?0:-3.0,W/H<.72?5.3:.7,0));drawGpuGeom(highModel,fruitPos,W/H<.72?2.12:2.62,!designRevealed(app.fi)?Math.sin(now*.48)*.045:DATA[app.fi].name==='Ope Ope no Mi'?0:now*.18,1);}
 clicks=[];ui.clearRect(0,0,W,H);if(app.stage===0)drawOverview();else if(app.stage===1)drawFamilies();else if(app.stage===2)drawFruitGroup();else drawDetail();drawBack();}
 function resize(){W=window.innerWidth;H=window.innerHeight;dpr=Math.min(window.devicePixelRatio||1,W/H<.72?1.65:1.75);for(let c of [canvas,labels,gpu]){c.width=Math.round(W*dpr);c.height=Math.round(H*dpr);c.style.width=W+'px';c.style.height=H+'px';}backCanvas.width=Math.round(W*dpr);backCanvas.height=Math.round(H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);frontCtx.setTransform(dpr,0,0,dpr,0,0);ui.setTransform(dpr,0,0,dpr,0,0);resetTreePositions();setOverview();}window.addEventListener('resize',resize,{passive:true});
 // 3D orbit and click ray selection are independent from DOM modals or page navigation.
