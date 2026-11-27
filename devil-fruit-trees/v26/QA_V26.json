@@ -1,0 +1,97 @@
+{
+  "version": "V26",
+  "date": "2026-11-27",
+  "source_sha256": "8ba5a8c34bf4200f48ff2c0d4620e4fc36aa4d326c0fe31482903b32d9dc9f56",
+  "catalogue": {
+    "inheritedEntries": 146,
+    "classes": {
+      "Zoan": 44,
+      "Logia": 12,
+      "Paramecia": 90
+    },
+    "families": {
+      "Zoan": 12,
+      "Logia": 3,
+      "Paramecia": 4
+    },
+    "illustratedByInheritedTag": 38,
+    "sealedByInheritedTag": 108,
+    "allRecordsTraversed": true,
+    "uniqueIDs": true
+  },
+  "geometry": [
+    {
+      "form": "Zoan A1 Beast Grove",
+      "faces": 11105,
+      "x": 127.82,
+      "y": 155.23,
+      "z": 108.21
+    },
+    {
+      "form": "Zoan A3 Mythic Sanctuary",
+      "faces": 11661,
+      "x": 128.96,
+      "y": 171.94,
+      "z": 109.91
+    },
+    {
+      "form": "Logia B1 Elemental Confluence",
+      "faces": 9130,
+      "x": 121.27,
+      "y": 138.26,
+      "z": 107.4
+    },
+    {
+      "form": "Logia B2 Primordial Tempest",
+      "faces": 11090,
+      "x": 140.01,
+      "y": 167.2,
+      "z": 126.4
+    },
+    {
+      "form": "Paramecia C1 Reality Bloom",
+      "faces": 6151,
+      "x": 124.99,
+      "y": 171.87,
+      "z": 104.3
+    },
+    {
+      "form": "Paramecia C2 Possibility Nexus",
+      "faces": 11360,
+      "x": 125.77,
+      "y": 169.23,
+      "z": 125.28
+    }
+  ],
+  "validations": {
+    "allSixMeshesFinite": true,
+    "noInvalidMeshColors": true,
+    "all146FruitInspectionMeshesCreated": true,
+    "all146FamilyHangingBudsCreated": true,
+    "all19FamiliesNavigable": true,
+    "noUncaughtRuntimeErrors": true,
+    "viewportTests": [
+      "390x731",
+      "390x844",
+      "844x390",
+      "1366x768"
+    ],
+    "testedControls": [
+      "switch_form",
+      "realm_next_previous",
+      "explore",
+      "back",
+      "canvas_family_tap",
+      "drag_orbit",
+      "wheel_zoom"
+    ],
+    "tenMatchingScreenshots": true,
+    "standaloneHTML": true
+  },
+  "limitations": [
+    "No independent canonical verification of all 146 entries or their appearances",
+    "No real-device Android GPU test",
+    "RawGitHack public page load unverified",
+    "Visual fidelity remains a subjective judgement rather than a measured score"
+  ]
+}
