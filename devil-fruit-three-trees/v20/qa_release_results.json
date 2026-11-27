@@ -1,0 +1,62 @@
+[
+  {
+    "stats": {
+      "classes": [
+        {
+          "name": "Zoan",
+          "groups": 12
+        },
+        {
+          "name": "Logia",
+          "groups": 3
+        },
+        {
+          "name": "Paramecia",
+          "groups": 4
+        }
+      ],
+      "groups": 19,
+      "fruits": 146,
+      "unique": 146,
+      "models": 146,
+      "clusters": 19,
+      "withUsers": 146,
+      "withArcs": 146,
+      "sealed": 123
+    },
+    "errors": [],
+    "resolution": "390x844",
+    "pageErrors": [],
+    "result": "PASS"
+  },
+  {
+    "stats": {
+      "classes": [
+        {
+          "name": "Zoan",
+          "groups": 12
+        },
+        {
+          "name": "Logia",
+          "groups": 3
+        },
+        {
+          "name": "Paramecia",
+          "groups": 4
+        }
+      ],
+      "groups": 19,
+      "fruits": 146,
+      "unique": 146,
+      "models": 146,
+      "clusters": 19,
+      "withUsers": 146,
+      "withArcs": 146,
+      "sealed": 123
+    },
+    "errors": [],
+    "resolution": "1440x900",
+    "pageErrors": [],
+    "result": "PASS"
+  }
+]
