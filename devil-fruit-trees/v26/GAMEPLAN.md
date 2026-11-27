@@ -1,59 +1,74 @@
-# Legendary Devil Fruit Trees V26 — permanent build and continuation game plan
+# Legendary Devil Fruit Trees V26 — permanent development and QA plan
 
-Date: 2026-11-27. Source of truth: `index.html` in this release, which preserves the 146-record catalogue from V25. Three illustration references: `zoan_legendary_tree_showcase.png`, `logia_elemental_confluence_tree.png` and `paramecia_possibility_nexus_tree.png` (concept art, *not* functional 3D models).
+**Date:** 27 November 2026
+**Working application:** `devil-fruit-trees/v26/index.html`
+**Baseline preserved:** V25 `index.html` and `GAMEPLAN.md`
 
-## Non-negotiable product intent
+## Locked creative direction
 
-- Exactly **three** legendary trees: Zoan, Logia, Paramecia. The old A/B tree switch was rejected; each class has **one** final live 3D sculpture.
-- A bright, readable, saturated, game-like low-poly environment. No cramped tree silhouettes, oversized obstructive embellishments, flat pseudo-3D sprites, or branches/fruit bunches overlapping in one plane.
-- Trees must stand as readable sculptural shapes from front, side, and 45° oblique camera angles. Every branch/canopy should have thickness and meaningful X/Y/Z dimension.
-- Zoan: noble lush living tree, broad separated canopy, integrated mythic organic motif, crown and roots.
-- Logia: powerful elemental anatomy. Fire, lightning, cloud, and ice occupy separate parts of a single legible trunk/branch system.
-- Paramecia: elegant twisting ivory, magenta, gold, pink bloom and limited spatial ornaments. No wall of oversized pink polygons.
-- Preserve metadata and interaction: browse 44 Zoan, 12 Logia, and 90 Paramecia; retain 19 families, fruit-group pages, name, power, user, affiliation, story arcs, saga, awakening and origin. Do not invent unverified canon appearances.
+One seamless interactive 3D Devil Fruit encyclopaedia, fruit-centred rather than user-centred. **Three classes, each with TWO real independent volumetric 3D forms**, all in saturated macro-chibi flat-polygon game style on floating islands:
 
-## V26 completed actions
+- **Zoan A1 Beast Grove / A3 Mythic Sanctuary**: thick sculpted roots, antlers, living guardian faces, lush tiered crowns, and in A3 split trunks and phoenix-like wings.
+- **Logia B1 Elemental Confluence / B2 Primordial Tempest**: physical basalt, flame, water, storm-cloud masses, lightning, ice and spiralling cyclone.
+- **Paramecia C1 Reality Bloom / C2 Possibility Nexus**: impossible but voluminous growth, large sculptural blossoms, twisting magenta bark, dimensional golden rings and asymmetric hanging clusters.
 
-1. Reviewed V23 screenshots and the three new refined portrait concept images.
-2. Reopened V25 HTML and catalogue; reused its complete dataset, renderer, camera, and controls.
-3. Removed the form selector from UI and selection logic.
-4. Generated exactly three unique 3D tree meshes. They are authored vertex geometry, not screenshots or image planes.
-5. Rebuilt organic skeletons with fewer, thick, separated branches and a rooted island.
-6. Replaced checkerboard foliage with normal-shaded, faceted canopy materials.
-7. Made Zoan's silhouette predominantly green foliage and timber with a single teal coil.
-8. Made Logia's elements physically distinct: orange fire on left, dark storm on right, pale cloud crowns above and crystalline ice at the base.
-9. Made Paramecia's silhouette pink and ivory with a physically wrapped ribbon and a small gold orbit ring.
-10. Reduced initial preview fruit crowding to three representative models per tree.
-11. Preserved the existing fruit-group/gallery/detail stages, source metadata, and navigation.
-12. Verified JS syntax; verified all three models load with no browser page errors in 390 × 731 software-rendered preview.
-13. Checked 146 catalogue entries and all eight corresponding metadata fields (previous full automated pass). Another full release-level QA pass should precede claims of bug-free completion.
-14. Captured the three 390 × 731 tree screens plus oblique-orbit and group/detail screens, saved under `screenshots`.
-15. Measured actual mesh geometry above Y=15: Zoan X=130.37 Y=168.39 Z=85.15; Logia X=123.56 Y=156.89 Z=85.67; Paramecia X=127.55 Y=156.89 Z=87.37; all vertices finite.
-16. Preserved earlier versions unchanged and produced a new self-contained V26 file and archive.
+All sculptures must maintain robust X, Y, and Z dimensions and recognisable silhouettes at front and side angles; never replace with sprites, image billboards or fake 2.5D. The **A/B form-switch remains essential**. Keep the interface one page, without search or modal text cards. Families must visibly grow/hang from 3D branches.
 
-## Quality assessment, without inflated claims
+The inherited historical project catalogue contains **146 fruits** (44 Zoan, 12 Logia, 90 Paramecia) in **19 groups** (12/3/4), with names, power, type, known user, affiliation, story arc, saga, awakening, origin. There are **38 inherited marked illustrated** and **108 sealed/unverified**. Do not describe these classifications as a complete canon-source audit.
 
-- **Concept image fidelity** is still limited. The actual 3D meshes are simpler, sparser, more angular, and less detailed than the generated portraits. The new renders should not be presented as if they reproduce the concept art.
-- **Structural cleanliness** has improved substantially relative to the user-rejected V25 designs. The goal of simplifying the visual mass and building a clearer base was achieved in the tested front views.
-- **Completeness of the intended final visual experience is not 100%.** There are 146 inherited entries but only 38 inherited designs considered revealed; another 108 are sealed/unrevealed. Canon lore is not independently verified. Actual Android GPU performance, touch gestures on physical hardware, and externally hosted delivery have not been independently measured.
+## Step-by-step implementation checklist (V26)
 
-## Next work sequence / v27 gates
+1. [x] Recover V25 as latest known good source, inspect previous V25 QA and screenshot baselines.
+2. [x] Preserve V25 intact and publish in new immutable `v26` version path.
+3. [x] Retain the six chosen A1/A3, B1/B2 and C1/C2 identities.
+4. [x] Rebuild Zoan A1 guardian tree with thicker roots, antlers and visibly separated front/back crowns.
+5. [x] Rebuild Zoan A3 with split supporting trunks, feathers, living decorations and separate deep canopy masses.
+6. [x] Rebuild Logia B1 with independent physical magma, ice, lightning, clouds, water and twisting basalt branches.
+7. [x] Rebuild Logia B2 with stacked cyclonic storm volumes and 3D helical rings around differentiated elemental regions.
+8. [x] Rebuild Paramecia C1 with thick flowering petal sculptures and raised golden cores.
+9. [x] Rebuild Paramecia C2 with zigzag trunk, separated floating crown volumes, orthogonal spatial hoops and floating facets.
+10. [x] Refine generic floating island and underside without stretching island into a full-screen flat landmass.
+11. [x] Connect branches to physical family attachment points and prevent missing/undefined mesh colours.
+12. [x] Render each inherited fruit as one distinct hanging group bud in its family at exploration distance; reduce distant overview to preview specimens for readability/performance.
+13. [x] Preserve dark chained and locked appearances for unverified models; do not fabricate canonical artwork.
+14. [x] Keep A/B variant switch, realm-switch arrows, tap Explore, select family, select fruit, Back/Next/Previous and camera orbit/zoom.
+15. [x] Fix C2 wrong crown palette and a discovered petal face-colour bug that previously crashed rendering.
+16. [x] Recreate the ten reference screenshot states at 390×731, including six overviews, Body Alteration, Energy & Weather, Ryu Ryu page 3 and Horo Horo fruit detail.
+17. [x] Inspect actual portrait and 3/4-angle renders and verify genuine non-zero X/Y/Z extents.
+18. [x] Verify responsive WebGL operation at 390×731, 390×844, 844×390 and 1366×768.
+19. [x] Test all 146 detail paths, all 19 groups, six tree variants and actual pointer controls including canvas tap, drag and zoom; record runtime errors.
+20. [x] Package standalone, editable source, complete screenshot sheet and the machine-readable QA record.
+21. [x] Commit exact tested HTML, preserve accessible fallback and save continuation instructions.
 
-1. Obtain user evaluation of actual V26 website screenshots against the three approved concept portraits, not relative to any prior assistant percentage.
-2. Create a side-by-side measurable silhouette comparison at identical 390 × 731 framing: crown height, trunk width, canopy distribution, percentage of negative space, floating-island scale, and UI occlusion.
-3. Sculpt a more lifelike Zoan: tapered limbs, tiered leaves, feathered central crown, one carved animal guardian with restrained scale; maintain open front-facing fruit space.
-4. Sculpt a more visually distinct Logia: cloud cyclone and lightning integrated as curved volume, glowing elemental seams, credible dark roots, no detached flat fire spikes or oversized pale spheres.
-5. Sculpt a more graceful Paramecia: smoother but still faceted twisting branches, layered pink blossoms and measured gold orbit arcs, a convincing magical portal without UI overlap.
-6. Improve all three silhouettes under yaw angles 0°, 45°, 90° and 135°, verifying no camera-side collapse or self-occlusion.
-7. Design and verify genuine physical attachment points for preview fruits and family-view fruits. No floating fruit stems or decorative stubs masquerading as branches.
-8. Add subtle ambient shading, material highlights, and more refined gradient-like colour palettes without checkerboard panels.
-9. Ensure the three concept names, fruit counts, page labels, group screens and detail panels remain readable at 320 × 640, 390 × 731, 844 × 390 and 1366 × 768.
-10. Programmatically test every fruit entry against the stored catalogue, check class/group membership, all eight metadata fields and all navigation buttons.
-11. Test touch swipe, drag orbit, pinch and physical-device WebGL where possible, plus keyboard and software-renderer fallback.
-12. Reproduce exactly 10 named portrait screenshot states and make one contact sheet. Compare them against the user's initial 10 examples.
-13. Audit lore and official/unrevealed appearances explicitly before marking any of the 108 sealed entries as revealed.
-14. Save updated QA JSON, screenshots, a complete immutable ZIP and continuation plan in the release folder.
-15. Publish only after source and screenshots actually correspond to the tested build, then verify remote content, remote link and commit.
-16. Never repeat overly generous percentage assessments. Clearly distinguish visual fidelity, structural depth, data coverage, and functioning UI.
+## Measured geometry (tree portions above y=15)
 
-For future continuation, this file and the previous versions are the handoff. Treat V26 as a **functional three-tree simplification baseline**, not as a finished recreation of the three high-fidelity illustration concepts.
+| Variant | Faces | X extent | Y extent | Z extent |
+|---|---:|---:|---:|---:|
+| Zoan A1 | 11,105 | 127.82 | 155.23 | 108.21 |
+| Zoan A3 | 11,661 | 128.96 | 171.94 | 109.91 |
+| Logia B1 | 9,130 | 121.27 | 138.26 | 107.40 |
+| Logia B2 | 11,090 | 140.01 | 167.20 | 126.40 |
+| Paramecia C1 | 6,151 | 124.99 | 171.87 | 104.30 |
+| Paramecia C2 | 11,360 | 125.77 | 169.23 | 125.28 |
+
+All measured vertices finite, and the forms have genuinely distinct topology. This measures depth, **not** subjective aesthetic quality.
+
+## Browser QA
+
+- Catalogue: 146 unique records and all required legacy fields; 19 group records; 146 reachable detailed inspection routes.
+- All six trees render with no missing face colour; all 146 detailed fruit meshes and 146 hanging buds constructed.
+- Four responsive viewport test cases: 390×731, 390×844, 844×390, 1366×768. No uncaught JS page errors, no bad mesh colours.
+- A/B form switch, realm navigation, explore, full back path, canvas fruit-family tap, drag orbit, wheel zoom tested in desktop Chromium with WebGL/software acceleration.
+- Ten screenshots plus angled side views preserved in source archive.
+- Full build source SHA-256: `8ba5a8c34bf4200f48ff2c0d4620e4fc36aa4d326c0fe31482903b32d9dc9f56`.
+
+## Honest remaining work
+
+- Full chapter/official-source audit of **all 146** fruits and which designs are actually illustrated is not completed; 38/108 are inherited tags only, not independently verified canon.
+- Physical Android GPU performance, pinch responsiveness, thermals, frame-time spikes and the public GitHack CDN end-to-end load have **not** been independently verified. Browser success does not establish physical-device success.
+- Artistic refinements remain: more individually sculpted fruit shapes, better crown-to-branch separation in every angled view, more cohesive shadows and lighting, improved petal spacing, fewer interfering floating ornaments and richer but not cluttered elemental materials.
+- Do not call the project 100% aesthetically complete. All visual-match percentages remain subjective.
+
+## Next-session continuation
+
+**Read V26 index.html and this plan first, then V25 GAMEPLAN.md**. Preserve six designs, their working A/B selector, and 146 records. Make V27 or later under a new immutable path. Repeat the same 10 screenshots, all 146 entry traversals, X/Y/Z mesh ranges and four-viewport UI tests. Never announce a live CDN test without actually opening the rendered public page; otherwise provide GitHub source and the offline standalone HTML.
