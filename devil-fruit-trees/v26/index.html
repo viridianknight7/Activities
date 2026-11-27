@@ -39,13 +39,10 @@
  #variantCaption{max-width:94px;font-size:10px}#variantButton{font-size:10px;padding:7px 8px}
  .brand{max-width:78%}#category{min-width:170px;padding:9px 17px}
  #bottom{padding-bottom:calc(5px + env(safe-area-inset-bottom))}}
-
-/* V26 has exactly three trees, not an alternate-form carousel. */
-#variantbox{display:none!important}
 </style></head><body><canvas id="sky" aria-hidden="true"></canvas><canvas id="world" aria-label="Interactive three-dimensional Devil Fruit world"></canvas><canvas id="gpu" aria-hidden="true"></canvas><canvas id="labels" aria-hidden="true"></canvas>
 <div id="access">Devil Fruit World. Explore Zoan, Logia and Paramecia through three giant floating trees. Tap a tree, then a family, then a fruit. The camera stays in one spatial world. Drag to orbit, scroll or pinch to zoom. Escape goes back. No popups or search. Each fruit retains its power, user, affiliation, arc and awakening data.</div>
 <div id="interface" aria-label="Legendary Devil Fruit Trees navigation">
- <header id="top"><div id="head"><div class="brand"><strong>LEGENDARY DEVIL FRUIT TREES</strong><small>THREE ORIGINS · ONE WORLD</small></div><div class="counter">146<small>FRUITS</small></div></div><div id="headline" hidden></div></header>
+ <header id="top"><div id="head"><div class="brand"><strong>LEGENDARY DEVIL FRUIT TREES · V26</strong><small>THREE ORIGINS · ONE WORLD</small></div><div class="counter">146<small>FRUITS</small></div></div><div id="headline" hidden></div></header>
  <div id="variantbox"><span id="variantCaption"></span><button id="variantButton" class="gbutton" type="button">SWITCH FORM</button></div>
  <aside id="detailPanel" aria-live="polite" hidden></aside>
  <footer id="bottom"><div id="category"><b id="realmName">ZOAN</b><span id="realmSubtitle">PRIMAL SOVEREIGN</span><small id="realmCount">44 DEVIL FRUITS</small></div>
@@ -79,7 +76,7 @@ const P=Math.PI,TAU=2*Math.PI;
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),mix=(a,b,t)=>a+(b-a)*t;
 const v=(x=0,y=0,z=0)=>({x,y,z}),add=(a,b)=>v(a.x+b.x,a.y+b.y,a.z+b.z),sub=(a,b)=>v(a.x-b.x,a.y-b.y,a.z-b.z),mul=(a,s)=>v(a.x*s,a.y*s,a.z*s),dot=(a,b)=>a.x*b.x+a.y*b.y+a.z*b.z,cross=(a,b)=>v(a.y*b.z-a.z*b.y,a.z*b.x-a.x*b.z,a.x*b.y-a.y*b.x),len=a=>Math.hypot(a.x,a.y,a.z)||1,norm=a=>mul(a,1/len(a));
 const rndSeed=(seed)=>()=>{seed=(1664525*seed+1013904223)>>>0;return seed/4294967296};const rands=[rndSeed(521),rndSeed(818),rndSeed(1491)];
-function rgb(hex){if(hex.startsWith('rgb'))return hex.match(/[0-9]+/g).slice(0,3).map(Number);const c=hex.replace('#','');return [parseInt(c.slice(0,2),16),parseInt(c.slice(2,4),16),parseInt(c.slice(4,6),16)]};
+function rgb(hex){if(typeof hex!=='string'||!hex){window.__V26_BAD_COLOR__=(window.__V26_BAD_COLOR__||0)+1;hex='#b69dbf';}if(hex.startsWith('rgb'))return hex.match(/[0-9]+/g).slice(0,3).map(Number);const c=hex.replace('#','');return [parseInt(c.slice(0,2),16),parseInt(c.slice(2,4),16),parseInt(c.slice(4,6),16)]};
 function rgba(hex,a=1){const c=rgb(hex);return `rgba(${c[0]},${c[1]},${c[2]},${a})`};
 function color(hex,brightness=1){const c=rgb(hex);return `rgb(${clamp(c[0]*brightness,0,255)|0},${clamp(c[1]*brightness,0,255)|0},${clamp(c[2]*brightness,0,255)|0})`};
 function lerpColor(a,b,t){const x=rgb(a),y=rgb(b);return `rgb(${mix(x[0],y[0],t)|0},${mix(x[1],y[1],t)|0},${mix(x[2],y[2],t)|0})`}
@@ -663,7 +660,7 @@ function generateTree(ci,low=false,variation=0){
 
 // V25 authored upgrade. Every visible object below is a fully three-dimensional
 // mesh. No image planes, sprite impostors, flattened models, or 2D tree assets.
-const CONCEPTS25=[
+const CONCEPTS25_BACKUP=[
  ['A1 · BEAST GROVE','A3 · MYTHIC SANCTUARY'],
  ['B1 · ELEMENTAL CONFLUENCE','B2 · PRIMORDIAL TEMPEST'],
  ['C1 · REALITY BLOOM','C2 · POSSIBILITY NEXUS']
@@ -972,142 +969,268 @@ function pa25b(g){
  // Spiralling bark inlay suggests the transformation powers grow from the trunk.
  spiralBadge24(g,39,21.2,'#fff19d');
 }
-
-// V26: Three purposeful authored sculptures, exactly one tree per class.
-// No graphic planes, imported raster tree art or collapsed fake depth.
-// Main shapes are all full 3D meshes; ornaments are subordinate to anatomy.
-const CONCEPTS26=['LIVING EVOLUTION','ELEMENTAL CONFLUENCE','POSSIBILITY NEXUS'];
-function softGlobe26(g,at,r,palette,seed,n=16,m=9){
- const [x,y,z]=at,[rx,ry,rz]=r,rows=[];
- for(let i=0;i<=m;i++){
-  const lat=-Math.PI/2+Math.PI*i/m,ring=[];
-  for(let j=0;j<=n;j++){
-   const lon=j*TAU/n,warp=1+.025*Math.sin(5*lon+seed)+.025*Math.sin(3*lat+2*lon+seed);
-   ring.push(v(x+rx*Math.cos(lat)*Math.cos(lon)*warp,y+ry*Math.sin(lat),z+rz*Math.cos(lat)*Math.sin(lon)*warp));
-  }
-  rows.push(ring);
- }
- // Shade primarily according to the facet's orientation, not a checkerboard pattern.
- const light=norm(v(-.5,.9,.8));
- for(let i=0;i<m;i++)for(let j=0;j<n;j++){
-  const A=rows[i][j],B=rows[i][j+1],C=rows[i+1][j+1],D=rows[i+1][j];
-  const mid=mul(add(add(A,B),add(C,D)),.25);
-  const faceNorm=norm(v((mid.x-x)/rx,(mid.y-y)/ry,(mid.z-z)/rz));
-  const shade=dot(faceNorm,light);let idx=shade>.50?4:shade>.12?3:shade>-.25?2:shade>-.58?1:0;
-  g.addQuad(A,B,C,D,palette[idx]);
- }
+// V26: Six separately art-directed, truly volumetric macro-chibi spirit trees.
+// All shapes are extruded polygons with distinct X, Y, and Z coordinates.
+const CONCEPTS26=[['A1 · BEAST GROVE','A3 · MYTHIC SANCTUARY'],['B1 · ELEMENTAL CONFLUENCE','B2 · PRIMORDIAL TEMPEST'],['C1 · REALITY BLOOM','C2 · POSSIBILITY NEXUS']];
+function blade26(g,A,B,w,cols){
+ const a=at24(A),b=at24(B),d=sub(b,a),L=Math.max(1e-4,Math.hypot(d.x,d.z)),side=v(d.z/L,0,-d.x/L);
+ const mid=add(mul(a,.51),mul(b,.49)),front=add(mid,v(0,w*.20,0)),c1=add(front,mul(side,w)),c2=add(front,mul(side,-w)),back=add(mid,v(0,-w*.30,-w*.10));
+ g.addTri(a,c1,b,cols[0]);g.addTri(a,b,c2,cols[1]||cols[0]);g.addTri(a,c2,back,cols[2]||cols[0]);g.addTri(a,back,c1,cols[1]||cols[0]);g.addTri(b,c1,back,cols[3]||cols[1]||cols[0]);g.addTri(b,back,c2,cols[2]||cols[0]);
+ g.addTri(c1,c2,back,cols[2]||cols[0]);
 }
-function crown26(g,x,y,z,rx,ry,rz,kind,seed){
- const pal=kind==='leaf'?['#2b7c32','#368f37','#47a83a','#61c747','#83dc55']:
- kind==='blossom'?['#a93785','#c44996','#d85caa','#ed7cbd','#f69dd0']:
- kind==='fire'?['#da481c','#ee6722','#f78324','#ffaf33','#ffce56']:
- kind==='storm'?['#353a6c','#48517b','#5a6694','#747fb1','#909bc7']:
- ['#9dbbd2','#afccdf','#c4dceb','#d6e9f4','#f4fbff'];
- softGlobe26(g,[x,y,z],[rx,ry,rz],pal,seed,17,10);
- // Three modest supporting lobes only, preserving distinct tree-scale silhouettes.
- for(let i=0;i<3;i++){
-  let a=seed*.31+i*TAU/3;
-  let px=x+Math.cos(a)*rx*.51,py=y-ry*.19+(i===2?ry*.16:0),pz=z+Math.sin(a)*rz*.47;
-  softGlobe26(g,[px,py,pz],[rx*.47,ry*.65,rz*.50],pal,(seed+i*7),12,7);
- }
+function limb26(g,p,rr,palette,n=10){path25(g,p,rr,palette,n)}
+function fork26(g,A,B,r,palette){branch25(g,A,B,r,palette,.10)}
+function massiveRoot26(g,x,z,len,color){
+ const d=Math.hypot(x,z),u=x/d,w=z/d;
+ limb26(g,[[0,11,0],[u*8,7,w*7],[u*18,4,w*16],[u*len,2,w*(len*.81)]],[7,5.2,2.9,.1],color,9);
+ for(let j=0;j<2;j++)blade26(g,[u*(15+j*6),4,w*(10+j*5)],[u*(23+j*7),2,w*(16+j*4)],2.9,[color[1],color[2],color[0]]);
 }
-function branch26(g,a,b,r,colors){
- const A=at24(a),B=at24(b),mid=[mix(A.x,B.x,.50),mix(A.y,B.y,.50)+5,mix(A.z,B.z,.50)];
- trunk24(g,[a,mid,b],[r,r*.71,.30],colors,12);
-}
-function root26(g,cols){
+function canopy26(g,at,rx,ry,rz,seed,jade=false,theme='jungle'){
+ const [x,y,z]=at,p=theme==='blossom'?['#bc2d97','#f36abc','#ffbde2','#8b2d7e','#ffd9ef']:jade?['#008c79','#38cfa6','#8cf1cf','#148e70','#c5ffe3']:['#238c35','#5dc531','#a4ee4f','#176e37','#b3f362'];
+ // Rear and near lobes are separate massive solids, not billboard hemispheres.
+ const lobes=[[-.36,-.05,-.48,.65],[.30,.13,.36,.72],[-.16,.45,.25,.56],[.47,-.27,-.32,.50]];
+ globe24(g,[x,y,z],[rx*.84,ry*.74,rz*.83],p,seed,11,7);
+ lobes.forEach(([dx,dy,dz,s],i)=>{
+   globe24(g,[x+dx*rx,y+dy*ry,z+dz*rz],[rx*s,ry*s*.84,rz*s],p.slice(i).concat(p.slice(0,i)),seed+5*i,10,6);
+ });
+ // Wide oversize rhombus leaves around the crown, visibly thick at all orbit angles.
  for(let j=0;j<7;j++){
-  let a=j*TAU/7+.17,x=Math.cos(a),z=Math.sin(a);
-  trunk24(g,[[x*4,15,z*4],[x*13,6,z*10],[x*27,2.5,z*20]],[6.4,3.7,.32],cols,10);
+  const theta=j*TAU/7+seed*.20;
+  const base=[x+Math.cos(theta)*rx*.54,y+ry*.09,z+Math.sin(theta)*rz*.61];
+  const tip=[x+Math.cos(theta)*rx*(.94+(j%2)*.12),y+ry*(.30+(j%3)*.22),z+Math.sin(theta)*rz*(1.1+(j%3)*.1)];
+  blade26(g,base,tip,3.5,p);
  }
 }
-function zoan26(g){
- const bark=['#b76d3c','#d99151','#9e5735','#e3ac67','#b97843','#c6854c'];
- trunk24(g,[[0,3,0],[-3,25,0],[3,49,-5],[-1,76,-11],[3,105,-17],[0,140,-27]],[20,17,13.5,10.1,6.3,.38],bark,15);
- root26(g,bark);
- // Widely spread structural limbs, three explicit crown tiers with front/back depth.
- const limbs=[
-  [[-43,82,-1],9.0],[[43,86,-4],9.2],
-  [[-32,115,-24],7.5],[[32,120,-30],7.5],
-  [[-5,144,-38],5.7]
- ];
- limbs.forEach(([pt,r],i)=>branch26(g,[i<2?0:2,pt[1]-29,i<2?-8:-18],pt,r,bark));
- crown26(g,-41,86,-3,24,15,21,'leaf',3);
- crown26(g,41,91,-11,24,15,21,'leaf',9);
- crown26(g,-31,121,-30,23,15,20,'leaf',15);
- crown26(g,31,126,-37,24,15,22,'leaf',21);
- crown26(g,-2,149,-43,24,15,21,'leaf',27);
- // One small elegant mythical animal statement rather than many competing objects.
- spiralBadge24(g,34,20.9,'#f5d68b');
- const serpent=[];for(let i=0;i<=36;i++){
-  const t=i/36,a=t*TAU*1.10+.55;
-  serpent.push([Math.cos(a)*(19-5*t),15+t*75,Math.sin(a)*(16-4*t)+2]);
- }
- trunk24(g,serpent,serpent.map((_,i)=>3.5-(i/36)*1.2),['#0d9f9b','#20bdb1','#69ddd0','#07827c'],9);
- // Crown crest is physically small and stays subordinate to canopy.
- for(let j=-3;j<=3;j++){
-  pointed24(g,[j*2,163,-43],[j*4,173+(3-Math.abs(j))*3.5,-46],2.0,['#ffce5c','#e7a232','#fff0a8']);
+function antlers26(g,s,headY,forwardZ){
+ const p=[[s*9,headY,forwardZ],[s*22,headY+15,forwardZ-5],[s*33,headY+39,forwardZ-14],[s*25,headY+57,forwardZ-19]];
+ limb26(g,p,[5.8,4.2,2.5,.2],['#e5c28b','#fff7d6','#c79e69','#fffef1'],10);
+ for(let j=0;j<2;j++){
+  let k=j+1,q=p[k];limb26(g,[q,[q[0]+s*9,q[1]+10,q[2]+1],[q[0]+s*13,q[1]+22,q[2]-6]],[2.6,1.55,.1],['#eed6a6','#fff9e7','#d6ae7c'],8);
  }
 }
-function logia26(g){
- const bark=['#342f50','#4b4064','#5d4e70','#26283f','#54445f','#736280'];
- trunk24(g,[[0,3,0],[-5,27,0],[2,52,-4],[1,76,-11],[-2,102,-18],[2,134,-27]],[19,17,14,11,7,.45],bark,15);
- root26(g,bark);
- const limbs=[[-43,99,-1,8.8],[44,100,-10,8.5],[-31,133,-31,7.0],[31,134,-31,7.0],[0,153,-39,5.1]];
- limbs.forEach(([x,y,z,r])=>branch26(g,[1,y-32,-10],[x,y,z],r,bark));
- // Elements are separated anatomically into quadrants and do not overlap.
- crown26(g,-41,102,-5,21,15,19,'fire',4);
- crown26(g,41,104,-16,22,15,20,'storm',11);
- crown26(g,-30,137,-36,22,15,19,'cloud',19);
- crown26(g,26,139,-38,19,13,17,'cloud',27);
- crown26(g,0,159,-45,23,13,20,'cloud',34);
- // Fire is rooted in the left limb, lightning in the right; ice at ground.
- for(let i=0;i<6;i++){
-  const x=-55+i*5;
-  pointed24(g,[x,108,-2],[x+(i%2?3:-3),124+(i%3)*5,-5],3.2,['#ff6b21','#ffc14b','#ffe783']);
+function guardian26(g,y,z){
+ globe24(g,[0,y,z],[12,9.5,6.2],['#b5703f','#efad64','#8c5335','#df9750'],9,9,6);
+ for(let s of [-1,1]){
+  globe24(g,[s*5,y+2.5,z+5.2],[2.65,2.2,1.55],['#fff2ab','#edd078','#7b4d28'],33,8,6);
+  globe24(g,[s*5,y+2.2,z+6.75],[.9,1.15,.6],['#2c4e44','#142c2d'],42,7,5);
+  blade26(g,[s*5,y+5,z+4.4],[s*8,y+7.6,z+4.9],1.15,['#70452f','#d28e4b','#513928']);
+  pointed24(g,[s*8,y-3,z+3],[s*10,y-10,z+6],3.1,['#fff0c8','#d5a46b','#fffef1']);
  }
- for(let i=0;i<4;i++){
-  let x=32+i*6;
-  trunk24(g,[[x,113,9],[x+4,106,11],[x-1,100,13]],[1.5,1.2,.05],['#46ccff','#d8fbff','#49b8ff'],6);
- }
- for(let i=0;i<8;i++){
-  let a=i*TAU/8;
-  crystal24(g,Math.cos(a)*24,8,Math.sin(a)*19,2.8,9+(i%3)*3,3.5,['#d9ffff','#71cdef','#2a91c5']);
- }
- // An actual recessed elemental seam rising within the bark rather than detached props.
- trunk24(g,[[2,14,18],[6,34,17],[4,56,15],[0,74,13]],[1.6,1.4,1.1,.25],['#ff9b36','#f9c05a','#ffd872'],7);
- trunk24(g,[[8,35,14],[7,58,13],[11,80,9]],[1.2,1.05,.2],['#61ddf4','#a2edff','#49afe8'],6);
- spiralBadge24(g,35,20,'#ffc955');
+ globe24(g,[0,y-3.6,z+6.6],[2.9,2,1.25],['#442e29','#6f4632','#d29150'],5,8,5);
 }
-function paramecia26(g){
- const bark=['#efc8ae','#f6dfcb','#c994a0','#fff0d9','#d6a3a4','#e7b4c4'];
- trunk24(g,[[0,3,0],[-7,28,-3],[7,54,-6],[-8,80,-13],[5,109,-21],[0,143,-31]],[19,15.5,13.1,10.2,6.6,.4],bark,15);
- root26(g,bark);
- for(const [x,y,z,r] of [[-43,86,-2,8],[43,91,-7,8],[-32,121,-28,7],[32,128,-31,7],[0,152,-39,5.5]])
-   branch26(g,[0,y-30,-12],[x,y,z],r,bark);
- crown26(g,-42,92,-4,22,14,18,'blossom',8);
- crown26(g,41,98,-13,22,14,19,'blossom',15);
- crown26(g,-31,130,-33,23,15,21,'blossom',23);
- crown26(g,31,135,-39,23,15,20,'blossom',29);
- crown26(g,-1,158,-47,23,14,20,'blossom',34);
- // Raised physical pink ribbon follows the trunk; gold rings are small, offset and truly 3D.
- const helix=[];for(let i=0;i<=54;i++){
-  const t=i/54,a=t*TAU*1.32+.3,rad=18-11*t;
-  helix.push([Math.cos(a)*rad,9+t*124,Math.sin(a)*rad-17*t]);
+function wing26(g,x,y,z,s){
+ for(let i=0;i<7;i++){
+  const len=22+i*2.3,base=[x+s*i*2.4,y+i*.9,z+i*.15];
+  let end=[x+s*(16+i*4.5),y+16+(6-i)*3,z-6-i*1.7];
+  blade26(g,base,end,4.5+i*.20,i%3===0?['#ff6527','#ffd04d','#fb8e2d','#ffeb9b']:i%3===1?['#fff3ad','#ffc73a','#e25e26']:['#e95723','#ffae36','#ffe285']);
  }
- trunk24(g,helix,helix.map((_,i)=>3.0-.8*i/54),['#d83f9c','#fa75b9','#ffafcf','#b73791'],10);
- tori25(g,0,158,-47,13,1.8,'#f9c751','xz',.3,38);
- for(let i=0;i<4;i++){
-  let a=i*TAU/4;
-  crystal24(g,Math.cos(a)*20,92+(i%2)*21,-12+Math.sin(a)*21,2.1,3.1,2.4,['#ffdc88','#f6a6e8','#fff1c9']);
+}
+function fluidFlame26(g,x,y,z,h,scale=1){
+ // Curved, solid flame tongues blend into the trunk rather than detached crystals.
+ for(let i=0;i<7;i++){
+  const a=i*TAU/7,rad=(4+i%3)*scale,px=x+Math.cos(a)*rad,pz=z+Math.sin(a)*rad;
+  const p=[[px,y,pz],[px+Math.sin(a)*4,y+h*.32,pz-1],[px+Math.cos(a)*5,y+h*.74,pz-5],[px+(i%2?1:-1)*4,y+h*(.92+(i%3)*.06),pz-6]];
+  limb26(g,p,[5.6*scale,4.4*scale,2.4*scale,.08],i%2===0?['#ef4d1a','#ff9e28','#ffe66d']:['#f96517','#ffc640','#fff3a4'],7);
  }
- spiralBadge24(g,37,19.7,'#ffe5a7');
+ globe24(g,[x,y+h*.28,z],[8*scale,7*scale,8*scale],['#ffab24','#f45717','#ffe266'],33,8,5);
+}
+function vapour26(g,x,y,z,rx,rz,grey=false,seed=1){
+ const cols=grey?['#555c82','#7c8fb5','#9bb5c4','#e2e9ee']:['#afc9dd','#dff0f8','#f9ffff','#92b4d1'];
+ const parts=[[-.50,.0,-.43,.69],[.32,.10,.33,.78],[-.08,.40,.09,.68],[.52,-.19,-.35,.53]];
+ parts.forEach(([dx,dy,dz,f],i)=>globe24(g,[x+rx*dx,y+dy*12,z+rz*dz],[rx*f,9*f,rz*f],cols,seed+i*8,11,7));
+}
+function lightning26(g,x,y,z,s=1){
+ const ps=[[x,y,z],[x+3*s,y-8*s,z+3],[x-2*s,y-14*s,z+4],[x+5*s,y-24*s,z+8]];
+ limb26(g,ps,[2.5*s,2.25*s,1.7*s,.12],['#ffdc4e','#fff6b2','#f4aa1d'],6);
+ for(let j=0;j<2;j++)limb26(g,[ps[1+j],[ps[1+j][0]+(j?7:-5)*s,ps[1+j][1]-7*s,ps[1+j][2]+5]],[1.25*s,.08],['#ffcf39','#fff3a9'],5);
+}
+function waterfall26(g,arr,width=4){
+ // Water is a thick, undulating 3D ribbon with a reflective central ridge.
+ const pts=arr.map(at24),dims=pts.map((p,i)=>Math.max(.5,width*(1-i/pts.length*.23)));
+ limb26(g,pts,dims,['#0c86b4','#36cce8','#a6f5ff','#1badd6'],8);
+ const ridge=pts.map(p=>[p.x-.3,p.y+.2,p.z+width*.69]);
+ limb26(g,ridge,ridge.map((_,i)=>Math.max(.15,width*.12*(1-i/ridge.length*.40))),['#d5ffff','#9dfaff'],5);
+}
+function petal3d26(g,c,A,rad,palette){
+ let base=at24(c),tip=at24(A),span=rad;
+ const axis=norm(sub(tip,base)),side=norm(cross(axis,v(0,0,1))),up=norm(cross(axis,side));
+ const origin=add(base,mul(axis,span*.22));
+ const m=add(base,mul(axis,span*.58)),end=add(base,mul(axis,span));
+ let plus=add(add(m,mul(side,span*.34)),mul(up,span*.14)),minus=add(add(m,mul(side,-span*.34)),mul(up,span*.14));
+ const inner=add(m,mul(up,-span*.16));
+ g.addTri(origin,plus,end,palette[0]);g.addTri(origin,end,minus,palette[1]);g.addTri(origin,minus,inner,palette[2]);g.addTri(origin,inner,plus,palette[3]||palette[0]);
+ g.addTri(plus,inner,end,palette[2]);g.addTri(inner,minus,end,palette[1]);
+}
+function flower26(g,x,y,z,r,seed){
+ // Every flower is a depth-bearing radial cluster with front and rear petals.
+ let pal=['#ed5aa9','#ff9ad0','#ffcfed','#ae2d85','#ffe7f5'];
+ for(let j=0;j<9;j++){
+  let a=j*TAU/9+seed*.18;
+  const start=[x+Math.cos(a)*3,y+Math.sin(a)*3,z],end=[x+Math.cos(a)*r,y+Math.sin(a)*r,z+Math.sin(j*2.3)*r*.36];
+  petal3d26(g,start,end,r,pal.slice(j%3).concat(pal));
+  petal3d26(g,[x,y,z-5],[x+Math.cos(a+.2)*r*.78,y+Math.sin(a+.2)*r*.78,z-6-Math.sin(a)*4],r*.80,['#c6429d','#e873bb','#fcb7dc','#8d387a']);
+ }
+ globe24(g,[x,y,z+5],[5.5,5.5,5],['#ffdb59','#fff4a9','#f3ae34'],seed+33,11,6);
+ for(let j=0;j<5;j++){
+  let a=j*TAU/5;pointed24(g,[x+Math.cos(a)*2,y+Math.sin(a)*2,z+9],[x+Math.cos(a)*4,y+Math.sin(a)*4,z+14],1.0,['#fff6d9','#ffb93c','#f8e68b']);
+ }
+}
+function island26(g,ci,variation){
+ island25(g,ci,variation);
+ // Broader, rounder chibi geology: expand the original island before adding ornaments.
+ for(const p of g.verts){if(p.y<13){p.x*=1.04;p.z*=1.0;}}
+ const accent=ci===0?['#248c3d','#a4e74a','#2c9e3e']:ci===1?['#48667d','#8ac8dd','#5293b0']:['#a62e88','#f885cb','#d73faa'];
+ // The perimeter stones and root-tangled topsoil retain generous depth and height.
+ for(let j=0;j<9;j++){
+  const a=j*TAU/9+.33,r=35.5+(j%3)*2;
+  crystal24(g,Math.cos(a)*r,-8-(j%2)*3,Math.sin(a)*r*.80,3.5,6.0+(j%3),3.6,accent);
+ }
+ for(let j=0;j<7;j++){
+  const a=j*TAU/7+.48,r=28+j%3;
+  const pos=[Math.cos(a)*r,2.0,Math.sin(a)*r*.77];
+  blade26(g,pos,[pos[0]+Math.cos(a)*8,5.3,pos[2]+Math.sin(a)*7],2.7,ci===0?['#78d543','#a9f45d','#2f9336']:ci===1?['#4ebbd9','#9ceeff','#1d729f']:['#f171bf','#ffb6e8','#923679']);
+ }
+}
+function trunkZoan26(g,twin=false){
+ let bark=['#995c31','#b9763f','#e4aa69','#814a2a','#d4904d'];
+ if(!twin){
+  limb26(g,[[0,2,1],[-5,26,0],[5,49,-4],[-1,78,-9],[6,113,-18],[2,144,-28]],[22,19,15,11.7,7.3,.6],bark,11);
+ }else{
+  limb26(g,[[-10,3,-1],[-16,29,-4],[-22,68,-12],[-14,103,-23],[-9,144,-32]],[15,13,10.5,6,.8],bark,11);
+  limb26(g,[[9,2,2],[18,27,0],[24,63,-7],[19,107,-23],[11,144,-35]],[15,13,10.5,6,.8],bark.slice(1),11);
+ }
+ for(let i=0;i<8;i++){const a=i*TAU/8;massiveRoot26(g,Math.cos(a)*36,Math.sin(a)*29,35,bark);}
+ for(const [x,y,z] of [[-40,72,-9],[39,76,-12],[-40,111,-22],[39,119,-29],[-22,142,-32],[24,149,-38]])
+  fork26(g,[twin?(x<0?-15:15):0,y-25,-9],[x,y,z],7.2,bark);
+}
+function treeZoanA26(g){
+ trunkZoan26(g,false);
+ canopy26(g,[-42,78,-8],19,15,20,3);canopy26(g,[41,85,-15],22,15,19,8);
+ canopy26(g,[-43,120,-27],20,17,19,12);canopy26(g,[42,128,-36],20,17,20,19);
+ canopy26(g,[-8,149,-39],21,15,20,23);canopy26(g,[19,157,-48],19,14,20,26);
+ guardian26(g,72,19);
+ for(let s of [-1,1])antlers26(g,s,91,0);
+ // Raised animal-scale vines wrap around depth, front, sides and rear.
+ climb25(g,0,0,13,110,20.4,1.12,['#048e86','#39d6b9','#cbffe1']);
+ spiralBadge24(g,39,22.0,'#ffecaa');
+}
+function treeZoanB26(g){
+ trunkZoan26(g,true);
+ canopy26(g,[-43,78,-9],20,15,19,4,true);canopy26(g,[44,87,-13],20,14,20,8,true);
+ canopy26(g,[-38,122,-24],20,15,19,10);canopy26(g,[41,133,-35],22,16,22,16);
+ canopy26(g,[-12,153,-42],21,14,18,22,true);canopy26(g,[24,165,-48],20,15,21,27,true);
+ guardian26(g,77,16);
+ for(let s of [-1,1]){wing26(g,s*13,153,-24,s);antlers26(g,s,93,-4);}
+ // Central phoenix wings and high green crest occupy different depth planes.
+ feather25(g,4,161,-34,.78);
+ for(let i=-4;i<=4;i++){
+  let x=i*8,zz=-21-(i%2)*12,yy=106+(i%3)*5;
+  limb26(g,[[x,yy,zz],[x+Math.sin(i)*4,yy-16,zz+4],[x+1,yy-34,zz+7]],[1.5,1.1,.11],['#c4854c','#edaf69','#8a5839'],6);
+ }
+ climb25(g,5,0,14,123,18.8,1.3,['#0da3a1','#72e9ce','#dcfff0']);
+ spiralBadge24(g,42,21,'#fff3a8');
+}
+function trunkLogia26(g,storm=false){
+ const col=['#3c314f','#645272','#28263b','#83677f','#48405f'];
+ limb26(g,[[0,1,0],[-3,26,2],[storm?10:3,58,-4],[-8,91,-10],[storm?8:0,119,-21],[4,151,-40]],[22,20,15.2,11.2,7.5,.8],col,13);
+ for(let i=0;i<7;i++){let a=i*TAU/7;massiveRoot26(g,Math.cos(a)*36,Math.sin(a)*29,36,col);}
+ for(const [x,y,z] of [[-39,72,-12],[38,73,-10],[-44,106,-25],[43,110,-31],[-19,146,-38],[20,143,-46]])
+  fork26(g,[0,y-32,-9],[x,y,z],6.9,col);
+}
+function treeLogiaA26(g){
+ trunkLogia26(g);
+ // Fire and storm physically grow from a black-basalt fork across different planes.
+ vapour26(g,-44,94,-21,23,22,false,3);vapour26(g,-16,132,-33,25,22,false,8);
+ vapour26(g,22,142,-45,22,20,true,15);fluidFlame26(g,38,102,-24,41,1.06);
+ fluidFlame26(g,21,57,10,30,.53);
+ waterfall26(g,[[-39,86,13],[-42,72,25],[-34,57,31],[-32,39,33],[-24,15,37]],4.7);
+ waterfall26(g,[[-12,127,1],[-13,110,19],[-10,91,29]],3.1);
+ for(let j=0;j<4;j++)lightning26(g,-48+j*11,104,-3,.85);
+ frost25(g,29,10,7,.92);frost25(g,-24,8,2,.72);
+ climb25(g,0,2,21,107,20.4,1.10,['#008bc8','#2acded','#c0ffff']);
+ // Separate orange cracks are thick-sided glowing lava channels, not printed lines.
+ limb26(g,[[7,9,18],[14,35,19],[7,63,17],[19,93,10]],[2.1,2.1,1.7,.5],['#f74b17','#ffb63d','#fff0a4'],6);
+ spiralBadge24(g,40,22,'#f4d078');
+}
+function treeLogiaB26(g){
+ trunkLogia26(g,true);
+ vapour26(g,-43,102,-24,24,19,true,2);vapour26(g,[].length+43,111,-34,24,21,true,6);
+ vapour26(g,-28,145,-48,26,23,false,11);vapour26(g,30,151,-49,22,22,false,17);vapour26(g,3,171,-64,27,23,false,24);
+ const helix=[];for(let j=0;j<=72;j++){
+  let t=j/72,a=t*TAU*2.45+.3,r=22+8*t;
+  helix.push([Math.cos(a)*r,21+132*t,Math.sin(a)*r-8*t]);
+ }
+ limb26(g,helix,helix.map((_,j)=>3.7*(1-j/120)),['#1db8d8','#b8f9ff','#3ddcf5','#127dab'],10);
+ for(let j=0;j<5;j++)lightning26(g,(j-2)*18,120+(j%2)*15,-10,.9);
+ fluidFlame26(g,30,48,-11,28,.60);
+ frost25(g,-30,9,5,1.12);
+ // One physical circular vortex ring positioned in depth, instead of repeated gold hoops.
+ tori25(g,0,160,-54,28,2.5,'#beecff','xz',.50,56);
+ spiralBadge24(g,41,21,'#fbe087');
+}
+function trunkPar26(g,portal=false){
+ const c=['#bb2486','#f45eae','#902979','#ff9cd6','#d13c99'];
+ limb26(g,portal?[[0,1,1],[13,29,0],[-14,58,-5],[12,90,-14],[-7,126,-31],[4,164,-49]]:[[0,1,0],[-9,26,0],[7,51,-6],[-8,83,-14],[6,120,-29],[0,157,-48]], [22,19,15.6,11.5,8.1,.9],c,12);
+ for(let i=0;i<8;i++){let a=i*TAU/8;massiveRoot26(g,Math.cos(a)*34,Math.sin(a)*26,33,c);}
+ for(const [x,y,z] of [[-40,72,-11],[40,76,-13],[-40,117,-27],[39,126,-37],[-18,158,-48],[23,157,-57]])fork26(g,[0,y-27,-12],[x,y,z],7.1,c);
+}
+function treeParA26(g){
+ trunkPar26(g);
+ // Oversized, asymmetric open flowers present actual layered polygonal thickness.
+ flower26(g,-39,83,-11,20,3);flower26(g,39,89,-19,22,7);
+ flower26(g,-34,127,-35,22,11);flower26(g,28,137,-42,24,15);flower26(g,2,166,-56,20,19);
+ for(const [x,y,z] of [[-30,82,6],[35,96,-5],[-27,128,-23],[27,149,-34]]){
+  blade26(g,[x*.65,y-15,z-4],[x,y+8,z+5],5.0,['#ffc3e4','#e953af','#a22586']);
+ }
+ // Broad elastic ribbon traces branch growth around the tree, not in front of the fruit specimens.
+ const spiral=[];for(let j=0;j<=48;j++){
+  const t=j/48,a=TAU*1.2*t+.2;
+  spiral.push([Math.cos(a)*25,18+t*105,Math.sin(a)*20-5*t]);
+ }
+ limb26(g,spiral,spiral.map(()=>2.3),['#efb92e','#ffed91','#fff5b1'],8);
+ spiralBadge24(g,42,21.7,'#fff1b7');
+}
+function treeParB26(g){
+ trunkPar26(g,true);
+ const c=['#d33295','#f65fbb','#fb9bd2','#a63285','#ffc3ea'];
+ // Crown groups stagger in XYZ so the tree remains truly dimensional from the side.
+ canopy26(g,[-39,77,-15],20,15,19,2,false,'blossom');canopy26(g,[42,94,-25],22,16,20,7,false,'blossom');
+ canopy26(g,[-37,132,-42],22,17,20,12,false,'blossom');canopy26(g,[35,147,-50],21,16,20,18,false,'blossom');
+ canopy26(g,[-2,171,-63],22,14,21,25,false,'blossom');
+ // Recolour the crystalline canopy with saturated pink local attachments and non-planar folds.
+ for(let j=0;j<14;j++){
+  let a=j*2.399,y=75+(j%6)*17,r=27+(j%3)*5;
+  const base=[Math.cos(a)*r*.6,y-4,Math.sin(a)*r*.50-18];
+  const tip=[Math.cos(a)*r,y+(j%3)*4,Math.sin(a)*r-25];
+  blade26(g,base,tip,4.1,c);
+ }
+ tori25(g,-3,114,-34,27,3.1,'#f9ce59','xy',.28,54);
+ tori25(g,4,143,-43,31,2.45,'#ffde71','yz',.47,54);
+ for(let j=0;j<10;j++){
+  const a=j*2.4,y=66+(j%5)*19,r=23+(j%3)*7;
+  crystal24(g,Math.cos(a)*r,y,Math.sin(a)*r-23,3.1,4.2,3.4,['#ffc8eb','#e464b2','#93419f']);
+ }
+ spiralBadge24(g,42,21.5,'#fff0a6');
+}
+function anchorLimbs26(g,ci,variation){
+ // Family nodes are physically attached to branches and occupy different depths.
+ const c=ci===0?['#a46940','#edb16c','#7d4f32']:ci===1?['#655276','#a18daf','#3a344d']:['#ba298d','#e969b7','#88336c'];
+ for(let gi=0;gi<GROUPS[ci].length;gi++){
+  const a=sub(familyAnchor(ci,gi,variation),treePositions[ci]);
+  // Attachment stem is distinct from foliage and extends towards the camera.
+  limb26(g,[[a.x*.65,a.y-11,a.z*.25],[a.x*.92,a.y-4,a.z*.69],[a.x,a.y+3,a.z-4]],[3.5,2.6,.65],c,8);
+  blade26(g,[a.x*.89,a.y-5,a.z*.60],[a.x+Math.sign(a.x||1)*5,a.y+1,a.z*.7],2.2,c);
+ }
 }
 function generateTree(ci,low=false,variation=0){
- const g=new Geometry();island24(g,ci,0);
- if(ci===0)zoan26(g);else if(ci===1)logia26(g);else paramecia26(g);
- return {geo:g,branches:[],variant:0};
+ const g=new Geometry();island26(g,ci,variation);
+ if(ci===0)(variation?treeZoanB26:treeZoanA26)(g);
+ else if(ci===1)(variation?treeLogiaB26:treeLogiaA26)(g);
+ else(variation?treeParB26:treeParA26)(g);
+ anchorLimbs26(g,ci,variation);
+ return {geo:g,branches:[],variant:variation,build:26};
 }
+
 
 const FRUITSHAPES=['round','pear','lobed','bell','heart','oval'];
 const CANON_SHAPES=Object.fromEntries(Object.entries(OFFICIAL_DESIGN).map(([k,d])=>[k,d.shape]));
@@ -1413,12 +1536,12 @@ function fruitBud(g,pos,id,ci,sz=1.25){
 
 let treePositions=[v(-56,0,-4),v(0,0,5),v(56,0,-4)];
 const variantChoices=[0,0,0];
-const TREES=CLASSES.map((_,ci)=>{const only=generateTree(ci,false,0);return [only,only];});
+const TREES=CLASSES.map((_,ci)=>[generateTree(ci,false,0),generateTree(ci,false,1)]);
 const TREE=CLASSES.map((_,ci)=>TREES[ci][0]);
 const TREE_LOW=TREE;
 function chooseVariant(ci,variant){
  if(!(ci>=0&&ci<3))return;
- variantChoices[ci]=0;
+ variantChoices[ci]=Math.max(0,Math.min(1,variant|0));
  TREE[ci]=TREES[ci][variantChoices[ci]];
  if(app.stage===1&&app.ci===ci)focusFamilyPage();
  if(app.stage===2&&app.ci===ci)camera.goal=fruitPageCenter(ci,app.gi,app.page);
@@ -1432,15 +1555,15 @@ const root=v;
 function resetTreePositions(){treePositions=W/H<.72?[v(-66,0,-5),v(0,0,3),v(66,0,-5)]:[v(-92,0,-4),v(0,0,3),v(92,0,-4)];}
 function setOverview(){app.stage=0;app.ci=-1;app.gi=-1;app.fi=-1;app.page=0;app.familyPage=0;
  const variant=variantChoices[app.realm],tall=variant&&app.realm===1;
- camera.goal=W/H<.72?add(treePositions[app.realm],v(0,tall?76:70,0)):v(0,64,0);
- camera.goalDist=W/H<.72?(tall?266:249):295;
+ camera.goal=W/H<.72?add(treePositions[app.realm],v(0,tall?84:79,0)):v(0,75,0);
+ camera.goalDist=W/H<.72?(tall?247:229):275;
  camera.goalYaw=0;camera.goalPitch=.012;hudStamp='';}
 function selectClass(i){app.stage=1;app.ci=i;app.gi=-1;app.fi=-1;app.page=0;app.familyPage=0;app.realm=i;
  focusFamilyPage();hudStamp='';}
 function shiftRealm(dir){app.realm=(app.realm+dir+3)%3;
  const tall=variantChoices[app.realm]&&app.realm===1;
- camera.goal=W/H<.72?add(treePositions[app.realm],v(0,tall?76:70,0)):v(0,64,0);
- camera.goalDist=W/H<.72?(tall?266:249):295;
+ camera.goal=W/H<.72?add(treePositions[app.realm],v(0,tall?84:79,0)):v(0,75,0);
+ camera.goalDist=W/H<.72?(tall?247:229):275;
  camera.goalYaw=0;camera.goalPitch=.012;hudStamp='';}
 function familiesPerPage(){return 1}
 function visibleFamilies(){return GROUPS[app.ci].map((name,gi)=>({name,gi})).slice(app.familyPage*familiesPerPage(),(app.familyPage+1)*familiesPerPage());}
@@ -1490,17 +1613,55 @@ function buildHangingPreview(ci,variation){
  const hidden=rows.filter(x=>!designRevealed(x.id));
  // Readable spread: 3 depth-separated tiers, rather than all 146 fruits
  // printed in the same front-facing plane. Both lore and silhouette remain real.
- const show=[...revealed.slice(0,3)];
- const sites=[[-37,79,27],[38,97,29],[0,126,30]];
+ const show=[...revealed.slice(0,7),...hidden.slice(0,ci===1?2:3)];
+ const sites=[[-34,67,37],[-17,93,40],[3,73,42],[28,94,40],[35,66,37],[-36,111,38],[-4,125,40],[23,125,39],[12,108,45],[-28,139,37],[0,97,46]];
  show.forEach((f,i)=>{
    const [x,y,z]=sites[i];let p=v(x,y+(variation&&i%3===0?4:0),z);
    hangOne24(g,ci,p,f,3.6,i%2===0?-1:1);
  });
  return g;
 }
-const HANGING_BUNCHES=CLASSES.map((_,ci)=>{const model=buildHangingBunches(ci,0);return [model,model];});
+// V26: Every existing catalogue fruit grows as one independently sculpted
+// hanging bud in its family's spatial cluster. Only close inspection reveals
+// its name and established appearance status.
+function makeFamilyBuds26(g,ci,gi,p,list,nPreview=Infinity){
+ const wood=ci===0?['#b46f3f','#e9a869']:ci===1?['#66547b','#a28cae']:['#cd3195','#f17dbe'];
+ // A single larger twig branches into multiple, depth-separated pendants.
+ const n=Math.min(list.length,nPreview),countPerRing=9;
+ limb26(g,[[p.x*.75,p.y-10,p.z*.63],[p.x*.92,p.y-3,p.z*.82],[p.x,p.y+3,p.z]],[2.8,1.9,.9],wood,8);
+ for(let k=0;k<n;k++){
+  const layer=Math.floor(k/countPerRing),j=k%countPerRing,a=TAU*j/countPerRing+layer*1.15;
+  const radius=2.2+Math.sqrt(n)*.82+layer*.65;
+  const dx=Math.cos(a)*radius,dz=Math.sin(a)*radius*.78+(layer%2)*1.8;
+  const q=v(p.x+dx,p.y-5.2-layer*3.35-(j%3)*.55,p.z+dz+1.7);
+  const stem=[v(p.x,p.y+2,p.z),v(p.x+dx*.48,p.y-1.7-layer*2,p.z+dz*.50),v(q.x,q.y+1.4,q.z)];
+  limb26(g,stem,[.23,.17,.065],['#deb47b','#f2d69c'],5);
+  const displaySz=n>25?1.10:n>11?1.24:1.50;
+  fruitBud(g,q,list[k].id,ci,displaySz);
+ }
+}
+function buildHangingBunches(ci,variation){
+ const g=new Geometry();
+ for(let gi=0;gi<GROUPS[ci].length;gi++){
+  const p=sub(familyAnchor(ci,gi,variation),treePositions[ci]);
+  makeFamilyBuds26(g,ci,gi,p,BYGROUP[ci][gi]);
+ }
+ return g;
+}
+function buildHangingPreview(ci,variation){
+ const g=new Geometry();
+ for(let gi=0;gi<GROUPS[ci].length;gi++){
+  const p=sub(familyAnchor(ci,gi,variation),treePositions[ci]);
+  // Two buds per family on the far overview, all buds when entering the tree.
+  makeFamilyBuds26(g,ci,gi,p,BYGROUP[ci][gi],2);
+ }
+ return g;
+}
 
-const HANGING_PREVIEW=CLASSES.map((_,ci)=>{const model=buildHangingPreview(ci,0);return [model,model];});
+
+const HANGING_BUNCHES=CLASSES.map((_,ci)=>[buildHangingBunches(ci,0),buildHangingBunches(ci,1)]);
+
+const HANGING_PREVIEW=CLASSES.map((_,ci)=>[buildHangingPreview(ci,0),buildHangingPreview(ci,1)]);
 
 function makeFamilyPortrait(ci,gi){
  const g=new Geometry(),fruits=BYGROUP[ci][gi],n=fruits.length;
@@ -1697,14 +1858,14 @@ function loop(time){if(!gpuAvailable&&time-last<30){requestAnimationFrame(loop);
 
 // Accessible, screen-safe scene controls.
 const hud={name:document.getElementById('realmName'),sub:document.getElementById('realmSubtitle'),count:document.getElementById('realmCount'),prompt:document.getElementById('stageprompt'),explore:document.getElementById('explore'),back:document.getElementById('backScene'),prev:document.getElementById('prev'),next:document.getElementById('next')};
-const CHAPTERS=CONCEPTS26;
+const CHAPTERS=['LIVING EVOLUTION','ELEMENTAL CONVERGENCE','POSSIBILITY NEXUS'];
 const vb=document.getElementById('variantbox'),vc=document.getElementById('variantCaption'),info=document.getElementById('detailPanel');
 const clean=t=>String(t??'Unknown').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
 let hudStamp='';
 function syncHud(){const state=app.stage+':'+app.realm+':'+app.ci+':'+app.gi+':'+app.page+':'+app.familyPage+':'+app.fi+':'+variantChoices.join(',');if(hudStamp===state)return;hudStamp=state;
  const ci=app.stage===0?app.realm:app.ci,fruitCount=DATA.filter(x=>x.class===CLASSES[ci]).length;
- let name=CLASSES[ci].toUpperCase(),sub=CONCEPTS26[ci],count=fruitCount+' DEVIL FRUITS',tip='TAP TO EXPLORE · SWIPE TO SWITCH',explore='EXPLORE TREE';
- vb.hidden=true;vc.textContent='';
+ let name=CLASSES[ci].toUpperCase(),sub=CONCEPTS26[ci][variantChoices[ci]],count=fruitCount+' DEVIL FRUITS',tip='TAP TO EXPLORE · SWIPE TO SWITCH',explore='EXPLORE TREE';
+ vb.hidden=app.stage>=2;vc.textContent=CONCEPTS26[ci][variantChoices[ci]].split(' · ')[0]+' · FORM '+(variantChoices[ci]?'B':'A');
  if(app.stage===1){name=GROUPS[ci][app.familyPage].replace('Standalone Single-Model Zoan Families','Other Zoans');sub=CLASSES[ci].toUpperCase()+' · FRUIT FAMILY';count=(app.familyPage+1)+' OF '+GROUPS[ci].length+' FAMILIES';tip='SELECT A BRANCH · ALL FRUITS GROW HERE';explore='EXPLORE FAMILY';}
  if(app.stage===2){name=GROUPS[ci][app.gi].replace('Standalone Single-Model Zoan Families','Other Zoans');sub=CLASSES[ci].toUpperCase()+' · SELECT A FRUIT';count='PAGE '+(app.page+1)+' OF '+Math.ceil(BYGROUP[ci][app.gi].length/fruitsPerPage());tip='SELECT A HANGING FRUIT TO READ ITS STORY';explore='OPEN FIRST FRUIT';}
  if(app.stage===3){let d=DATA[app.fi];name=d.name;sub=CLASSES[ci].toUpperCase()+' · '+(designRevealed(app.fi)?'REVEALED DESIGN':'UNKNOWN DESIGN');count='FRUIT '+(app.fi+1)+' OF '+DATA.length;tip='DRAG TO ORBIT · SCROLL THE INFORMATION';explore='NEXT FRUIT';
@@ -1713,13 +1874,13 @@ function syncHud(){const state=app.stage+':'+app.realm+':'+app.ci+':'+app.gi+':'
  }else info.innerHTML='';info.hidden=app.stage!==3;
  document.getElementById('category').hidden=app.stage===3;hud.name.textContent=name;hud.sub.textContent=sub;hud.count.textContent=count;hud.prompt.textContent=tip;hud.explore.textContent=explore;hud.back.hidden=app.stage===0;
 }
-document.getElementById('variantButton').onclick=()=>{};
+document.getElementById('variantButton').onclick=()=>{const ci=app.stage===0?app.realm:app.ci;chooseVariant(ci,1-variantChoices[ci]);if(app.stage===0)setOverview();syncHud();};
 hud.prev.onclick=()=>{if(app.stage===0)shiftRealm(-1);else if(app.stage===1)nextFamilyPage(-1);else if(app.stage===2)setPage(-1);else nextFruit(-1);syncHud();};
 hud.next.onclick=()=>{if(app.stage===0)shiftRealm(1);else if(app.stage===1)nextFamilyPage(1);else if(app.stage===2)setPage(1);else nextFruit(1);syncHud();};
 hud.explore.onclick=()=>{if(app.stage===0)selectClass(app.realm);else if(app.stage===1)selectGroup(app.familyPage);else if(app.stage===2){let f=selectedList()[app.page*fruitsPerPage()];if(f)selectFruit(f.id)}else nextFruit(1);syncHud();};
 hud.back.onclick=()=>{back();syncHud();};
-window.__V26__={state:()=>({...window.__WORLD_TEST__.getState(),variants:variantChoices.slice(),canvas:{w:W,h:H}}),selectClass,selectGroup,selectFruit,back,shiftRealm,nextFamilyPage,setPage,nextFruit,chooseVariant,
- geometryDepth:()=>TREES.map((pair,ci)=>[pair[0]].map((tree,vi)=>{
+window.__V25__={meshAudit:()=>({tree: TREES.map(arr=>arr.map(t=>({faces:t.geo.faces.length,invalid:t.geo.faces.filter(f=>!f[3]).length}))),hanging:HANGING_BUNCHES.map(arr=>arr.map(t=>({faces:t.faces.length,invalid:t.faces.filter(f=>!f[3]).length}))),previews:HANGING_PREVIEW.map(arr=>arr.map(t=>({faces:t.faces.length,invalid:t.faces.filter(f=>!f[3]).length})))}),auditColors:()=>DATA.map((f,i)=>({id:i,name:f.name,invalid:fruitModel(i,1).faces.filter(face=>typeof face[3]!=='string'||!face[3]).length})).filter(x=>x.invalid),catalogue:()=>DATA.map(f=>({...f})),groupCounts:()=>BYGROUP.map(f=>f.map(g=>g.length)),openFruit:(id)=>{let ci=CLASSES.indexOf(DATA[id].class);selectClass(ci);let gi=BYGROUP[ci].findIndex(group=>group.some(x=>x.id===id));selectGroup(gi);selectFruit(id);},openGroup:(ci,gi)=>{selectClass(ci);selectGroup(gi);},state:()=>({...window.__WORLD_TEST__.getState(),variants:variantChoices.slice(),canvas:{w:W,h:H}}),selectClass,selectGroup,selectFruit,back,shiftRealm,nextFamilyPage,setPage,nextFruit,chooseVariant,
+ geometryDepth:()=>TREES.map((pair,ci)=>pair.map((tree,vi)=>{
    const pts=tree.geo.verts.filter(p=>p.y>15),mn=[Infinity,Infinity,Infinity],mx=[-Infinity,-Infinity,-Infinity];
    for(const p of pts){for(let k=0;k<3;k++){const n=[p.x,p.y,p.z][k];mn[k]=Math.min(mn[k],n);mx[k]=Math.max(mx[k],n);}}
    return {ci,vi,faces:tree.geo.faces.length,range:mn.map((n,k)=>+(mx[k]-n).toFixed(2)),finite:pts.every(p=>Number.isFinite(p.x)&&Number.isFinite(p.y)&&Number.isFinite(p.z))};
