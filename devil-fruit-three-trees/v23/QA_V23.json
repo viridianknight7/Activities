@@ -1,0 +1,39 @@
+{
+  "version": "V23",
+  "scope": "Historical 146-entry project catalogue",
+  "classes": {
+    "Zoan": 44,
+    "Logia": 12,
+    "Paramecia": 90
+  },
+  "families": {
+    "Zoan": 12,
+    "Logia": 3,
+    "Paramecia": 4
+  },
+  "checks": {
+    "mobile390x844": {
+      "renderedSixVariants": true,
+      "fruitFamily": true,
+      "fruitInspection": true,
+      "interactiveNavigation": "PASS",
+      "runtimePageErrors": 0
+    },
+    "desktop1440x900": {
+      "renderedSixVariants": true,
+      "fruitFamily": true,
+      "fruitInspection": true,
+      "interactiveNavigation": "PASS",
+      "runtimePageErrors": 0
+    },
+    "fruitMeshesGenerated": 146,
+    "requiredCatalogueFields": "PASS",
+    "syntax": "PASS",
+    "standaloneRebuild": "BYTE IDENTICAL"
+  },
+  "limitations": [
+    "external CDN launch not independently loaded",
+    "physical Android performance unbenchmarked",
+    "canonical appearance reference audit incomplete"
+  ]
+}
