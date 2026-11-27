@@ -1,0 +1,24 @@
+[
+  {
+    "resolution": "390x844",
+    "status": "PASS",
+    "catalogue": {
+      "n": 146,
+      "models": 146,
+      "unique": 146,
+      "issues": []
+    },
+    "errors": []
+  },
+  {
+    "resolution": "1440x900",
+    "status": "PASS",
+    "catalogue": {
+      "n": 146,
+      "models": 146,
+      "unique": 146,
+      "issues": []
+    },
+    "errors": []
+  }
+]
