@@ -50,6 +50,8 @@ body[data-stage="2"] #variant,body[data-stage="3"] #variant{display:none}
 
 body[data-stage="3"] .masthead h1{display:none}
 body[data-stage="3"] #crumb{font-size:11px}
+/* In the three-tree desktop panorama, the trees themselves are the three selection controls. */
+@media (min-width:801px){body[data-stage="0"] #bottom{display:none}body[data-stage="0"] #tip{bottom:24px}}
 </style></head><body>
 <div id="backdrop" aria-hidden="true"></div><div id="clouds" aria-hidden="true"><svg viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice"><g fill="#f6feff" opacity=".54"><path d="M-30 170Q90 128 160 178Q205 115 292 169Q325 144 390 196L390 236L-30 236Z"/><path d="M1060 240Q1100 185 1160 210Q1240 146 1330 210Q1410 162 1500 238L1500 280L1060 280Z"/><path d="M-90 690Q75 630 145 688Q230 635 305 703L305 748L-90 748Z"/></g><g fill="#e7f9ff" opacity=".34"><path d="M500 75Q565 15 645 65Q715 26 770 96L770 129L500 129Z"/></g></svg></div>
 <canvas id="world" role="img" aria-label="Interactive 3D Devil Fruit trees. Use the on-screen arrows and touch the hanging families to explore them."></canvas>
