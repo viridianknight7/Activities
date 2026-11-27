@@ -1,0 +1,72 @@
+{
+  "version": "V24",
+  "derived_exclusively_from": "devil_fruit_v23/index.html",
+  "test_method": "Playwright Chromium (headful, Xvfb, software WebGL); original V24 source loaded directly",
+  "exact_designs": [
+    "Zoan Beast Grove",
+    "Logia Elemental Confluence",
+    "Paramecia Possibility Nexus"
+  ],
+  "selectable_alternates": 0,
+  "dimensions_xyz": [
+    {
+      "type": "Zoan",
+      "x": 42.6,
+      "y": 63.2,
+      "z": 40.1,
+      "triangles": 24276
+    },
+    {
+      "type": "Logia",
+      "x": 38.7,
+      "y": 60.9,
+      "z": 40.1,
+      "triangles": 12715
+    },
+    {
+      "type": "Paramecia",
+      "x": 37.5,
+      "y": 62.1,
+      "z": 38.1,
+      "triangles": 16048
+    }
+  ],
+  "catalogue": {
+    "Zoan": 44,
+    "Logia": 12,
+    "Paramecia": 90,
+    "total": 146,
+    "families": 19,
+    "unverified_appearances": 123
+  },
+  "browser_tests": [
+    {
+      "viewport": "390x844",
+      "webgl": true,
+      "three_tree_renders": "PASS",
+      "tree_tap": "PASS",
+      "family_button": "PASS",
+      "fruit_selection": "PASS",
+      "next_back": "PASS",
+      "all_146_inspection_meshes": "PASS",
+      "js_errors": 0
+    },
+    {
+      "viewport": "1440x900",
+      "webgl": true,
+      "three_tree_renders": "PASS",
+      "tree_selection": "PASS",
+      "family_button": "PASS",
+      "fruit_selection": "PASS",
+      "next_back": "PASS",
+      "all_146_inspection_meshes": "PASS",
+      "js_errors": 0
+    }
+  ],
+  "source_rebuild": "V24 local editable source reconstructs index.html byte for byte",
+  "limitations": [
+    "Canon-accurate appearance audit of 146 items not completed",
+    "Physical Android GPU performance not measured",
+    "External CDN preview not independently loaded"
+  ]
+}
