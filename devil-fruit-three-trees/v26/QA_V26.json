@@ -1,0 +1,66 @@
+{
+  "version": "V26",
+  "baseline": "V25 only",
+  "viewports": [
+    "390x844",
+    "1440x900"
+  ],
+  "trees": [
+    {
+      "name": "Zoan",
+      "xyz": [
+        43.86,
+        67.41,
+        44.7
+      ],
+      "triangles": 15900
+    },
+    {
+      "name": "Logia",
+      "xyz": [
+        41.38,
+        65.64,
+        36.16
+      ],
+      "triangles": 13650
+    },
+    {
+      "name": "Paramecia",
+      "xyz": [
+        40.84,
+        66.53,
+        43.87
+      ],
+      "triangles": 19091
+    }
+  ],
+  "catalogue": {
+    "Zoan": 44,
+    "Logia": 12,
+    "Paramecia": 90,
+    "total": 146,
+    "families": 19
+  },
+  "screenshotTemplates": 10,
+  "automated": {
+    "runtimeErrors": 0,
+    "all146Models": true,
+    "all146DataPanels": true,
+    "all19Families": true,
+    "mobileNavigation": true,
+    "desktopNavigation": true
+  },
+  "actualTouchEvents": {
+    "horizontalSwipe": true,
+    "pinchZoom": true,
+    "tapTree": true,
+    "tapFamilyGeometry": true,
+    "tapFruitGeometry": true
+  },
+  "sha256": "be0dbd8c3c2a598a6d6b70a5da59f7dc5cb7e49c8daabc2f187c209302c84971",
+  "limitations": [
+    "Canon appearance flags inherited, not independently verified",
+    "No physical Android frame rate measurement",
+    "External CDN preview not independently tested"
+  ]
+}
