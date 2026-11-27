@@ -1,44 +1,39 @@
-# Legendary Devil Fruit Trees · V21
+# The Legendary Devil Fruit Trees — V21
 
-Fan-made 3D Devil Fruit encyclopaedia. Three original trees represent Zoan, Logia and Paramecia, respectively. These tree designs are not part of official One Piece canon.
+## Approved visual direction
 
-## Approved visual design
+Single-page 3D Devil Fruit encyclopaedia rendered in a saturated, flat-faceted, oversized **macro-chibi adventure-game** style inspired by the spirit of *One Piece*. The tree sculptures are **original non-canon designs**, not reproductions of official assets.
 
-Macro-chibi, hand-sculpted look, broad opaque polygon faces with flat lighting, exaggerated proportions, vibrant solid colours, intricate-but-legible inlays, oversized spiral-patterned fruits, organically integrated branches and tall tree structures. Distinct legends: Zoan as beast/life/evolution, Logia as embodiment of elemental nature, Paramecia as impossible transformation/possibility. The game presents two selectable 3D variants for each (A and B).
+The preferred design selection is **Zoan A1 Beast Grove** and **Zoan A3 Mythic Ascension** (two switchable variants), **Logia B1 Elemental Confluence** (default), and **Paramecia C2 Possibility Nexus** (default). Logia B2 and Paramecia C1 remain as alternative designs, providing two variants per type. Switching designs does not reset the catalogue or open a new page.
 
-## Art and technical release plan
+## Development plan and completion record
 
-1. Inspect the supplied mobile screenshots and list visual/functional failures.
-2. Develop two vertically proportioned concepts for each of the three trees.
-3. Reconstruct real 3D mesh geometry for six distinct tree forms.
-4. Rebuild floating island geometry and material palette.
-5. Keep 146 fruit entries and their existing family classification.
-6. Generate fruit branches, stems, spiral inlays and unknown-design markers.
-7. Rebuild controls, contextual text, camera framing and family navigation.
-8. Prevent duplicate family fruit geometry from appearing on top of tree fruit geometry.
-9. Provide a separate, readable detailed-fruit information display.
-10. Visual QA of mobile and desktop overview, family, group and fruit views.
-11. Validate all A/B toggles and page controls.
-12. Run record-by-record navigation tests for every source record.
-13. Correct found rendering defects; publish tested standalone HTML.
-14. Recheck GitHub publication and the exact committed file.
+1. Preserve source catalogue and original single-page navigation: **done** (146 entries; 44 Zoan / 12 Logia / 90 Paramecia).
+2. Lock six sculptural concepts, prioritising A1, A3, B1, C2: **done**.
+3. Rebuild the three tree classes as distinct macro-faceted polygonal sculptures with two variants each: **done**.
+4. Sculpt oversized trunks, horn/feather Zoan motifs, elemental Logia growth and impossible Paramecia forms: **done as stylised interpretation**.
+5. Rebuild the generic floating islands with grass, stratified rock, waterfalls and vegetation: **done**.
+6. Connect physical fruit-family clusters to the trees: **done** (19 groups and all 146 generic hanging fruits).
+7. Model revealed fruits with visible front-facing spiral relief and preserve locked unrevealed silhouettes: **done as stylised models; canon-accurate physical reproduction remains incomplete**.
+8. Recompose the family-inspection and individual-fruit views, avoiding oversized tree backdrops obscuring information: **done**.
+9. Improve mobile typography, navigation spacing, camera positioning and selectability: **done**.
+10. Retain names, powers, users, affiliations, arcs, saga, awakening and origin: **done**.
+11. Render both variants of each tree on portrait mobile and desktop: **done** (QA screenshots in this package).
+12. Inspect and adjust large forms and silhouette placement: **done as a first visual pass; exact concept-art fidelity is an open artistic task**.
+13. Test touch/click navigation, 146 nonempty fruit meshes, 19 groups and UI paths: **passed locally** at 390×844 and 1440×900.
+14. Publish the standalone app and editable source to GitHub: release step.
+15. Verify published commit and public link: release step.
 
-## QA performed
+## Navigation
 
-- Desktop and mobile browser screenshots inspected.
-- JavaScript syntax validation passed.
-- 146 catalogue items / 146 unique IDs, group totals Zoan 44, Logia 12, Paramecia 90.
-- All 146 records selected through corresponding class and family without exceptions.
-- Category switches, A/B model toggles, family selection, group selection, detail panel, and back navigation exercised on mobile and desktop.
-- Local headless Chromium used its **software 3D** fallback. Real-world Android WebGL performance and external caching are not independently confirmed.
+Choose one of three tree classes; tap its hanging family, then a fruit. Use Back and Previous/Next to navigate. Tap the `Design 1/2` switch to compare tree sculptures. Drag to orbit; pinch or scroll to zoom. No search, modal route or conventional card grid. All content lives in one continuous 3D world.
 
-## Remaining quality limitations
+## Factual limitations
 
-- Concept illustrations are references. This build does **not** achieve faithful 90% visual reproduction of the generated concept art. The six real-time 3D sculptures are simplified by comparison.
-- Fruit appearance knowledge is incomplete. 'Unknown design' denotes a symbolic representation, not an invented canon appearance.
-- Desktop overview draws a small representative set of fruits per family for performance. Selecting a tree renders its complete hanging-bunch catalogue.
-- Rendering throughput on specific Android hardware still needs user-device testing.
+The appearance flag comes from the supplied curated source. It is **not** a complete independent verification of every manga appearance as of November 2026. The 23 appearance-referenced fruits are enhanced stylised representations, **not guaranteed one-to-one canon models**. The black chained silhouette means physical appearance was unverified in the source data, not that the fruit or character is inaccessible.
 
-## Source and access
+## Build and QA
 
-Open `index.html` in a modern browser. The HTML includes all source data, shaders, geometry and interface, no CDN dependencies. This release is at `devil-fruit-three-trees/v21/index.html` in `viridianknight7/Activities`.
+Run `python build.py` in the source directory to embed `style.css`, `geometry.js`, `app.js`, `data.json` into a single standalone `index.html`, with no external dependencies. Run `xvfb-run -a python qa21_short.py` on systems with Chromium and Xvfb for local WebGL testing.
+
+The QA guarantees successful local browser interaction under the tested software WebGL environment; it does not establish measured FPS on all physical devices. Future changes should rerun mobile and desktop renders and verify each view before publication.
