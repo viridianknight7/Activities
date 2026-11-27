@@ -36,7 +36,7 @@ Capture six class previews (three head-on and three 3/4 orbit angles) and four r
 13. [x] Construct and traverse all 146 fruit models and all 19 families; check required fields, no duplicate IDs and no uncaught JavaScript errors.
 14. [x] Measure true XYZ mesh bounds. Zoan (42.11, 61.73, 45.65), Logia (38.84, 61.56, 36.38), Paramecia (37.51, 62.87, 37.70). All axes use model units.
 15. [x] Verify the editable-source rebuild is identical to the release HTML, generate the ZIP, README, screenshot package and this plan.
-16. [ ] Publish a separate immutable GitHub V25 revision, verify the repository source and preview link.
+16. [x] Publish the separate immutable GitHub V25 revision and verify the exact repository source SHA. The external preview host is separately qualified as unverified.
 
 ## Explicitly not complete
 
