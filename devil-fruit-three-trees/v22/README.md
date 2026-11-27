@@ -1,52 +1,41 @@
-# Legendary Devil Fruit Trees · V22
+# The Legendary Devil Fruit Trees — V22
 
-## Current approved direction
+A single-page, entirely self-contained WebGL Devil Fruit encyclopaedia containing the established **146-entry** curated collection: **44 Zoan, 12 Logia, 90 Paramecia**. All 19 families are represented as 3D hanging clusters on one of three legendary trees. Fruit-first navigation: type → family → fruit → powers, user, affiliation, story arcs, saga, awakening and origin. There are no search inputs, page reloads or text modals.
 
-Original, fan-made three-tree encyclopaedia inspired by One Piece Devil Fruit categories. The trees are artistic metaphors, not canon Devil Fruit origins.
+## Art direction and production checklist
 
-Macro-chibi, flat-shaded polygonal 3D: oversized trunks, chunky sculpted canopies, intentional broad facets, vibrant colours, physical hanging fruits, distinctive islands, fine spiral inlays and clean mobile navigation.
+Approved direction: **oversized macro-chibi, flat-shaded, faceted polygonal forms** in saturated adventure-game colours, with fantastical organic anatomy rather than ordinary trees decorated with props. Each sculpt is an original fan-inspired design, not an official One Piece model. The 2×3 concept sheet is in `a_vibrant_stylized_vector_flat_polygon_concept_sh.png` in the conversation; actual application models are documented with the included V22 browser screenshots.
 
-- **Zoan · The Living Evolution:** wholly new design replacing the two rejected Zoan A concepts. Intertwined wood, teal scales, ivory horn growth, a feathered mythical crown and claw-like living roots. It represents ordinary, ancient and mythical Zoans, evolution, life and inherited will without a pasted-on animal head.
-- **Logia · B1 / Elemental Convergence:** basalt trunk physically becoming magma, storm cloud, lightning, icy formations, water and fire.
-- **Paramecia · C1 / Possibility Nexus:** a bright pink, impossible growth form, oversized faceted blossoms, suspended material fragments and golden spatial rings.
+1. [x] Audit V21 screenshots, identifying overlapping badges, similar crown primitives, plain fruit models, duplicated island silhouettes, and obscured details.
+2. [x] Develop two substantially different silhouette concepts for each of Zoan, Logia and Paramecia.
+3. [x] Preserve the 146-record catalogue and its 19 families, with all important fields intact.
+4. [x] Remove old V20/V21 tree-generation code from the production toolkit.
+5. [x] Rebuild six trees as original V22 WebGL meshes using giant branches, distinctive canopies and type-specific details.
+6. [x] Zoan A1: world-beast with a carved feline face and huge antlers; Zoan A3: phoenix with giant feather wings.
+7. [x] Logia B1: confluence of clouds, fire and flowing water; Logia B2: thunder cyclone and magma growth.
+8. [x] Paramecia C2: intertwined twin trees and large dimensional portals; Paramecia C1: exaggerated flower canopy and elastic golden ribbons.
+9. [x] Rebuild the generic floating island mesh with irregular stone strata, thick grass, vegetation and segmented waterfalls.
+10. [x] Attach every family cluster to thick, branching arms; preserve one individually rendered fruit per entry.
+11. [x] Sculpt source-marked illustrated fruits with differentiated shapes, protruding spiral inlays and stems, retaining chained black silhouettes for physical appearances marked unverified.
+12. [x] Improve portrait camera and HUD placement; reduce visual overlap and make fruit inspection information readable.
+13. [x] Render all six trees at 390×844 and 1440×900; run navigation and mesh validation.
+14. [x] Package the reproducible source and standalone HTML.
+15. [ ] Independently confirm the public raw.githack preview works on a real mobile device. GitHub publication will be validated independently through its contents API.
 
-## Release plan, executed in order
+## Fidelity limits
 
-1. [x] Inspect V21 user screenshots and the approved concept direction.
-2. [x] Create a replacement Zoan concept; retain the selected Logia B1 and Paramecia C1 references.
-3. [x] Replace the three old tree geometry generators with independent sculpted macro-faceted architectures.
-4. [x] Rebuild islands as thick, irregular stone strata with broad grassy tops and waterfalls.
-5. [x] Add botanical, ancient, mythical, elemental and impossible-growth detail directly to the forms.
-6. [x] Connect fruit bunches to scene-space branches; preserve a family camera view with its parent tree visible.
-7. [x] Use visually conservative dark locked hanging buds for unrevealed designs; retain known canonical-inspired models for the fruit detail view.
-8. [x] Reposition the desktop islands and improve both mobile/desktop camera framing.
-9. [x] Hide unselected form-switch UI and simplify the main navigation.
-10. [x] Restore stage-by-stage movement: three-tree overview → branch family → hanging fruit selection → complete fruit lore.
-11. [x] Preserve the user-supplied 146-entry catalogue and every stored field without silently rewriting lore.
-12. [x] Run browser screenshot QA at mobile and desktop viewport sizes, all three overview trees, and family/group/detail stages.
-13. [x] Run 146 direct selections and validate visible metadata, all 19 families and button-based Back/Explore navigation.
-14. [x] Run JavaScript syntax checks and inspect the actual final desktop and mobile renders.
-15. [x] Publish the standalone HTML to GitHub and verify the committed file and SHA.
+The tree forms are original stylised interpretations and do **not** precisely reproduce the approved concept drawings. The curated 23 appearance-referenced fruits are differentiated models but do not yet all match every canonical physical detail. The unverified status concerns the *physical appearance in the supplied dataset*, not whether the fruit or user exists. V22 is a functioning application under the tested Chromium/SwiftShader WebGL environment, but physical-device FPS has not been benchmarked.
 
-## QA results
+## Build
 
-- 146 entries with 146 distinct IDs: Zoan 44, Logia 12, Paramecia 90.
-- 19 families: 12 Zoan, 3 Logia, 4 Paramecia.
-- Every fruit can be selected into the final detail state and displays its name/metadata.
-- Four-layer button navigation and Back navigation tested.
-- Mobile 390×844 and desktop 1366×768 screenshot renders checked.
-- No JavaScript errors detected in local browser checks.
-- Test browser used the **software 3D fallback**. The WebGL path exists but Android hardware rendering and performance are not independently verified.
+From this directory:
 
-## Known limitations
+```bash
+python build.py
+```
 
-- The 3D assets remain noticeably less elaborate than the approved polished concept illustration. Do not claim 90%+ concept-image fidelity or perfect artistic completion.
-- The dataset is retained from the supplied project; not independently canon-audited as of this release. Only 38 appearances are conservatively marked shown, the rest are sealed.
-- The original published link uses a third-party HTML preview service. GitHub file commit can be verified independently, but external service caching may take time.
-- Some families have many fruits, requiring pagination for readable selection.
+This embeds `geometry.js`, `geometry22.js`, `app.js`, `style.css` and `data.json` into `index.html`, with no external runtime dependencies. The packaged HTML can be opened as a file or served through GitHub/RawGitHack.
 
-## Reproduction
+## Navigation
 
-Standalone `index.html` includes all CSS, JavaScript and data without external CDN dependencies. The development scripts are supplied in the accompanying downloadable source ZIP in this conversation.
-
-Published application commit: `e5ba4215acb1e496b5a28992b5b156e2eb500163` at `devil-fruit-three-trees/v22/index.html`.
+Swipe left/right or use the arrow buttons to switch between types. Tap a tree to enter it; tap a hanging family, then a fruit; use Back to return. Use the design toggle to compare a type's two sculptures. Drag to orbit; pinch or mouse-wheel to zoom. Mobile and desktop on-screen controls were tested locally.
