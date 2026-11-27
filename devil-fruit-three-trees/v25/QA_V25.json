@@ -1,0 +1,86 @@
+{
+  "version": "V25",
+  "derived_from": "V24 standalone HTML only",
+  "screenshots": {
+    "count": 10,
+    "matrix": [
+      "Zoan front",
+      "Logia front",
+      "Paramecia front",
+      "Zoan three-quarter orbit",
+      "Logia three-quarter orbit",
+      "Paramecia three-quarter orbit",
+      "Tree family navigation",
+      "Paramecia Body Alteration family",
+      "Logia Mera Mera inspection (stylised)",
+      "Logia Goro Goro inspection (sealed)"
+    ]
+  },
+  "test_environment": "Chromium Playwright in virtual X11 with SwiftShader WebGL",
+  "tested_viewports": [
+    [
+      390,
+      844
+    ],
+    [
+      1440,
+      900
+    ]
+  ],
+  "catalogue": {
+    "Zoan": 44,
+    "Logia": 12,
+    "Paramecia": 90,
+    "total": 146,
+    "families": 19,
+    "unique_ids": 146,
+    "model_meshes_generated": 146
+  },
+  "geometry": [
+    {
+      "class": "Zoan",
+      "xyz": [
+        42.11,
+        61.73,
+        45.65
+      ],
+      "triangles": 11813
+    },
+    {
+      "class": "Logia",
+      "xyz": [
+        38.84,
+        61.56,
+        36.38
+      ],
+      "triangles": 8846
+    },
+    {
+      "class": "Paramecia",
+      "xyz": [
+        37.51,
+        62.87,
+        37.7
+      ],
+      "triangles": 28362
+    }
+  ],
+  "navigation": {
+    "tree_tap": true,
+    "family_label_click": true,
+    "fruit_label_click": true,
+    "next": true,
+    "previous": true,
+    "back": true,
+    "drag_orbit": true,
+    "all_records_traversed": true
+  },
+  "runtime_errors": 0,
+  "source_rebuild": "Local editable files reconstruct the standalone application byte-for-byte",
+  "limitations": [
+    "Appearance/illustration flags are inherited from the historical 146-record project, not independently canon-audited",
+    "No physical Android performance benchmark",
+    "RawGitHack preview not yet independently opened",
+    "Visual fidelity ratings are subjective"
+  ]
+}
