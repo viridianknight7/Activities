@@ -1,0 +1,1122 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5,user-scalable=yes"><meta name="theme-color" content="#0b65be"><meta name="description" content="Explore 146 Devil Fruits in a continuous 3D world of three legendary trees."><title>The Legendary Devil Fruit Trees | V21</title><style>:root{--navy:#09234f;--navy2:#051637;--gold:#f7c447;--yellow:#fff0b2;--cream:#fffbeb;--aqua:#31d9e7}*{box-sizing:border-box}html,body{width:100%;height:100%;margin:0;overflow:hidden}body{font-family:'Trebuchet MS',Arial,sans-serif;color:white;background:#0d69c7;user-select:none;-webkit-tap-highlight-color:transparent}#backdrop{position:fixed;inset:0;pointer-events:none;background:linear-gradient(175deg,#0758bc 0%,#137be0 24%,#3ab4fa 52%,#7ed9fa 73%,#5bb9e9 80%,#0874c9 100%)}#backdrop:before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 75% 14%,rgba(247,255,255,.6),transparent 29%),linear-gradient(180deg,transparent 78%,rgba(10,95,197,.4) 79%,rgba(0,62,158,.5) 100%)}#world{position:fixed;inset:0;display:block;touch-action:none;cursor:grab;z-index:1}#world:active{cursor:grabbing}#clouds{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.28}#clouds svg{width:100%;height:100%;display:block}#hud{position:fixed;inset:0;z-index:3;pointer-events:none}.pointer{pointer-events:auto}.eyebrow{font-size:clamp(10px,1vw,12px);font-weight:900;letter-spacing:.25em;color:#fff1ba;text-shadow:0 2px 0 #173e69}.masthead{position:absolute;top:clamp(12px,3vh,24px);left:50%;transform:translateX(-50%);text-align:center;width:min(94vw,990px);filter:drop-shadow(0 5px 0 rgba(0,22,63,.35))}.masthead h1{margin:2px 0;font-size:clamp(20px,3.9vw,46px);font-weight:1000;color:#fff2ba;line-height:1.06;letter-spacing:-.035em;text-transform:uppercase;-webkit-text-stroke:.35px #29365a;text-shadow:1px 3px 0 #0a325b,0 0 20px #0363e678}.masthead p{font-weight:900;font-size:clamp(10px,1vw,13px);letter-spacing:.17em;margin:7px 0;color:#fff;text-shadow:0 2px 6px #1b457a}#crumb{display:inline-block;padding:4px 15px 3px;color:#ffe188;background:#0a2a55;border:2px solid #eeb958;clip-path:polygon(8px 0,calc(100% - 8px) 0,100% 50%,calc(100% - 8px) 100%,8px 100%,0 50%)}.brand{position:absolute;left:17px;top:16px;border:3px solid #f9c74f;background:#092957;box-shadow:0 4px 0 #5b3719,0 8px 0 #061c42;padding:8px 13px 7px;transform:skew(-5deg);text-align:center;line-height:1.05;max-width:180px}.brand b{font-size:15px;font-weight:1000;letter-spacing:-.03em}.brand span{display:block;color:#ffc954;font-size:9px;letter-spacing:.12em;margin-top:4px}.counter{position:absolute;right:17px;top:16px;background:#0a295a;border:3px solid #ffcb4a;clip-path:polygon(12px 0,100% 0,100% 75%,calc(100% - 12px) 100%,0 100%,0 25%);padding:7px 16px;text-align:center}.counter b{font-size:23px;color:#fff6d8}.counter span{display:block;font-size:9px;letter-spacing:.13em;font-weight:900;color:#ffdb6f}.pictogram{display:inline-block;font-size:21px;margin-right:5px}.outline-btn{border:3px solid #ebc16f;background:#0a2650;color:#fff8e0;box-shadow:0 4px 0 #633b28,0 7px 14px #002f6180;font-family:inherit;font-weight:1000;cursor:pointer;pointer-events:auto;touch-action:manipulation;text-shadow:0 2px 0 #15203e}.outline-btn:active{transform:translateY(2px);box-shadow:0 2px 0 #633b28}#back{position:absolute;top:96px;left:24px;font-size:15px;min-height:48px;padding:6px 17px;clip-path:polygon(11px 0,100% 0,100% 100%,11px 100%,0 50%)}#back[hidden]{display:none!important}#labels{position:fixed;inset:0;z-index:2;pointer-events:none}.float-node{position:absolute;transform:translate(-50%,-50%);min-width:90px;max-width:min(58vw,240px);border:2px solid #ffd474;background:#092859e8;color:#fffbec;box-shadow:0 4px 0 #643b2c,0 8px 23px #00284b7a;padding:8px 11px 7px;clip-path:polygon(10px 0,calc(100% - 10px) 0,100% 36%,100% 100%,0 100%,0 36%);pointer-events:auto;cursor:pointer;text-shadow:0 2px 0 #071d42;transition:transform .15s ease,filter .15s ease;touch-action:manipulation}.float-node:hover{filter:brightness(1.22);transform:translate(-50%,-53%) scale(1.04)}.float-node span{display:block;font:1000 13px/1.15 'Trebuchet MS',Arial,sans-serif}.float-node small{font-size:9px;color:#ffdd68;letter-spacing:.1em;font-weight:900}.tree-node{font-size:20px;min-width:125px;border-width:3px}.tree-node span{font-size:clamp(19px,2.5vw,30px)}.family-node{min-width:132px}.fruit-node{min-width:115px;background:#12345dcf}.fruit-node small{color:#ffdf94}#bottom{position:absolute;left:0;right:0;bottom:max(16px,env(safe-area-inset-bottom));display:flex;justify-content:center;align-items:center;gap:12px;pointer-events:auto}.nav-btn{width:56px;height:52px;clip-path:polygon(8px 0,calc(100% - 8px) 0,100% 50%,calc(100% - 8px) 100%,8px 100%,0 50%);font-size:23px}#page-num{background:linear-gradient(110deg,#112858,#1e3970);border:3px solid #f9c54d;padding:13px 24px;color:#fff6df;min-width:162px;min-height:52px;text-align:center;font-size:14px;font-weight:1000;letter-spacing:.045em;box-shadow:0 4px 0 #593828}#tip{position:absolute;bottom:calc(max(16px,env(safe-area-inset-bottom)) + 65px);left:50%;transform:translateX(-50%);font-size:11px;font-weight:1000;letter-spacing:.11em;white-space:nowrap;color:#fff7cb;text-shadow:-1px -1px 0 #1b375f,2px 2px 0 #1b375f,0 4px 12px #00224b;pointer-events:none}#fallback{display:none;position:fixed;inset:30% 10%;z-index:30;background:#11264e;border:3px solid #ffcf63;padding:25px;max-height:40%;font-size:20px;font-weight:bold}#detail{position:fixed;z-index:4;right:22px;bottom:91px;width:min(410px,32vw);max-height:calc(100vh - 174px);pointer-events:auto;overflow-y:auto;overscroll-behavior:contain;background:linear-gradient(165deg,#153963 0%,#0a2445 72%);border:4px solid #f7c45b;box-shadow:0 9px 0 #593d40,0 17px 40px #071630b8;clip-path:polygon(18px 0,calc(100% - 14px) 0,100% 14px,100% calc(100% - 14px),calc(100% - 14px) 100%,16px 100%,0 calc(100% - 16px),0 16px);padding:16px 22px 19px;scrollbar-width:thin;scrollbar-color:#eebf6e #112b50}#detail[hidden]{display:none!important}#fruit-title{margin:2px 0 4px;color:#fff0bb;font-size:clamp(18px,1.7vw,25px);font-weight:1000;line-height:1.13;text-shadow:0 2px 0 #103255}#fruit-state{font-size:10px;font-weight:900;color:#8bf1cb;letter-spacing:.10em}#fruit-state[data-sealed=true]{color:#ffd278}#fields{display:grid;grid-template-columns:1fr 1fr;column-gap:14px;row-gap:11px;margin-top:15px}.fact{display:flex;flex-direction:column;gap:3px;min-width:0;border-top:1px solid #356483;padding-top:6px}.fact span{font-size:10px;color:#f1cb6f;font-weight:1000;letter-spacing:.07em}.fact strong{font-size:12.5px;line-height:1.27;overflow-wrap:anywhere;color:#f7faff;font-weight:700}body[data-stage='3'] #bottom{z-index:9}body[data-stage='3'] .masthead h1{font-size:clamp(17px,2vw,23px)}
+@media(max-width:800px){.brand,.counter{display:none}.masthead{top:17px;width:96vw}.masthead h1{font-size:clamp(18px,4.6vw,28px)}.masthead p{font-size:10px;letter-spacing:.10em;margin:7px 0}.eyebrow{font-size:9px}#back{top:118px;left:16px;min-height:39px;padding:4px 12px;font-size:13px}#detail{width:calc(100% - 26px);left:13px;right:13px;bottom:94px;max-height:43vh;padding:12px 16px 14px}#detail #fruit-title{font-size:18px}#fields{margin-top:9px;gap:6px 12px}#fields .fact{padding-top:3px}#fields .fact span{font-size:8.8px}#fields .fact strong{font-size:11.5px}#bottom{gap:8px}.nav-btn{height:46px;width:51px}#page-num{min-width:138px;min-height:46px;padding:11px 11px;font-size:12px}#tip{bottom:calc(max(16px,env(safe-area-inset-bottom)) + 62px);font-size:10px}body[data-stage='3'] .masthead{top:12px}body[data-stage='3'] #back{top:62px}body[data-stage='3'] .masthead h1{max-width:80vw;margin-inline:auto;font-size:16px}}
+@media(max-height:650px){#detail{max-height:38vh}#tip{display:none}.masthead{top:8px}.masthead h1{font-size:18px}.masthead p{display:none}}
+
+@media(max-width:800px){#clouds{opacity:.14}.masthead h1{font-size:clamp(19px,5.25vw,27px);text-shadow:0 3px 1px #112a61}.masthead p{font-size:10px}.tree-node{border-color:#ffdb56}}
+
+@media(max-width:670px){.fruit-node{min-width:0;width:30%;max-width:116px;padding:6px 4px}.fruit-node span{font-size:11.7px}.fruit-node small{font-size:8.5px}.family-node{max-width:170px}.masthead{filter:drop-shadow(0 3px 0 #0a3159)}}
+
+body[data-stage="0"] .masthead h1{display:inline-block;max-width:95%;padding:9px 22px 10px;background:linear-gradient(160deg,#ffecab 0%,#f7c867 55%,#df9c42 100%);color:#342444;font-weight:1000;border:3px solid #704454;clip-path:polygon(14px 0,calc(100% - 14px) 0,100% 17px,calc(100% - 8px) 100%,10px 100%,0 15px);-webkit-text-stroke:0;text-shadow:0 2px 0 #ffefc2;box-shadow:none}
+body[data-stage="0"] .masthead p{color:#fffbd9;text-shadow:0 2px 0 #174978}
+@media(max-width:670px){body[data-stage="0"] .masthead h1{font-size:clamp(19px,5.2vw,24px);line-height:1.08;padding:10px 14px}body[data-stage="0"] .masthead p{font-size:9px;margin-top:4px}}
+body[data-stage="0"] .masthead h1{background:none;border:0;clip-path:none;color:#fff9e7;text-shadow:0 2px 5px #123d70;padding:0;font-size:clamp(20px,4vw,40px)}.masthead{filter:none}#crumb{background:none;border:0;color:#fff4ba;clip-path:none}.masthead p{text-shadow:none!important}#variant{position:absolute;right:12px;top:105px;pointer-events:auto;background:#09234f;color:#fff;border:1px solid #ffdc81;border-radius:8px;padding:10px;font-weight:bold}body:not([data-stage="0"]) #variant{display:none}#page-num{border:1px solid #ffe09b;border-radius:12px;box-shadow:none} .outline-btn{box-shadow:none;border-width:1px}#backdrop{background:linear-gradient(165deg,#0752a4,#36b8e9 60%,#ffd6a6)}
+/* V20 design pass: disciplined chibi game HUD; no stacked panels or duplicated category labels. */
+#backdrop{background:linear-gradient(175deg,#0861cf 0%,#1486ed 31%,#50c4f6 61%,#93e5ff 78%,#277ed2 83%,#0756b8 100%)}
+#backdrop:before{background:radial-gradient(ellipse at 72% 22%,rgba(255,255,255,.35),transparent 34%),linear-gradient(180deg,transparent 79%,rgba(4,60,150,.10) 80%,rgba(0,40,109,.36) 100%)}
+.masthead{width:min(91vw,760px);top:clamp(12px,2.1vh,20px)}
+body[data-stage="0"] .masthead h1{font-size:clamp(19px,3.7vw,35px);letter-spacing:-.01em;color:#fff6cf;text-shadow:0 3px 0 #174070;max-width:100%}
+.masthead h1{font-size:clamp(20px,2.8vw,32px);color:#fff5d4;text-shadow:0 3px 0 #104480}
+.masthead p{font-size:12px;letter-spacing:.075em;color:#f6faff;margin-top:5px}
+#crumb{font-size:9px;letter-spacing:.20em;color:#ffe9a0}
+#back{top:104px;border-radius:7px;padding:8px 14px;clip-path:none;min-height:41px;border:2px solid #ffda7a;background:#082c58}
+#variant{position:absolute;top:105px;right:16px;z-index:9;max-width:205px;min-height:38px;border:2px solid #ffe08b;background:#0b3258ee;box-shadow:0 3px 0 #5a3954;border-radius:8px;padding:7px 10px;font:bold 11px 'Trebuchet MS',Arial,sans-serif;color:#fff5d1;pointer-events:auto;cursor:pointer;white-space:normal;text-align:center}
+body[data-stage="2"] #variant,body[data-stage="3"] #variant{display:none}
+.outline-btn{box-shadow:0 3px 0 #644558;background:#062f62f0;border-color:#ffe1a4;clip-path:none;border-radius:9px}
+#page-num{border-radius:12px;border:2px solid #fbe3a0;background:#0b315eeb;box-shadow:0 3px 0 #654365;letter-spacing:.03em}
+#tip{text-shadow:0 2px 4px #12477e;font-size:10px;opacity:.95;letter-spacing:.07em}
+.float-node{background:#0b2b58ed;border:2px solid #ffe0a0;border-radius:9px;clip-path:none;box-shadow:0 2px 0 #573e48,0 4px 14px #01376b6e}
+.float-node span{font-weight:1000}
+#detail{background:linear-gradient(155deg,#153765,#082344);border-color:#f5d992;border-radius:16px;clip-path:none;box-shadow:0 6px 0 #65455a,0 12px 36px #0a2a4a8c}
+.fact{border-color:#3f6085}
+@media(max-width:670px){
+ .masthead{top:15px;width:94vw}
+ .masthead h1,body[data-stage="0"] .masthead h1{font-size:clamp(18px,5vw,22px);line-height:1.06;text-shadow:0 2px 0 #224878}
+ .masthead p{font-size:9px;letter-spacing:.06em;margin-top:5px}
+ #crumb{font-size:9px;letter-spacing:.16em}
+ #back{top:102px;left:14px;font-size:12px;min-height:36px;padding:7px 12px}
+ #variant{top:101px;right:14px;min-height:36px;font-size:10px;max-width:198px;padding:7px 10px}
+ #bottom{bottom:max(18px,env(safe-area-inset-bottom));gap:8px}
+ #page-num{font-size:11px;min-height:45px;min-width:146px;display:flex;align-items:center;justify-content:center;padding:8px}
+ .nav-btn{height:45px;width:49px;font-size:21px}
+ #tip{bottom:calc(max(18px,env(safe-area-inset-bottom)) + 59px);font-size:10px;letter-spacing:.02em}
+ #detail{left:14px;right:14px;width:auto;bottom:93px;max-height:40vh;padding:12px 15px 12px}
+ #fruit-title{font-size:17px!important}
+ #fields{row-gap:6px;column-gap:10px}
+ #fields .fact strong{font-size:11.8px}
+ .family-node{min-width:115px;max-width:160px;padding:7px 8px}
+ .family-node span{font-size:12px}
+ body[data-stage="1"] .masthead h1{font-size:19px}
+}
+
+body[data-stage="3"] .masthead h1{display:none}
+body[data-stage="3"] #crumb{font-size:11px}
+/* In the three-tree desktop panorama, the trees themselves are the three selection controls. */
+@media (min-width:801px){body[data-stage="0"] #bottom{display:none}body[data-stage="0"] #tip{bottom:24px}}
+
+/* V21 clarity and native portrait composition */
+body[data-stage="1"] #variant{display:block}
+body[data-stage="0"] .masthead{top:12px}
+#variant{max-width:245px;z-index:7;background:#0b2956f2;border:2px solid #ffdb74;letter-spacing:.02em}
+#detail{border-radius:14px;background:#092954f2}
+#fields{grid-template-columns:repeat(2,minmax(0,1fr));}
+body[data-stage="2"] #tip{bottom:calc(max(16px,env(safe-area-inset-bottom)) + 59px)}
+body[data-stage="2"] #labels{z-index:4}
+body[data-stage="3"] #tip{display:none}
+@media(max-width:670px){
+ body[data-stage="0"] .masthead h1{font-size:20px;max-width:96vw}
+ body[data-stage="0"] .masthead p{font-size:10px}
+ #variant{top:95px;right:12px;max-width:170px;font-size:10px;padding:7px}
+ body[data-stage="1"] #variant{top:103px;max-width:167px}
+ #detail{bottom:95px;max-height:38vh;border-width:3px;}
+ #detail #fruit-title{font-size:18px!important;line-height:1.2;}
+ #fields{row-gap:7px;column-gap:11px}
+ #fields .fact strong{font-size:11px}
+ body[data-stage="2"] .fruit-node{top:62%!important;max-width:116px}
+ body[data-stage="2"] #back{top:100px}
+ body[data-stage="3"] #back{top:65px}
+}
+
+/* V22 camera-space typography and reduced overlapping decoration. */
+#clouds {opacity:.20}
+#backdrop {background:linear-gradient(180deg,#0564c5 0%,#1788e9 31%,#5ac7f8 67%,#92eaff 80%,#217bc7 85%,#09468e 100%)}
+.masthead{z-index:8;pointer-events:none}
+body[data-stage="0"] .masthead{top:14px}
+body[data-stage="0"] .masthead h1{font-size:clamp(18px,3.4vw,32px)}
+#variant{z-index:10;box-shadow:none;border-color:#f6d287;background:#102c4bdb}
+#back{z-index:10;box-shadow:none}
+.float-node{border:1.5px solid #ffdf96;background:#0a2b51e8;box-shadow:0 3px 10px #05234066;border-radius:12px}
+.family-node{min-width:130px;max-width:198px;padding:8px 9px}
+.family-node span{font-size:13px}
+.family-node small{font-size:10px;color:#bcecfb}
+#page-num{border-color:#ffde95;box-shadow:none}
+#tip{opacity:.9}
+#detail{box-shadow:0 12px 34px #0820417a}
+#fruit-state{font-weight:800}
+@media(max-width:670px){
+ body[data-stage="1"] #variant{top:94px;right:11px;max-width:151px;padding:6px 8px;font-size:9px;line-height:1.22}
+ body[data-stage="0"] #variant{top:95px;right:11px;max-width:151px;padding:6px 8px;font-size:9px;line-height:1.22}
+ .family-node{min-width:106px;max-width:136px;padding:5px 7px}
+ .family-node span{font-size:11.1px}
+ .family-node small{font-size:8px}
+ body[data-stage="3"] #detail{max-height:41vh;bottom:87px}
+ body[data-stage="3"] #bottom{bottom:18px}
+ #tip{font-size:9px}
+}
+
+/* V23: reduce interface layers so the original sculpted tree stays central. */
+:root{--gold:#ffe09a;--cream:#fff8dd}
+#variant{background:#0b315bdc;border:1.5px solid #ffe29d;border-radius:12px;box-shadow:0 3px 0 #23456599;padding:6px 10px;font-weight:900;max-width:192px;font-size:10px;line-height:1.22;letter-spacing:.015em}
+.masthead h1{color:#fff8dd;text-shadow:0 2px 0 #14507f,0 4px 16px #12578775}
+#clouds{opacity:.11}
+#tip{color:#fffbdf}
+body[data-stage="0"] #tip{bottom:calc(max(15px,env(safe-area-inset-bottom)) + 72px)}
+#detail{border:2.5px solid #ffe1a2;background:#082a50f0;box-shadow:0 9px 25px #07294f70;max-height:42vh}
+#fruit-title{color:#fff2ca}
+#fruit-state{letter-spacing:.065em}
+#page-num{min-width:138px;background:#0b3563f2}
+.family-node{background:#09335cd9;border-color:#ffdd8c}
+@media(max-width:670px){
+ body[data-stage="0"] #variant,body[data-stage="1"] #variant{top:81px;right:10px;max-width:135px;padding:6px 7px;font-size:9px;min-height:32px}
+ body[data-stage="1"] #back{top:83px}
+ .masthead h1,body[data-stage="0"] .masthead h1{font-size:18px;letter-spacing:-.016em}
+ .masthead p{font-size:9px}
+ body[data-stage="0"] .masthead{top:10px}
+ .family-node{max-width:145px;min-width:100px;padding:5px 7px}
+ .family-node span{font-size:11px;line-height:1.13}
+ #page-num{min-width:138px;max-width:180px;font-size:12px}
+ .nav-btn{width:49px;height:48px}
+ body[data-stage="2"] .fruit-node{top:61%!important}
+ body[data-stage="3"] #detail{max-height:41vh;bottom:84px;padding:11px 13px}
+ #detail #fruit-title{font-size:17px!important}
+}
+
+/* V24 : intentionally exactly one volumetric design per class. */
+body[data-stage="0"] .masthead{top:11px}
+body[data-stage="1"] #tip{bottom:calc(max(18px,env(safe-area-inset-bottom)) + 61px)}
+#variant{display:none!important}
+@media(max-width:670px){.masthead h1{font-size:18px}body[data-stage="2"] #tip{opacity:.8}#detail{border-radius:16px}}
+</style></head><body>
+<div id="backdrop" aria-hidden="true"></div><div id="clouds" aria-hidden="true"><svg viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice"><g fill="#f6feff" opacity=".54"><path d="M-30 170Q90 128 160 178Q205 115 292 169Q325 144 390 196L390 236L-30 236Z"/><path d="M1060 240Q1100 185 1160 210Q1240 146 1330 210Q1410 162 1500 238L1500 280L1060 280Z"/><path d="M-90 690Q75 630 145 688Q230 635 305 703L305 748L-90 748Z"/></g><g fill="#e7f9ff" opacity=".34"><path d="M500 75Q565 15 645 65Q715 26 770 96L770 129L500 129Z"/></g></svg></div>
+<canvas id="world" role="img" aria-label="Interactive 3D Devil Fruit trees. Use the on-screen arrows and touch the hanging families to explore them."></canvas>
+<div id="labels" aria-label="Interactive labels for the 3D tree world"></div>
+<div id="hud">
+<div class="brand"><span class="pictogram" aria-hidden="true">✥</span><b>DEVIL FRUIT<br>ENCYCLOPAEDIA</b><span>THE GRAND ATLAS</span></div>
+<div class="counter"><b>146</b><span>DEVIL FRUITS</span></div>
+<header class="masthead"><div class="eyebrow"><span id="crumb">THE ORIGINS</span></div><h1 id="heading">THE LEGENDARY DEVIL FRUIT TREES</h1><p id="subheading">146 FRUITS · THREE LEGENDARY SPIRITS</p></header>
+<button id="back" hidden class="outline-btn" aria-label="Return to previous level">◀ BACK</button>
+
+<div id="tip" aria-live="polite">TAP A TREE · SWIPE TO SWITCH</div>
+<nav id="bottom" aria-label="Explore the 3D world"><button id="prev" class="outline-btn nav-btn" aria-label="Previous">◀</button><div id="page-num">ZOAN · 44 FRUITS</div><button id="next" class="outline-btn nav-btn" aria-label="Next">▶</button></nav>
+</div>
+<section id="detail" hidden aria-label="Devil Fruit details"><h2 id="fruit-title"></h2><div id="fruit-state"></div><div id="fields"></div></section>
+<div id="fallback" role="alert"></div>
+<script>const DATA=[{"id":0,"name":"Inu Inu no Mi, Model: Wolf","power":"Dog-Dog: Wolf","subtype":"Standard · Inu Inu no Mi (Canine)","users":"Jabra (Alive)","affiliation":"CP9 / CP0 (Agent)","arcs":"Enies Lobby","saga":"Water 7","awakened":"No","origin":"Natural","cls":"Zoan","group":"Inu Inu no Mi","appearance":"unverified"},{"id":1,"name":"Inu Inu no Mi, Model: Jackal","power":"Dog-Dog: Jackal","subtype":"Standard · Inu Inu no Mi (Canine)","users":"Chaka (Alive)","affiliation":"Alabasta Kingdom (Acting Captain)","arcs":"Arabasta","saga":"Arabasta","awakened":"No","origin":"Natural","cls":"Zoan","group":"Inu Inu no Mi","appearance":"unverified"},{"id":2,"name":"Inu Inu no Mi, Model: Dachshund","power":"Dog-Dog: Dachshund","subtype":"Standard · Inu Inu no Mi (Canine)","users":"Lassoo (Inanimate Cannon)","affiliation":"Baroque Works (Mr. 4's Weapon)","arcs":"Arabasta","saga":"Arabasta","awakened":"No","origin":"Natural (Object)","cls":"Zoan","group":"Inu Inu no Mi","appearance":"unverified"},{"id":3,"name":"Inu Inu no Mi, Model: Tanuki","power":"Dog-Dog: Raccoon Dog","subtype":"Standard · Inu Inu no Mi (Canine)","users":"Bunbuku (Inanimate Teapot)","affiliation":"Tenguyama Hitetsu (Pet)","arcs":"Wano Country","saga":"Four Emperors","awakened":"No","origin":"Natural (Object)","cls":"Zoan","group":"Inu Inu no Mi","appearance":"unverified"},{"id":4,"name":"Inu Inu no Mi, Model: Hound","power":"Dog-Dog: Hound","subtype":"Standard · Inu Inu no Mi (Canine)","users":"Hound (Alive)","affiliation":"Marines (Vice Admiral)","arcs":"Egghead","saga":"Final Saga","awakened":"No","origin":"Natural","cls":"Zoan","group":"Inu Inu no Mi","appearance":"unverified"},{"id":5,"name":"Inu Inu no Mi, Model: Kyubi no Kitsune","power":"Dog-Dog: Nine-Tailed Fox (Illusions/Shapeshifting)","subtype":"Mythical · Inu Inu no Mi (Canine)","users":"Catarina Devon (Alive)","affiliation":"Blackbeard Pirates (6th Ship Captain)","arcs":"Impel Down / Wano / Egghead","saga":"Summit War / Four Emperors","awakened":"No","origin":"Natural","cls":"Zoan","group":"Inu Inu no Mi","appearance":"unverified"},{"id":6,"name":"Inu Inu no Mi, Model: Okuchi no Makami","power":"Dog-Dog: Wolf Deity (Ice & Guardian Powers)","subtype":"Mythical · Inu Inu no Mi (Canine)","users":"Yamato (Alive)","affiliation":"Wano / Ninja-Pirate-Mink-Samurai Alliance","arcs":"Wano Country","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Zoan","group":"Inu Inu no Mi","appearance":"unverified"},{"id":7,"name":"Neko Neko no Mi, Model: Leopard","power":"Cat-Cat: Leopard","subtype":"Standard · Neko Neko no Mi (Feline)","users":"Rob Lucci (Alive)","affiliation":"CP9 / CP0 (Masked Agent)","arcs":"Water 7 / Enies Lobby / Egghead","saga":"Water 7 / Final Saga","awakened":"Confirmed","origin":"Natural","cls":"Zoan","group":"Neko Neko no Mi","appearance":"illustrated"},{"id":8,"name":"Neko Neko no Mi, Model: Saber Tiger","power":"Cat-Cat: Saber-Toothed Tiger","subtype":"Ancient · Neko Neko no Mi (Feline)","users":"Who's-Who (Alive)","affiliation":"Beasts Pirates (Tobiroppo)","arcs":"Wano Country","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Zoan","group":"Neko Neko no Mi","appearance":"unverified"},{"id":9,"name":"Hito Hito no Mi","power":"Human-Human: Human","subtype":"Standard · Hito Hito no Mi (Humanoid)","users":"Tony Tony Chopper (Alive)","affiliation":"Straw Hat Pirates (Doctor)","arcs":"Drum Island","saga":"Arabasta","awakened":"No (Rumble Ball)","origin":"Natural","cls":"Zoan","group":"Hito Hito no Mi","appearance":"illustrated"},{"id":10,"name":"Hito Hito no Mi, Model: Nika","power":"Human-Human: Sun God Nika (Rubber / Liberation)","subtype":"Mythical · Hito Hito no Mi (Humanoid)","users":"Monkey D. Luffy (Alive)","affiliation":"Straw Hat Pirates (Captain / Emperor)","arcs":"Romance Dawn (Awakened: Wano)","saga":"East Blue / Four Emperors","awakened":"Confirmed","origin":"Natural","cls":"Zoan","group":"Hito Hito no Mi","appearance":"illustrated"},{"id":11,"name":"Hito Hito no Mi, Model: Daibutsu","power":"Human-Human: Great Buddha (Gold Shockwaves)","subtype":"Mythical · Hito Hito no Mi (Humanoid)","users":"Sengoku (Alive)","affiliation":"Marines (Former Fleet Admiral / Inspector General)","arcs":"Jaya / Marineford","saga":"Sky Island / Summit War","awakened":"No","origin":"Natural","cls":"Zoan","group":"Hito Hito no Mi","appearance":"unverified"},{"id":12,"name":"Hito Hito no Mi, Model: Onyudo","power":"Human-Human: Giant Monk Yokai","subtype":"Mythical · Hito Hito no Mi (Humanoid)","users":"Onimaru (Alive)","affiliation":"Shimotsuki Ushimaru / Wano Guardian","arcs":"Wano Country","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Zoan","group":"Hito Hito no Mi","appearance":"unverified"},{"id":13,"name":"Ryu Ryu no Mi, Model: Pteranodon","power":"Dragon-Dragon: Pteranodon","subtype":"Ancient · Ryu Ryu no Mi (Dinosaur/Dragon)","users":"King / Alber (Alive)","affiliation":"Beasts Pirates (All-Star)","arcs":"Wano Country","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Zoan","group":"Ryu Ryu no Mi","appearance":"unverified"},{"id":14,"name":"Ryu Ryu no Mi, Model: Brachiosaurus","power":"Dragon-Dragon: Brachiosaurus","subtype":"Ancient · Ryu Ryu no Mi (Dinosaur/Dragon)","users":"Queen (Alive)","affiliation":"Beasts Pirates (All-Star)","arcs":"Wano Country","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Zoan","group":"Ryu Ryu no Mi","appearance":"unverified"},{"id":15,"name":"Ryu Ryu no Mi, Model: Allosaurus","power":"Dragon-Dragon: Allosaurus","subtype":"Ancient · Ryu Ryu no Mi (Dinosaur/Dragon)","users":"X Drake (Alive)","affiliation":"Marines (SWORD Captain) / Beasts Pirates","arcs":"Sabaody Archipelago / Wano","saga":"Summit War / Four Emperors","awakened":"No","origin":"Natural","cls":"Zoan","group":"Ryu Ryu no Mi","appearance":"unverified"},{"id":16,"name":"Ryu Ryu no Mi, Model: Spinosaurus","power":"Dragon-Dragon: Spinosaurus","subtype":"Ancient · Ryu Ryu no Mi (Dinosaur/Dragon)","users":"Page One (Alive)","affiliation":"Beasts Pirates (Tobiroppo)","arcs":"Wano Country","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Zoan","group":"Ryu Ryu no Mi","appearance":"unverified"},{"id":17,"name":"Ryu Ryu no Mi, Model: Triceratops","power":"Dragon-Dragon: Triceratops","subtype":"Ancient · Ryu Ryu no Mi (Dinosaur/Dragon)","users":"Sasaki (Alive)","affiliation":"Beasts Pirates (Tobiroppo)","arcs":"Wano Country","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Zoan","group":"Ryu Ryu no Mi","appearance":"unverified"},{"id":18,"name":"Ryu Ryu no Mi, Model: Pachycephalosaurus","power":"Dragon-Dragon: Pachycephalosaurus","subtype":"Ancient · Ryu Ryu no Mi (Dinosaur/Dragon)","users":"Ulti (Alive)","affiliation":"Beasts Pirates (Tobiroppo)","arcs":"Wano Country","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Zoan","group":"Ryu Ryu no Mi","appearance":"unverified"},{"id":19,"name":"Ryu Ryu no Mi, Model: Kirin","power":"Dragon-Dragon: Kirin (Dream Manifestation)","subtype":"Mythical · Ryu Ryu no Mi (Dinosaur/Dragon)","users":"Rimoshifu Killingham (Alive)","affiliation":"World Government (God's Knights)","arcs":"Elbaph","saga":"Final Saga","awakened":"Confirmed","origin":"Natural","cls":"Zoan","group":"Ryu Ryu no Mi","appearance":"unverified"},{"id":20,"name":"Ryu Ryu no Mi, Model: Nidhöggr","power":"Dragon-Dragon: Nidhöggr (Giant Mythic Dragon)","subtype":"Mythical · Ryu Ryu no Mi (Dinosaur/Dragon)","users":"Loki (Alive)","affiliation":"Elbaph Royal Family (Accursed Prince)","arcs":"Elbaph","saga":"Final Saga","awakened":"No","origin":"Natural","cls":"Zoan","group":"Ryu Ryu no Mi","appearance":"unverified"},{"id":21,"name":"Uo Uo no Mi, Model: Seiryu","power":"Fish-Fish: Azure Dragon (Flame Clouds, Fire, Lightning)","subtype":"Mythical · Uo Uo no Mi (Fish)","users":"Kaido (Unknown); Kozuki Momonosuke (Alive)","affiliation":"Beasts Pirates (Emperor); Kozuki Family (Shogun)","arcs":"Wano Country / Punk Hazard","saga":"Four Emperors / Dressrosa","awakened":"No","origin":"Natural + Vegapunk Replica","cls":"Zoan","group":"Uo Uo no Mi","appearance":"illustrated"},{"id":22,"name":"Tori Tori no Mi, Model: Falcon","power":"Bird-Bird: Falcon","subtype":"Standard · Tori Tori no Mi (Avian)","users":"Pell (Alive)","affiliation":"Alabasta Kingdom (Guardian)","arcs":"Arabasta","saga":"Arabasta","awakened":"No","origin":"Natural","cls":"Zoan","group":"Tori Tori no Mi","appearance":"unverified"},{"id":23,"name":"Tori Tori no Mi, Model: Albatross","power":"Bird-Bird: Albatross","subtype":"Standard · Tori Tori no Mi (Avian)","users":"Morgans (Alive)","affiliation":"World Economy News Paper (President)","arcs":"Whole Cake Island","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Zoan","group":"Tori Tori no Mi","appearance":"unverified"},{"id":24,"name":"Tori Tori no Mi, Model: Phoenix","power":"Bird-Bird: Phoenix (Blue Healing Flames)","subtype":"Mythical · Tori Tori no Mi (Avian)","users":"Marco (Alive)","affiliation":"Whitebeard Pirates (1st Division Commander)","arcs":"Jaya / Marineford / Wano","saga":"Sky Island / Summit War","awakened":"No","origin":"Natural","cls":"Zoan","group":"Tori Tori no Mi","appearance":"unverified"},{"id":25,"name":"Hebi Hebi no Mi, Model: Anaconda","power":"Snake-Snake: Anaconda","subtype":"Standard · Hebi Hebi no Mi (Serpent)","users":"Boa Sandersonia (Alive)","affiliation":"Kuja Pirates / Amazon Lily","arcs":"Amazon Lily","saga":"Summit War","awakened":"No","origin":"Natural","cls":"Zoan","group":"Hebi Hebi no Mi","appearance":"unverified"},{"id":26,"name":"Hebi Hebi no Mi, Model: King Cobra","power":"Snake-Snake: King Cobra (Venom)","subtype":"Standard · Hebi Hebi no Mi (Serpent)","users":"Boa Marigold (Alive)","affiliation":"Kuja Pirates / Amazon Lily","arcs":"Amazon Lily","saga":"Summit War","awakened":"No","origin":"Natural","cls":"Zoan","group":"Hebi Hebi no Mi","appearance":"unverified"},{"id":27,"name":"Hebi Hebi no Mi, Model: Yamata no Orochi","power":"Snake-Snake: Eight-Headed Serpent","subtype":"Mythical · Hebi Hebi no Mi (Serpent)","users":"Kurozumi Orochi (Deceased)","affiliation":"Wano Shogunate / Beasts Pirates","arcs":"Wano Country","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Zoan","group":"Hebi Hebi no Mi","appearance":"unverified"},{"id":28,"name":"Ushi Ushi no Mi, Model: Giraffe","power":"Ox-Ox: Giraffe","subtype":"Standard · Ushi Ushi no Mi (Bovine/Hoofed)","users":"Kaku (Alive)","affiliation":"CP9 / CP0 (Masked Agent)","arcs":"Water 7 / Enies Lobby / Egghead","saga":"Water 7 / Final Saga","awakened":"Confirmed","origin":"Natural","cls":"Zoan","group":"Ushi Ushi no Mi","appearance":"illustrated"},{"id":29,"name":"Ushi Ushi no Mi, Model: Bison","power":"Ox-Ox: Bison","subtype":"Standard · Ushi Ushi no Mi (Bovine/Hoofed)","users":"Dalton (Alive)","affiliation":"Sakura Kingdom (King)","arcs":"Drum Island","saga":"Arabasta","awakened":"No","origin":"Natural","cls":"Zoan","group":"Ushi Ushi no Mi","appearance":"illustrated"},{"id":30,"name":"Zou Zou no Mi","power":"Elephant-Elephant: Elephant","subtype":"Standard · Zou Zou no Mi (Proboscidean)","users":"Funkfreed (Inanimate Sword)","affiliation":"CP9 (Spandam's Weapon)","arcs":"Enies Lobby","saga":"Water 7","awakened":"No","origin":"Natural (Object)","cls":"Zoan","group":"Zou Zou no Mi","appearance":"unverified"},{"id":31,"name":"Zou Zou no Mi, Model: Mammoth","power":"Elephant-Elephant: Mammoth","subtype":"Ancient · Zou Zou no Mi (Proboscidean)","users":"Jack (Alive)","affiliation":"Beasts Pirates (All-Star)","arcs":"Zou / Wano Country","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Zoan","group":"Zou Zou no Mi","appearance":"unverified"},{"id":32,"name":"Uma Uma no Mi","power":"Horse-Horse: Horse","subtype":"Standard · Uma Uma no Mi (Equine)","users":"Pierre (Alive - Bird)","affiliation":"Gan Fall (Skypiea Companion)","arcs":"Skypiea","saga":"Sky Island","awakened":"No","origin":"Natural","cls":"Zoan","group":"Uma Uma no Mi","appearance":"unverified"},{"id":33,"name":"Uma Uma no Mi, Model: Pegasus","power":"Horse-Horse: Pegasus","subtype":"Mythical · Uma Uma no Mi (Equine)","users":"Stronger (Alive - Horse)","affiliation":"Blackbeard Pirates (Doc Q's Steed)","arcs":"Jaya / Egghead","saga":"Sky Island / Final Saga","awakened":"No","origin":"Natural","cls":"Zoan","group":"Uma Uma no Mi","appearance":"unverified"},{"id":34,"name":"Mushi Mushi no Mi, Model: Kabutomushi","power":"Bug-Bug: Rhinoceros Beetle","subtype":"Standard · Mushi Mushi no Mi (Insect)","users":"Kabu (Alive)","affiliation":"Tontatta Kingdom / Straw Hat Grand Fleet","arcs":"Dressrosa","saga":"Dressrosa","awakened":"No","origin":"Natural","cls":"Zoan","group":"Mushi Mushi no Mi","appearance":"unverified"},{"id":35,"name":"Mushi Mushi no Mi, Model: Suzumebachi","power":"Bug-Bug: Hornet","subtype":"Standard · Mushi Mushi no Mi (Insect)","users":"Bian (Alive)","affiliation":"Tontatta Kingdom / Straw Hat Grand Fleet","arcs":"Dressrosa","saga":"Dressrosa","awakened":"No","origin":"Natural","cls":"Zoan","group":"Mushi Mushi no Mi","appearance":"unverified"},{"id":36,"name":"Risu Risu no Mi, Model: Ratatoskr","power":"Squirrel-Squirrel: Ratatoskr (Mythical Squirrel)","subtype":"Mythical · Risu Risu no Mi (Rodent)","users":"Ragnir (Inanimate Hammer)","affiliation":"Elbaph (Loki's Weapon)","arcs":"Elbaph","saga":"Final Saga","awakened":"No","origin":"Natural (Object)","cls":"Zoan","group":"Other Zoans","appearance":"unverified"},{"id":37,"name":"Kumo Kumo no Mi, Model: Rosamygale Grauvogeli","power":"Spider-Spider: Prehistoric Spider","subtype":"Ancient · Kumo Kumo no Mi (Arachnid)","users":"Black Maria (Alive)","affiliation":"Beasts Pirates (Tobiroppo)","arcs":"Wano Country","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Zoan","group":"Other Zoans","appearance":"unverified"},{"id":38,"name":"Sara Sara no Mi, Model: Axolotl","power":"Salamander-Salamander: Axolotl","subtype":"Standard · Sara Sara no Mi (Amphibian)","users":"Smiley (Deceased - Poison Gas)","affiliation":"Caesar Clown (Weapon)","arcs":"Punk Hazard","saga":"Dressrosa","awakened":"No","origin":"Natural (Object)","cls":"Zoan","group":"Other Zoans","appearance":"illustrated"},{"id":39,"name":"Mogu Mogu no Mi","power":"Mole-Mole: Mole","subtype":"Standard · Mogu Mogu no Mi (Subterranean)","users":"Drophy / Miss Merry Christmas (Alive)","affiliation":"Baroque Works (Officer Agent)","arcs":"Arabasta","saga":"Arabasta","awakened":"No","origin":"Natural","cls":"Zoan","group":"Other Zoans","appearance":"unverified"},{"id":40,"name":"Kame Kame no Mi","power":"Turtle-Turtle: Turtle","subtype":"Standard · Kame Kame no Mi (Reptile)","users":"Pekoms (Unknown)","affiliation":"Big Mom Pirates (Combatant)","arcs":"Fish-Man Island / Whole Cake Island","saga":"Fish-Man Island / Four Emperors","awakened":"No","origin":"Natural","cls":"Zoan","group":"Other Zoans","appearance":"unverified"},{"id":41,"name":"Tama Tama no Mi","power":"Egg-Egg: Chicken / Egg Evolution","subtype":"Standard · Tama Tama no Mi (Avian/Egg)","users":"Tamago (Alive)","affiliation":"Big Mom Pirates (Knight)","arcs":"Fish-Man Island / Whole Cake Island","saga":"Fish-Man Island / Four Emperors","awakened":"No","origin":"Natural","cls":"Zoan","group":"Other Zoans","appearance":"unverified"},{"id":42,"name":"Batto Batto no Mi","power":"Bat-Bat: Bat","subtype":"Standard · Batto Batto no Mi (Chiroptera)","users":"Stussy (Alive)","affiliation":"CP0 / MADS Clone","arcs":"Whole Cake Island / Egghead","saga":"Four Emperors / Final Saga","awakened":"No","origin":"Natural","cls":"Zoan","group":"Other Zoans","appearance":"unverified"},{"id":43,"name":"Rako Rako no Mi","power":"Otter-Otter: Otter","subtype":"Standard · Rako Rako no Mi (Mustelid)","users":"Pomsky (Alive)","affiliation":"Marines (Vice Admiral)","arcs":"Egghead","saga":"Final Saga","awakened":"No","origin":"Natural","cls":"Zoan","group":"Other Zoans","appearance":"unverified"},{"id":44,"name":"Mera Mera no Mi","power":"Flare-Flare (Fire)","subtype":"Logia · Energy & Weather","users":"Portgas D. Ace (Deceased); Sabo (Alive)","affiliation":"Whitebeard Pirates; Revolutionary Army","arcs":"Arabasta / Marineford / Dressrosa","saga":"Arabasta / Summit War / Dressrosa","awakened":"No","origin":"Natural","cls":"Logia","group":"Energy & Weather","appearance":"illustrated"},{"id":45,"name":"Goro Goro no Mi","power":"Rumble-Rumble (Lightning)","subtype":"Logia · Energy & Weather","users":"Enel (Alive)","affiliation":"God's Army (Former Ruler of Skypiea)","arcs":"Skypiea","saga":"Sky Island","awakened":"No","origin":"Natural","cls":"Logia","group":"Energy & Weather","appearance":"unverified"},{"id":46,"name":"Pika Pika no Mi","power":"Glint-Glint (Light)","subtype":"Logia · Energy & Weather","users":"Borsalino / Kizaru (Alive)","affiliation":"Marines (Admiral)","arcs":"Sabaody Archipelago / Egghead","saga":"Summit War / Final Saga","awakened":"No","origin":"Natural","cls":"Logia","group":"Energy & Weather","appearance":"unverified"},{"id":47,"name":"Hie Hie no Mi","power":"Chilly-Chilly (Ice)","subtype":"Logia · Energy & Weather","users":"Kuzan / Aokiji (Alive)","affiliation":"Marines (Former Admiral) / Blackbeard Pirates","arcs":"Long Ring Long Land / Marineford / Hachinosu","saga":"Water 7 / Summit War / Final Saga","awakened":"No","origin":"Natural","cls":"Logia","group":"Energy & Weather","appearance":"unverified"},{"id":48,"name":"Yuki Yuki no Mi","power":"Snow-Snow (Snow)","subtype":"Logia · Energy & Weather","users":"Monet (Deceased)","affiliation":"Donquixote Pirates","arcs":"Punk Hazard","saga":"Dressrosa","awakened":"No","origin":"Natural","cls":"Logia","group":"Energy & Weather","appearance":"unverified"},{"id":49,"name":"Gasu Gasu no Mi","power":"Gas-Gas (Gas & Air Control)","subtype":"Logia · Energy & Weather","users":"Caesar Clown (Alive)","affiliation":"MADS / NEO MADS","arcs":"Punk Hazard / Whole Cake Island","saga":"Dressrosa / Four Emperors","awakened":"No","origin":"Natural","cls":"Logia","group":"Energy & Weather","appearance":"unverified"},{"id":50,"name":"Magu Magu no Mi","power":"Magma-Magma (Magma)","subtype":"Logia · Earth & Matter","users":"Sakazuki / Akainu (Alive)","affiliation":"Marines (Fleet Admiral)","arcs":"Marineford","saga":"Summit War","awakened":"No","origin":"Natural","cls":"Logia","group":"Earth & Matter","appearance":"unverified"},{"id":51,"name":"Suna Suna no Mi","power":"Sand-Sand (Sand & Dehydration)","subtype":"Logia · Earth & Matter","users":"Crocodile (Alive)","affiliation":"Baroque Works / Cross Guild","arcs":"Arabasta / Marineford","saga":"Arabasta / Summit War","awakened":"No","origin":"Natural","cls":"Logia","group":"Earth & Matter","appearance":"illustrated"},{"id":52,"name":"Numa Numa no Mi","power":"Swamp-Swamp (Bottomless Swamp)","subtype":"Logia · Earth & Matter","users":"Caribou (Alive)","affiliation":"Caribou Pirates","arcs":"Return to Sabaody / Wano Country","saga":"Fish-Man Island / Four Emperors","awakened":"No","origin":"Natural","cls":"Logia","group":"Earth & Matter","appearance":"unverified"},{"id":53,"name":"Mori Mori no Mi","power":"Woods-Woods (Forest & Plant Life)","subtype":"Logia · Earth & Matter","users":"Aramaki / Ryokugyu (Alive)","affiliation":"Marines (Admiral)","arcs":"Wano Country","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Logia","group":"Earth & Matter","appearance":"illustrated"},{"id":54,"name":"Susu Susu no Mi","power":"Soot-Soot (Soot & Crows)","subtype":"Logia · Earth & Matter","users":"Karasu (Alive)","affiliation":"Revolutionary Army (North Army Commander)","arcs":"Levely","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Logia","group":"Earth & Matter","appearance":"unverified"},{"id":55,"name":"Yami Yami no Mi","power":"Dark-Dark (Darkness, Gravity & Power Nullification)","subtype":"Logia · Unique / Special","users":"Marshall D. Teach / Blackbeard (Alive)","affiliation":"Blackbeard Pirates (Admiral / Emperor)","arcs":"Jaya / Banaro Island / Marineford","saga":"Sky Island / Water 7 / Summit War","awakened":"No","origin":"Natural","cls":"Logia","group":"Unique Logia","appearance":"illustrated"},{"id":56,"name":"Mochi Mochi no Mi","power":"Mochi-Mochi (Mochi Generation & Shape-Shifting)","subtype":"Paramecia · Special","users":"Charlotte Katakuri (Alive)","affiliation":"Big Mom Pirates (Sweet Commander)","arcs":"Whole Cake Island","saga":"Four Emperors","awakened":"Confirmed","origin":"Natural","cls":"Paramecia","group":"Special Paramecia","appearance":"illustrated"},{"id":57,"name":"Bara Bara no Mi","power":"Chop-Chop (Body Splitting & Levitation)","subtype":"Paramecia · Body Alteration","users":"Buggy (Alive)","affiliation":"Buggy Pirates / Cross Guild (Emperor)","arcs":"Orange Town / Marineford","saga":"East Blue / Summit War","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"illustrated"},{"id":58,"name":"Sube Sube no Mi","power":"Slip-Slip (Frictionless Skin)","subtype":"Paramecia · Body Alteration","users":"Alvida (Alive)","affiliation":"Alvida Pirates / Cross Guild","arcs":"Romance Dawn / Loguetown","saga":"East Blue","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"illustrated"},{"id":59,"name":"Bomu Bomu no Mi","power":"Bomb-Bomb (Explosive Body & Breath)","subtype":"Paramecia · Body Alteration","users":"Gem / Mr. 5 (Alive)","affiliation":"Baroque Works (Officer Agent)","arcs":"Whisky Peak / Little Garden","saga":"Arabasta","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":60,"name":"Kilo Kilo no Mi","power":"Kilo-Kilo (Weight Manipulation 1–10,000 kg)","subtype":"Paramecia · Body Alteration","users":"Mikita / Miss Valentine (Alive)","affiliation":"Baroque Works (Officer Agent)","arcs":"Whisky Peak / Little Garden","saga":"Arabasta","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":61,"name":"Ton Ton no Mi","power":"Ton-Ton (Heavy Weight Manipulation up to 10,000 tons)","subtype":"Paramecia · Body Alteration","users":"Machvise (Alive)","affiliation":"Donquixote Pirates","arcs":"Dressrosa","saga":"Dressrosa","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":62,"name":"Supa Supa no Mi","power":"Dice-Dice (Steel Blades)","subtype":"Paramecia · Body Alteration","users":"Daz Bonez / Mr. 1 (Alive); S-Hawk (Alive)","affiliation":"Baroque Works / Cross Guild; Seraphim","arcs":"Arabasta / Egghead","saga":"Arabasta / Final Saga","awakened":"No","origin":"Natural + Green Blood","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":63,"name":"Toge Toge no Mi","power":"Spike-Spike (Body Spikes)","subtype":"Paramecia · Body Alteration","users":"Zala / Miss Doublefinger (Alive)","affiliation":"Baroque Works (Officer Agent)","arcs":"Arabasta","saga":"Arabasta","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":64,"name":"Bane Bane no Mi","power":"Spring-Spring (Limb Springs)","subtype":"Paramecia · Body Alteration","users":"Bellamy (Alive)","affiliation":"Bellamy Pirates / Donquixote Pirates","arcs":"Jaya / Dressrosa","saga":"Sky Island / Dressrosa","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":65,"name":"Shari Shari no Mi","power":"Wheel-Wheel (Limb Wheels)","subtype":"Paramecia · Body Alteration","users":"Sharinguru (Alive)","affiliation":"Marines (Captain)","arcs":"Enies Lobby","saga":"Water 7","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":66,"name":"Beri Beri no Mi","power":"Berry-Berry (Sphere Splitting)","subtype":"Paramecia · Body Alteration","users":"Very Good (Alive)","affiliation":"Marines (Captain)","arcs":"Enies Lobby","saga":"Water 7","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":67,"name":"Sabi Sabi no Mi","power":"Rust-Rust (Rusting Touch)","subtype":"Paramecia · Body Alteration","users":"Shu (Alive)","affiliation":"Marines (Captain)","arcs":"Enies Lobby","saga":"Water 7","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":68,"name":"Kage Kage no Mi","power":"Shadow-Shadow (Shadow Manipulation & Zombies)","subtype":"Paramecia · Body Alteration","users":"Gecko Moria (Alive)","affiliation":"Thriller Bark Pirates (Captain)","arcs":"Thriller Bark / Marineford","saga":"Thriller Bark / Summit War","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"illustrated"},{"id":69,"name":"Horo Horo no Mi","power":"Hollow-Hollow (Negative Ghosts & Astral Projection)","subtype":"Paramecia · Body Alteration","users":"Perona (Alive)","affiliation":"Thriller Bark Pirates","arcs":"Thriller Bark","saga":"Thriller Bark","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":70,"name":"Suke Suke no Mi","power":"Clear-Clear (Invisibility)","subtype":"Paramecia · Body Alteration","users":"Absalom (Deceased); Shiryu (Alive)","affiliation":"Thriller Bark Pirates; Blackbeard Pirates","arcs":"Thriller Bark; Hachinosu","saga":"Thriller Bark; Final Saga","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":71,"name":"Yomi Yomi no Mi","power":"Revive-Revive (Resurrection & Soul Energy)","subtype":"Paramecia · Body Alteration","users":"Brook (Alive)","affiliation":"Straw Hat Pirates (Musician)","arcs":"Thriller Bark","saga":"Thriller Bark","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"illustrated"},{"id":72,"name":"Shiro Shiro no Mi","power":"Castle-Castle (Living Fortress Body)","subtype":"Paramecia · Body Alteration","users":"Capone Bege (Alive)","affiliation":"Fire Tank Pirates (Captain)","arcs":"Sabaody Archipelago / Whole Cake Island","saga":"Summit War / Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":73,"name":"Deka Deka no Mi","power":"Huge-Huge (Colossal Size Increase)","subtype":"Paramecia · Body Alteration","users":"Sanjuan Wolf (Alive)","affiliation":"Blackbeard Pirates (7th Ship Captain)","arcs":"Marineford / Hachinosu","saga":"Summit War / Final Saga","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":74,"name":"Buki Buki no Mi","power":"Arms-Arms (Full-Body Weapon Transformation)","subtype":"Paramecia · Body Alteration","users":"Baby 5 (Alive)","affiliation":"Donquixote Pirates / Happo Navy","arcs":"Punk Hazard / Dressrosa","saga":"Dressrosa","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":75,"name":"Guru Guru no Mi","power":"Spin-Spin (Body Propellers)","subtype":"Paramecia · Body Alteration","users":"Buffalo (Alive)","affiliation":"Donquixote Pirates","arcs":"Punk Hazard / Dressrosa","saga":"Dressrosa","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":76,"name":"Hobi Hobi no Mi","power":"Hobby-Hobby (Toy Transformation, Memory Erasure, Agelessness)","subtype":"Paramecia · Body Alteration","users":"Sugar (Alive)","affiliation":"Donquixote Pirates","arcs":"Dressrosa","saga":"Dressrosa","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":77,"name":"Bisu Bisu no Mi","power":"Biscuit-Biscuit (Biscuit Generation & Soldiers)","subtype":"Paramecia · Body Alteration","users":"Charlotte Cracker (Alive)","affiliation":"Big Mom Pirates (Sweet Commander)","arcs":"Whole Cake Island","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":78,"name":"Pero Pero no Mi","power":"Lick-Lick (Hardened Candy Creation)","subtype":"Paramecia · Body Alteration","users":"Charlotte Perospero (Alive)","affiliation":"Big Mom Pirates (Minister of Candy)","arcs":"Whole Cake Island / Wano Country","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":79,"name":"Kuri Kuri no Mi","power":"Cream-Cream (Burning Cream Generation)","subtype":"Paramecia · Body Alteration","users":"Charlotte Opera (Alive)","affiliation":"Big Mom Pirates (Minister of Cream)","arcs":"Whole Cake Island","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":80,"name":"Bata Bata no Mi","power":"Butter-Butter (Butter Generation & Binding)","subtype":"Paramecia · Body Alteration","users":"Charlotte Galette (Alive)","affiliation":"Big Mom Pirates (Minister of Butter)","arcs":"Whole Cake Island","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":81,"name":"Shibo Shibo no Mi","power":"Wring-Wring (Liquid & Juice Extraction)","subtype":"Paramecia · Body Alteration","users":"Charlotte Smoothie (Alive)","affiliation":"Big Mom Pirates (Sweet Commander)","arcs":"Whole Cake Island","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":82,"name":"Maki Maki no Mi","power":"Scroll-Scroll (Ninja Scroll Storage & Release)","subtype":"Paramecia · Body Alteration","users":"Raizo (Alive)","affiliation":"Kozuki Family (Nine Red Scabbards)","arcs":"Zou / Wano Country","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":83,"name":"Juku Juku no Mi","power":"Ripe-Ripe (Maturing & Aging Objects/People)","subtype":"Paramecia · Body Alteration","users":"Shinobu (Alive)","affiliation":"Kozuki Family (Kunoichi)","arcs":"Wano Country","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":84,"name":"Nomi Nomi no Mi","power":"Brain-Brain (Infinite Knowledge Storage)","subtype":"Paramecia · Body Alteration","users":"Dr. Vegapunk (Deceased - Satellites Alive)","affiliation":"Marines (SSG) / MADS","arcs":"Egghead","saga":"Final Saga","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":85,"name":"Riki Riki no Mi","power":"Strong-Strong (Superhuman Strength)","subtype":"Paramecia · Body Alteration","users":"Jesus Burgess (Alive)","affiliation":"Blackbeard Pirates (1st Ship Captain)","arcs":"Jaya / Egghead","saga":"Sky Island / Final Saga","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":86,"name":"Choki Choki no Mi","power":"Snip-Snip (Scissors & Cutting Solid Surfaces Like Paper)","subtype":"Paramecia · Body Alteration","users":"Inazuma (Alive)","affiliation":"Revolutionary Army (Grand Line Commander)","arcs":"Impel Down / Marineford","saga":"Summit War","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":87,"name":"Horu Horu no Mi","power":"Horm-Horm (Hormone Engineering)","subtype":"Paramecia · Body Alteration","users":"Emporio Ivankov (Alive)","affiliation":"Revolutionary Army (Grand Line Commander)","arcs":"Impel Down / Marineford","saga":"Summit War","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":88,"name":"Kobu Kobu no Mi","power":"Pump-Pump (Morale & Strength Rallying)","subtype":"Paramecia · Body Alteration","users":"Belo Betty (Alive)","affiliation":"Revolutionary Army (East Army Commander)","arcs":"Levely","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":89,"name":"Iba Iba no Mi","power":"Thorn-Thorn (Barbed Thorns & Emotional Pain)","subtype":"Paramecia · Body Alteration","users":"Shepherd Sommers (Alive)","affiliation":"World Government (God's Knights)","arcs":"Elbaph","saga":"Final Saga","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Body Alteration","appearance":"unverified"},{"id":90,"name":"Doru Doru no Mi","power":"Wax-Wax (Hardened Candle Wax)","subtype":"Paramecia · Substance Generation","users":"Galdino / Mr. 3 (Alive)","affiliation":"Baroque Works / Cross Guild","arcs":"Little Garden / Impel Down / Marineford","saga":"Arabasta / Summit War","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Substance Creation","appearance":"illustrated"},{"id":91,"name":"Awa Awa no Mi","power":"Bubble-Bubble (Strength-Draining Soap Bubbles)","subtype":"Paramecia · Substance Generation","users":"Kalifa (Alive)","affiliation":"CP9 / CP0","arcs":"Enies Lobby","saga":"Water 7","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Substance Creation","appearance":"illustrated"},{"id":92,"name":"Doku Doku no Mi","power":"Venom-Venom (Lethal Poisons & Venom Demon)","subtype":"Paramecia · Substance Generation","users":"Magellan (Alive)","affiliation":"Impel Down (Former Chief Warden / Vice Warden)","arcs":"Impel Down","saga":"Summit War","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Substance Creation","appearance":"unverified"},{"id":93,"name":"Beta Beta no Mi","power":"Stick-Stick (Flammable Adhesive Mucus)","subtype":"Paramecia · Substance Generation","users":"Trebol (Alive)","affiliation":"Donquixote Pirates (Executive)","arcs":"Dressrosa","saga":"Dressrosa","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Substance Creation","appearance":"unverified"},{"id":94,"name":"Pamu Pamu no Mi","power":"Pop-Pop (Rupturing Body & Inorganic Objects)","subtype":"Paramecia · Substance Generation","users":"Gladius (Alive)","affiliation":"Donquixote Pirates","arcs":"Dressrosa","saga":"Dressrosa","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Substance Creation","appearance":"unverified"},{"id":95,"name":"Ato Ato no Mi","power":"Art-Art (Abstract Art Transformation)","subtype":"Paramecia · Substance Generation","users":"Giolla (Alive)","affiliation":"Donquixote Pirates","arcs":"Dressrosa","saga":"Dressrosa","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Substance Creation","appearance":"unverified"},{"id":96,"name":"Nui Nui no Mi","power":"Stitch-Stitch (Stitching Anything Together)","subtype":"Paramecia · Substance Generation","users":"Leo (Alive)","affiliation":"Tontatta Kingdom / Straw Hat Grand Fleet","arcs":"Dressrosa","saga":"Dressrosa","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Substance Creation","appearance":"unverified"},{"id":97,"name":"Buku Buku no Mi","power":"Book-Book (Book Manipulation & Prison Worlds)","subtype":"Paramecia · Substance Generation","users":"Charlotte Mont-d'Or (Alive)","affiliation":"Big Mom Pirates (Minister of Cheese)","arcs":"Whole Cake Island","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Substance Creation","appearance":"unverified"},{"id":98,"name":"Kuku Kuku no Mi","power":"Cook-Cook (Turning Objects into Food)","subtype":"Paramecia · Substance Generation","users":"Streusen (Alive)","affiliation":"Big Mom Pirates (Executive Chef)","arcs":"Whole Cake Island","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Substance Creation","appearance":"unverified"},{"id":99,"name":"Fuku Fuku no Mi","power":"Garb-Garb (Conjuring Disguises & Clothing)","subtype":"Paramecia · Substance Generation","users":"Kin'emon (Alive)","affiliation":"Kozuki Family (Nine Red Scabbards)","arcs":"Punk Hazard / Dressrosa / Wano","saga":"Dressrosa / Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Substance Creation","appearance":"unverified"},{"id":100,"name":"Kibi Kibi no Mi","power":"Millet-Millet (Animal-Taming Cheek Dango)","subtype":"Paramecia · Substance Generation","users":"Kurozumi Tama (Alive)","affiliation":"Wano Country / Ninja-Pirate-Mink-Samurai Alliance","arcs":"Wano Country","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Substance Creation","appearance":"unverified"},{"id":101,"name":"Fude Fude no Mi","power":"Brush-Brush (Bringing Ink Drawings to Life)","subtype":"Paramecia · Substance Generation","users":"Kurozumi Kanjuro (Deceased)","affiliation":"Kozuki Family / Beasts Pirates (Spy)","arcs":"Dressrosa / Zou / Wano","saga":"Dressrosa / Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Substance Creation","appearance":"unverified"},{"id":102,"name":"Muchi Muchi no Mi","power":"Whip-Whip (Commanding Whatever Is Whipped)","subtype":"Paramecia · Substance Generation","users":"Kujaku (Alive)","affiliation":"Marines (Rear Admiral / SWORD)","arcs":"Egghead","saga":"Final Saga","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Substance Creation","appearance":"unverified"},{"id":103,"name":"Gunyo Gunyo no Mi","power":"Clay-Clay (Sculpting Living Clay Golems)","subtype":"Paramecia · Substance Generation","users":"Prince Grus (Alive)","affiliation":"Marines (Rear Admiral / SWORD)","arcs":"Egghead","saga":"Final Saga","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Substance Creation","appearance":"unverified"},{"id":104,"name":"Aro Aro no Mi","power":"Arrow-Arrow (Vector Trajectory Arrows)","subtype":"Paramecia · Substance Generation","users":"Manmayer Gunko (Alive)","affiliation":"World Government (God's Knights)","arcs":"Elbaph","saga":"Final Saga","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Substance Creation","appearance":"unverified"},{"id":105,"name":"Hana Hana no Mi","power":"Flower-Flower (Sprouting Limbs & Clones)","subtype":"Paramecia · Environmental & Conceptual","users":"Nico Robin (Alive)","affiliation":"Straw Hat Pirates (Archaeologist)","arcs":"Whisky Peak / Arabasta / Enies Lobby / Wano","saga":"Arabasta / Water 7 / Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"illustrated"},{"id":106,"name":"Baku Baku no Mi","power":"Munch-Munch (Eating & Fusing Objects/People)","subtype":"Paramecia · Environmental & Conceptual","users":"Wapol (Alive)","affiliation":"Black Drum Kingdom (King)","arcs":"Drum Island / Levely","saga":"Arabasta / Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"illustrated"},{"id":107,"name":"Mane Mane no Mi","power":"Clone-Clone (Face & Body Shapeshifting)","subtype":"Paramecia · Environmental & Conceptual","users":"Bentham / Mr. 2 Bon Kurei (Alive); Kurozumi Higurashi (Deceased)","affiliation":"Baroque Works / Impel Down; Kurozumi Family","arcs":"Arabasta / Impel Down; Wano (Flashback)","saga":"Arabasta / Summit War; Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":108,"name":"Ori Ori no Mi","power":"Cage-Cage (Iron Restraining Shackles)","subtype":"Paramecia · Environmental & Conceptual","users":"Hina (Alive)","affiliation":"Marines (Rear Admiral)","arcs":"Arabasta / Marineford","saga":"Arabasta / Summit War","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":109,"name":"Noro Noro no Mi","power":"Slow-Slow (30-Second Slowdown Photons)","subtype":"Paramecia · Environmental & Conceptual","users":"Foxy (Alive)","affiliation":"Foxy Pirates (Captain)","arcs":"Long Ring Long Land","saga":"Water 7","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":110,"name":"Doa Doa no Mi","power":"Door-Door (Doors Through Air & Solid Surfaces)","subtype":"Paramecia · Environmental & Conceptual","users":"Blueno (Alive)","affiliation":"CP9 / CP0","arcs":"Water 7 / Enies Lobby","saga":"Water 7","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":111,"name":"Gura Gura no Mi","power":"Tremor-Tremor (Earthquakes & Seaquakes)","subtype":"Paramecia · Environmental & Conceptual","users":"Edward Newgate / Whitebeard (Deceased); Marshall D. Teach (Alive)","affiliation":"Whitebeard Pirates; Blackbeard Pirates","arcs":"Marineford","saga":"Summit War","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":112,"name":"Fuwa Fuwa no Mi","power":"Float-Float (Levitation of Self & Non-Living Matter)","subtype":"Paramecia · Environmental & Conceptual","users":"Shiki (Alive)","affiliation":"Golden Lion Pirates (Admiral)","arcs":"Strong World / Wano (Flashback)","saga":"Summit War / Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":113,"name":"Woshu Woshu no Mi","power":"Wash-Wash (Washing & Hanging People Like Laundry)","subtype":"Paramecia · Environmental & Conceptual","users":"Tsuru (Alive)","affiliation":"Marines (Vice Admiral)","arcs":"Marineford","saga":"Summit War","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":114,"name":"Mato Mato no Mi","power":"Mark-Mark (Homing Thrown Targets)","subtype":"Paramecia · Environmental & Conceptual","users":"Vander Decken IX (Alive)","affiliation":"Flying Pirates (Captain)","arcs":"Fish-Man Island","saga":"Fish-Man Island","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":115,"name":"Ope Ope no Mi","power":"Op-Op (Spatial Operating Room & Immortality Surgery)","subtype":"Paramecia · Environmental & Conceptual","users":"Trafalgar D. Water Law (Alive)","affiliation":"Heart Pirates (Captain)","arcs":"Sabaody Archipelago / Punk Hazard / Dressrosa / Wano","saga":"Summit War / Dressrosa / Four Emperors","awakened":"Confirmed","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"illustrated"},{"id":116,"name":"Sui Sui no Mi","power":"Swim-Swim (Swimming Through Solid Ground & Walls)","subtype":"Paramecia · Environmental & Conceptual","users":"Senor Pink (Alive); S-Shark (Alive)","affiliation":"Donquixote Pirates; Seraphim","arcs":"Dressrosa; Egghead","saga":"Dressrosa; Final Saga","awakened":"No","origin":"Natural + Green Blood","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":117,"name":"Ito Ito no Mi","power":"String-String (Razor Strings, Parasite Control, Sky Path)","subtype":"Paramecia · Environmental & Conceptual","users":"Donquixote Doflamingo (Alive)","affiliation":"Donquixote Pirates (Captain)","arcs":"Jaya / Marineford / Dressrosa","saga":"Sky Island / Summit War / Dressrosa","awakened":"Confirmed","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":118,"name":"Bari Bari no Mi","power":"Barrier-Barrier (Indestructible Barriers)","subtype":"Paramecia · Environmental & Conceptual","users":"Bartolomeo (Alive); Kurozumi Semimaru (Deceased)","affiliation":"Barto Club / Straw Hat Grand Fleet; Kurozumi Family","arcs":"Dressrosa; Wano (Flashback)","saga":"Dressrosa; Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":119,"name":"Hira Hira no Mi","power":"Ripple-Ripple (Turning Solids Into Rippling Cloth)","subtype":"Paramecia · Environmental & Conceptual","users":"Diamante (Alive)","affiliation":"Donquixote Pirates (Executive)","arcs":"Dressrosa","saga":"Dressrosa","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":120,"name":"Ishi Ishi no Mi","power":"Stone-Stone (Assimilating & Controlling Stone)","subtype":"Paramecia · Environmental & Conceptual","users":"Pica (Alive)","affiliation":"Donquixote Pirates (Executive)","arcs":"Dressrosa","saga":"Dressrosa","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":121,"name":"Giro Giro no Mi","power":"Glare-Glare (X-Ray Vision, Mind Reading, Clairvoyance)","subtype":"Paramecia · Environmental & Conceptual","users":"Viola (Alive)","affiliation":"Dressrosa Royal Family (Princess)","arcs":"Dressrosa","saga":"Dressrosa","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":122,"name":"Chiyu Chiyu no Mi","power":"Heal-Heal (Restorative Tears & Living Tissue Repair)","subtype":"Paramecia · Environmental & Conceptual","users":"Mansherry (Alive)","affiliation":"Tontatta Kingdom (Princess)","arcs":"Dressrosa","saga":"Dressrosa","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":123,"name":"Zushi Zushi no Mi","power":"Press-Press (Gravitational Force Manipulation)","subtype":"Paramecia · Environmental & Conceptual","users":"Issho / Fujitora (Alive)","affiliation":"Marines (Admiral)","arcs":"Dressrosa","saga":"Dressrosa","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":124,"name":"Nagi Nagi no Mi","power":"Calm-Calm (Soundproof Fields & Silencing)","subtype":"Paramecia · Environmental & Conceptual","users":"Donquixote Rosinante / Corazon (Deceased)","affiliation":"Marines (Commander) / Donquixote Pirates","arcs":"Dressrosa (Flashback)","saga":"Dressrosa","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":125,"name":"Soru Soru no Mi","power":"Soul-Soul (Soul Extraction, Homies, Lifespan Control)","subtype":"Paramecia · Environmental & Conceptual","users":"Charlotte Linlin / Big Mom (Unknown); Carmel (Deceased)","affiliation":"Big Mom Pirates (Emperor); Sheep's House","arcs":"Whole Cake Island / Wano Country","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":126,"name":"Mira Mira no Mi","power":"Mirror-Mirror (Mirror Reflection & Mirror World Access)","subtype":"Paramecia · Environmental & Conceptual","users":"Charlotte Brûlée (Alive)","affiliation":"Big Mom Pirates","arcs":"Whole Cake Island","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":127,"name":"Memo Memo no Mi","power":"Memo-Memo (Extracting & Editing Memory Film)","subtype":"Paramecia · Environmental & Conceptual","users":"Charlotte Pudding (Alive)","affiliation":"Big Mom Pirates","arcs":"Whole Cake Island","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":128,"name":"Gocha Gocha no Mi","power":"Pile-Pile (Merging Multiple Bodies Into One)","subtype":"Paramecia · Environmental & Conceptual","users":"Charlotte Newshi (Alive)","affiliation":"Big Mom Pirates (Decuplets)","arcs":"Whole Cake Island","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":129,"name":"Netsu Netsu no Mi","power":"Heat-Heat (Extreme Thermal Heat Generation)","subtype":"Paramecia · Environmental & Conceptual","users":"Charlotte Oven (Alive)","affiliation":"Big Mom Pirates (Minister of Browned Food)","arcs":"Whole Cake Island","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":130,"name":"Hoya Hoya no Mi","power":"Puff-Puff (Summoning a Genie From Body Smoke)","subtype":"Paramecia · Environmental & Conceptual","users":"Charlotte Daifuku (Alive)","affiliation":"Big Mom Pirates (Minister of Beans)","arcs":"Whole Cake Island","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":131,"name":"Oshi Oshi no Mi","power":"Push-Push (Pushing & Molding Ground Like Clay)","subtype":"Paramecia · Environmental & Conceptual","users":"Morley (Alive)","affiliation":"Revolutionary Army (West Army Commander)","arcs":"Levely","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":132,"name":"Toshi Toshi no Mi","power":"Age-Age (Age & Distorted Future Manipulation)","subtype":"Paramecia · Environmental & Conceptual","users":"Jewelry Bonney (Alive)","affiliation":"Bonney Pirates (Captain)","arcs":"Sabaody Archipelago / Egghead","saga":"Summit War / Final Saga","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":133,"name":"Jiki Jiki no Mi","power":"Magnet-Magnet (Electromagnetic Attraction & Repulsion)","subtype":"Paramecia · Environmental & Conceptual","users":"Eustass Kid (Unknown)","affiliation":"Kid Pirates (Captain)","arcs":"Sabaody Archipelago / Wano Country","saga":"Summit War / Four Emperors","awakened":"Confirmed","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"illustrated"},{"id":134,"name":"Wara Wara no Mi","power":"Straw-Straw (Voodoo Straw Dolls & Damage Redirection)","subtype":"Paramecia · Environmental & Conceptual","users":"Basil Hawkins (Unknown)","affiliation":"Hawkins Pirates / Beasts Pirates (Headliner)","arcs":"Sabaody Archipelago / Wano Country","saga":"Summit War / Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":135,"name":"Oto Oto no Mi","power":"Tone-Tone (Body Musical Instruments & Sound Attacks)","subtype":"Paramecia · Environmental & Conceptual","users":"Scratchmen Apoo (Alive)","affiliation":"On Air Pirates / Beasts Pirates","arcs":"Sabaody Archipelago / Wano Country","saga":"Summit War / Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":136,"name":"Nikyu Nikyu no Mi","power":"Paw-Paw (Repelling Anything Including Air, Pain & People)","subtype":"Paramecia · Environmental & Conceptual","users":"Bartholomew Kuma (Alive); S-Bear (Alive)","affiliation":"Revolutionary Army / Warlords; Seraphim","arcs":"Thriller Bark / Sabaody; Egghead","saga":"Thriller Bark / Summit War; Final Saga","awakened":"No","origin":"Natural + Green Blood","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":137,"name":"Mero Mero no Mi","power":"Love-Love (Petrification via Lust/Emotion)","subtype":"Paramecia · Environmental & Conceptual","users":"Boa Hancock (Alive); S-Snake (Alive)","affiliation":"Kuja Pirates (Empress); Seraphim","arcs":"Amazon Lily / Marineford; Egghead","saga":"Summit War; Final Saga","awakened":"No","origin":"Natural + Green Blood","cls":"Paramecia","group":"Environment & Concepts","appearance":"illustrated"},{"id":138,"name":"Toki Toki no Mi","power":"Time-Time (Sending Self or Others Forward in Time)","subtype":"Paramecia · Environmental & Conceptual","users":"Kozuki Toki (Deceased)","affiliation":"Kozuki Family","arcs":"Wano Country (Flashback)","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":139,"name":"Wapu Wapu no Mi","power":"Warp-Warp (Instant Spatial Teleportation)","subtype":"Paramecia · Environmental & Conceptual","users":"Van Augur (Alive)","affiliation":"Blackbeard Pirates (3rd Ship Captain)","arcs":"Jaya / Egghead","saga":"Sky Island / Final Saga","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":140,"name":"Shiku Shiku no Mi","power":"Sick-Sick (Inflicting Contagious Diseases)","subtype":"Paramecia · Environmental & Conceptual","users":"Doc Q (Alive)","affiliation":"Blackbeard Pirates (9th Ship Captain)","arcs":"Jaya / Egghead","saga":"Sky Island / Final Saga","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":141,"name":"Gabu Gabu no Mi","power":"Glug-Glug (Liquor Generation & Intoxication)","subtype":"Paramecia · Environmental & Conceptual","users":"Vasco Shot (Alive)","affiliation":"Blackbeard Pirates (8th Ship Captain)","arcs":"Impel Down / Hachinosu","saga":"Summit War / Final Saga","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":142,"name":"Uta Uta no Mi","power":"Sing-Sing (Trapping Consciousness in a Virtual Song World)","subtype":"Paramecia · Environmental & Conceptual","users":"Uta (Unknown)","affiliation":"Red Hair Pirates (Former Musician)","arcs":"Film: Red / Wano (Silhouette)","saga":"Four Emperors","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":143,"name":"Kira Kira no Mi","power":"Twinkle-Twinkle (Turning Body Into Diamond)","subtype":"Paramecia · Environmental & Conceptual","users":"Jozu (Alive)","affiliation":"Whitebeard Pirates (3rd Division Commander)","arcs":"Marineford","saga":"Summit War","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":144,"name":"Poke Poke no Mi","power":"Pocket-Pocket (Infinite Storage Pockets in Body)","subtype":"Paramecia · Environmental & Conceptual","users":"Blamenco (Alive)","affiliation":"Whitebeard Pirates (6th Division Commander)","arcs":"Marineford","saga":"Summit War","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"},{"id":145,"name":"Koro Koro no Mi","power":"Roll-Roll (Turning Ground Into Railway Tracks)","subtype":"Paramecia · Environmental & Conceptual","users":"Biblo (Alive)","affiliation":"Elbaph (Owl Library Guardian)","arcs":"Elbaph","saga":"Final Saga","awakened":"No","origin":"Natural","cls":"Paramecia","group":"Environment & Concepts","appearance":"unverified"}];</script><script>/* Devil Fruit World - original self contained geometric modelling toolkit. */
+const TAU=Math.PI*2;
+const V=(x=0,y=0,z=0)=>[x,y,z];
+const add=(a,b)=>[a[0]+b[0],a[1]+b[1],a[2]+b[2]];
+const sub=(a,b)=>[a[0]-b[0],a[1]-b[1],a[2]-b[2]];
+const mul=(a,n)=>[a[0]*n,a[1]*n,a[2]*n];
+const cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
+const norm=a=>{const l=Math.hypot(...a)||1;return mul(a,1/l)};
+const lerp=(a,b,t)=>a+(b-a)*t;
+const mix=(a,b,t)=>a.map((n,i)=>lerp(n,b[i],t));
+const C=h=>{const x=parseInt(h.replace('#',''),16);return [((x>>16)&255)/255,((x>>8)&255)/255,(x&255)/255]};
+const shades=(h,f=1)=>C(h).map(x=>Math.min(1,x*f));
+function rng(seed){let x=seed>>>0;return ()=>{x^=x<<13;x^=x>>>17;x^=x<<5;return (x>>>0)/4294967296}}
+class Mesh {
+ constructor(){this.a=[];this.vbo=null;this.n=0}
+ tri(a,b,c,col){const n=norm(cross(sub(b,a),sub(c,a)));const color=Array.isArray(col)?col:C(col);for(let p of [a,b,c])this.a.push(...p,...n,...color)}
+ quad(a,b,c,d,col){this.tri(a,b,c,col);this.tri(a,c,d,col)}
+ append(other,at=V(),scale=1){for(let i=0;i<other.a.length;i+=9){let o=other.a.slice(i,i+9);o[0]=o[0]*scale+at[0];o[1]=o[1]*scale+at[1];o[2]=o[2]*scale+at[2];this.a.push(...o)}}
+ upload(gl){if(this.vbo)return;this.vbo=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,this.vbo);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(this.a),gl.STATIC_DRAW);this.n=this.a.length/9;this.a.length=0}
+}
+function tube(g,pts,rad,color,sides=8){const cols=Array.isArray(color)?color:[color];const rings=[];
+ for(let i=0;i<pts.length;i++){const tangent=norm(sub(pts[Math.min(pts.length-1,i+1)],pts[Math.max(0,i-1)]));let u=norm(cross(tangent,[0,0,1]));if(Math.hypot(...u)<.01)u=[1,0,0];const w=norm(cross(tangent,u));let r=Array.isArray(rad)?rad[Math.min(i,rad.length-1)]:rad;
+ rings.push(Array.from({length:sides},(_,j)=>{const a=j*TAU/sides;return add(pts[i],add(mul(u,Math.cos(a)*r),mul(w,Math.sin(a)*r)))}));}
+ for(let i=0;i<rings.length-1;i++)for(let j=0;j<sides;j++)g.quad(rings[i][j],rings[i][(j+1)%sides],rings[i+1][(j+1)%sides],rings[i+1][j],cols[i%cols.length]);
+ const top=pts[pts.length-1];for(let j=0;j<sides;j++)g.tri(top,rings.at(-1)[j],rings.at(-1)[(j+1)%sides],cols.at(-1));
+}
+function blob(g,p,r,color,seed=1,segments=9,lat=5){const R=rng(seed),verts=[];let col=Array.isArray(color)?color:[color];for(let j=0;j<=lat;j++){let t=j*Math.PI/lat,ring=[];for(let k=0;k<segments;k++){let a=k*TAU/segments,sc=1+.045*(R()-.5);ring.push(add(p,[Math.sin(t)*Math.cos(a)*r[0]*sc,Math.cos(t)*r[1],Math.sin(t)*Math.sin(a)*r[2]*sc]))}verts.push(ring)}for(let j=0;j<lat;j++)for(let k=0;k<segments;k++)g.quad(verts[j][k],verts[j][(k+1)%segments],verts[j+1][(k+1)%segments],verts[j+1][k],col[Math.floor(j/2)%col.length]);}
+function leaf(g,a,b,w,col,mid){const t=norm(sub(b,a)),side=norm(cross(t,[0,0,1]));const c=mix(a,b,.50),u=add(c,mul(side,w)),v=sub(c,mul(side,w));g.tri(a,u,b,col);g.tri(a,b,v,col);if(mid){g.tri(a,add(c,[0,w*.12,.06]),u,mid);g.tri(a,v,add(c,[0,w*.12,.06]),mid)}}
+function shard(g,foot,tip,rad,col,sides=6){const mid=mix(foot,tip,.64);tube(g,[foot,mid,tip],[rad,rad*.7,.015],[col],sides)}
+function arc(g,start,end,rise,rad,col,count=11){const pts=[];for(let i=0;i<=count;i++){let t=i/count;pts.push(add(mix(start,end,t),[0,Math.sin(t*Math.PI)*rise,0]))}tube(g,pts,pts.map((_,i)=>Math.max(.06,rad*Math.pow(1-i/pts.length,.83))),col,8)}
+function torus(g,p,rx,rz,y,rad,col,start=0,turns=1,steps=65){let ps=Array.from({length:steps+1},(_,i)=>{const t=i/steps,a=start+t*TAU*turns;return add(p,[Math.cos(a)*rx,y(t),Math.sin(a)*rz])});tube(g,ps,ps.map(()=>rad),col,7)}
+
+/* Anonymous silhouette shown when the source has no verified physical appearance. */
+function sealedFruit(seed=0){const g=new Mesh();blob(g,[0,0,0],[.72,.87,.68],['#080f1e','#161b2c'],seed,10,6);tube(g,[[0,.74,0],[.15,1.1,.03]],[.12,.04],'#3a3c46',6);
+ for(let s of [-1,1]){for(let k=0;k<8;k++){let t=(k+.5)/8,y=lerp(-.56,.56,t),x=s*y*.72,z=.68*Math.sqrt(Math.max(.12,1-y*y/.78-x*x/1.1));const p=[x,y,z+.07],a=[];for(let j=0;j<=10;j++){let th=j*TAU/10;a.push(add(p,[Math.cos(th)*.14,Math.sin(th)*.085,0]))}tube(g,a,a.map(()=>.031),'#bcb39f',5)}}
+ // simple golden lock, shackle and keyhole in 3D, visible on black frontal body
+ const z=.88;g.quad([-.25,-.41,z],[.25,-.41,z],[.25,-.04,z],[-.25,-.04,z],'#eec75c');tube(g,[[-.15,-.05,z],[ -.15,.16,z],[.15,.16,z],[.15,-.05,z]],[.05,.05,.05,.05],'#ffe8ac',6);shard(g,[0,-.19,z+.025],[0,-.32,z+.02],.055,'#1b2940',5);return g}
+
+/* Flat spiral relief shared by every illustrated fruit and tree. */
+function planeSpiral(g,origin,rad,col,turns=1.6,line=.095,steps=42){
+ const pp=[];for(let i=0;i<=steps;i++){let t=i/steps,ang=turns*TAU*t+.25;pp.push(add(origin,[Math.cos(ang)*rad*(1-t*.92),Math.sin(ang)*rad*(1-t*.92),.14+.035*Math.sin(ang)]));}
+ tube(g,pp,line,col,6);
+}
+
+/* V22 original replacement sculpture geometry. Deliberately large, flat-shaded
+   macro facets, 2 different silhouettes per Devil Fruit class. All functions
+   use the original lightweight WebGL Mesh/triangle kit. */
+const SPIRIT22={
+  zoan:{wood:'#ae662d',shade:'#7d431f',bright:'#e6a354',leaf:'#42b92c'},
+  logia:{stone:'#44395f',dark:'#282541',storm:'#e3f6fb',water:'#24c9f2'},
+  para:{wood:'#bd398c',deep:'#822a7c',pink:'#ff78c3',gold:'#ffd345'}
+};
+function branch22(g,pts,r,c){tube(g,pts,r,c,9)}
+function gem22(g,p,s,color,segments=6){blob(g,p,s,color,Math.round(p[0]*11+p[1]*7+97),segments,4)}
+function oval22(g,p,r,c){blob(g,p,r,c,42+Math.round(p[0]*3),10,5)}
+function polyCrown22(g,p,rad,col0,col1,seed=1){
+ // Massive, flattened canopy boulders with carved polygon tiles; no smooth spheres.
+ const R=rng(14000+seed),n=11,spin=.12*seed;
+ let layers=[[-.60,.56],[-.32,.94],[.03,1.05],[.40,.96],[.75,.58],[1.05,.18]];
+ const rings=layers.map(([y,r],k)=>Array.from({length:n},(_,i)=>{let a=TAU*i/n+spin,rr=r*(1+.075*Math.sin(i*2.7+seed));return [p[0]+Math.cos(a)*rad[0]*rr,p[1]+y*rad[1],p[2]+Math.sin(a)*rad[2]*rr]}));
+ for(let k=0;k<rings.length-1;k++)for(let i=0;i<n;i++){let j=(i+1)%n;
+  let mid=(i+k*3)%7===0?col1:col0;
+  g.quad(rings[k][i],rings[k][j],rings[k+1][j],rings[k+1][i],mid);
+  if((i+k*3)%6===0){const a=rings[k+1][i],b=rings[k+1][j],c=mix(a,b,.38);g.tri(a,b,add(c,[0,rad[1]*.20,.04]),col1)}
+ }
+ for(let i=0;i<n;i++)g.tri(rings.at(-1)[i],rings.at(-1)[(i+1)%n],[p[0],p[1]+rad[1]*1.14,p[2]],i%3===0?col1:col0);
+}
+function feather22(g,start,end,w,color,facet){
+ const tangent=norm(sub(end,start)),side=norm(cross(tangent,[0,0,1]));let center=mix(start,end,.51),height=.55;
+ const u=add(center,mul(side,w)),v=sub(center,mul(side,w)),ridge=add(center,[0,height,.62]);
+ g.tri(start,u,ridge,color);g.tri(start,ridge,v,facet);g.tri(ridge,u,end,color);g.tri(ridge,end,v,facet);
+}
+function splitLava22(g,p,phase=0){
+ for(let j=0;j<4;j++){let a=phase+j*.62,base=add(p,[j*1.3-2.0,0,j%2*.6]);
+ feather22(g,base,add(base,[Math.sin(a)*1.8,6.5+j%3*1.9,1.1]),1.45,j%2?'#ff6424':'#ffa62e','#fff17a')}
+}
+function frontRune22(g,p,scale,c){planeSpiral(g,p,scale,c,1.68,Math.max(.12,scale*.095),48);}
+function angularBranches22(g,style,p,group){
+ const colors=['#b46d30','#55476c','#b7398b'];const c=colors[style];
+ // Connect family bunches to the actual structural bough, never an isolated UI icon.
+ for(let k=0;k<groups[style].length;k++){
+  let target=anchorFor(style,k),from=[target[0]*.12,11.5+(k%4)*2,target[2]*.08],middle=[target[0]*.62,target[1]+2.3,target[2]*.62-1.1];
+  branch22(g,[from,middle,add(target,[0,3.9,0]),add(target,[0,2.1,0])],[1.85,1.35,.65,.18],c);
+  feather22(g,add(target,[-1.25,3.0,-.5]),add(target,[1.3,3.9,-.3]),.78,['#b3df42','#9fe5fd','#ffc5de'][style],['#70b73c','#50cae2','#e479be'][style]);
+ }
+}
+function chunkyRoots22(g,colors,spread=1){for(let i=0;i<8;i++){let a=TAU*i/8;branch22(g,[V(Math.cos(a)*1.6,4,Math.sin(a)*1.5),V(Math.cos(a)*6,1.0,Math.sin(a)*5.6),V(Math.cos(a)*13.2*spread,.22,Math.sin(a)*10.5*spread)],[3.15,1.95,.10],colors);}}
+function barkInlay22(g,x,y,z,primary,bright){
+ // Faceted bark seams follow the contours rather than drawing circles around a trunk.
+ for(let i=0;i<4;i++){let dx=(i-1.5)*1.25;
+  branch22(g,[[x+dx,y+i*.85,z],[x+dx-.36,y+1.6+i*.77,z+.13],[x+dx+.35,y+2.35+i*.77,z+.04]],[.18,.21,.09],i%2?primary:bright)}
+}
+function island22(ci){
+ const g=new Mesh(),N=17,R=rng(22+ci);
+ const rads=[18.6,18.8,18.0,16.1,13.1,8.1,0.05],heights=[0,-2,-5,-10.2,-15,-18.7,-22.5],rings=[];
+ for(let k=0;k<rads.length;k++)rings.push(Array.from({length:N},(_,i)=>{let a=i*TAU/N,rad=rads[k]*(1+.095*Math.sin(i*1.84+ci)+.04*Math.cos(i*4.0));return [Math.cos(a)*rad,heights[k],Math.sin(a)*rad*.78]}));
+ for(let j=0;j<N;j++){let k=(j+1)%N;
+  g.tri([0,.34,0],rings[0][j],rings[0][k],j%2?'#7ed92b':'#a7e84b');
+  for(let layer=0;layer<6;layer++)g.quad(rings[layer][j],rings[layer][k],rings[layer+1][k],rings[layer+1][j],
+   layer===0?(j%3===0?'#72c631':'#369d35'):layer===1?(j%2?'#c29459':'#d4a672'):
+   layer===2?(j%2?'#ac815f':'#bf926b'):layer===3?'#93706d':layer===4?'#6c536e':'#493858');
+ }
+ // Bushes and tiny faceted stepping stones, generic across all three types.
+ for(let i=0;i<12;i++){let a=i*TAU/12,r=14.0+1.8*R();let p=[Math.cos(a)*r,.66,Math.sin(a)*r*.78];
+  polyCrown22(g,p,[1.2,.55,1.15],i%2?'#30aa39':'#78cc30','#afe94a',i+51);
+  if(i%4===0)gem22(g,[p[0]+.7,.22,p[2]+1.8],[.75,.55,.85],'#a6b6a7');
+ }
+ // Chibi waterfall ribbons with bends/steps and white foam fragments.
+ for(let side of [-1,1]){
+  const z=14.3;let x=side*8.5;
+  for(let j=0;j<4;j++){
+   let y0=.15-j*5.4,y1=.15-(j+1)*5.4,nx=x+side*(j%2===0?.8:-.5),zz=z+j*.85,znext=z+(j+1)*.85;
+   for(let strip=0;strip<5;strip++){
+    let q0=(strip/5-.5)*3.65,q1=((strip+1)/5-.5)*3.65;
+    g.quad([x+q0,y0,zz],[x+q1,y0,zz],[nx+q1,y1,znext],[nx+q0,y1,znext],
+    strip===0?'#b9faff':strip===2?'#f6ffff':strip%2?'#40d7f8':'#129bc4');
+   }
+   for(let f of [-1,1])gem22(g,[nx+f*1.8,y1+.4,znext],[.38,.52,.42],'#efffff',6);
+   x=nx;
+  }
+  for(let i=0;i<7;i++)gem22(g,[x+(i-3)*.72,-21.3,z+4.3],[.52,.38,.53],i%2?'#d6ffff':'#62d5f6',6);
+ }
+ return g;
+}
+function beastMask22(g,wood='#c77b39'){
+ polyCrown22(g,[0,15,5.7],[3.9,3.1,2.2],wood,'#eeac60',191);
+ for(let side of [-1,1]){
+  gem22(g,[side*1.8,16.1,7.35],[.85,.65,.37],'#ffe399',6);
+  gem22(g,[side*1.83,16.18,7.74],[.27,.31,.14],'#1c3941',5);
+  feather22(g,[side*3.05,15.2,6.7],[side*4.7,13.8,7.1],1.0,'#fff0bd','#efc785');
+ }
+ gem22(g,[0,14,8.16],[.86,.48,.31],'#ffd37a',6);
+ gem22(g,[0,13.87,8.52],[.42,.27,.19],'#243344',5);
+ frontRune22(g,[0,10.7,5.8],2.15,'#ffe09c');
+}
+function zoanBeast22(g){
+ chunkyRoots22(g,'#ad632d',1.03);
+ branch22(g,[[0,0,0],[-2.2,7,0],[1.6,15,0],[-1.4,23,0],[0,31,0]],[6.6,6.0,4.7,3.2,.45],'#ae662d');
+ const angles=[-2.5,-1.72,-.87,.04,.83,1.75,2.59];
+ for(let i=0;i<angles.length;i++){
+  let a=angles[i],end=[Math.cos(a)*13.2,22+i%3*2.2,Math.sin(a)*9];
+  branch22(g,[[0,13.5+i%3*1.5,0],[end[0]*.58,end[1]-4,end[2]*.55],end],[3.35,2.15,.2],'#b87430');
+  polyCrown22(g,add(end,[0,4.1,0]),[6.8,4.8,5.8],i%3===0?'#159b45':i%3===1?'#7dd52c':'#37b52f',i%2?'#a8ed36':'#b9f64e',i);
+ }
+ polyCrown22(g,[0,32,-1],[10.6,5.4,8.6],'#61c923','#b6ee40',77);
+ // Huge ivory antlers grow above foliage, branching outward with taper.
+ for(let s of [-1,1]){
+  branch22(g,[[s*3,20,2],[s*6.5,26,2.4],[s*11.5,32.5,2.9],[s*13.4,37,3],[s*11,41.5,3.3]],[2.6,2.1,1.5,.75,.04],'#ffe0a2');
+  branch22(g,[[s*9.3,31,3],[s*13.3,34,3],[s*16,39,3.3]],[1.1,.75,.05],'#fff1c9');
+  branch22(g,[[s*6.9,26.7,2.4],[s*7.2,32.2,2.6],[s*5.9,35.7,2.7]],[.9,.6,.05],'#fff0be');
+ }
+ beastMask22(g);barkInlay22(g,0,3.5,5.0,'#c78946','#f8b354');
+ for(let i=0;i<8;i++){let a=i*2.399,p=[Math.cos(a)*10,28+i%4*1.6,Math.sin(a)*7];
+  feather22(g,p,add(p,[Math.cos(a)*5,-4,Math.sin(a)*3]),1.7,i%2?'#9bea32':'#66c92d','#c7f45e');}
+}
+function zoanMyth22(g){
+ chunkyRoots22(g,'#9c5e31',.93);
+ branch22(g,[[0,0,0],[2.4,8,0],[-1.9,16,0],[1.4,25,0],[0,36,0]],[6.1,5.4,4.3,2.7,.2],'#ae743a');
+ // Phoenix wings form a large negative-space silhouette, rather than antler clones.
+ for(let s of [-1,1]){
+  branch22(g,[[s*1.6,19,1],[s*7.5,26.5,3],[s*13.5,32.5,4],[s*18.4,32.6,3.7]],[2.4,1.6,.8,.02],'#ffdb91');
+  for(let j=0;j<9;j++){
+    let a=[s*(4.6+j*1.25),25.4+j*.57,3],b=[s*(9+j*1.15),24.8-j*.76,5];
+    feather22(g,a,b,1.35,j%3===0?'#ff8345':j%3===1?'#fff3c6':'#feca65','#ffe5a3');
+  }
+ }
+ for(let i=0;i<6;i++){let a=i*TAU/6,p=[Math.cos(a)*10,25+i%2*4,Math.sin(a)*7.5];
+  branch22(g,[[0,15,0],[p[0]*.65,p[1]-4,p[2]*.65],p],[2.9,1.6,.12],'#9c653b');
+  polyCrown22(g,add(p,[0,3,0]),[5.7,4.3,5.1],i%2?'#0a9457':'#64cf29',i%2?'#61d34a':'#b4ec3d',i+200);
+ }
+ polyCrown22(g,[0,36,-1.2],[7.8,4.6,6.0],'#7ce33d','#bdf36d',38);
+ // Stylised crown crest and breast of mythic phoenix carved into living trunk.
+ gem22(g,[0,24,5.4],[2.9,2.7,1.9],'#f4c073');
+ for(let s of [-1,1])feather22(g,[s*.4,24,7],[s*2.9,25.2,7.2],1.5,'#ffe699','#ffb75c');
+ gem22(g,[0,22.2,7.7],[.8,1.1,.45],'#ffc33c');
+ frontRune22(g,[0,12,5.2],2.2,'#ffe0a7');
+}
+function cloudMass22(g,p,size,seed){polyCrown22(g,p,[size,size*.66,size*.83],seed%2?'#e7f9ff':'#bfdde9','#fffef5',seed)}
+function naturalLightning22(g,at,scale){
+ branch22(g,[at,add(at,[scale*.32,-scale*.52,.3]),add(at,[-scale*.20,-scale*.51,.7]),add(at,[scale*.05,-scale*1.3,1])],[scale*.16,scale*.11,scale*.12,.025],'#fff05b');
+}
+function waterVortex22(g,rad,height,phase=0,bright=false){
+ let path=Array.from({length:48},(_,i)=>{let t=i/47,a=t*TAU*1.33+phase;return [Math.cos(a)*rad*(1+.08*t),5+height*t,Math.sin(a)*rad*(1+.08*t)]});
+ branch22(g,path,path.map((_,i)=>(1-i/47*.25)*(bright?.34:1.25)),bright?'#b8faff':'#15bde6');
+}
+function logiaFusion22(g){
+ chunkyRoots22(g,'#443957',1.04);
+ branch22(g,[[0,0,0],[-2,8,0],[2.2,17,0],[-1.4,26,0],[0,35,0]],[6.8,6,4.9,3.1,.4],'#443957');
+ // Strongly asymmetric branch crown: left ice-weather, right lava-fire.
+ for(let i=0;i<4;i++){
+  let left=[-6.5-i*2.1,28-(i%2)*3,0.5+(i%3)*1.5];
+  branch22(g,[[0,17,0],[-6,23,.3],left],[3,2,.15],'#56617c');
+  cloudMass22(g,add(left,[0,2,0]),6.3,i);
+  naturalLightning22(g,add(left,[0,-.1,3.5]),3.6);
+  let right=[6.8+i*2.25,27+i%2*2,0.2+(i%3)*1.5];
+  branch22(g,[[0,17,0],[6,22,0],right],[2.8,1.7,.12],'#55405b');
+  splitLava22(g,add(right,[0,1.5,1]),i*.3);
+ }
+ cloudMass22(g,[-4,35,0],8.6,38);splitLava22(g,[7,35,1],1.2);
+ waterVortex22(g,7.1,23,.7);waterVortex22(g,7.3,23,.7,true);
+ // Glowing magma cracks running *along* the basalt bark.
+ for(let s of [-1,1])branch22(g,[[s*1.3,3,5.2],[s*2,9,5.6],[s*.6,14,5.1],[s*1.5,20,4.6]],[.35,.52,.31,.08],s>0?'#ff6d22':'#ffcb35');
+ for(let j=0;j<9;j++){let a=j*TAU/9,q=[Math.cos(a)*9,.6,Math.sin(a)*9];gem22(g,q,[1.45,3.1+j%2*1.7,1.1],j%2?'#6ce4f7':'#aff7ff',5)}
+ frontRune22(g,[0,11.2,5.7],2.2,'#f6bc66');
+}
+function logiaStorm22(g){
+ chunkyRoots22(g,'#4c3861',.94);
+ // Arching thunder cyclone with broad ring cloud bands, unlike confluence's side-by-side forces.
+ branch22(g,[[0,0,0],[1.7,8,0],[-1.8,17,0],[2,26,0],[-.8,36,0]],[6.4,5.8,4.3,2.8,.22],'#49385e');
+ for(let k=0;k<9;k++){let a=k*2.399,p=[Math.cos(a)*11,24+k%4*2.8,Math.sin(a)*9.4];
+  branch22(g,[[0,15+k%3*2,0],[p[0]*.66,p[1]-5,p[2]*.52],p],[2.9,1.7,.14],'#54486b');
+  cloudMass22(g,add(p,[0,1.2,0]),5.2,k+40);
+  if(k%2===0)naturalLightning22(g,add(p,[0,-1.2,3.0]),4.8);
+ }
+ // White, cyan and bright magma cyclone ribbons cross storm trunk.
+ waterVortex22(g,9.5,29,1.7);waterVortex22(g,9.7,29,1.7,true);
+ for(let j=0;j<5;j++){let a=j*TAU/5;splitLava22(g,[Math.cos(a)*6,9+j*2.3,Math.sin(a)*6],.8)}
+ for(let j=0;j<7;j++){let a=j*TAU/7,p=[Math.cos(a)*9,1.0,Math.sin(a)*9];gem22(g,p,[1.6,3.8+j%3,1.6],j%2?'#70e8ff':'#c1ffff',6)}
+ frontRune22(g,[0,11.2,5.7],2.8,'#ffcf68');
+}
+function goldenRibbon22(g,p,r,height,phase,turns,col='#ffd347',thick=1.18){
+ let path=Array.from({length:55},(_,i)=>{let t=i/54,a=phase+t*TAU*turns;return add(p,[Math.cos(a)*r*(1-.06*t),t*height,Math.sin(a)*r*(1-.06*t)])});
+ branch22(g,path,path.map((_,i)=>thick*(1-.24*i/54)),col);
+}
+function paraPortal22(g){
+ chunkyRoots22(g,'#a8318b',.93);
+ // Two intertwining *separate* trunks. Gold portals physically pierce the canopy.
+ for(let s of [-1,1])branch22(g,[[s*.8,0,0],[s*3.6,7,0],[s*1.5,15,0],[s*5.6,22,0],[s*3.1,33,0]],[4.0,3.0,2.8,1.7,.2],s<0?'#bd398f':'#dd4ca7');
+ for(let j=0;j<6;j++){let a=TAU*j/6,p=[Math.cos(a)*11.6,24+(j%3)*3,Math.sin(a)*8];
+  branch22(g,[[0,18,0],[p[0]*.68,p[1]-3,p[2]*.66],p],[3.5,2.1,.25],'#bc408f');
+  polyCrown22(g,add(p,[0,3,0]),[6.5,4.4,5.4],j%2?'#ec63ac':'#fa87cd',j%2?'#ffb8df':'#ff9cd6',j+80);
+ }
+ polyCrown22(g,[0,36,-1.5],[8.5,4.6,7.0],'#ff6fbf','#ffc4ea',99);
+ // Interwoven sky loops with unmistakable large-scale silhouette.
+ for(let s of [-1,1]){
+  let loop=Array.from({length:57},(_,i)=>{let t=i/56,a=t*TAU;return [s*4.2+Math.cos(a)*7,24.0+Math.sin(a)*7.6,1.0]});
+  branch22(g,loop,loop.map(()=>.95),s===1?'#ffe171':'#94f1ff');
+  let diamond=[s*4.2,24,2];gem22(g,diamond,[2.0,2.1,.7],'#ffe67e',5);
+ }
+ goldenRibbon22(g,[0,4,0],8.1,25,1.6,1.8,'#ffcb40',1.0);
+ for(let j=0;j<12;j++){let a=j*TAU/12,q=[Math.cos(a)*12,10+j%4*4,Math.sin(a)*9];gem22(g,q,[1.12,1.3,1.05],j%2?'#a868e9':'#ffc268',6)}
+ frontRune22(g,[0,10.6,5.8],2.2,'#fff09a');
+}
+function paraBloom22(g){
+ chunkyRoots22(g,'#9c317f',.95);
+ branch22(g,[[0,0,0],[-2.4,8,0],[2.7,17,0],[-2,26,0],[0,35,0]],[6.0,5.6,4.4,2.6,.3],'#bc368f');
+ for(let j=0;j<7;j++){let a=j*2.399,p=[Math.cos(a)*10.6,22+j%3*3,Math.sin(a)*8.8];
+  branch22(g,[[0,13+j%3*2,0],[p[0]*.6,p[1]-4,p[2]*.6],p],[3.1,1.65,.15],'#d44797');
+  // Giant chibi cherry blossoms, five individual macro polygon petals each.
+  for(let petal=0;petal<5;petal++){
+   let ang=petal*TAU/5,r=3.8;
+   feather22(g,add(p,[0,1.2,0]),add(p,[Math.cos(ang)*r,4.4,Math.sin(ang)*r]),2.7,
+     petal%2?'#ffa2d5':'#fa78b9','#ffe2f1');
+  }
+  gem22(g,add(p,[0,2.1,0]),[1.3,1.2,1.2],'#ffcb4d',7);
+  polyCrown22(g,add(p,[0,3.2,-2.7]),[5.3,3.3,3.9],j%2?'#f574b5':'#f592d2','#ffd0e8',j+80);
+ }
+ polyCrown22(g,[0,37,-2],[8,4.3,6.5],'#fe76c4','#ffd0e8',89);
+ goldenRibbon22(g,[0,4,0],8.5,29,.5,1.35,'#ffd453',1.1);
+ goldenRibbon22(g,[0,12,0],6.0,19,2.0,1.1,'#fff0ad',.43);
+ frontRune22(g,[0,12.2,5.8],2.5,'#ffd27b');
+}
+function makeTree22(ci,variant=0){const g=new Mesh();
+ if(ci===0)(variant===0?zoanBeast22:zoanMyth22)(g);
+ else if(ci===1)(variant===0?logiaFusion22:logiaStorm22)(g);
+ else (variant===0?paraPortal22:paraBloom22)(g);
+ angularBranches22(g,ci,variant);
+ return g;
+}
+function genericFruit22(ci,seed){
+ const g=new Mesh(),color=[['#6ddc38','#18af62','#e7d848'],['#ef6a28','#12baef','#ffdd4c'],['#ff70b3','#8e6bdd','#f7ae4e']][ci][seed%3];
+ const ratio=seed%5===0?[.75,1.05,.73]:seed%5===1?[.91,.83,.84]:[.81,.91,.77];
+ blob(g,[0,0,0],ratio,color,seed,10,5);
+ tube(g,[[0,.71,0],[.08,1.03,0],[.3,1.12,0]],[.13,.085,.03],'#75a739',6);
+ feather22(g,[.08,1.01,0],[.56,1.15,-.04],.20,'#bdf45a','#45b844');
+ planeSpiral(g,[0,.02,ratio[2]],.27,'#ffe79f',1.5,.05,20);
+ return g;
+}
+
+/* The known-appearance set receives differentiated, stylised sculptures. These are
+   explicitly design interpretations, not a claim of verified exact manga topology. */
+function specialFruit22(d){
+ const g=new Mesh(),n=d.name,id=d.id;
+ const palette= /Nika/.test(n)?['#9f81e9','#d9baff','#fff1ff']:
+ /Ope Ope/.test(n)?['#e64e89','#ff7daa','#ffd4e1']:
+ /Mera Mera/.test(n)?['#ff7626','#ffb538','#ffe46b']:
+ /Seiryu/.test(n)?['#00afcd','#41d8ed','#bcfff0']:
+ /Mori Mori/.test(n)?['#27ad6e','#7ee46f','#dfff9a']:
+ /Suna Suna/.test(n)?['#db9f42','#ffd784','#fff0c8']:
+ /Yami Yami/.test(n)?['#583477','#a36cba','#dfc3f4']:
+ /Doru Doru/.test(n)?['#e5e0bd','#fff2d1','#ffffff']:
+ /Awa Awa/.test(n)?['#58bce0','#a5eaf9','#ffffff']:
+ /Hana Hana/.test(n)?['#ed62ac','#ffb4d8','#fff7e2']:
+ /Giraffe/.test(n)?['#e4a34a','#ffce67','#fff1b5']:
+ /Bison/.test(n)?['#7b4b2f','#c28b5a','#ffe4ac']:
+ /Baku Baku/.test(n)?['#c54466','#ed8192','#fff0bd']:
+ /Mero Mero/.test(n)?['#e8659d','#ff9fc5','#ffdbf0']:
+ /Kage Kage/.test(n)?['#6446a4','#a88cd4','#eee3ff']:
+ /Yomi Yomi/.test(n)?['#cadce3','#edf5ff','#ffffff']:
+ /Jiki Jiki/.test(n)?['#876fcb','#e9b8dd','#fff3a8']:
+ /Mochi/.test(n)?['#e4d0a3','#fff1d4','#ffffff']:
+ /Bara Bara/.test(n)?['#db4d56','#ff809a','#ffe0cc']:
+ /Sube Sube/.test(n)?['#8b67c8','#be99f3','#fff2fc']:
+ /Hito Hito/.test(n)?['#e75a70','#ffa6ad','#ffe9be']:
+ /Neko Neko/.test(n)?['#e8a153','#ffd16c','#fff0a4']:
+ ['#ae78df','#d5a4ec','#fff4d5'];
+ let shape='oval';
+ if(/Nika/.test(n))shape='nika';
+ else if(/Ope Ope|Mero Mero/.test(n))shape='heart';
+ else if(/Giraffe/.test(n))shape='cluster';
+ else if(/Hana Hana/.test(n))shape='flower';
+ else if(/Awa Awa/.test(n))shape='bubbles';
+ else if(/Mera Mera/.test(n))shape='flame';
+ else if(/Mori Mori/.test(n))shape='tree';
+ else if(/Bara Bara|Baku Baku/.test(n))shape='pumpkin';
+ else if(/Mochi/.test(n))shape='mochi';
+ else if(/Seiryu/.test(n))shape='dragon';
+ if(shape==='nika'){
+  gem22(g,[0,-.06,0],[.64,.86,.63],palette[0],8);
+  for(let i=0;i<12;i++){let a=i*2.39996,t=(i+.5)/12;gem22(g,[Math.cos(a)*(.38+.18*t),.68-1.38*t,Math.sin(a)*(.38+.18*t)],[.31,.35,.31],i%3===0?palette[1]:palette[0],7);}
+  branch22(g,[[0,.87,0],[.22,1.31,0],[.63,1.33,0],[.75,1.02,0]],[.13,.12,.08,.035],'#4b9d4c');
+ }else if(shape==='heart'){
+  gem22(g,[-.42,.32,0],[.56,.66,.58],palette[0]);gem22(g,[.42,.32,0],[.56,.66,.58],palette[0]);
+  const pp=[[-.95,.25,0],[-.78,-.3,0],[0,-1.28,0],[.78,-.3,0],[.95,.25,0]];
+  for(let i=0;i<4;i++){g.tri(pp[i],pp[i+1],[0,.08,.57],palette[1]);g.tri([0,.08,-.57],pp[i+1],pp[i],palette[0]);}
+ }else if(shape==='cluster'){
+  for(let i=0;i<6;i++){let a=i*TAU/6;const path=Array.from({length:10},(_,j)=>{let t=j/9;return [Math.cos(a)*(.26+.48*t)+.23*Math.sin(Math.PI*t),1.12-2.1*t,Math.sin(a)*(.26+.48*t)]});
+  branch22(g,path,path.map((_,j)=>.10+.23*Math.sin(Math.PI*j/9)),i%2?palette[0]:palette[1]);}
+ }else if(shape==='flower'){
+  for(let i=0;i<9;i++){let a=i*TAU/9;feather22(g,[0,.03,0],[Math.cos(a)*1.28,.05,Math.sin(a)*1.1],.47,i%2?palette[0]:palette[1],palette[2]);}
+  gem22(g,[0,0,.5],[.44,.42,.45],'#ffd674');
+ }else if(shape==='bubbles'){
+  gem22(g,[0,0,0],[.76,.75,.68],palette[0]);for(let i=0;i<8;i++){let a=i*2.4;gem22(g,[Math.cos(a)*.65,Math.sin(a)*.61,Math.sin(a*1.4)*.42],[.32,.33,.3],i%2?palette[1]:palette[2]);}
+ }else if(shape==='mochi'){
+  gem22(g,[0,.32,0],[.95,.76,.83],palette[0]);gem22(g,[0,-.54,0],[.78,.52,.8],palette[1]);
+ }else if(shape==='pumpkin'){
+  for(let i=0;i<7;i++){let a=i*TAU/7;gem22(g,[Math.cos(a)*.31,0,Math.sin(a)*.28],[.63,.9,.58],i%2?palette[0]:palette[1]);}
+ }else if(shape==='dragon'){
+  gem22(g,[0,0,0],[.88,1.1,.79],palette[0]);for(let i=0;i<9;i++){let a=i*TAU/9;feather22(g,[Math.cos(a)*.55,.5,Math.sin(a)*.57],[Math.cos(a)*.9,1.25,Math.sin(a)*.76],.22,palette[1],palette[2]);}
+ }else if(shape==='tree'){
+  gem22(g,[0,-.2,0],[.88,.94,.82],palette[0]);for(let i=0;i<5;i++){let a=i*TAU/5;feather22(g,[0,.65,0],[Math.cos(a)*.9,1.4,Math.sin(a)*.6],.38,palette[1],palette[2]);}
+ }else{
+  let size=/Suna Suna/.test(n)?[.85,1.12,.84]:/Yami Yami/.test(n)?[1.0,.86,.92]:/Nika/.test(n)?[.91,1.01,.89]:[.88,1.04,.82];
+  // Different crown/shoulder shapes even when the printed fruit's official details aren't available.
+  blob(g,[0,0,0],size,palette[0],id,12,6);
+ }
+ if(/Bara Bara/.test(n)){for(let i=0;i<7;i++){let a=i*TAU/7;feather22(g,[Math.cos(a)*.3,.68,Math.sin(a)*.3],[Math.cos(a)*.55,1.5,Math.sin(a)*.55],.32,'#3ab55b','#8ce74a')}}
+ if(shape==='flame'){
+  // Fire is grown as flame ridges and curled leaves, not a crystal hat.
+  for(let i=0;i<8;i++){let a=i*TAU/8;feather22(g,[Math.cos(a)*.5,.47,Math.sin(a)*.4],[Math.cos(a)*.68,1.47+Math.sin(i*2)*.18,Math.sin(a)*.68],.31,'#f66a24','#ffe45b');}
+ }
+ if(shape!=='flower'){
+  for(let i=0;i<5;i++){let a=i*TAU/5,x=Math.cos(a)*.44,y=Math.sin(a)*.48;
+   planeSpiral(g,[x,y,.81+.024*(i%2)],.17,palette[2],1.32,.05,22);
+  }
+  planeSpiral(g,[0,.04,.93],.33,palette[2],1.74,.072,31);
+ }
+ branch22(g,[[0,.86,0],[.06,1.23,0],[.38,1.35,.03]],[.16,.11,.04],'#5e9d4a');
+ feather22(g,[0,1.12,0],[.62,1.31,-.14],.27,'#50b84c','#b2e75c');
+ if(/Neko Neko|Bison/.test(n))for(let side of [-1,1])feather22(g,[side*.55,.65,.15],[side*.9,1.2,.15],.2,palette[1],palette[2]);
+ if(/Jiki Jiki/.test(n))branch22(g,[[-.58,.05,.35],[-.65,-.45,.4],[.65,-.45,.4],[.55,.12,.4]],[.13,.13,.13,.13],'#ffe37f');
+ return g;
+}
+function familyBranch22(ci){const g=new Mesh(),base=['#b47535','#524567','#c14591'][ci];
+ branch22(g,[[-9.6,-3.3,0],[-4.7,-1.6,0],[0,0,0],[4.8,-1.3,0],[9.5,-3.3,0]],[.32,.91,1.25,.92,.28],base);
+ for(let side of [-1,1]){
+  feather22(g,[side*4.1,-1.5,0],[side*6.9,-.20,.5],1.2,['#8ee64b','#a8eeff','#ff9fce'][ci],['#c9f56d','#d6fdff','#ffc9df'][ci]);
+  feather22(g,[side*5,-1.8,0],[side*7.4,-1.85,.8],.8,['#5ac747','#66cbf0','#e469a6'][ci],'#ffde8f');
+ }
+ return g;
+}
+
+/* V23 — six original macro-faceted spirit trees. Each sculpture is modelled from
+   large sectional forms, sculpted silhouette accents and branch-root continuity.
+   The rendering remains intentionally untextured, chibi, and performant. */
+const P23={
+ zo:['#a76633','#d99449','#f7d17c','#1e8740','#5fbe35','#a2eb42'],
+ lo:['#352c51','#584d77','#e1f5ff','#00beee','#ff5d23','#ffe557'],
+ pa:['#842567','#c53890','#ff80c0','#ffbee1','#ffe071','#a9f0ff']
+};
+function seq23(seed){return rng(seed*739+23)}
+function line23(g,pts,r,c,side=9){tube(g,pts,r,c,side)}
+function swell23(g,p,r,c,id=42){blob(g,p,r,c,id,11,5)}
+function bigHorn23(g,points,r=2.2,col='#f7d59a'){
+ line23(g,points,points.map((_,i)=>Math.max(.025,r*Math.pow(1-i/(points.length-1),1.2))),col,7);
+ line23(g,points.map(p=>add(p,[0,.14,.17])),points.map((_,i)=>Math.max(.018,r*.09*(1-i/(points.length-1)))),'#fff0c4',5);
+}
+function bigLeaf23(g,start,end,width,col,highlight='#e1ff98'){
+ // Two broad triangular planes and a central low-poly ridge, not thin pine needles.
+ const tangent=norm(sub(end,start)),side=norm(cross(tangent,[0,0,1]));
+ const m=mix(start,end,.49),ridge=add(m,[0,width*.30,.45]);
+ const l=add(m,mul(side,width)),r=sub(m,mul(side,width));
+ g.tri(start,l,ridge,col);g.tri(l,end,ridge,highlight);
+ g.tri(start,ridge,r,col);g.tri(ridge,end,r,highlight);
+ g.tri(l,r,end,col);
+}
+function halo23(g,c,r,ry,color='#ffe57a',thick=.6){
+ const ps=Array.from({length:43},(_,j)=>{const a=TAU*j/42;return add(c,[Math.cos(a)*r,Math.sin(a)*ry,0])});
+ line23(g,ps,ps.map(()=>thick),color,7);
+}
+function livingCrown23(g,p,r,light,dark,seed=0,petals=9){
+ // Multi-tier canopy: large flattened facets, jagged natural edges, overlapping leaf fans.
+ const R=seq23(seed),sides=11,levels=[[-.55,.56],[-.26,.98],[.06,1.16],[.33,.95],[.67,.60],[.93,.18]];
+ const rings=levels.map(([h,rs],j)=>Array.from({length:sides},(_,i)=>{const a=TAU*i/sides+.11*seed;
+  const radius=rs*(1+.085*Math.sin(i*2.9+seed));return add(p,[Math.cos(a)*r[0]*radius,h*r[1],Math.sin(a)*r[2]*radius]);}));
+ for(let j=0;j<levels.length-1;j++)for(let k=0;k<sides;k++){const l=(k+1)%sides;g.quad(rings[j][k],rings[j][l],rings[j+1][l],rings[j+1][k],((k+j*2)%4===0)?light:dark)}
+ for(let j=0;j<sides;j++)g.tri(rings.at(-1)[j],rings.at(-1)[(j+1)%sides],add(p,[0,r[1]*1.02,0]),j%2?light:dark);
+ for(let i=0;i<petals;i++){const a=i*TAU/petals+.27*seed;
+  let src=add(p,[Math.cos(a)*r[0]*.55,.08*r[1],Math.sin(a)*r[2]*.55]);
+  let dst=add(p,[Math.cos(a)*r[0]*(1.25+(i%3)*.08),(-.02+(i%2)*.12)*r[1],Math.sin(a)*r[2]*1.22]);
+  bigLeaf23(g,src,dst,r[1]*(.35+(i%2)*.07),i%2?dark:light,i%3===0?'#d7f27a':light);
+ }
+}
+function crest23(g,c,sz,base,hi){
+ // Inlaid rune with a readable macro-spiral; no texture maps or tiny text.
+ let ring=Array.from({length:28},(_,i)=>{let t=i/27,a=t*TAU*1.58;return add(c,[Math.cos(a)*sz*(1-t*.88),Math.sin(a)*sz*(1-t*.88),.13])});
+ line23(g,ring,ring.map((_,i)=>.17*(1-i/60)),hi,7);
+ swell23(g,add(c,[0,0,-.18]),[sz*.84,sz*.84,.28],base,28);
+}
+function fruitBoughs23(g,ci){
+ let c=['#9a602f','#584f72','#bb358c'][ci];
+ for(let j=0;j<groups[ci].length;j++){
+  const to=anchorFor(ci,j),a=[to[0]*.14,11.7+(j%3)*3,to[2]*.08],b=[to[0]*.57,to[1]+4.2,to[2]*.50],end=add(to,[0,2.55,0]);
+  line23(g,[a,b,end],[2.5,1.48,.22],c,8);
+  if(j%2===0)bigLeaf23(g,add(b,[0,.3,-.2]),add(b,[to[0]>=0?4:-4,1.7,-.7]),1.6,['#68c843','#b9ecf1','#fa80b9'][ci],['#b0ed51','#d3f4ff','#ffbadf'][ci]);
+ }
+}
+function deepRoots23(g,wood,rootHi){
+ for(let j=0;j<9;j++){const a=j*TAU/9;const o=[Math.cos(a),Math.sin(a)];
+  line23(g,[[o[0]*2.3,6,o[1]*2],[o[0]*6,2.0,o[1]*5],[o[0]*12,.35,o[1]*10.6],[o[0]*14.5,-.4,o[1]*12]],[3.9,2.7,1.2,.09],j%3?wood:rootHi,9);
+ }
+}
+function heroTrunk23(g,ci,alt=false){
+ const wood=[P23.zo[0],P23.lo[0],P23.pa[1]][ci],hi=[P23.zo[1],P23.lo[1],P23.pa[2]][ci];
+ const way=ci===0?[[0,0,0],[-2,8,0],[1,16,0],[-1.2,24,0],[0,32,0]]:ci===1?[[0,0,0],[2,8,0],[-1.5,16,0],[2,24,0],[0,32,0]]:[[0,0,0],[-3,8,0],[3,16,0],[-2,24,0],[0,32,0]];
+ line23(g,way,[7.5,6.9,5.7,4.1,1.35],wood,11);
+ line23(g,way.map(p=>add(p,[1.1,0,1.3])),[.52,.68,.51,.34,.08],hi,7);
+ deepRoots23(g,wood,hi);
+}
+function beastFace23(g,variant=0){
+ // Guardian face is carved in one massive continuous wood trunk.
+ const dark='#633e2d',gold='#f6d898',wood='#b97238';
+ swell23(g,[0,18,5.4],[5.0,4.4,2.3],wood,12);
+ for(let s of [-1,1]){
+  bigHorn23(g,[[s*3.1,20.5,6.3],[s*5.0,24.5,6.1],[s*5.4,28,6.0]],1.45,gold);
+  swell23(g,[s*2.35,19.0,7.25],[1.0,.72,.35],'#fbe7a5',10);
+  swell23(g,[s*2.35,19.07,7.63],[.39,.43,.20],'#18383c',11);
+  bigHorn23(g,[[s*3.8,16.6,7.3],[s*4.2,14.2,7.4],[s*3.7,13.6,7.5]],1,gold);
+ }
+ swell23(g,[0,16.5,8.0],[1.55,1.15,.60],dark,22);
+ swell23(g,[0,16.45,8.55],[.82,.49,.16],gold,25);
+ bigHorn23(g,[[-2.4,14.6,7.2],[0,14.1,7.5],[2.4,14.6,7.2]],.30,gold);
+ crest23(g,[0,10.2,6.5],2.05,'#9c5e32','#ffe0a3');
+}
+function zoanPrimal23(g){
+ heroTrunk23(g,0);beastFace23(g);
+ // Silhouette led by enormous organic tree antlers, growing out of the bark.
+ for(let s of [-1,1]){
+  bigHorn23(g,[[s*4,19,2],[s*8,26,2],[s*12,33,1],[s*14,40,0],[s*12,45,0]],2.65);
+  bigHorn23(g,[[s*10,30,1],[s*15,34,1],[s*18,40,1]],1.4);
+  bigHorn23(g,[[s*7,26,2],[s*8,34,2],[s*6.5,39,2]],1.15);
+ }
+ for(let i=0;i<7;i++){const a=i*2.39996,ctr=[Math.cos(a)*12.5,28+(i%3)*3,Math.sin(a)*8];
+  line23(g,[[0,17,0],mul(ctr,.56),ctr],[3.4,2.4,.1],'#99582f',8);
+  livingCrown23(g,add(ctr,[0,2.8,0]),[7.9,5.2,6.4],i%2?'#9be842':'#3caa37',i%2?'#5dba23':'#178447',i+2,7);
+ }
+ livingCrown23(g,[0,37,-2],[10,5.6,8],'#a3ed46','#4cae2f',22,11);
+}
+function zoanMythic23(g){
+ heroTrunk23(g,0,true);beastFace23(g,1);
+ for(let s of [-1,1]){
+  // Truly wide guardian wings, with individual macro-feather facets.
+  line23(g,[[s*2,19,2],[s*9,26,1],[s*15,30,1],[s*20,34,.3]],[2.5,1.6,1,.03],'#f3d88e');
+  for(let j=0;j<9;j++){
+   let base=[s*(7+j*1.18),26+j*.58,2.2],tip=[s*(9+j*1.35),19.0-j*.61,3.0];
+   bigLeaf23(g,base,tip,1.45,j%3===0?'#ffe8b1':j%3===1?'#f9b45d':'#d88f48','#fff6c9');
+  }
+  bigHorn23(g,[[s*4,24,2],[s*9,30,2],[s*13,34,1]],1.8,'#ffdf9e');
+ }
+ for(let j=0;j<6;j++){const a=j*TAU/6;let p=[Math.cos(a)*12.5,29+j%2*3,Math.sin(a)*8];
+  line23(g,[[0,17,0],[p[0]*.63,p[1]-4,p[2]*.5],p],[3.2,2,.1],'#a06a35');
+  livingCrown23(g,add(p,[0,3,0]),[6.7,4.7,5.3],j%2?'#b9f452':'#49bf3a',j%2?'#6bbb27':'#178a4e',101+j,7);
+ }
+ livingCrown23(g,[0,39,-1],[8.6,5,7.3],'#a3e948','#2d9d40',56,8);
+ halo23(g,[0,25,0],7.2,7.2,'#f9d772',.56);
+ // Mythical animal spirit rises out of its own canopy.
+ for(let s of [-1,1])bigLeaf23(g,[s*1,40,1],[s*4.5,46,1.4],2.2,'#ffc773','#fff1b8');
+}
+function facetFlame23(g,p,h=7,r=3.4){
+ // Fat flame-tongues are plump polygons with inset colour ridges, not diamonds.
+ const pal=['#e44326','#ff7625','#ffb32b','#ffe66b'];
+ for(let k=0;k<4;k++){
+  let a=k*TAU/4;const base=add(p,[Math.cos(a)*r*.6,-.2,Math.sin(a)*r*.6]);
+  bigLeaf23(g,base,add(base,[Math.sin(a)*r*.5,h*(.8+k*.08),Math.cos(a)*r*.5]),r*(.52-k*.035),pal[k],pal[(k+1)%4]);
+ }
+ swell23(g,add(p,[0,1.4,0]),[r*.8,2.5,r*.75],'#ff6d25',88);
+}
+function cloud23(g,p,r=7,k=0){
+ const pale=['#e9f8fd','#b5d9e8','#f8ffff','#9cbacd'];
+ for(let i=0;i<4;i++){let off=(i-1.5)*r*.52;
+  swell23(g,add(p,[off,Math.sin(i*2)*r*.13,i%2*.35]),[r*.58,r*.46,r*.52],pale[(i+k)%4],k*21+i);
+ }
+}
+function bolt23(g,p,scale=5){const path=[p,add(p,[scale*.16,-scale*.4,.6]),add(p,[-scale*.18,-scale*.55,.7]),add(p,[scale*.03,-scale*1.07,.6])];line23(g,path,[.75,.56,.42,.05],'#ffe75f',5)}
+function elementalCurrents23(g,phase=0,r=6.8,y=4,h=27){
+ const pts=Array.from({length:58},(_,i)=>{const t=i/57,a=phase+TAU*t*1.43;
+  return [Math.cos(a)*r*(1-t*.08),y+t*h,Math.sin(a)*r*(1-t*.08)]});
+ line23(g,pts,pts.map((_,i)=>1.33-(i/57)*.38),'#04b9e6',7);
+ line23(g,pts.map(p=>add(p,[0,.18,.48])),pts.map(()=>.28),'#b1f4ff',5);
+}
+function elementalCore23(g,spiralPhase=0){
+ // Divided core with basalt, lava fissures and glacial water on continuous bark.
+ heroTrunk23(g,1);elementalCurrents23(g,spiralPhase);
+ for(let s of [-1,1]){
+  line23(g,[[s*.8,3,6.8],[s*2.6,8,6.6],[s*.9,13.2,5.4],[s*2.4,19,4.4]],[.58,.75,.58,.10],s===1?'#ff7b29':'#ffda49',7);
+ }
+ for(let i=0;i<7;i++){let a=i*TAU/7;shard(g,[Math.cos(a)*8,0.4,Math.sin(a)*8],[Math.cos(a)*9.5,4+i%3*3,Math.sin(a)*9.5],1.25,i%2?'#8bebff':'#35bce8',6)}
+ crest23(g,[0,9,7],2.2,'#3b3361','#ffcc75');
+}
+function logiaConfluence23(g){
+ elementalCore23(g,.35);
+ for(let j=0;j<4;j++){
+  let left=[-8-j*1.7,29-j%2*3,Math.sin(j*1.3)*2],right=[9+j*1.55,29+(j%2)*2,Math.sin(j*2)*2];
+  line23(g,[[0,19,0],[left[0]*.6,24,left[2]*.6],left],[3,1.8,.12],'#555070');
+  cloud23(g,add(left,[0,2,0]),5.8,j);bolt23(g,add(left,[0,-2,3]),3.3);
+  line23(g,[[0,18,0],[right[0]*.6,24,right[2]*.6],right],[3,2,.15],'#62415d');
+  facetFlame23(g,add(right,[0,2.3,0]),6.2+j%2,2.5);
+ }
+ // A single water arch forms the middle connective tissue.
+ line23(g,[[-10,25,0],[-7,19,3],[-2,15,4],[3,10,4],[8,1,3]],[1.8,1.6,1.4,1.2,.15],'#23bce9');
+ for(let i=0;i<6;i++)bolt23(g,[-5-i*.9,25-(i%3)*2,4],2.5);
+}
+function logiaTempest23(g){
+ elementalCore23(g,1.5);
+ for(let j=0;j<9;j++){
+  const a=j*2.399,ctr=[Math.cos(a)*10,28+j%4*2.0,Math.sin(a)*9];
+  line23(g,[[0,19,0],[ctr[0]*.61,ctr[1]-4,ctr[2]*.63],ctr],[2.6,1.6,.1],'#504264');
+  cloud23(g,add(ctr,[0,1.4,0]),4.6,j);
+  if(j%2===0)bolt23(g,add(ctr,[0,-1.8,3]),4.7);
+ }
+ // A different silhouette from B1: two long rising storm streamers and central lightning crest.
+ for(let s of [-1,1]){
+  const ps=Array.from({length:30},(_,i)=>{let t=i/29;return [s*(9+3*Math.sin(t*TAU)),6+t*33,Math.cos(t*TAU*1.4)*7]});
+  line23(g,ps,ps.map(()=>.55),s===1?'#9dedff':'#ffffff',7);
+  facetFlame23(g,[s*6,17,3],6.2,2.2);
+ }
+ bolt23(g,[0,41,2],9);
+}
+function facetedFlower23(g,p,scale=4.3){
+ for(let j=0;j<7;j++){
+  let a=j*TAU/7;bigLeaf23(g,add(p,[0,0,.7]),add(p,[Math.cos(a)*scale,Math.sin(a)*scale*.7,Math.sin(a)*scale*.44+1.1]),scale*.45,j%2?'#f36fac':'#ff99cc','#ffe0f3');
+ }
+ swell23(g,add(p,[0,0,1.6]),[scale*.27,scale*.28,scale*.17],'#ffd765',17);
+}
+function impossibleTrunk23(g){
+ deepRoots23(g,'#b63088','#ed6db5');
+ for(let s of [-1,1]){
+  line23(g,[[s*.4,0,0],[s*3.6,8,0],[s*.8,17,0],[s*4,26,0],[s*2.3,35,0]],[4.7,4.2,3.3,2.2,.45],s<0?'#b53085':'#d3479b',10);
+ }
+ crest23(g,[0,8,5.6],2.3,'#ab327e','#ffdc6b');
+}
+function elasticLoop23(g,center,r,light='#ffe171',thick=1.1,z=.2){
+ let pts=Array.from({length:55},(_,i)=>{let a=i*TAU/54;return add(center,[Math.cos(a)*r,Math.sin(a)*r*.81,z])});
+ line23(g,pts,pts.map(()=>thick),light,9);
+}
+function paraNexus23(g){
+ impossibleTrunk23(g);
+ for(let j=0;j<7;j++){const a=j*2.399,p=[Math.cos(a)*13,27+j%3*3,Math.sin(a)*9];
+  line23(g,[[0,16,0],[p[0]*.65,p[1]-5,p[2]*.6],p],[3,2,.16],'#bb3589');
+  livingCrown23(g,add(p,[0,3,0]),[7.4,4.8,5.3],j%2?'#ff9bd2':'#ff72be',j%2?'#da4d98':'#c03a8a',j+80,5);
+ }
+ livingCrown23(g,[0,39,-2],[8.2,5.4,6.9],'#ff9bd3','#cf4093',90,7);
+ elasticLoop23(g,[-4,26,3],8.2,'#ffda62',1.2);
+ elasticLoop23(g,[8,22,-1],6.9,'#bff5ff',.82);
+ let pts=Array.from({length:57},(_,i)=>{let t=i/56,a=t*TAU*1.6;return [Math.cos(a)*8.3,5+27*t,Math.sin(a)*8.1]});
+ line23(g,pts,pts.map(()=>1.3),'#ffcc42');
+ for(let i=0;i<12;i++){let a=i*TAU/12,p=[Math.cos(a)*13,8+i%4*3,Math.sin(a)*11];swell23(g,p,[1.4,1.6,1.2],i%2?'#9a6be6':'#ffd173',50+i)}
+}
+function paraBloom23(g){
+ impossibleTrunk23(g);
+ for(let j=0;j<8;j++){let a=j*2.399,p=[Math.cos(a)*11.5,27+j%3*2.8,Math.sin(a)*8.2];
+  line23(g,[[0,15,0],[p[0]*.6,p[1]-5,p[2]*.6],p],[3.0,1.8,.15],'#c04096');
+  facetedFlower23(g,add(p,[0,2.6,0]),3.9+j%2*1.0);
+  livingCrown23(g,add(p,[0,1.3,-3.3]),[4.8,2.8,3.1],'#ff97cb','#d94b9e',30+j,4);
+ }
+ facetedFlower23(g,[0,40,0],7.0);
+ let ps=Array.from({length:42},(_,i)=>{let t=i/41,a=t*TAU*1.4;return [Math.cos(a)*8.7,3+t*31,Math.sin(a)*8]});
+ line23(g,ps,ps.map(()=>1.22),'#ffe269');
+ for(let j=0;j<5;j++)elasticLoop23(g,[Math.cos(j*2.2)*6.8,26+j%3*2,0],2.2,'#ffe4a1',.32);
+}
+function makeTree23(ci,variant){let g=new Mesh();
+ if(ci===0)(variant===0?zoanPrimal23:zoanMythic23)(g);
+ else if(ci===1)(variant===0?logiaConfluence23:logiaTempest23)(g);
+ else (variant===0?paraNexus23:paraBloom23)(g);
+ fruitBoughs23(g,ci);return g;
+}
+function island23(ci){
+ const g=new Mesh(),N=17, R=seq23(ci+25),radius=[18.5,19.2,18.7],base=radius[ci],radii=[base,base*1.05,base*.96,base*.86,base*.69,base*.44,.06],h=[-.2,-2.2,-5,-9.8,-15.8,-21,-24.0],rings=[];
+ for(let y=0;y<radii.length;y++){
+  rings.push(Array.from({length:N},(_,i)=>{let a=i*TAU/N;let rad=radii[y]*(1+.075*Math.sin(i*3.3+ci)+.055*Math.sin(i*7+2));return [Math.cos(a)*rad,h[y]+(y<3?.25*Math.sin(i*4.3):0),Math.sin(a)*rad*.83]}));
+ }
+ for(let i=0;i<N;i++){let j=(i+1)%N;g.tri([0,.35,0],rings[0][i],rings[0][j],i%4===0?'#9ae838':'#63c92a');for(let k=0;k<6;k++)g.quad(rings[k][i],rings[k][j],rings[k+1][j],rings[k+1][i],[['#2f9c30','#55b92b'],['#aa7a50','#d2a16c'],['#8b6c54','#ad855e'],['#665567','#876d65'],['#59485e','#614f61'],['#403b57','#4e405b']][k][i%2]);}
+ // Each waterfall is a stepped, broad cloth-like ribbon, with visible white foamy seams.
+ for(let side of [-1,1]){
+  let origin=[side*9.1,-.1,14.7],segments=8;
+  for(let j=0;j<segments;j++){
+   let t=j/segments,tt=(j+1)/segments,y0=origin[1]-t*25,y1=origin[1]-tt*25,
+    x=origin[0]+side*(t*1.8+.6*Math.sin(t*10)),xx=origin[0]+side*(tt*1.8+.6*Math.sin(tt*10)),z=origin[2]+t*5,zz=origin[2]+tt*5;
+   for(let k=0;k<7;k++){
+    let left=(k/7-.5)*2.8,right=((k+1)/7-.5)*2.8;
+    g.quad([x+left,y0,z],[x+right,y0,z],[xx+right,y1,zz],[xx+left,y1,zz],k===0?'#bdfbff':k===4?'#e7ffff':k%2?'#20bce7':'#088abd');
+   }
+   if(j%2===0)for(let q of [-1,1])swell23(g,[xx+q*1.35,y1+.15,zz+.2],[.3,.4,.28],'#dcffff',j*4+q);
+  }
+  for(let j=0;j<8;j++)swell23(g,[origin[0]+side*1.5+(j-4)*.57,-24.1,20.0],[.48,.3,.46],j%2?'#93edff':'#e3ffff',j);
+ }
+ for(let k=0;k<15;k++){let a=k*TAU/15,dist=12.7+(k%3)*1.7;
+  let p=[Math.cos(a)*dist,.45,Math.sin(a)*dist*.8];livingCrown23(g,p,[1.4,.6,1.2],k%2?'#51bd32':'#8cda3a','#2b9c35',k,2);
+ }
+ return g;
+}
+function genericFruit23(ci,seed){
+ // At family scale all fruits deliberately read as one family of stylised objects.
+ const g=new Mesh(),s=seed%5,palette=[['#75e443','#168e5e','#e6cd4f'],['#f5752e','#18bce0','#ffe25c'],['#ff7ac9','#9968d9','#ffbd63']][ci];
+ blob(g,[0,0,0],s===0?[.77,1.12,.7]:s===1?[.92,.83,.83]:[.81,.94,.77],palette[seed%3],seed,10,5);
+ line23(g,[[0,.75,0],[.09,1.04,0],[.3,1.13,0]],[.15,.08,.025],'#598c37',5);
+ planeSpiral(g,[0,.02,.75],.28,'#ffe6a3',1.55,.05,18);
+ return g;
+}
+function specialFruit23(d){
+ // Published appearance is drawn with distinct in-verse-inspired stylisation; where
+ // appearance is unverified the caller never enters this function.
+ const g=specialFruit22(d);return g;
+}
+function familyBranch23(ci){
+ const g=new Mesh(),wood=['#a4622c','#524969','#b43887'][ci];
+ line23(g,[[-11,-2.5,0],[-8,-.6,0],[-4,1.0,0],[0,1.8,0],[4,1,0],[8,-.6,0],[11,-2.5,0]],[.2,.65,1.05,1.45,1.05,.65,.2],wood,8);
+ for(let k=-2;k<=2;k++){
+  let x=k*4.0,y=1.7-Math.abs(k)*.68;
+  line23(g,[[x,y,0],[x*.99,y-1.0,.04],[x,y-2.3,.04]],[.13,.09,.02],ci===0?'#ca9350':ci===1?'#9ca7bd':'#f18daf',5);
+  if(Math.abs(k)!==2)bigLeaf23(g,[x,y,.02],[x+(k%2?2.1:-2.1),y+.8,-.4],1.10,['#83d349','#b5eeef','#ff9ed3'][ci],['#b5eb63','#e0ffff','#ffd2e6'][ci]);
+ }
+ return g;
+}
+
+/* V24: one independent, substantial, volumetric macro-chibi sculpture for
+   each class. Built ONLY on the V23 engine and historical catalogue.
+   All forms are actual XYZ triangle meshes, not billboards or image textures. */
+const V24={
+ zo:{bark:'#a76132',light:'#d68c45',deep:'#6e3d2b',canopy:['#16995a','#34bd52','#82d944','#c8ec63'],ivory:'#ffe1a0'},
+ lo:{rock:'#403655',light:'#665677',deep:'#27223b',cloud:['#e7faff','#a6d3e3','#f9fcff','#799fc3'],fire:['#fd451f','#ff8122','#ffd33d']},
+ pa:{bark:'#c23488',deep:'#8d2879',light:'#ed58af',canopy:['#f95ba9','#ff92cc','#f3aedb','#b56ccd'],gold:'#ffda67'}
+};
+const v24Color=(cs,i)=>cs[(i+cs.length*30)%cs.length];
+function v24Orb(g,p,r,cols,seed=1,seg=11,lat=7){blob(g,p,r,Array.isArray(cols)?cols:[cols],seed,seg,lat)}
+function v24Path(g,points,thick,c,sides=9){tube(g,points,thick,c,sides)}
+function v24Frame(g,p,r,seed,col,highlight){
+ // A hollow 3D-facing faceted lobe with readable depth and natural ridge patterns.
+ v24Orb(g,p,r,[col,highlight,col],seed,11,7);
+ for(let i=0;i<4;i++){let a=(i+.2)*TAU/4+seed*.1;
+  const from=add(p,[Math.cos(a)*r[0]*.45,-r[1]*.25,Math.sin(a)*r[2]*.58]);
+  const to=add(p,[Math.cos(a)*r[0]*.92,r[1]*.45,Math.sin(a)*r[2]*.92]);
+  v24Path(g,[from,mix(from,to,.62),to],[.28,.19,.035],highlight,5);
+ }
+}
+function v24GroveCrown(g,p,r,seed){
+ const R=rng(seed+1008),greens=V24.zo.canopy;
+ v24Orb(g,p,r,[greens[0],greens[1],greens[2]],seed,12,7);
+ // Voluminous orbital leaf-bunches wrap around the front, rear AND sides.
+ for(let i=0;i<9;i++){let a=i*TAU/9+seed*.31,top=(i%4-1)*1.85;
+  let q=add(p,[Math.cos(a)*r[0]*.69,top+2.3,Math.sin(a)*r[2]*.72]);
+  v24Orb(g,q,[r[0]*.40,r[1]*(.55+(i%3)*.06),r[2]*.46],v24Color(greens,i+seed),seed*17+i,9,6);
+  if(i%2===0){const t=add(q,[Math.cos(a)*r[0]*.3,3.4,Math.sin(a)*r[2]*.3]);
+   v24Path(g,[q,mix(q,t,.55),t],[.35,.28,.02],greens[3],6);
+  }
+ }
+ for(let i=0;i<4;i++){let a=i*TAU/4+.35;let q=add(p,[Math.cos(a)*r[0]*.41,r[1]*.86,Math.sin(a)*r[2]*.46]);v24Orb(g,q,[r[0]*.37,r[1]*.40,r[2]*.39],greens[2],seed*31+i,9,6)}
+}
+function v24Roots(g,col,light){
+ for(let i=0;i<8;i++){const a=i*TAU/8,dx=Math.cos(a),dz=Math.sin(a);
+  v24Path(g,[[dx*1.5,7,dz*1.5],[dx*5.8,3.8,dz*6.0],[dx*10.5,1.2,dz*10],[dx*14.6,.4,dz*13.4]],[4.5,3.4,2.1,.23],i%3?col:light,9);
+ }
+}
+function v24Trunk(g,ci){
+ const c=[V24.zo.bark,V24.lo.rock,V24.pa.bark][ci],h=[V24.zo.light,V24.lo.light,V24.pa.light][ci];
+ const pts=[[0,0,0],[-1.2,6,.8],[1.9,14,-1],[-1,23,0],[.6,32,-.5],[0,40,0]];
+ v24Path(g,pts,[9.4,8.6,7.1,6.0,4.5,2.5],c,12);v24Roots(g,c,h);
+ // Three physical macro-facet bark veins follow the trunk's actual volume.
+ for(let k=0;k<3;k++){let a=TAU*k/3+.3,ps=pts.slice(0,5).map((p,i)=>add(p,[Math.sin(a+i*.2)*(7.3-i*.6),0,Math.cos(a+i*.2)*(7.3-i*.6)]));
+  v24Path(g,ps,[.52,.46,.32,.24,.06],h,6);
+ }
+}
+function v24Horns(g,side){
+ const s=side;
+ v24Path(g,[[s*5.8,24,1.7],[s*10.2,32,2],[s*14.7,38,1.6],[s*17.3,46,1.3],[s*15.7,52,.5]],[3.0,2.4,1.6,.85,.06],V24.zo.ivory,9);
+ v24Path(g,[[s*12.0,35,1.5],[s*17.9,41,2.5],[s*20.8,46,2.4]],[1.75,.95,.06],'#ffe9b6',8);
+ v24Path(g,[[s*10,32,1.9],[s*11.8,41,3.1],[s*11.3,46,3]],[1.6,.7,.06],'#ebcc88',7);
+}
+function v24Zoan(g){
+ v24Trunk(g,0);
+ // The tree's animal face is part of the bark, kept broad and readable.
+ v24Orb(g,[0,21,7.8],[4.9,4.3,2.8],[V24.zo.light,V24.zo.bark],411,10,7);
+ for(const s of [-1,1]){
+  v24Path(g,[[s*2.0,22.3,9.8],[s*2.5,22.0,10.35]],[.8,.8],'#ffdf99',7);
+  v24Orb(g,[s*2.65,22.0,10.54],[.43,.48,.22],'#223e45',12,9,5);
+  v24Path(g,[[s*3.8,20.8,9.1],[s*5.5,18.3,9.8],[s*5.7,16.5,9.4]],[1.6,1,.02],V24.zo.ivory,8);
+  v24Horns(g,s);
+ }
+ v24Orb(g,[0,19.3,11],[1.1,.76,.52],'#6b3c27',71,8,5);
+ planeSpiral(g,[0,12,8.9],2.9,'#ffe3a0',1.73,.30,49);
+ // The 3D boughs grow in a full radial crown, not a squashed plane.
+ for(let i=0;i<10;i++){let a=i*2.39996,angle=a+.3,y=27+(i%4)*3.2,
+  end=[Math.cos(angle)*(10+(i%3)*2.5),y,Math.sin(angle)*(11+(i%2)*2.5)];
+  v24Path(g,[[0,17+i%2*2,0],[end[0]*.49,y-8,end[2]*.48],end,add(end,[Math.cos(a)*3.6,2.7,Math.sin(a)*3.6])],[3.6,2.8,1.6,.10],i%3?V24.zo.bark:V24.zo.light,9);
+  const leaf=add(end,[0,4.1,0]);v24GroveCrown(g,leaf,[5.5+(i%3)*.6,5.4+(i%2)*.9,5.9+(i%3)*.5],i*5+9);
+ }
+ v24GroveCrown(g,[0,46,0],[9.0,7.1,9.5],101);
+ v24GroveCrown(g,[-4,52,-3],[6.1,5.0,6.3],142);
+}
+function v24Cloud(g,p,seed=0){
+ const cs=V24.lo.cloud;
+ for(let i=0;i<6;i++){const a=i*TAU/6;let q=add(p,[Math.cos(a)*4.2,Math.sin(a*1.4)*2.0,Math.sin(a)*4.0]);
+  v24Orb(g,q,[4.0+(i%2)*.8,4.3+(i%3)*.35,4.2+(i%3)*.5],[v24Color(cs,i+seed),cs[2]],seed*19+i,10,6);
+ }
+ v24Orb(g,p,[5.8,4.7,6],[cs[0],cs[1]],seed+801,11,7);
+}
+function v24Flame(g,p,height,colIndex=0){
+ const cs=V24.lo.fire;
+ for(let j=0;j<5;j++){const a=j*TAU/5,dx=Math.cos(a),dz=Math.sin(a),h=height*(.73+(j%3)*.12),q=add(p,[dx*1.5,-1.4,dz*1.7]);
+  v24Path(g,[q,add(q,[dx*1.2,h*.37,dz*1.2]),add(q,[dx*1.5,h*.74,dz*.6]),add(q,[dx*2.2,h,dz*.5])],[2.7,2.2,1.12,.04],v24Color(cs,j+colIndex),7);
+ }
+ v24Orb(g,add(p,[0,1.2,0]),[3.9,3.9,3.7],[cs[0],cs[1]],122+colIndex,10,6);
+}
+function v24Water(g,start=0,top=39,radius=9){
+ const ps=Array.from({length:55},(_,i)=>{const t=i/54,a=start+t*TAU*1.38;return [Math.cos(a)*radius*(1-.08*t),4+t*(top-4),Math.sin(a)*radius*(1-.08*t)]});
+ v24Path(g,ps,ps.map((_,i)=>1.85-.65*i/54),'#03bfe7',9);
+ v24Path(g,ps.map(p=>add(p,[.23,.3,.58])),ps.map(()=>.29),'#baf6ff',6);
+}
+function v24Lightning(g,start,scale,side=1){
+ const [x,y,z]=start;
+ v24Path(g,[[x,y,z],[x+side*.5*scale,y-.36*scale,z+1],[x-side*.32*scale,y-.59*scale,z+1.2],[x+side*.06*scale,y-1.03*scale,z+1.6]],[.75,.75,.56,.02],'#fff080',6);
+}
+function v24Logia(g){
+ v24Trunk(g,1);v24Water(g,.2,43,8.4);v24Water(g,2.3,34,10.2);
+ // Physically opposed wings: volcanic matter and storm cloud, both fully 3D.
+ for(let j=0;j<8;j++){
+  let a=j*2.39996,y=27+(j%3)*4,r=10+(j%3)*1.8;
+  let p=[Math.cos(a)*r,y,Math.sin(a)*r];
+  v24Path(g,[[0,17,0],[p[0]*.55,y-5,p[2]*.59],p],[4.3,2.9,.35],V24.lo.rock,9);
+  if(j%2===0){v24Cloud(g,add(p,[0,4,0]),j);v24Lightning(g,add(p,[0,-.5,3]),6,j%3?1:-1)}
+  else{v24Flame(g,add(p,[0,3,0]),7.8+(j%3)*2,j)}
+ }
+ v24Cloud(g,[-5,51,-4],20);v24Cloud(g,[4,52,3],21);
+ v24Flame(g,[10,49,-5],10,7);
+ for(let j=0;j<9;j++){const a=j*TAU/9;
+  const q=[Math.cos(a)*9,.5,Math.sin(a)*9];shard(g,q,add(q,[Math.cos(a)*2,5+j%3*2,Math.sin(a)*2]),1.55,j%2?'#72e8ff':'#b2faff',7);
+ }
+ planeSpiral(g,[0,12,8.4],2.55,'#ffc262',1.7,.29,45);
+}
+function v24ParaPetal(g,c,ang,rad,seed){
+ // Fat three-dimensional flower petal with contrasting raised ridge.
+ const dx=Math.cos(ang),dz=Math.sin(ang),p=add(c,[dx*rad*.57,2.0,dz*rad*.57]);
+ v24Orb(g,p,[rad*.43,rad*.65,rad*.45],[V24.pa.canopy[(seed+1)%4],V24.pa.canopy[seed%4]],seed*83,9,6);
+ let front=add(p,[dx*rad*.18,rad*.3,dz*rad*.15]);v24Orb(g,front,[rad*.18,rad*.32,rad*.20],'#ffd2ea',seed*93,8,5);
+}
+function v24Bloom(g,p,r,seed){
+ for(let i=0;i<7;i++)v24ParaPetal(g,p,TAU*i/7+seed*.17,r,seed+i);
+ v24Orb(g,add(p,[0,1,2]),[r*.34,r*.4,r*.35],'#ffd869',seed*33,10,6);
+}
+function v24TiltRing(g,c,rx,ry,rz,a0,colour,thick){
+ const points=Array.from({length:61},(_,i)=>{const a=i*TAU/60+a0;return add(c,[Math.cos(a)*rx,Math.sin(a)*ry,Math.sin(a+.7)*rz])});
+ v24Path(g,points,points.map(()=>thick),colour,9);
+}
+function v24Paramecia(g){
+ // Three massive twisting columns split/merge; impossible geometry from the trunk outward.
+ v24Roots(g,V24.pa.bark,V24.pa.light);
+ for(let k=0;k<3;k++){
+  let a0=k*TAU/3;
+  const pts=Array.from({length:29},(_,i)=>{const t=i/28,a=a0+t*TAU*1.28;return [Math.cos(a)*(5.9-t*2),t*45,Math.sin(a)*(6.2-t*2)]});
+  v24Path(g,pts,pts.map((_,i)=>Math.max(.3,4.0-i*.117)),v24Color([V24.pa.bark,V24.pa.light,V24.pa.deep],k),9);
+ }
+ // Not a flat pink cloud: deep radial branching and genuinely spherical blossoms.
+ for(let i=0;i<8;i++){
+  let a=i*2.39996,ys=25+i%3*3.8,dist=11+(i%3)*2.2;
+  let p=[Math.cos(a)*dist,ys,Math.sin(a)*dist];
+  v24Path(g,[[0,15,0],[p[0]*.56,ys-5,p[2]*.58],p],[3.4,2.3,.35],i%2?V24.pa.bark:V24.pa.deep,9);
+  const top=add(p,[0,5,0]);v24Orb(g,top,[6.0,5.6,5.9],[V24.pa.canopy[0],V24.pa.canopy[2],V24.pa.canopy[3]],i*31+9,11,7);
+  if(i%2===0)v24Bloom(g,add(p,[0,7,1.7]),4.8,i);
+ }
+ v24Orb(g,[0,49,0],[9,7,9],[V24.pa.canopy[0],V24.pa.canopy[1]],22,11,7);
+ v24Bloom(g,[0,53,3],6.6,14);
+ v24TiltRing(g,[0,27,0],12.4,8.2,5.8,.4,V24.pa.gold,1.25);
+ v24TiltRing(g,[0,35,-2],10.0,9.6,7.5,2.0,'#c9f6fa',.80);
+ // A rising spiral that bends around the tree in *all three axes*.
+ const spiral=Array.from({length:70},(_,i)=>{let t=i/69,a=1.3+t*TAU*1.62;return [Math.cos(a)*8.4,4+t*40,Math.sin(a)*8.9]});
+ v24Path(g,spiral,spiral.map((_,i)=>1.20-.5*i/69),V24.pa.gold,9);
+ for(let i=0;i<9;i++){let a=i*2.4,y=10+(i%6)*5,r=13+(i%3)*1.2;
+  v24Orb(g,[Math.cos(a)*r,y,Math.sin(a)*r],[1.4,1.7,1.6],i%2?'#ffe18c':'#ab75e0',i+122,8,6);
+ }
+ planeSpiral(g,[0,13,7.5],3.1,'#ffeaa5',1.75,.30,44);
+}
+function v24Boughs(g,ci){
+ const c=[V24.zo.bark,V24.lo.rock,V24.pa.bark][ci],h=[V24.zo.light,V24.lo.light,V24.pa.light][ci];
+ for(let i=0;i<groups[ci].length;i++){
+  let t=anchorFor(ci,i),e=add(t,[0,3.0,0]);
+  let from=[t[0]*.15,15+(i%4)*2.1,t[2]*.17];
+  let mid=[t[0]*.58,t[1]+5,t[2]*.62];
+  v24Path(g,[from,mid,e,add(t,[0,1.05,0])],[2.75,1.95,.82,.15],i%3?h:c,9);
+ }
+}
+function makeTree24(ci){const g=new Mesh();[v24Zoan,v24Logia,v24Paramecia][ci](g);v24Boughs(g,ci);return g}
+function island24(ci){
+ // Shared floating archipelago language, class-neutral stone/soil and deep XYZ underside.
+ const g=new Mesh(),N=19,r=[22.3,23,22.8,21,18,12,3,0.07],y=[.15,-2.3,-5.7,-10,-14.2,-19.8,-25.5,-27.8];
+ const rings=r.map((radius,k)=>Array.from({length:N},(_,j)=>{let a=j*TAU/N,rr=radius*(1+.08*Math.sin(j*2.6+ci*.6)+.035*Math.cos(j*6.9));return [Math.cos(a)*rr,y[k]+(k<2?.40*Math.sin(j*3):0),Math.sin(a)*rr*.91]}));
+ for(let j=0;j<N;j++){let nxt=(j+1)%N;g.tri([0,.4,0],rings[0][nxt],rings[0][j],j%3?'#60b932':'#a8e34f');for(let k=0;k<r.length-1;k++)g.quad(rings[k][j],rings[k][nxt],rings[k+1][nxt],rings[k+1][j],[
+  ['#308d3a','#56ac26'],['#ca9b64','#be8759'],['#a87e5e','#986a54'],['#806b68','#6c5560'],['#71596e','#5b4a63'],['#51445c','#42384f'],['#312c43','#363a51']][k][j%2]);}
+ for(let s of [-1,1]){
+  // Three-dimensional waterfall sheets with staggered lateral flow, never straight pipes.
+  let pts=[];for(let j=0;j<=11;j++){let t=j/11;pts.push([s*(9+3.3*t+.65*Math.sin(t*TAU)), -.2-26.7*t,20+9*t+1.5*Math.sin(t*Math.PI)])}
+  for(let j=0;j<11;j++)for(let k=0;k<7;k++){
+   const a=(k/7-.5)*3.2,b=((k+1)/7-.5)*3.2;
+   const A=add(pts[j],[a,0,0]),B=add(pts[j],[b,0,0]),C=add(pts[j+1],[b,0,0]),D=add(pts[j+1],[a,0,0]);
+   g.quad(A,B,C,D,['#e6feff','#1ebee2','#69d8f7','#17a7d0'][k%4]);
+  }
+  for(let j=0;j<9;j++)v24Orb(g,[pts[11][0]+(j-4)*.5,-27.5,pts[11][2]],[.35,.3,.46],j%2?'#e8ffff':'#a3f2ff',j+25,7,5);
+ }
+ // Bigger, grounded vegetation clusters on both the front and rear faces.
+ for(let k=0;k<16;k++){let a=k*2.39996,p=[Math.cos(a)*(15.0+(k%3)*1.5),.6,Math.sin(a)*(13.3+(k%3)*1.1)];
+  v24Orb(g,p,[1.7,.9,1.8],k%3?'#499f37':'#a0d947',k+23,8,5);
+ }
+ return g;
+}
+function familyBranch24(ci){const g=new Mesh();const col=[V24.zo.bark,V24.lo.rock,V24.pa.bark][ci];
+ const pts=[[-12,-1,0],[-9,0,1],[-5,1.8,1.1],[0,2.7,1.5],[5,1.8,1.1],[9,0,1],[12,-1,0]];
+ v24Path(g,pts,[.5,1.1,1.75,2.1,1.75,1.1,.5],col,9);
+ for(let i=-2;i<=2;i++){let p=[i*4.2,1.8-Math.abs(i)*.38,1.0];
+  v24Path(g,[p,add(p,[i%2?1:-1,2.0,-1.0])],[.56,.03],[V24.zo.canopy[1],V24.lo.cloud[0],V24.pa.canopy[0]][ci],6);
+ }return g;
+}
+function genericFruit24(ci,seed){
+ const g=new Mesh(),palette=[['#8de448','#2ca85c','#c8ec65'],['#ffab3e','#29b8e5','#f7e866'],['#ff7abd','#a77ae7','#f9b475']][ci];
+ let shape=seed%4,r=[.9,.94,.90];if(shape===0)r=[.85,1.15,.89];if(shape===1)r=[1.02,.85,1.03];if(shape===2)r=[.82,1.04,.85];
+ v24Orb(g,[0,0,0],r,palette[seed%3],seed,9,6);
+ v24Path(g,[[0,.88,0],[.08,1.21,0],[.34,1.27,.02]],[.15,.10,.02],'#4a8e4d',6);
+ // Low-poly swirl patterns are a real relief above the body.
+ planeSpiral(g,[0,0,r[2]],.32,'#fff0af',1.4,.055,18);
+ return g;
+}
+
+</script><script>/* The Legendary Devil Fruit Trees, original WebGL world. No external runtime. */
+const CLASS=['Zoan','Logia','Paramecia'];
+const PINS=[[-34,0,0],[0,0,0],[34,0,0]];
+const groups=CLASS.map(cls=>{const map=new Map();for(const d of DATA.filter(d=>d.cls===cls)){if(!map.has(d.group))map.set(d.group,[]);map.get(d.group).push(d)}return [...map].map(([name,fruit],idx)=>({name,fruit,idx,cls}))});
+const GUESS={Zoan:'BEAST GROVE',Logia:'ELEMENTAL CONFLUENCE',Paramecia:'POSSIBILITY NEXUS'};
+const TREE_NAMES=['A1 · BEAST GROVE','B1 · ELEMENTAL CONFLUENCE','C2 · POSSIBILITY NEXUS'];
+
+const TYPES={Zoan:'INSTINCT · EVOLUTION · WILL',Logia:'NATURE · FORCE · EMBODIMENT',Paramecia:'ALTERATION · POSSIBILITY · FREEDOM'};
+const fruitsById=new Map(DATA.map(d=>[d.id,d]));
+const glCanvas=document.getElementById('world'),gl=glCanvas.getContext('webgl',{antialias:true,alpha:true,powerPreference:'high-performance',depth:true,preserveDrawingBuffer:false});
+const hud=document.getElementById('hud'),floatLabels=document.getElementById('labels'),detail=document.getElementById('detail');
+const titleNode=document.getElementById('heading'),subNode=document.getElementById('subheading'), crumb=document.getElementById('crumb');
+const backBtn=document.getElementById('back'),nextBtn=document.getElementById('next'),prevBtn=document.getElementById('prev'),tip=document.getElementById('tip'),pageNum=document.getElementById('page-num');
+const warn=document.getElementById('fallback');
+let scaleFactor=1,WIDTH=390,HEIGHT=800,last=0,frame=0,glProgram=null,loc={},drawCalls=0;
+const state={stage:0,cls:0,group:0,fruit:0,page:0,orbit:0,orbitGoal:0,pitch:.09,pitchGoal:.09,dist:68,distGoal:68,target:V(0,11,0),goal:V(0,11,0),hover:'',initialized:false};
+const meshes={trees:[],islands:[],clusters:[],familyBranches:[],fruits:new Map(),sealed:new Map(),insignia:null};
+function compile(type,src){const sh=gl.createShader(type);gl.shaderSource(sh,src);gl.compileShader(sh);if(!gl.getShaderParameter(sh,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(sh));return sh}
+function initialiseGL(){if(!gl){warn.textContent='WebGL is unavailable on this device. Please use a browser with WebGL support.';warn.style.display='block';return false}
+ const vert=`attribute vec3 aPosition; attribute vec3 aNormal; attribute vec3 aColor;uniform mat4 uVP;uniform vec3 uOffset;uniform float uLift;uniform float uScale;varying vec3 vColor;void main(){vec3 w=aPosition*uScale+uOffset;w.y+=uLift;gl_Position=uVP*vec4(w,1.);float sun=max(dot(aNormal,normalize(vec3(.34,.75,.5))),0.);float light=.65+sun*.34;vColor=aColor*light;}`;
+ const frag=`precision mediump float;varying vec3 vColor;void main(){gl_FragColor=vec4(vColor,1.);}`;
+ const p=gl.createProgram();gl.attachShader(p,compile(gl.VERTEX_SHADER,vert));gl.attachShader(p,compile(gl.FRAGMENT_SHADER,frag));gl.linkProgram(p);if(!gl.getProgramParameter(p,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(p));gl.useProgram(p);glProgram=p;['aPosition','aNormal','aColor'].forEach(n=>loc[n]=gl.getAttribLocation(p,n));['uVP','uOffset','uLift','uScale'].forEach(n=>loc[n]=gl.getUniformLocation(p,n));gl.enable(gl.DEPTH_TEST);gl.depthFunc(gl.LEQUAL);gl.disable(gl.CULL_FACE);gl.clearColor(0,0,0,0);return true}
+function buildAssets(){
+ meshes.insignia=new Mesh();
+ const ring=Array.from({length:33},(_,i)=>{let a=i*TAU/32;return [Math.cos(a)*2.0,Math.sin(a)*2.2,-1.35]});
+ tube(meshes.insignia,ring,ring.map(()=>.085),'#ffd879',7);
+ for(let k=0;k<4;k++){let a=k*TAU/4;shard(meshes.insignia,[Math.cos(a)*2.15,Math.sin(a)*2.3,-1.35],[Math.cos(a)*2.45,Math.sin(a)*2.6,-1.35],.15,'#fff6cc',5)}
+ for(let ci=0;ci<3;ci++){
+ meshes.trees.push(makeTree24(ci));meshes.islands.push(island24(ci));
+ meshes.familyBranches.push(familyBranch24(ci));const gs=groups[ci];meshes.clusters[ci]=gs.map((group,gidx)=>{const gg=new Mesh(),anchor=anchorFor(ci,gidx),count=group.fruit.length;
+ // Every fruit in each family physically exists on its hanging branch. No unverified silhouettes at this distance.
+ let spread=count>30?3.1:count>12?2.55:count>5?1.95:1.65;
+ for(let i=0;i<count;i++){let seed=group.fruit[i].id,angle=i*2.39996,r=spread*Math.sqrt((i+.25)/Math.max(1,count)),y=-(.85+Math.floor(i/7)*.55);
+ const pos=[Math.cos(angle)*r,y,Math.sin(angle)*r*.7];gg.append(genericFruit24(ci,seed),pos,count>28?.60:count>10?.72:.90);
+ tube(gg,[[-.10,1.23,0],[pos[0]*.6,.35,pos[2]*.6],add(pos,[0,.58,0])],[.11,.07,.025],['#b88c50'],5);
+ }
+ // sturdy branch attachment and a readable dangling charm
+ tube(gg,[[0,3.2,-1],[0,1.8,-.15],[0,1.18,0]],[.46,.27,.14],[ci===0?'#a96732':ci===1?'#49899f':'#b54b84'],7);
+ return {mesh:gg,anchor,group};});
+ }
+ }
+function anchorFor(ci,gidx){
+ // Staggered, genuinely branch-attached fruit clusters. Each family occupies its own bough.
+ if(ci===0){const col=gidx%4,row=Math.floor(gidx/4);return [(col-1.5)*7.4,14.2+row*4.3+(col%2)*.9,6.4+(row%2)*1.3]}
+ if(ci===1)return [[-11.2,19.8,7.0],[0,25.0,7.8],[11.2,19.8,7.0]][gidx];
+ return [[-12.4,17,6.6],[-4.2,23,7.2],[4.2,19.1,7.6],[12.4,23.4,6.6]][gidx];
+}
+function getFruitMesh(d){const key=d.id;const map=d.appearance==='unverified'?meshes.sealed:meshes.fruits;if(!map.has(key))map.set(key,d.appearance==='unverified'?sealedFruit(key):specialFruit23(d));return map.get(key)}
+function perspective(fovy,aspect,near,far){const f=1/Math.tan(fovy/2),inv=1/(near-far);return [f/aspect,0,0,0,0,f,0,0,0,0,(far+near)*inv,-1,0,0,2*far*near*inv,0]}
+function view(eye,target){const front=norm(sub(target,eye)),right=norm(cross(front,[0,1,0])),up=cross(right,front);return [right[0],up[0],-front[0],0,right[1],up[1],-front[1],0,right[2],up[2],-front[2],0,-dot(right,eye),-dot(up,eye),dot(front,eye),1]}
+const dot=(a,b)=>a.reduce((sum,n,i)=>sum+n*b[i],0);
+function matMul(a,b){let o=Array(16).fill(0);for(let c=0;c<4;c++)for(let r=0;r<4;r++)for(let k=0;k<4;k++)o[c*4+r]+=a[k*4+r]*b[c*4+k];return o}
+let cam={eye:V(),right:V(1,0,0),up:V(0,1,0),front:V(0,0,-1),vp:null};
+function updateCamera(dt){let k=1-Math.exp(-Math.min(dt,.05)*7.4);state.target=mix(state.target,state.goal,k);state.dist=lerp(state.dist,state.distGoal,k);state.orbit=lerp(state.orbit,state.orbitGoal,k);state.pitch=lerp(state.pitch,state.pitchGoal,k);
+ const xy=Math.cos(state.pitch),eye=add(state.target,[state.dist*Math.sin(state.orbit)*xy,state.dist*Math.sin(state.pitch),state.dist*Math.cos(state.orbit)*xy]);cam.eye=eye;cam.front=norm(sub(state.target,eye));cam.right=norm(cross(cam.front,[0,1,0]));cam.up=cross(cam.right,cam.front);cam.vp=matMul(perspective(.86,WIDTH/HEIGHT,.12,400),view(eye,state.target))}
+function project(p){let v=sub(p,cam.eye),z=dot(v,cam.front);if(z<.05)return null;let f=HEIGHT/(2*Math.tan(.86/2));return {x:WIDTH/2+f*dot(v,cam.right)/z,y:HEIGHT/2-f*dot(v,cam.up)/z,z};}
+function draw(mesh,offset=V(),lift=0,scale=1){mesh.upload(gl);gl.bindBuffer(gl.ARRAY_BUFFER,mesh.vbo);gl.vertexAttribPointer(loc.aPosition,3,gl.FLOAT,false,36,0);gl.vertexAttribPointer(loc.aNormal,3,gl.FLOAT,false,36,12);gl.vertexAttribPointer(loc.aColor,3,gl.FLOAT,false,36,24);for(let key of ['aPosition','aNormal','aColor'])gl.enableVertexAttribArray(loc[key]);gl.uniform3fv(loc.uOffset,offset);gl.uniform1f(loc.uLift,lift);gl.uniform1f(loc.uScale,scale);gl.drawArrays(gl.TRIANGLES,0,mesh.n);drawCalls++}
+function visiblePageItems(list,count){let pages=Math.ceil(list.length/count);if(state.page>=pages)state.page=Math.max(0,pages-1);return list.slice(state.page*count,(state.page+1)*count)}
+function visibleFamilyLabels(){return visiblePageItems(groups[state.cls],WIDTH<640?3:5)}
+function visibleFruits(){return visiblePageItems(groups[state.cls][state.group].fruit,WIDTH<640?3:5)}
+function previewPosition(i,total){let spread=WIDTH<640?3.35:4.7;return [(i-(total-1)/2)*spread,0,0]}
+function fruitStagePosition(i,total){const p=previewPosition(i,total);return add(PINS[state.cls],[p[0],21.1+(i%2)*.1,19.95])}
+function displayFruitPosition(){return add(PINS[state.cls],[0,22.5,23.0])}
+function doRender(dt){if(!glProgram)return;updateCamera(dt);gl.viewport(0,0,glCanvas.width,glCanvas.height);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.useProgram(glProgram);gl.uniformMatrix4fv(loc.uVP,false,new Float32Array(cam.vp));drawCalls=0;
+ const mobile=WIDTH<670;
+ if(state.stage===0){for(let ci=0;ci<3;ci++){if(mobile&&ci!==state.cls)continue;draw(meshes.islands[ci],PINS[ci]);draw(meshes.trees[ci],PINS[ci]);for(let cl of meshes.clusters[ci])draw(cl.mesh,add(PINS[ci],cl.anchor))}}
+ else {const ci=state.cls;
+ if(state.stage===1){draw(meshes.islands[ci],PINS[ci]);draw(meshes.trees[ci],PINS[ci]);for(let cl of meshes.clusters[ci])draw(cl.mesh,add(PINS[ci],cl.anchor));}
+ if(state.stage===2){draw(meshes.familyBranches[ci],add(PINS[ci],[0,25.0,19.7]));const vis=visibleFruits();for(let i=0;i<vis.length;i++){const f=vis[i],p=fruitStagePosition(i,vis.length);draw(getFruitMesh(f),p,Math.sin(frame*.017+i)*.16,2.62)}}
+ else if(state.stage===3){const f=groups[ci][state.group].fruit[state.fruit],p=displayFruitPosition();draw(meshes.insignia,p,0,WIDTH<670?1.55:2.35);draw(getFruitMesh(f),p,Math.sin(frame*.016)*.12,3.04)}
+ }
+ if(frame%8===0)layoutLabels();frame++;
+}
+function stageName(){return state.stage===0?'The origins of Devil Fruits':state.stage===1?CLASS[state.cls]+' · The legendary tree':state.stage===2?groups[state.cls][state.group].name:'Devil Fruit';}
+function updateHud(){document.body.dataset.stage=state.stage;document.body.dataset.cls=CLASS[state.cls].toLowerCase();let c=CLASS[state.cls],item=state.stage>=2?groups[state.cls][state.group]:null;
+ titleNode.textContent=state.stage===0?'THE LEGENDARY DEVIL FRUIT TREES':state.stage===1?`${c.toUpperCase()} · ${TREE_NAMES[state.cls]}`:state.stage===2?item.name:state.stage===3?item.fruit[state.fruit].name:'';
+ subNode.textContent=state.stage===0?'146 FRUITS · THREE LEGENDARY SPIRITS':state.stage===1?TYPES[c]:state.stage===2?`${item.fruit.length} FRUIT${item.fruit.length===1?'':'S'} · TOUCH A FRUIT`:'';
+ crumb.textContent=state.stage===0?'THE ORIGINS':state.stage===1?'THE TREE':state.stage===2?'THE FAMILY':'THE FRUIT';backBtn.hidden=state.stage===0;
+ let total=state.stage===0?3:state.stage===1?Math.ceil(groups[state.cls].length/(WIDTH<640?3:5)):state.stage===2?Math.ceil(item.fruit.length/(WIDTH<640?3:5)):item.fruit.length;
+ let cur=state.stage===0?state.cls+1:state.stage===3?state.fruit+1:state.page+1;
+ pageNum.textContent=state.stage===0?`${c.toUpperCase()} · ${DATA.filter(f=>f.cls===c).length} FRUITS`:`${cur} / ${total}`;
+ tip.textContent=state.stage===0?'TAP TREE TO EXPLORE · SWIPE TO SWITCH':state.stage===1?'TAP A HANGING FAMILY':state.stage===2?'TAP A FRUIT TO EXAMINE':'DRAG TO ORBIT · PREV / NEXT FRUIT';
+ detail.hidden=state.stage!==3;if(state.stage===3)updateDetail();layoutLabels();}
+function updateDetail(){let d=groups[state.cls][state.group].fruit[state.fruit];let fields=[['POWER',d.power],['CLASSIFICATION',d.subtype],['KNOWN USER',d.users],['AFFILIATION',d.affiliation],['STORY ARCS',d.arcs],['SAGA',d.saga],['AWAKENING',d.awakened],['ORIGIN',d.origin]];
+ document.getElementById('fruit-title').textContent=d.name;document.getElementById('fruit-state').textContent=d.appearance==='unverified'?'SEALED · APPEARANCE NOT VERIFIED':'STYLISED · DESIGN INTERPRETATION';document.getElementById('fruit-state').dataset.sealed=d.appearance==='unverified';let field=document.getElementById('fields');field.replaceChildren();for(let [name,value] of fields){const cell=document.createElement('div');cell.className='fact';const a=document.createElement('span');a.textContent=name;const b=document.createElement('strong');b.textContent=value;cell.append(a,b);field.append(cell)}}
+function button(label,p,cb,subtext,kind='fruit'){if(!p||p.z<.1)return null;const el=document.createElement('button');el.className='float-node '+kind;el.style.left=p.x+'px';el.style.top=p.y+'px';el.type='button';el.innerHTML='';const name=document.createElement('span');name.textContent=label;el.appendChild(name);if(subtext){const sub=document.createElement('small');sub.textContent=subtext;el.appendChild(sub)}el.addEventListener('click',e=>{e.stopPropagation();cb()});return el}
+function layoutLabels(){if(!cam.vp)return;floatLabels.replaceChildren();
+ if(state.stage===0){if(WIDTH<670){return;}else{for(let ci=0;ci<3;ci++){let p=project(add(PINS[ci],[0,-5,9]));const label=button(CLASS[ci],p,()=>openClass(ci),`${DATA.filter(d=>d.cls===CLASS[ci]).length} DEVIL FRUITS`,'tree-node');if(label)floatLabels.append(label)}}return}
+ if(state.stage===1){let list=visibleFamilyLabels(),nodes=[];for(let i=0;i<list.length;i++){let item=list[i],pt=add(PINS[state.cls],meshes.clusters[state.cls][item.idx].anchor);const p=project(add(pt,[0,-1.1,0]));if(p){nodes.push({label:item.name,p,idx:item.idx,count:item.fruit.length});}}
+ // Readable floating labels in tree space. Stagger labels if a branch projects over another.
+ nodes.sort((a,b)=>a.p.y-b.p.y);for(let i=0;i<nodes.length;i++){let n=nodes[i],p={...n.p};p.x=Math.max(WIDTH*.22,Math.min(WIDTH*.78,p.x));p.y=Math.max(HEIGHT*.31,Math.min(HEIGHT*.74,p.y));if(i&&p.y<nodes[i-1].displayY+(WIDTH<670?57:58))p.y=nodes[i-1].displayY+(WIDTH<670?57:58);n.displayY=p.y;const label=button(n.label,p,()=>openGroup(n.idx),`${n.count} FRUIT${n.count===1?'':'S'}`,'family-node');if(label)floatLabels.append(label)}
+ }else if(state.stage===2){let vis=visibleFruits();for(let i=0;i<vis.length;i++){let d=vis[i],p=project(add(fruitStagePosition(i,vis.length),[0,-2.0,0]));if(p){p.x=WIDTH<640?WIDTH*(i+.5)/vis.length:Math.max(120,Math.min(WIDTH-120,p.x));p.y=WIDTH<640?HEIGHT*.596:Math.max(HEIGHT*.48,Math.min(HEIGHT*.69,p.y));let short=d.name.includes('Model:')?d.name.split('Model:')[1].trim():d.name.replace(' no Mi','');const node=button(short,p,()=>openFruit(state.page*(WIDTH<640?3:5)+i),d.appearance==='unverified'?'SEALED':'REVEALED','fruit-node');if(node)floatLabels.append(node)}}}
+ }
+function gotoStage(){if(state.stage===0){state.goal=WIDTH<670?add(PINS[state.cls],[0,17.5,0]):[0,17.5,0];state.distGoal=WIDTH<670?120:115;state.orbitGoal=0;state.pitchGoal=.10}
+ if(state.stage===1){state.goal=add(PINS[state.cls],[0,20,0]);state.distGoal=WIDTH<670?100:92;state.orbitGoal=.03;state.pitchGoal=.08}
+ if(state.stage===2){state.goal=add(PINS[state.cls],[0,19,19.7]);state.distGoal=WIDTH<670?32:37;state.orbitGoal=.02;state.pitchGoal=.05}
+ if(state.stage===3){state.goal=add(displayFruitPosition(),[0,-3.7,0]);state.distGoal=WIDTH<670?20.2:22;state.orbitGoal=0;state.pitchGoal=0}
+ updateHud()}
+function openClass(ci){state.cls=ci;state.stage=1;state.page=0;gotoStage()}
+function openGroup(gi){state.group=gi;state.stage=2;state.page=0;gotoStage()}
+function openFruit(index){state.fruit=Math.min(groups[state.cls][state.group].fruit.length-1,index);state.stage=3;gotoStage()}
+function goBack(){if(state.stage===0)return;state.stage--;if(state.stage<=1)state.page=0;gotoStage()}
+function navigate(dir){if(state.stage===0){state.cls=(state.cls+dir+3)%3;gotoStage()}
+ else if(state.stage===1){const pages=Math.ceil(groups[state.cls].length/(WIDTH<640?3:5));state.page=(state.page+dir+pages)%pages;updateHud()}
+ else if(state.stage===2){let pages=Math.ceil(groups[state.cls][state.group].fruit.length/(WIDTH<640?3:5));state.page=(state.page+dir+pages)%pages;updateHud()}
+ else {const len=groups[state.cls][state.group].fruit.length;state.fruit=(state.fruit+dir+len)%len;updateHud()}}
+function syncSize(){WIDTH=innerWidth;HEIGHT=innerHeight;scaleFactor=Math.min(1.65,devicePixelRatio||1);glCanvas.width=Math.round(WIDTH*scaleFactor);glCanvas.height=Math.round(HEIGHT*scaleFactor);glCanvas.style.width=WIDTH+'px';glCanvas.style.height=HEIGHT+'px';updateHud()}
+let pointers=new Map(),startPointer=null,startOrbit=0,lastPointer=null,dragged=false;
+function pointerDown(e){glCanvas.setPointerCapture(e.pointerId);pointers.set(e.pointerId,[e.clientX,e.clientY]);if(pointers.size===1){startPointer=[e.clientX,e.clientY];lastPointer=[e.clientX,e.clientY];dragged=false}}
+function pointerMove(e){if(!pointers.has(e.pointerId))return;let old=pointers.get(e.pointerId);pointers.set(e.pointerId,[e.clientX,e.clientY]);let dx=e.clientX-old[0],dy=e.clientY-old[1];if(Math.abs(e.clientX-startPointer?.[0])>8||Math.abs(e.clientY-startPointer?.[1])>8)dragged=true;
+ if(pointers.size===1){state.orbitGoal+=dx*.006;state.pitchGoal=Math.max(-.28,Math.min(.35,state.pitchGoal-dy*.0025));}
+ else if(pointers.size===2){const pts=[...pointers.values()],d=Math.hypot(pts[0][0]-pts[1][0],pts[0][1]-pts[1][1]);if(lastPointer&&typeof lastPointer==='number'){state.distGoal=Math.min(150,Math.max(11,state.distGoal+(lastPointer-d)*.045))}lastPointer=d}}
+function pointerUp(e){if(!pointers.has(e.pointerId))return;pointers.delete(e.pointerId);if(pointers.size===0){let dx=e.clientX-(startPointer?.[0]||e.clientX),dy=e.clientY-(startPointer?.[1]||e.clientY);if(WIDTH<670&&Math.abs(dx)>80&&Math.abs(dx)>Math.abs(dy)*1.7){navigate(dx<0?1:-1);state.orbitGoal=0}else if(!dragged&&state.stage===0){let t=WIDTH<670?state.cls:nearestTree(e.clientX,e.clientY);openClass(t)}}lastPointer=null}
+function nearestTree(x,y){const a=[0,1,2].map(ci=>({ci,p:project(add(PINS[ci],[0,15,0]))}));return a.reduce((best,cur)=>Math.abs(x-cur.p.x)<Math.abs(x-best.p.x)?cur:best).ci}
+function bind(){backBtn.addEventListener('click',goBack);nextBtn.addEventListener('click',()=>navigate(1));prevBtn.addEventListener('click',()=>navigate(-1));glCanvas.addEventListener('pointerdown',pointerDown);glCanvas.addEventListener('pointermove',pointerMove);glCanvas.addEventListener('pointerup',pointerUp);glCanvas.addEventListener('pointercancel',pointerUp);glCanvas.addEventListener('wheel',e=>{e.preventDefault();state.distGoal=Math.min(150,Math.max(11,state.distGoal+e.deltaY*.02))},{passive:false});window.addEventListener('resize',syncSize);window.addEventListener('keydown',e=>{if(e.key==='Escape'||e.key==='Backspace')goBack();if(e.key==='ArrowRight')navigate(1);if(e.key==='ArrowLeft')navigate(-1)})}
+function start(){try{if(!initialiseGL())return;buildAssets();bind();syncSize();gotoStage();state.target=[...state.goal];state.dist=state.distGoal;let prev=performance.now();function frameLoop(now){let dt=Math.min(.05,(now-prev)/1000);prev=now;doRender(dt);requestAnimationFrame(frameLoop)}requestAnimationFrame(frameLoop);state.initialized=true;window.DF_DEBUG={state,DATA,groups,openClass,openGroup,openFruit,goBack,navigate,project,meshes,gl,worldVersion:24};}catch(e){console.error('Devil Fruit startup failed',e);warn.textContent='Unable to start the 3D world: '+e.message;warn.style.display='block'}}
+start();
+
+
+</script></body></html>
