@@ -1,0 +1,11 @@
+# Legendary Devil Fruit World V31
+
+An offline-capable, completely interactive, single-page WebGL One Piece-inspired Devil Fruit encyclopaedia. V31 derives **only from the verified V30 build** and retains 146 historical project fruit entries across 19 families, arranged in four finger-navigated spatial levels. Exactly **one independent, fully three-dimensional macro-chibi tree per class**.
+
+Zoan: giant face-free, muscular-rooted ancient oak, irregular layered deep-green canopy, visible branching depth, **two asymmetric integrated antique golden lunar growth arcs**, large colourful family fruit. No animal head, mask or other facial features. Logia: one dark fused basalt tree supporting curling warm fire, purple thunderhead, energy seams, crystalline ice and high-spatial blue/white wind surfaces. Paramecia: large intertwined ivory/blush trunks, many deep sakura flower crowns, two restrained gold spatial rings and grown violet portal. Each class has its own stepped floating island with dimensional waterfalls and distant faceted atmosphere.
+
+Tap an actual tree, highlighted family or hanging fruit to enter; swipe horizontally to change selections; drag slowly to orbit; pinch or wheel to zoom. Compact icon-only Back/Previous/Next and keyboard controls provide access without decorative instructional text. Selected names and eight factual fruit fields are the only visible copy.
+
+Open `index.html` in a WebGL-capable browser. No network JS or external runtime. To reproduce: run `python build.py` in the source directory; it concatenates editable `template.html`, CSS, unchanged `data.json`, geometry engine plus versions 25–31, and `app.js` into the exact standalone HTML.
+
+Review `V31_fourteen_diagnostic_views.png`, `V31_reference_V30_V31_comparison.png`, `QA_V31.json` and the permanently saved `GAMEPLAN.md`. Actual browser tests pass at 390×844 and 1440×900, all 146 detail screens and their eight fields, and the principal touch/mouse/keyboard interactions. The three reference illustrations were supplied as two-dimensional artistic targets: this model remains a **stylised interpretation, not an exact studio-produced copy**. The original catalogue's 23 'illustrated' entries have not been manga appearance-audited, and 123 remain sealed. No Android-device FPS test or external CDN uptime test has been made.
