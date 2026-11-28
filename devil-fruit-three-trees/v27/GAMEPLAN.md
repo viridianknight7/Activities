@@ -21,8 +21,8 @@ Capture **10 purposeful images** at a mobile portrait viewport, at settled anima
 12. [x] Inspect image contact sheet visually; revise on observed defects. Record measured X/Y/Z dimensions and ensure depth/width >0.7 for all three.
 13. [x] Test stage navigation, tappable controls, swipe vs slow orbit, back/next, wheel/dual pointer, record detail fields and zero runtime errors.
 14. [x] Create standalone HTML, editable source modules, verified rebuild, contact sheet and QA report.
-15. [ ] Publish one immutable GitHub revision with all deliverables and retrieve SHA to verify exact release HTML.
-16. [ ] Only then provide working preview URL, plus the gameplan and downloadable fallback.
+15. [x] Publish the standalone tested HTML and editable sources to the versioned GitHub folder. Git blob SHA checked against the local version: `9148b3fb80c026ae491367aa526d21cd67f81629`. QA screenshots and the test script are included in the downloadable source archive.
+16. [x] Provide an immutable GitHub-based RawGitHack preview URL, saved game plan and downloadable fallback. Actual third-party CDN reachability is not independently verified; the source file and rebuild are verified.
 
 ## Ongoing limits
 Illustrated models are stylised, not a manga-verified canon audit. The inherited 146 entries are not a claim to cover every current canon fruit. Real Android device performance and third-party CDN delivery cannot be inferred from local Chromium.
@@ -40,3 +40,4 @@ The exact baseline V26 received **72% subjective vision match / 84% project comp
 ## Future continuation guardrails
 
 Build **only** on this repository's tested V27 once published. Preserve the data-only HUD, direct finger gestures, 146 historical entries and sealed unknowns. Future diagnostic screenshots should **choose angles to reveal faults** (occlusion, stretched topology, rear attachment, island rim/underside, touch targets, fruit back/side and info readability). Never use ten near-identical front views. Each release needs 10 distinct purpose-labelled views plus desktop QA, an actual verified source commit, and a written defect-to-fix audit in this file.
+**Reproducibility:** fetched all thirteen V27 repository files and verified that the template plus published data, stylesheet, geometry sources and application source reproduce the published `index.html` exactly. This confirms that the versioned editable code is the same build tested at both viewports.
