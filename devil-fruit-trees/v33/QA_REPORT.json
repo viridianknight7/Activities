@@ -1,0 +1,74 @@
+{
+  "release": "V33 The Three Legendary Origins",
+  "date": "2026-11-27",
+  "design": "Three class-specific illustrated home views; separate rotatable genuine 3D explore scenes",
+  "catalogue": {
+    "records": 146,
+    "details_opened_and_passed": 146,
+    "families": 19,
+    "classes": {
+      "Zoan": 44,
+      "Logia": 12,
+      "Paramecia": 90
+    }
+  },
+  "meshes": {
+    "Zoan": {
+      "triangles": 8240,
+      "xyz_extents": [
+        14.646,
+        21.69,
+        9.39
+      ]
+    },
+    "Logia": {
+      "triangles": 8432,
+      "xyz_extents": [
+        14.282,
+        20.317,
+        8.415
+      ]
+    },
+    "Paramecia": {
+      "triangles": 9894,
+      "xyz_extents": [
+        14.15,
+        21.707,
+        8.584
+      ]
+    }
+  },
+  "screenshots": 13,
+  "illustrated_home_screens": 3,
+  "three_dimensional_front_oblique_screens": 6,
+  "reference_fruit_screen_templates": 4,
+  "tested_viewports": [
+    "360x800",
+    "390x731",
+    "430x932",
+    "844x390",
+    "1366x768"
+  ],
+  "horizontal_overflow_errors": 0,
+  "javascript_page_errors": 0,
+  "passed": [
+    "Three distinct embedded illustrations",
+    "Home to Explore to Home transitions",
+    "Synthetic touch pointer class swipe",
+    "Real 3D canvas fruit picking",
+    "Mouse wheel zoom",
+    "146 fruit metadata sheets",
+    "Nineteen families",
+    "No horizontal overflow or JavaScript errors"
+  ],
+  "home_illustrations_are_rotatable_3d": false,
+  "interactive_explore_contains_true_3d_meshes": true,
+  "headless_test_renderer": "Canvas2D software projection of genuine 3D mesh",
+  "unverified": [
+    "Raw.GitHack preview availability",
+    "Physical Android GPU WebGL frame rate",
+    "Physical pinch comfort",
+    "Independent inherited lore canon accuracy",
+    "Individual canon-accurate 3D models for all 146 fruits"
+  ]
+}
