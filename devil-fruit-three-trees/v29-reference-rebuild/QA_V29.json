@@ -1,0 +1,219 @@
+{
+  "version": "V29",
+  "source": "Recovered V28 standalone, exact prior app engine and 146-record dataset",
+  "baseline_vision_match_subjective_pct": 48,
+  "baseline_completeness_subjective_pct": 85,
+  "ten_screenshots": [
+    {
+      "filename": "01_Zoan_front.png",
+      "diagnostic_goal": "Zoan front: golden crescent wing connection, canopy, hanging fruits"
+    },
+    {
+      "filename": "02_Logia_front.png",
+      "diagnostic_goal": "Logia front: curved fire canopy, storm vortex, rooted glacier"
+    },
+    {
+      "filename": "03_Paramecia_front.png",
+      "diagnostic_goal": "Paramecia front: ivory-pink braid, sakura depth, base portal"
+    },
+    {
+      "filename": "04_Zoan_elevated_rear.png",
+      "diagnostic_goal": "Zoan 135-degree elevated rear: radial support, roots, foliage depth"
+    },
+    {
+      "filename": "05_Logia_opposite_rear.png",
+      "diagnostic_goal": "Logia 235-degree elevated rear: storm-vortex depth, ice, flame backside"
+    },
+    {
+      "filename": "06_Paramecia_high_side.png",
+      "diagnostic_goal": "Paramecia 80-degree elevated side: canopy back, flower and orbit thickness"
+    },
+    {
+      "filename": "07_Tori_family_low_oblique.png",
+      "diagnostic_goal": "Tori Tori family low orbit: physical bough attachment and marker"
+    },
+    {
+      "filename": "08_Substance_fruits_side.png",
+      "diagnostic_goal": "Substance Creation family side: fruit size, spacing and tap targets"
+    },
+    {
+      "filename": "09_Awa_revealed_oblique.png",
+      "diagnostic_goal": "Awa Awa fruit angled: illustrated 3D surface and data legibility"
+    },
+    {
+      "filename": "10_Numa_sealed_opposite.png",
+      "diagnostic_goal": "Numa Numa opposite angle: sealed chain, lock and data legibility"
+    }
+  ],
+  "reports": [
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "status": "PASS",
+      "model_extents": [
+        {
+          "class": "Zoan",
+          "xyz": [
+            79.31,
+            87.6,
+            70.6
+          ],
+          "triangles": 7152
+        },
+        {
+          "class": "Logia",
+          "xyz": [
+            79.72,
+            84.75,
+            68.48
+          ],
+          "triangles": 7670
+        },
+        {
+          "class": "Paramecia",
+          "xyz": [
+            85.58,
+            92.79,
+            77.29
+          ],
+          "triangles": 25576
+        }
+      ],
+      "counts": [
+        44,
+        12,
+        90
+      ],
+      "families": [
+        12,
+        3,
+        4
+      ],
+      "catalogue": 146,
+      "illustrated": 23,
+      "sealed": 123,
+      "inspected": 146,
+      "real_canvas_tap": true,
+      "finger_swipe": true,
+      "drag_orbit": true,
+      "wheel_zoom": true,
+      "synthetic_two_touch_pinch": true,
+      "js_errors": 0
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "status": "PASS",
+      "model_extents": [
+        {
+          "class": "Zoan",
+          "xyz": [
+            79.31,
+            87.6,
+            70.6
+          ],
+          "triangles": 7152
+        },
+        {
+          "class": "Logia",
+          "xyz": [
+            79.72,
+            84.75,
+            68.48
+          ],
+          "triangles": 7670
+        },
+        {
+          "class": "Paramecia",
+          "xyz": [
+            85.58,
+            92.79,
+            77.29
+          ],
+          "triangles": 25576
+        }
+      ],
+      "counts": [
+        44,
+        12,
+        90
+      ],
+      "families": [
+        12,
+        3,
+        4
+      ],
+      "catalogue": 146,
+      "illustrated": 23,
+      "sealed": 123,
+      "inspected": 146,
+      "real_canvas_tap": false,
+      "finger_swipe": false,
+      "drag_orbit": true,
+      "wheel_zoom": true,
+      "synthetic_two_touch_pinch": true,
+      "js_errors": 0
+    }
+  ],
+  "js_errors": [],
+  "html_sha256": "0f8b1eb2b7beb4cdf8fb0af1e506001a54721d10c76382c5237cd135e14e45a0",
+  "limitations": [
+    "The three supplied reference pictures are rendered concept art, not original 3D source models",
+    "The 146 project records are historical and not verified as complete current manga canon",
+    "Only 23 historically illustrated fruit forms are stylised interpretations; 123 are sealed as unverified",
+    "Local Chromium software WebGL is not sustained real Android GPU performance",
+    "Third-party hosting and external preview are not tested by this local browser run"
+  ],
+  "source_provenance": "V28 materialized from file library; preserved original 146 records, engine and navigation",
+  "geometry_depth_ratio": {
+    "Zoan": 0.89,
+    "Logia": 0.859,
+    "Paramecia": 0.903
+  },
+  "subjective_v29_vision_match_pct": 62,
+  "subjective_v29_project_completeness_pct": 88,
+  "reference_features": {
+    "Zoan": [
+      "Warm carved ancient guardian trunk",
+      "Dense radial green crown with rear depth",
+      "Two integrated golden crescent wings",
+      "Colourful embossed hero fruit with curling stems"
+    ],
+    "Logia": [
+      "Wide orange fire canopy",
+      "Purple thunderhead/vortex and lightning",
+      "Cyan water currents and connected ice fan",
+      "Dark volcanic central trunk"
+    ],
+    "Paramecia": [
+      "Three braided ivory/rose strands",
+      "Sakura and lotus canopies in multiple Z planes",
+      "Limited golden spatial ring and purple rooted portal",
+      "Distinct fruit groups"
+    ]
+  },
+  "visual_issues_fixed": [
+    "Reinstated restrained golden Ancient Zoan crescent wings in front of crown rather than hiding behind foliage",
+    "Raised and redistributed physical family bunches from trunk bottom to real crown boughs",
+    "Enlarged one representative fruit per family, with multicolour swirl surface and golden curling stems; all other members retained",
+    "Replaced front-facing narrow fire triangles with bent broad 3D flame tongues, enlarged integrated storm/vortex and ice",
+    "Rebuilt Paramecia in contrasting ivory and rose wood with multiple broad sakura crowns, fewer dimensional lotus accents and a root portal",
+    "Expanded actual rear/front branches for XYZ depth, avoiding width-only silhouettes",
+    "Changed waterfalls from narrow pipes to wider faceted blue 3D waterfall sheets and softened their flow",
+    "Corrected canopy side normals so directional lighting shows bright green/pink facets",
+    "Fixed pinch gesture ending from mistakenly triggering a tap, and raised orbit zoom maximum for the larger tree meshes",
+    "Shrunk the family close-up bough and enlarged inspectable family fruits while preserving small icon-only navigation"
+  ],
+  "visual_issues_outstanding": [
+    "Polished 2D reference artwork has considerably more detail than V29 procedural sculptures; direct concept-art fidelity is not achieved",
+    "Zoan rounded foliage remains visibly repeating low-poly crowns from some angles",
+    "Logia fire tongues are broad geometric folded meshes and could be sculpted much more organically",
+    "Paramecia still lacks the reference image’s rich layered cherry blossom detail and sweeping physically continuous ivory trunk accents",
+    "Background clouds, roots and waterfall geometry remain simple; full mobile performance unmeasured",
+    "Individual illustrated fruit forms and canon content need a reference-backed audit"
+  ]
+}
