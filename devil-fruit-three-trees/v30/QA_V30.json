@@ -1,0 +1,247 @@
+{
+  "version": "V30",
+  "derived_from": "V29 immutable commit 8843c59d7bb3a732502d97d95f5968d2bbd2668c",
+  "reference_target": "Three user-provided 1152x1536 studio-style low-poly concept images; NOT 3D model sources",
+  "screenshots": [
+    {
+      "file": "01_Zoan_front.png",
+      "design_test": "Zoan frontal view: no face, integrated gold lunar marks, green canopy and large fruit"
+    },
+    {
+      "file": "02_Logia_front.png",
+      "design_test": "Logia frontal view: natural fire, basalt, purple storm, glacier and roots"
+    },
+    {
+      "file": "03_Paramecia_front.png",
+      "design_test": "Paramecia frontal view: ivory-pink braid, blossom clusters, portal and orbit"
+    },
+    {
+      "file": "04_Zoan_high_rear.png",
+      "design_test": "Zoan 136-degree rear/high: crown support and no hidden mask"
+    },
+    {
+      "file": "05_Logia_back_opposite.png",
+      "design_test": "Logia 234-degree opposite/high: fire/ice and cloud attachment"
+    },
+    {
+      "file": "06_Paramecia_high_side.png",
+      "design_test": "Paramecia elevated 84-degree side: petal volume and open trunk branches"
+    },
+    {
+      "file": "07_Tori_family_low.png",
+      "design_test": "Zoan Tori family: lower viewpoint, 3D stem/family focus"
+    },
+    {
+      "file": "08_Ryu_family_rear.png",
+      "design_test": "Zoan Ryu family: rear cluster and occlusion"
+    },
+    {
+      "file": "09_Energy_family_high.png",
+      "design_test": "Logia Energy family: storm/focus from high side"
+    },
+    {
+      "file": "10_Environment_family_side.png",
+      "design_test": "Paramecia Environment family: side-view fruit and marker"
+    },
+    {
+      "file": "11_Tori_fruits_angled.png",
+      "design_test": "Tori Tori fruit selection: spaced individual objects and tap labels"
+    },
+    {
+      "file": "12_Substance_fruits_angled.png",
+      "design_test": "Paramecia Substance fruit selection: sculptural spacing, interaction"
+    },
+    {
+      "file": "13_Awa_illustrated_oblique.png",
+      "design_test": "Awa Awa illustrated detail: 3D surface spirals and eight data fields"
+    },
+    {
+      "file": "14_Numa_sealed_opposite.png",
+      "design_test": "Numa Numa sealed detail: opposite 3D angle, chains and eight data fields"
+    }
+  ],
+  "testing_environment": "Chromium Playwright with virtual X11 and software SwiftShader WebGL; mobile-sized and desktop-sized browser viewports",
+  "record_counts": {
+    "Zoan": 44,
+    "Logia": 12,
+    "Paramecia": 90,
+    "total": 146,
+    "families": 19,
+    "historically_illustrated": 23,
+    "unverified_sealed": 123
+  },
+  "geometry": [
+    {
+      "class": "Zoan",
+      "xyz": [
+        98.8,
+        100.22,
+        89.91
+      ],
+      "triangles": 11007
+    },
+    {
+      "class": "Logia",
+      "xyz": [
+        91.49,
+        91.33,
+        90.18
+      ],
+      "triangles": 13380
+    },
+    {
+      "class": "Paramecia",
+      "xyz": [
+        107.91,
+        107.76,
+        94.42
+      ],
+      "triangles": 24966
+    }
+  ],
+  "tests": [
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "status": "PASS",
+      "record_inspections": 146,
+      "all_fields_per_record": 8,
+      "catalogue_counts": [
+        44,
+        12,
+        90
+      ],
+      "family_counts": [
+        12,
+        3,
+        4
+      ],
+      "three_tree_models": true,
+      "mesh_bounds": [
+        {
+          "class": "Zoan",
+          "xyz": [
+            98.8,
+            100.22,
+            89.91
+          ],
+          "triangles": 11007
+        },
+        {
+          "class": "Logia",
+          "xyz": [
+            91.49,
+            91.33,
+            90.18
+          ],
+          "triangles": 13380
+        },
+        {
+          "class": "Paramecia",
+          "xyz": [
+            107.91,
+            107.76,
+            94.42
+          ],
+          "triangles": 24966
+        }
+      ],
+      "swipe": "PASS",
+      "touch_tree_tap": "PASS",
+      "direct_family_and_fruit_selection": "PASS",
+      "slow_orbit_drag": "PASS",
+      "synthetic_two_pointer_pinch": "PASS",
+      "wheel_zoom": "PASS",
+      "back_next_previous": "PASS",
+      "keyboard_arrow": "PASS",
+      "runtime_errors": 0
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "status": "PASS",
+      "record_inspections": 146,
+      "all_fields_per_record": 8,
+      "catalogue_counts": [
+        44,
+        12,
+        90
+      ],
+      "family_counts": [
+        12,
+        3,
+        4
+      ],
+      "three_tree_models": true,
+      "mesh_bounds": [
+        {
+          "class": "Zoan",
+          "xyz": [
+            98.8,
+            100.22,
+            89.91
+          ],
+          "triangles": 11007
+        },
+        {
+          "class": "Logia",
+          "xyz": [
+            91.49,
+            91.33,
+            90.18
+          ],
+          "triangles": 13380
+        },
+        {
+          "class": "Paramecia",
+          "xyz": [
+            107.91,
+            107.76,
+            94.42
+          ],
+          "triangles": 24966
+        }
+      ],
+      "swipe": "not checked on desktop",
+      "touch_tree_tap": "not checked on desktop",
+      "direct_family_and_fruit_selection": "PASS",
+      "slow_orbit_drag": "PASS",
+      "synthetic_two_pointer_pinch": "PASS",
+      "wheel_zoom": "PASS",
+      "back_next_previous": "PASS",
+      "keyboard_arrow": "PASS",
+      "runtime_errors": 0
+    }
+  ],
+  "visual_fixes": [
+    "Completely rebuilt active Zoan geometry without any eyes, nose, muzzle, face or mask",
+    "Limited gold lunar accents to two asymmetric cambium arcs connected to living wooden branches",
+    "Corrected checkerboard waterfall bands with continuous longitudinal three-dimensional channels",
+    "Removed unnatural flat Logia orange disk, replaced with continuous ember-fed bough and flame ribbons",
+    "Reduced repeating pink petal spikes around Paramecia crowns",
+    "Improved mobile factual typography and 44px minimum controls"
+  ],
+  "subjective_assessment": {
+    "V29_vision_match_percent": 62,
+    "V30_vision_match_percent": 66,
+    "V29_completeness_percent": 88,
+    "V30_completeness_percent": 90,
+    "warning": "Not measurable proof of reference-exact, studio-quality or award-winning art."
+  },
+  "source_integrity": {
+    "tested_html_git_blob_sha1": "b2c348f9edf99db4aa1819e1a56cd27b4f6c3736",
+    "tested_html_sha256": "e2b0935e9b3c147bc1efa750b8daff27221b36f57146869560c3d0fa50b7e923",
+    "editable_module_rebuild_exact": true
+  },
+  "limitations": [
+    "No actual physical Android GPU, battery, memory or thermal benchmark",
+    "No independent audit of current complete One Piece canon catalogue or individual canonical fruit sculpture",
+    "No independent third-party RawGitHack CDN response guarantee",
+    "A user-provided 2D concept image does not contain the complete 3D source and exact view-independent replication has not been achieved",
+    "Visual material sophistication remains significantly below hand-authored studio reference"
+  ]
+}
