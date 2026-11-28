@@ -1,0 +1,252 @@
+{
+  "version": "V31",
+  "parent": "V30 official verified source blob b2c348f9edf99db4aa1819e1a56cd27b4f6c3736",
+  "screenshots": [
+    {
+      "filename": "01_Zoan_front.png",
+      "purpose": "Zoan front: face-free oak, connected gold lunar arcs, non-flat crown, fruit"
+    },
+    {
+      "filename": "02_Logia_front.png",
+      "purpose": "Logia front: integrated fire, thunderhead, glacier and root forks"
+    },
+    {
+      "filename": "03_Paramecia_front.png",
+      "purpose": "Paramecia front: interlocking ivory branches, blossoms and grown portal"
+    },
+    {
+      "filename": "04_Zoan_high_rear.png",
+      "purpose": "Zoan elevated 136°: structural branch support and rear foliage volume"
+    },
+    {
+      "filename": "05_Logia_back_opposite.png",
+      "purpose": "Logia opposite 234°: storm rear, glowing basalt and ice branch attachment"
+    },
+    {
+      "filename": "06_Paramecia_high_side.png",
+      "purpose": "Paramecia high 84°: flower thickness, negative space, gold ring alignment"
+    },
+    {
+      "filename": "07_Tori_family_low.png",
+      "purpose": "Zoan Tori family below: focus ring must clear fruit and branch"
+    },
+    {
+      "filename": "08_Ryu_family_rear.png",
+      "purpose": "Zoan Ryu family from rear: marker/fruit vs foliage occlusion"
+    },
+    {
+      "filename": "09_Energy_family_high.png",
+      "purpose": "Logia Energy high side: 3D focus marker and fire backdrop"
+    },
+    {
+      "filename": "10_Environment_family_side.png",
+      "purpose": "Paramecia Environment from side: focus and petal overlap"
+    },
+    {
+      "filename": "11_Tori_fruits_angled.png",
+      "purpose": "Tori fruits oblique: distinct fruit meshes and spaced finger targets"
+    },
+    {
+      "filename": "12_Substance_fruits_angled.png",
+      "purpose": "Substance fruit group side: grouping and clear labels"
+    },
+    {
+      "filename": "13_Awa_illustrated_oblique.png",
+      "purpose": "Awa Awa close: genuine dimensional geometry and factual typography"
+    },
+    {
+      "filename": "14_Numa_sealed_opposite.png",
+      "purpose": "Numa Numa opposite: real lock depth and eight fields readable"
+    }
+  ],
+  "tests": [
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "status": "PASS",
+      "catalogue_counts": [
+        44,
+        12,
+        90
+      ],
+      "family_counts": [
+        12,
+        3,
+        4
+      ],
+      "records_inspected": 146,
+      "sealed": 123,
+      "illustrated": 23,
+      "geometry": [
+        {
+          "class": "Zoan",
+          "xyz": [
+            119.99,
+            108.3,
+            105.36
+          ],
+          "triangles": 16921
+        },
+        {
+          "class": "Logia",
+          "xyz": [
+            105.42,
+            103.37,
+            93.25
+          ],
+          "triangles": 12061
+        },
+        {
+          "class": "Paramecia",
+          "xyz": [
+            122.78,
+            123.29,
+            112.39
+          ],
+          "triangles": 45981
+        }
+      ],
+      "tree_tap": true,
+      "swipe": true,
+      "slow_orbit": true,
+      "wheel_zoom": true,
+      "two_pointer_pinch": true,
+      "keyboard": true,
+      "back_next_prev": true,
+      "family_click": true,
+      "fruit_click": true,
+      "runtime_errors": 0
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "status": "PASS",
+      "catalogue_counts": [
+        44,
+        12,
+        90
+      ],
+      "family_counts": [
+        12,
+        3,
+        4
+      ],
+      "records_inspected": 146,
+      "sealed": 123,
+      "illustrated": 23,
+      "geometry": [
+        {
+          "class": "Zoan",
+          "xyz": [
+            119.99,
+            108.3,
+            105.36
+          ],
+          "triangles": 16921
+        },
+        {
+          "class": "Logia",
+          "xyz": [
+            105.42,
+            103.37,
+            93.25
+          ],
+          "triangles": 12061
+        },
+        {
+          "class": "Paramecia",
+          "xyz": [
+            122.78,
+            123.29,
+            112.39
+          ],
+          "triangles": 45981
+        }
+      ],
+      "tree_tap": false,
+      "swipe": false,
+      "slow_orbit": true,
+      "wheel_zoom": true,
+      "two_pointer_pinch": true,
+      "keyboard": true,
+      "back_next_prev": true,
+      "family_click": true,
+      "fruit_click": true,
+      "runtime_errors": 0
+    }
+  ],
+  "errors": [],
+  "html_sha256": "5da215d1b62dcf66f4cbf9a69bf65163ff0ff8bdf8dc57edd0b6668194ae8327",
+  "scope": {
+    "unique_tree_classes": 3,
+    "historical_catalogue": 146,
+    "families": 19,
+    "historically_illustrated": 23,
+    "sealed_unverified": 123
+  },
+  "art_direction": "No Zoan face. Two asymmetric gold lunar-growth motifs. Three uniquely redesigned spatial spirit trees. Data-only touch UI.",
+  "limitations": [
+    "Concept paintings are 2D references and cannot be exactly reconstructed as 3D from one camera angle without hand-authored production assets.",
+    "No physical Android FPS, memory, thermal or battery testing.",
+    "The inherited 146-entry database is not independently audited as a complete current canonical listing.",
+    "23 historically illustrated forms remain stylised, 123 remain sealed as unverified.",
+    "CDN preview availability is separate from GitHub file verification; do not infer it from tests."
+  ],
+  "scoring_subjective": {
+    "V30_vision_match_against_concept_pct": 52,
+    "V31_vision_match_against_concept_pct": 60,
+    "V30_project_completeness_pct": 90,
+    "V31_project_completeness_pct": 92,
+    "note": "Visual match is subjective; model remains below requested studio-quality reference art."
+  },
+  "models": [
+    {
+      "name": "Zoan",
+      "width": 119.99,
+      "height": 108.3,
+      "depth": 105.36,
+      "depth_to_width": 0.878,
+      "triangles": 16921
+    },
+    {
+      "name": "Logia",
+      "width": 105.42,
+      "height": 103.37,
+      "depth": 93.25,
+      "depth_to_width": 0.885,
+      "triangles": 12061
+    },
+    {
+      "name": "Paramecia",
+      "width": 122.78,
+      "height": 123.29,
+      "depth": 112.39,
+      "depth_to_width": 0.915,
+      "triangles": 45981
+    }
+  ],
+  "design_decisions": [
+    "Removed all active Zoan face and facial components permanently",
+    "Kept only two integrated asymmetric ancient gold lunar/cambium arcs",
+    "Rebuilt broad spatial oak crowns and supporting side/rear branches; increased representative hanging-fruit scale",
+    "Reformed Logia around joined basalt, heat and storm branches, swirling purple storm and iceberg/wind masses",
+    "Interwove cream and blush Paramecia boughs with thick spatial sakura crowns, two gold rings and rooted portal",
+    "Rebuilt all three multi-tier floating island types and attached tapering water sheeting",
+    "Added sparse 3D distant faceted clouds and quiet class-tinted atmospheric backgrounds",
+    "Revised angular facet palettes to reduce stripe banding; reduced repetitive fire fans and blossom spikes",
+    "Changed family camera to preserve active branch/fruit context instead of extremely close bark crops",
+    "Preserved data-only typography and finger-first gestures with native small icon controls"
+  ],
+  "remaining_gap": [
+    "The three sculptures still look algorithmically generated rather than manually production-sculpted; cannot claim award-winning exactness",
+    "Clouds, foliage, ice and fire lack the material complexity, painted facet work and artistic lighting in reference illustrations",
+    "Individual canon fruit looks not independently audited against primary manga reference",
+    "Physical Android touch and thermal/performance tests not performed",
+    "RawGitHack CDN accessibility not independently confirmed"
+  ],
+  "source_rebuild_exact": true
+}
