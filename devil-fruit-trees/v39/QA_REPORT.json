@@ -1,0 +1,87 @@
+{
+  "release": "V39 Reforged Origins",
+  "date": "2026-11-28",
+  "geometry_glb": {
+    "Zoan": {
+      "triangles": 3680,
+      "xyz_extents": [
+        17.19,
+        30.01,
+        14.55
+      ],
+      "z_div_x": 0.846
+    },
+    "Logia": {
+      "triangles": 2140,
+      "xyz_extents": [
+        16.5,
+        29.22,
+        14.55
+      ],
+      "z_div_x": 0.882
+    },
+    "Paramecia": {
+      "triangles": 5754,
+      "xyz_extents": [
+        17.34,
+        32.08,
+        14.55
+      ],
+      "z_div_x": 0.839
+    }
+  },
+  "runtime": {
+    "catalogue_records": 146,
+    "metadata_opened_and_passed": 146,
+    "families": 19,
+    "counts": {
+      "Zoan": 44,
+      "Logia": 12,
+      "Paramecia": 90
+    },
+    "three_fruits_per_group_page": true,
+    "body_alteration_page": "01/11",
+    "energy_weather_page": "01/02",
+    "ryu_ryu_page": "03/03",
+    "fruit_canvas_pick": true,
+    "orbit_drag": true,
+    "wheel_zoom": true,
+    "catalogue_search": true,
+    "page_errors": 0,
+    "horizontal_overflow": 0
+  },
+  "screenshot_coverage": {
+    "model_screenshots": 15,
+    "angles": [
+      "front",
+      "three-quarter",
+      "true side",
+      "rear",
+      "elevated/above"
+    ],
+    "ui_screenshots": 8,
+    "ui_states": [
+      "Zoan home",
+      "Ryu Ryu page 3",
+      "compact family picker",
+      "Energy Weather page 1",
+      "Mera Mera detail",
+      "Body Alteration page 1",
+      "Horo Horo detail",
+      "catalogue search"
+    ]
+  },
+  "viewport_sizes": [
+    "360x800",
+    "390x731",
+    "430x932",
+    "844x390",
+    "1366x768"
+  ],
+  "observed_renderer": "Canvas2D software projection of the same genuine 3D triangles",
+  "native_android_webgl_verified": false,
+  "independently_canon_verified": false,
+  "all_fruits_individually_sculpted": false,
+  "user_art_approved": false,
+  "note": "These meshes have genuine 3D depth and separate anatomy. Reference-faithful legendary sculpting is not achieved; no award-quality claim."
+}
