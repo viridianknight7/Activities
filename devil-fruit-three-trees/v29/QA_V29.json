@@ -1,0 +1,111 @@
+{
+  "version": "V29",
+  "baseline": "V28 only",
+  "scores_are_subjective": true,
+  "baseline_score": {
+    "vision_match_pct": 79,
+    "completeness_pct": 88
+  },
+  "provisional_v29_score": {
+    "vision_match_pct": 84,
+    "completeness_pct": 90
+  },
+  "views": [
+    "01 Zoan front / crown silhouette",
+    "02 Logia front / fire-storm integration",
+    "03 Paramecia front / blossom separation",
+    "04 Zoan elevated rear / bough supports and waterfall rim",
+    "05 Logia opposite side / cloud undersides and fire depth",
+    "06 Paramecia high side / petal thickness and stem structure",
+    "07 Inu Inu family low rear / fruit bunch attachment",
+    "08 Body Alteration oblique / fruit spacing and selectable targets",
+    "09 Mera Mera revealed fruit oblique / modelling and eight facts",
+    "10 Okuchi no Makami sealed opposite / lock, chain and eight facts"
+  ],
+  "environment": "Headful Playwright Chromium, Xvfb, SwiftShader software WebGL",
+  "viewport_checks": [
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "status": "PASS",
+      "fruit_details_checked": 146,
+      "fields_per_detail": 8,
+      "group_count": 19,
+      "sealed": 123,
+      "swipe": true,
+      "slow_drag_orbit": true,
+      "wheel_zoom": true,
+      "simulated_two_touch_pinch": true,
+      "uncaught_js_errors": 0
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "status": "PASS",
+      "fruit_details_checked": 146,
+      "fields_per_detail": 8,
+      "group_count": 19,
+      "sealed": 123,
+      "swipe": "not applicable desktop test",
+      "slow_drag_orbit": true,
+      "wheel_zoom": true,
+      "simulated_two_touch_pinch": true,
+      "uncaught_js_errors": 0
+    }
+  ],
+  "catalogue": {
+    "Zoan": 44,
+    "Logia": 12,
+    "Paramecia": 90,
+    "total": 146,
+    "families": {
+      "Zoan": 12,
+      "Logia": 3,
+      "Paramecia": 4
+    }
+  },
+  "mesh_extents": [
+    {
+      "type": "Zoan",
+      "xyz": [
+        58.72,
+        77.81,
+        55
+      ],
+      "triangles": 9456
+    },
+    {
+      "type": "Logia",
+      "xyz": [
+        47.19,
+        73.39,
+        42.65
+      ],
+      "triangles": 12151
+    },
+    {
+      "type": "Paramecia",
+      "xyz": [
+        58.06,
+        84.66,
+        54.95
+      ],
+      "triangles": 51706
+    }
+  ],
+  "local_sha256": "17cde22242c528a5b17b7111538258a80480ea0ca988558846d66208310d406f",
+  "exact_html_git_blob": "5aafb81b315e6854e3e24f2a972ec13056c1dc93",
+  "source_rebuild": "Local editable modules produce the same HTML byte-for-byte",
+  "limits": [
+    "Only 23 historical illustrated fruit meshes, stylised rather than source-verified",
+    "123 entries sealed with unknown appearance",
+    "146 is the preserved historical catalogue, not verified exhaustive current canon",
+    "Actual Android GPU performance unmeasured",
+    "Third-party preview delivery not independently loaded",
+    "Visual match percentages subjective"
+  ]
+}
