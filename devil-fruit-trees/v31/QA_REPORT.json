@@ -1,0 +1,96 @@
+{
+  "version": "V31 Ancient Titans",
+  "date": "2026-11-27",
+  "html_sha256": "1900d7b8fe6d2f8f8c425fbb7ac7fabf8cd4c1a9ab74081988ed0f688ccad2ca",
+  "catalogue": {
+    "records": 146,
+    "unique_ids": 146,
+    "details_opened_and_checked": 146,
+    "families": 19,
+    "classes": {
+      "Zoan": 44,
+      "Logia": 12,
+      "Paramecia": 90
+    }
+  },
+  "meshes": {
+    "Zoan": {
+      "triangles": 28590,
+      "extents_xyz": [
+        15.005,
+        20.89,
+        11.304
+      ],
+      "depth_to_width_ratio": 0.753
+    },
+    "Logia": {
+      "triangles": 28050,
+      "extents_xyz": [
+        14.932,
+        20.921,
+        11.334
+      ],
+      "depth_to_width_ratio": 0.759
+    },
+    "Paramecia": {
+      "triangles": 32238,
+      "extents_xyz": [
+        15.001,
+        21.363,
+        11.849
+      ],
+      "depth_to_width_ratio": 0.79
+    }
+  },
+  "screenshots": {
+    "count": 20,
+    "tree_angles": [
+      "front",
+      "three-quarter",
+      "side",
+      "elevated",
+      "rear"
+    ],
+    "fruit_templates": [
+      "Paramecia Body Alteration 1/11 at oblique angle",
+      "Logia Energy & Weather 1/2 near side view",
+      "Zoan Ryu Ryu no Mi 3/3 elevated",
+      "Horo Horo no Mi details over Paramecia oblique"
+    ],
+    "other": "Narrow family menu regression"
+  },
+  "viewports": [
+    "390x731",
+    "360x800",
+    "430x932",
+    "844x390",
+    "1366x768"
+  ],
+  "horizontal_overflow_errors": 0,
+  "js_page_errors": 0,
+  "passed": [
+    "No visible text on default home",
+    "one finger horizontal class swipe",
+    "direct world fruit picking",
+    "drag orbit",
+    "wheel zoom",
+    "catalogue search",
+    "group selection/page navigation",
+    "detail previous/next",
+    "all 146 records and eight information fields",
+    "56px family chooser"
+  ],
+  "hardware_renderer": "Canvas2D software 3D, based on the same volumetric 3D meshes",
+  "native_webgl_verified": false,
+  "android_hardware_verified": false,
+  "lore_independently_audited": false,
+  "all_fruit_visuals_faithful": false,
+  "visual_target_met": false,
+  "prior_user_score_v30_percent": 1,
+  "limitations": [
+    "still-rounded procedural canopy geometry; no user art approval",
+    "native Android WebGL performance not tested",
+    "inherited lore not independently fact-checked",
+    "not all 146 fruit visuals individually modelled"
+  ]
+}
