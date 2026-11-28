@@ -1,0 +1,1 @@
+The Three Legendary Origins V33: swipe between three class illustrations, tap to explore independently modelled rotatable 3D scenes, and open 146 Devil Fruit records. The home illustrations are not 3D. The standalone HTML embeds all assets and runs offline. See GAMEPLAN.md and QA_REPORT.json for design choices, checks and limits.
