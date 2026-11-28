@@ -1,0 +1,126 @@
+{
+  "version": "V27",
+  "baseline": "Verified V26 only",
+  "subjective_baseline": {
+    "vision_match_pct": 72,
+    "project_completeness_pct": 84
+  },
+  "screenshots": [
+    {
+      "filename": "01_Zoan_front.png",
+      "why_that_angle": "Front: guardian mask, asymmetric crown layering"
+    },
+    {
+      "filename": "02_Logia_front.png",
+      "why_that_angle": "Front: geology, fire, storm and water integration"
+    },
+    {
+      "filename": "03_Paramecia_front.png",
+      "why_that_angle": "Front: separate blossoms, rings, trunk gaps"
+    },
+    {
+      "filename": "04_Zoan_rear_high.png",
+      "why_that_angle": "Elevated 132° rear: bough support, volumetric crowns and island rim"
+    },
+    {
+      "filename": "05_Logia_far_side.png",
+      "why_that_angle": "Opposite 232°: storm rear, fire depth and ice roots"
+    },
+    {
+      "filename": "06_Paramecia_side_high.png",
+      "why_that_angle": "Elevated 87° side: petal and portal depth"
+    },
+    {
+      "filename": "07_family_low_oblique.png",
+      "why_that_angle": "Low oblique family focus: attachment and occlusion"
+    },
+    {
+      "filename": "08_three_fruits_oblique.png",
+      "why_that_angle": "Oblique family close-up: fruit spacing and touch targets"
+    },
+    {
+      "filename": "09_revealed_close_oblique.png",
+      "why_that_angle": "Close-oblique revealed fruit: dimensional spirals and eight field readability"
+    },
+    {
+      "filename": "10_sealed_opposite.png",
+      "why_that_angle": "Opposing close angle: lock/chain depth and eight field readability"
+    }
+  ],
+  "tests": {
+    "390x844": {
+      "webgl": "PASS",
+      "catalogue": [
+        44,
+        12,
+        90
+      ],
+      "families": [
+        12,
+        3,
+        4
+      ],
+      "unique_records": 146,
+      "sealed": 123,
+      "inspected_records": 146,
+      "fields_per_record": 8,
+      "swipe": "PASS",
+      "orbit": "PASS",
+      "wheel": "PASS",
+      "synthetic_pinch": "PASS",
+      "javascript_errors": 0
+    },
+    "1440x900": {
+      "webgl": "PASS",
+      "catalogue": [
+        44,
+        12,
+        90
+      ],
+      "families": [
+        12,
+        3,
+        4
+      ],
+      "unique_records": 146,
+      "sealed": 123,
+      "inspected_records": 146,
+      "fields_per_record": 8,
+      "orbit": "PASS",
+      "wheel": "PASS",
+      "synthetic_pinch": "PASS",
+      "javascript_errors": 0
+    }
+  },
+  "geometry": [
+    {
+      "type": "Zoan",
+      "width": 45.68,
+      "height": 76.36,
+      "depth": 41.59,
+      "triangles": 6435
+    },
+    {
+      "type": "Logia",
+      "width": 43.56,
+      "height": 67.05,
+      "depth": 36.59,
+      "triangles": 7802
+    },
+    {
+      "type": "Paramecia",
+      "width": 45.1,
+      "height": 76.95,
+      "depth": 38.45,
+      "triangles": 17458
+    }
+  ],
+  "exact_tested_html_sha256": "26ff7e388277a9531544a100eb8e64aeb01596899998255ea8a86b66fc44b293",
+  "exact_tested_html_gitblob": "9148b3fb80c026ae491367aa526d21cd67f81629",
+  "limitations": [
+    "23 historically illustrated fruit sculptures remain stylised, not verified canon-accurate models",
+    "123 unknown appearances remain sealed",
+    "The inherited 146-entry catalogue is not independently verified against latest canon",
+    "External preview CDN reachability and actual Android GPU performance not independently tested"
+  ]
+}
