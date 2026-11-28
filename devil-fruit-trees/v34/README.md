@@ -1,0 +1,6 @@
+# Legendary Devil Fruit Trees V34 — Sculpted Origins
+Exactly three independently sculpted real 3D Devil Fruit tree models: Zoan, Logia, Paramecia. Unlike V33, the home screen is the actual rotatable 3D geometry, not an illustration. It contains no persistent title or instruction text.
+
+The standalone offline index.html has an inherited 146-record, 19-family catalogue. Swipe horizontally to change class, tap the tree to explore, drag to orbit, pinch/wheel to zoom, tap a hanging fruit for its data; family/search overlays are on-demand only. The user's downloadable source ZIP includes the precise tested HTML, edited art34.js, data JSON, three real GLB exports, 23 actual browser screenshots and repeatable QA scripts.
+
+Local checks passed 146/146 record details, real canvas picking, class swipe, zoom, orbit, search and five device widths. Native Android WebGL/GPU behaviour and independent current One Piece canon have NOT been verified. Visual acceptance is NOT met; see GAMEPLAN.md for the next bespoke 3D sculpting requirements.
