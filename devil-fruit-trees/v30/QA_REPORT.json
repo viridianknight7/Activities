@@ -1,0 +1,98 @@
+{
+  "release": "V30",
+  "date": "2026-11-27",
+  "source_sha256": "08ca6b6753cb0dc8c2a01339cda297e109f937da789869456b49e3cd5b7f00b7",
+  "source": "deployed from /mnt/data/legendary_trees_v30/index.html",
+  "canonical_fruit_catalogue": {
+    "records": 146,
+    "families": 19,
+    "classes": {
+      "Zoan": 44,
+      "Logia": 12,
+      "Paramecia": 90
+    },
+    "unique_ids": 146,
+    "verified_record_sheets": 146
+  },
+  "sculptures": {
+    "Zoan": {
+      "triangles": 27438,
+      "xyz_extents": [
+        13.294,
+        17.877,
+        6.74
+      ]
+    },
+    "Logia": {
+      "triangles": 25718,
+      "xyz_extents": [
+        12.48,
+        17.859,
+        6.733
+      ]
+    },
+    "Paramecia": {
+      "triangles": 27936,
+      "xyz_extents": [
+        12.802,
+        17.856,
+        6.744
+      ]
+    }
+  },
+  "actual_screenshots": {
+    "count": 17,
+    "tree_angles": [
+      "front",
+      "three-quarter",
+      "side",
+      "elevated"
+    ],
+    "four_original_templates": [
+      "Paramecia Body Alteration 1/11 at oblique angle",
+      "Logia Energy & Weather 1/2 at side angle",
+      "Zoan Ryu Ryu no Mi 3/3 at elevated angle",
+      "Horo Horo no Mi details over Paramecia at oblique angle"
+    ],
+    "additional": "family chooser deliberately opened"
+  },
+  "interface": {
+    "home_visible_text": false,
+    "open_family_chooser_height_px": 56,
+    "fruit_paging": 3,
+    "form_variants": false,
+    "tree_count": 3
+  },
+  "tested_viewports": [
+    "390x731",
+    "360x800",
+    "430x932",
+    "844x390",
+    "1366x768"
+  ],
+  "horizontal_overflow_count": 0,
+  "javascript_page_errors": 0,
+  "tested_interactions": [
+    "one-finger class swipe",
+    "direct in-world fruit tapping",
+    "orbit drag",
+    "two-finger pinch",
+    "wheel zoom",
+    "fruit-family selection/pagination",
+    "catalogue search",
+    "detail next and previous"
+  ],
+  "pinch_distance_before": 35.53333681022352,
+  "pinch_distance_after": 33.253336810223516,
+  "software_renderer_used_in_capture": true,
+  "android_gpu_tested": false,
+  "canon_audited": false,
+  "fruit_sculpts_unique_and_canon_complete": false,
+  "subjective_ratings": {
+    "user_v29_visual_match": 1,
+    "assistant_v30_visual_estimate": 12,
+    "assistant_v30_functional_estimate": 85,
+    "user_art_acceptance": false
+  },
+  "disclaimer": "Working prototype; artwork still far below user's envisioned ornate legendary sculptural style"
+}
