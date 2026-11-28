@@ -1,0 +1,188 @@
+{
+  "version": "V28",
+  "baseline": "V27 only, verified Git blob 9148b3fb80c026ae491367aa526d21cd67f81629",
+  "screenshots": [
+    {
+      "name": "01_Zoan_front.png",
+      "purpose": "Zoan: front / silhouette, face and layered canopy"
+    },
+    {
+      "name": "02_Logia_front.png",
+      "purpose": "Logia: front / storm-fire integration"
+    },
+    {
+      "name": "03_Paramecia_front.png",
+      "purpose": "Paramecia: front / distinct flowers and loops"
+    },
+    {
+      "name": "04_Zoan_rear_high.png",
+      "purpose": "Zoan: elevated rear / boughs and root depth"
+    },
+    {
+      "name": "05_Logia_far_side.png",
+      "purpose": "Logia: opposite-side orbit / force anatomy"
+    },
+    {
+      "name": "06_Paramecia_side_high.png",
+      "purpose": "Paramecia: high side / real flower volume"
+    },
+    {
+      "name": "07_family_low_oblique.png",
+      "purpose": "Tori Tori: left-low angle / living branch support"
+    },
+    {
+      "name": "08_three_fruits_oblique.png",
+      "purpose": "Substance Creation: right oblique / bunch spacing"
+    },
+    {
+      "name": "09_revealed_close_oblique.png",
+      "purpose": "Awa Awa: shallow side / spirals and facts"
+    },
+    {
+      "name": "10_sealed_opposite.png",
+      "purpose": "Numa Numa: opposing side / chain and facts"
+    }
+  ],
+  "reports": [
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "catalogue": [
+        44,
+        12,
+        90
+      ],
+      "family_groups": [
+        12,
+        3,
+        4
+      ],
+      "sealed": 123,
+      "mesh_extents": [
+        {
+          "type": "Zoan",
+          "xyz": [
+            54.55,
+            72.55,
+            48.04
+          ],
+          "triangles": 7749
+        },
+        {
+          "type": "Logia",
+          "xyz": [
+            45.22,
+            69.48,
+            40.88
+          ],
+          "triangles": 8447
+        },
+        {
+          "type": "Paramecia",
+          "xyz": [
+            53.2,
+            83.18,
+            43.33
+          ],
+          "triangles": 31578
+        }
+      ],
+      "detail_screens_checked": 146,
+      "swipe": true,
+      "slow_drag_orbit": true,
+      "wheel_zoom": true,
+      "two_touch_pinch": true,
+      "runtime_errors": 0,
+      "status": "PASS"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "catalogue": [
+        44,
+        12,
+        90
+      ],
+      "family_groups": [
+        12,
+        3,
+        4
+      ],
+      "sealed": 123,
+      "mesh_extents": [
+        {
+          "type": "Zoan",
+          "xyz": [
+            54.55,
+            72.55,
+            48.04
+          ],
+          "triangles": 7749
+        },
+        {
+          "type": "Logia",
+          "xyz": [
+            45.22,
+            69.48,
+            40.88
+          ],
+          "triangles": 8447
+        },
+        {
+          "type": "Paramecia",
+          "xyz": [
+            53.2,
+            83.18,
+            43.33
+          ],
+          "triangles": 31578
+        }
+      ],
+      "detail_screens_checked": 146,
+      "swipe": false,
+      "slow_drag_orbit": true,
+      "wheel_zoom": true,
+      "two_touch_pinch": true,
+      "runtime_errors": 0,
+      "status": "PASS"
+    }
+  ],
+  "source_hash_sha256": "1ce83c257b78d44886e5673a15d31352a0e8224bff0667cd3c4d69c3708f659e",
+  "known_limitations": [
+    "Original 146 project records retained, not exhaustive current manga canon",
+    "Only 23 historically illustrated models; all stylised, not canon-exact",
+    "RawGitHack and real Android performance not independently checked"
+  ],
+  "art_vision_score_subjective": {
+    "V27": 76,
+    "V28": 81
+  },
+  "completion_score_subjective": {
+    "V27": 86,
+    "V28": 88
+  },
+  "geometry_depth_to_width_ratio": {
+    "Zoan": 0.881,
+    "Logia": 0.904,
+    "Paramecia": 0.814
+  },
+  "diagnostic_defects_fixed": [
+    "Fire-sail surfaces were edge-on from the front: changed blade basis and increased thickness, rerendered",
+    "Paramecia high bloom looked detached: extended structural stem into bloom core and created rear sepal",
+    "Zoan foliage excessively compressed: broadened radial crown lobes and thickened crown heights",
+    "Increasing sculptural width clipped mobile sides: moved 3D camera back and lifted camera centre",
+    "Unnecessary STYLISED APPEARANCE line on every illustrated fruit: removed, retained APPEARANCE UNKNOWN on sealed fruits",
+    "QA family button click intercepted by focused canvas area: test now directly clicks visible focus button, with first canvas tap still tested separately"
+  ],
+  "still_open": [
+    "The Zoan canopy remains deliberately low-poly and some lobes still appear procedural",
+    "Logia clouds and fires need further sculptural design refinement, not fully concept-art fidelity",
+    "Paramecia flowers are stylised and not based on final handcrafted meshes",
+    "Waterfalls from opposing high angles can still feel separated from the rock even though stream source intersects its rim",
+    "Canon-specific physical fruit appearances remain unaudited; actual Android GPU performance unbenchmarked"
+  ]
+}
