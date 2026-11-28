@@ -1,0 +1,87 @@
+{
+  "release": "V29",
+  "date": "2026-11-27",
+  "catalogue": {
+    "records": 146,
+    "groups": 19,
+    "unique_ids": 146,
+    "opened_details": 146,
+    "classes": {
+      "Zoan": 44,
+      "Logia": 12,
+      "Paramecia": 90
+    }
+  },
+  "models": {
+    "Zoan": {
+      "triangles": 30272,
+      "xyz_extents": [
+        12.29,
+        17.62,
+        7.35
+      ]
+    },
+    "Logia": {
+      "triangles": 25512,
+      "xyz_extents": [
+        11.04,
+        17.06,
+        6.62
+      ]
+    },
+    "Paramecia": {
+      "triangles": 37656,
+      "xyz_extents": [
+        11.02,
+        17.49,
+        6.62
+      ]
+    }
+  },
+  "screenshots": {
+    "canonical": 10,
+    "expanded": 16,
+    "angles_per_tree": [
+      "front",
+      "oblique",
+      "side",
+      "elevated"
+    ],
+    "four_templates": [
+      "Body Alteration 1/11",
+      "Energy & Weather 1/2",
+      "Ryu Ryu no Mi 3/3",
+      "Horo Horo no Mi detail"
+    ]
+  },
+  "tested_viewports": [
+    "390x731",
+    "360x800",
+    "430x932",
+    "844x390",
+    "1366x768"
+  ],
+  "passed": [
+    "All 146 detail sheets and eight information fields",
+    "19 families and three class counts",
+    "Touch-pointer class swipe",
+    "3D fruit canvas tap",
+    "Orbit drag",
+    "Wheel zoom",
+    "Catalogue search",
+    "Family pagination",
+    "Detail next/previous",
+    "No horizontal overflow in five viewports",
+    "Zero page errors"
+  ],
+  "renderer": "Canvas2D software 3D fallback",
+  "webgl_hardware_verified": false,
+  "android_hardware_verified": false,
+  "canon_independently_verified": false,
+  "subjective": {
+    "user_previous_vision_percent": 1,
+    "assistant_v29_vision_percent": 15,
+    "assistant_functional_completeness_percent": 85,
+    "visual_target_met": false
+  }
+}
