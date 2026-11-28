@@ -1,0 +1,83 @@
+{
+  "release": "V38: Three individually authored polygonal 3D trees",
+  "date": "2026-11-27",
+  "reference_images": [
+    "Zoan orange dragon and oak canopy",
+    "Logia storm fire wind ice",
+    "Paramecia lotus gold orbit and root portal"
+  ],
+  "geometry": {
+    "Zoan": {
+      "triangles": 2551,
+      "xyz_extents": [
+        17.061,
+        24.428,
+        13.535
+      ],
+      "depth_to_width": 0.793,
+      "glb": "models/zoan_authored.glb"
+    },
+    "Logia": {
+      "triangles": 2209,
+      "xyz_extents": [
+        15.265,
+        24.494,
+        11.408
+      ],
+      "depth_to_width": 0.747,
+      "glb": "models/logia_authored.glb"
+    },
+    "Paramecia": {
+      "triangles": 3335,
+      "xyz_extents": [
+        16.261,
+        23.856,
+        11.856
+      ],
+      "depth_to_width": 0.729,
+      "glb": "models/paramecia_authored.glb"
+    }
+  },
+  "catalogue": {
+    "inherited_records": 146,
+    "opened_checked": 146,
+    "classes": {
+      "Zoan": 44,
+      "Logia": 12,
+      "Paramecia": 90
+    },
+    "families": 19
+  },
+  "qa": {
+    "camera_views_per_tree": [
+      "front",
+      "right side",
+      "rear",
+      "elevated"
+    ],
+    "browser_model_screenshots": 12,
+    "additional_ui_screenshots": 4,
+    "home_shows_live_model_not_still": true,
+    "direct_fruit_canvas_pick": true,
+    "orbit_drag": true,
+    "wheel_zoom": true,
+    "responsive_sizes": [
+      "360x800",
+      "390x731",
+      "430x932",
+      "844x390",
+      "1366x768"
+    ],
+    "page_errors": 0,
+    "horizontal_overflow_cases": 0,
+    "glbs_reloaded_and_verified": true
+  },
+  "caveats": [
+    "Current 3D models are still significantly less sculpturally refined than the reference illustrations",
+    "Browser screenshots used Canvas2D software projection of the same real polygon meshes; physical Android WebGL performance unverified",
+    "The three GLB models are downloadable with the ZIP but this GitHub source folder contains the standalone HTML and documentation",
+    "Inherited One Piece lore not independently canon audited",
+    "Not every fruit has a faithful individual 3D model"
+  ],
+  "artistic_user_approval": false
+}
