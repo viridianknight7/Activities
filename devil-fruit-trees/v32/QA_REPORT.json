@@ -1,0 +1,101 @@
+{
+  "version": "V32 Crown Rebuild",
+  "date": "2026-11-27",
+  "source_sha256": "cc01ae9ebffad1f203ffdc1e977d8133c726bf1a7b7432c669fe525ef0ade818",
+  "records": {
+    "total": 146,
+    "opened_and_checked": 146,
+    "groups": 19,
+    "classes": {
+      "Zoan": 44,
+      "Logia": 12,
+      "Paramecia": 90
+    }
+  },
+  "meshes": {
+    "Zoan": {
+      "triangles": 33013,
+      "extents_xyz": [
+        15.636,
+        22.463,
+        11.93
+      ]
+    },
+    "Logia": {
+      "triangles": 25715,
+      "extents_xyz": [
+        15.93,
+        22.001,
+        10.664
+      ]
+    },
+    "Paramecia": {
+      "triangles": 35903,
+      "extents_xyz": [
+        15.636,
+        21.919,
+        10.14
+      ]
+    }
+  },
+  "tested_viewports": [
+    "390x731",
+    "360x800",
+    "430x932",
+    "844x390",
+    "1366x768"
+  ],
+  "horizontal_overflow_errors": 0,
+  "javascript_page_errors": 0,
+  "screenshots": {
+    "canonical": 20,
+    "close_diagnostic": 9,
+    "total": 29,
+    "tree_views": [
+      "front",
+      "oblique",
+      "side",
+      "elevated",
+      "rear"
+    ],
+    "four_templates": [
+      "Body Alteration 1/11",
+      "Energy & Weather 1/2",
+      "Ryu Ryu no Mi 3/3",
+      "Horo Horo no Mi details"
+    ],
+    "family_picker_px": 56
+  },
+  "passed": [
+    "no resting home text",
+    "one-finger horizontal tree swipe",
+    "direct 3D fruit picking",
+    "mouse drag orbit",
+    "wheel zoom",
+    "two-pointer pinch zoom",
+    "19 family group navigation",
+    "catalogue search",
+    "146/146 details opened and eight fields checked",
+    "details next/previous",
+    "five screen widths"
+  ],
+  "synthetic_pinch_camera_distance": {
+    "before": 39.39565602872607,
+    "after": 37.87565602872608,
+    "passed": true
+  },
+  "capture_renderer": "Canvas2D software 3D projection of the same triangle meshes",
+  "physical_android_webgl_tested": false,
+  "canon_independently_audited": false,
+  "user_visual_acceptance": false,
+  "subjective_estimates": {
+    "vision_match_percent": 25,
+    "functional_completeness_percent": 88
+  },
+  "remaining_art_flaws": [
+    "Zoan still reads like a stylised ordinary tree",
+    "Logia elemental masses not sufficiently merged into trunk anatomy",
+    "Paramecia foliage too angular and busy",
+    "requires bespoke sculpted hero assets"
+  ]
+}
