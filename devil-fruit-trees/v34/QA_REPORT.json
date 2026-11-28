@@ -1,0 +1,95 @@
+{
+  "version": "V34 Sculpted Origins",
+  "date": "2026-11-27",
+  "homepage": "Shows the actual interactive 3D mesh, not a still illustration",
+  "catalogue": {
+    "records": 146,
+    "opened_and_passed": 146,
+    "groups": 19,
+    "classes": {
+      "Zoan": 44,
+      "Logia": 12,
+      "Paramecia": 90
+    }
+  },
+  "meshes": {
+    "Zoan": {
+      "triangles": 10376,
+      "xyz_extents": [
+        15.755,
+        26.77,
+        11.489
+      ],
+      "glb_bytes": 623560
+    },
+    "Logia": {
+      "triangles": 10824,
+      "xyz_extents": [
+        15.771,
+        25.01,
+        10.716
+      ],
+      "glb_bytes": 650440
+    },
+    "Paramecia": {
+      "triangles": 13112,
+      "xyz_extents": [
+        14.175,
+        25.723,
+        10.413
+      ],
+      "glb_bytes": 787720
+    }
+  },
+  "screenshots": {
+    "total": 23,
+    "tree_views_per_class": [
+      "front",
+      "three-quarter",
+      "side",
+      "elevated",
+      "rear",
+      "close-up branch junction"
+    ],
+    "original_fruit_states": [
+      "Body Alteration 1/11",
+      "Energy & Weather 1/2",
+      "Ryu Ryu no Mi 3/3",
+      "Horo Horo no Mi details"
+    ],
+    "other": "Narrow 56px family selector"
+  },
+  "verified_interactions": [
+    "home horizontal finger swipe",
+    "direct canvas fruit picking",
+    "drag orbit",
+    "two-pointer pinch",
+    "mouse wheel zoom",
+    "catalogue search",
+    "family selection",
+    "data details"
+  ],
+  "tested_viewport_sizes": [
+    "360x800",
+    "390x731",
+    "430x932",
+    "844x390",
+    "1366x768"
+  ],
+  "document_overflow_count": 0,
+  "js_page_error_count": 0,
+  "source_sha256": "1f62bb088d77593073a4a86c9a047642acee199ebebd578f3324dd5762b07c26",
+  "capture_renderer": "Canvas2D projection of the same real triangle mesh",
+  "native_android_webgl_tested": false,
+  "inherited_canon_independently_audited": false,
+  "all_fruit_3d_shapes_canon_accurate": false,
+  "user_visual_approval": false,
+  "assistant_visual_match_estimate_percent": "15–20",
+  "assistant_functional_completeness_estimate_percent": 90,
+  "unresolved_art": [
+    "Zoan's foliage and dragon still look procedural",
+    "Logia elements remain visibly attached rather than organically grown",
+    "Paramecia petals and golden orbit remain too geometric",
+    "floating islands still seem toy-like"
+  ]
+}
